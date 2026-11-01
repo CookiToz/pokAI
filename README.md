@@ -66,7 +66,7 @@ Satirique, affectueux, jamais méchant : on se moque des **tics de l'industrie**
     <td><img src="docs/screenshots/model-hub.png" alt="Model Hub (Neurodex)"><br><sub><b>Model Hub</b> : le Neurodex, filtrable par type et par licence.</sub></td>
   </tr>
   <tr>
-    <td><img src="docs/screenshots/hub-interieur.png" alt="Intérieur du Hub"><br><sub><b>Intérieur du Hub</b> : soins, PC et Repo de stockage.</sub></td>
+    <td><img src="docs/screenshots/hub-interieur.png" alt="Intérieur du Hub"><br><sub><b>Intérieur du Hub</b> : un comptoir de soins, le PC du Repo, la sortie. Rien de plus.</sub></td>
     <td><img src="docs/screenshots/creation-perso.png" alt="Création du personnage"><br><sub><b>Création du Vibeur</b> : corps, visage, coiffure, tenue et accessoires.</sub></td>
   </tr>
 </table>
