@@ -15,6 +15,7 @@ import { createMinimap, type Minimap, type MinimapFrame } from '../ui-dom/minima
 import { charKey } from '../world/art/char-contract';
 import { CITY_VARIANTS } from '../world/art';
 import { posterBase, thinFamily, wallKeys, wallMask, wantsLow } from '../world/engine/walls';
+import { buildingSprite } from '../world/engine/buildings';
 import { FLAT_TILES, UNDERLAY_TILES, V03_PROP_TILES, V04_AXIS_TILES, V04_PROP_TILES, groundVariants } from '../world/art/tiles';
 import { RUN_FPS, WALK_FPS, isContactFrame, leanAngle, pickView, walkFrame, type ViewPick } from '../world/engine/anim';
 import { laneRuns, packetPos, type LaneRun } from '../world/engine/lanes';
@@ -31,9 +32,9 @@ import { newPatrol, newWander, stepPatrol, stepWander, unitToward, type PatrolSt
 import { coneOutline, inVisionCone, rayClear } from '../world/engine/vision';
 import {
   DIR_VEC, GROUND_DEPTH, fallbackMapId, LAYER, dominantGround, depthKey, fitZoom, groundUnder, isNearWall, mapBounds,
-  project, roofColourAbove, roofShape, tileNameAt, variantOf,
+  project, tileNameAt, variantOf,
 } from '../world/iso';
-import { SPRITE_SCALE, anchorOf, charactersForMap, ensureCharacters, ensurePlayerTextures, packetKeys, worldKey } from '../world/textures';
+import { SPRITE_SCALE, anchorOf, charactersForMap, ensureCharacters, ensureMapArt, ensurePlayerTextures, packetKeys, worldKey } from '../world/textures';
 import { SCENES } from './keys';
 import { emitGameEvent } from '../systems/progression';
 
@@ -68,9 +69,8 @@ const SIGN_PREVIEW_RANGE = 2.8;
 const PUSH_HOLD = 0.14;
 /** Tiles with a gx-axis sprite (:0) and a gy-axis sprite (:1). */
 const AXIS_TILES: ReadonlySet<TileName> = new Set<TileName>(['data_lane', 'data_bridge', 'cell_bars', ...V04_AXIS_TILES]);
-const ROOF_TILE_COLOUR: Partial<Record<TileName, string>> = {
-  roof_red: 'red', roof_blue: 'blue', roof_grey: 'grey', hub_roof: 'hub', store_roof: 'store', bench_roof: 'bench',
-};
+/** Building shadows sit on a band just above the ground: every block covers them, only the outer silhouette shows. */
+const BUILDING_SHADOW_DEPTH = GROUND_DEPTH + 5;
 const PUFF_COLOURS = [0xff48b0, 0x00a095, 0xffd23f, 0xf4efe4];
 
 interface Ctl {
@@ -488,28 +488,8 @@ export class OverworldScene extends Phaser.Scene implements WorldPort {
   private blockKey(map: MapDef, name: TileName, x: number, y: number): string | null {
     if (name === 'signpost') return `signpost:${signVariant(signLines(map, x, y), variantOf(x, y, 4))}`;
     if (PROP_TILES.has(name) && !V04_PROP_TILES.has(name)) return `${name}:0`; // v0.4 props pick position variants in blockTex
-    const roof = ROOF_TILE_COLOUR[name];
-    if (roof) return `roof:${roof}:${roofShape(map, x, y)}`;
-    switch (name) {
-      case 'wall':
-      case 'wall_window':
-        return `${name}:${isNearWall(map, x, y) ? 'low' : '0'}`;
-      case 'house_wall':
-      case 'house_window':
-      case 'house_door':
-        return `${name}:${roofColourAbove(map, x, y)}`;
-      case 'hub_wall':
-      case 'hub_door':
-        return `${name}:hub`;
-      case 'store_wall':
-      case 'store_door':
-        return `${name}:store`;
-      case 'bench_wall':
-      case 'bench_door':
-        return `${name}:bench`;
-      default:
-        return null;
-    }
+    if (name === 'wall' || name === 'wall_window') return `${name}:${isNearWall(map, x, y) ? 'low' : '0'}`;
+    return null;
   }
 
   /** Texture for a tall tile: the family-specific key first, then the generic `<name>:<variant>` / `<name>:0`. */
@@ -540,8 +520,10 @@ export class OverworldScene extends Phaser.Scene implements WorldPort {
           // thin wall: floor under the slab (room floor taken from the neighbours), slab on the block layer
           this.drawGround(map, groundUnder(map, x, y), x, y);
           this.addImg(thin, x, y, depthKey(x, y, LAYER.block));
+          if (this.hasTex(`${thin}:sh`)) this.addImg(`${thin}:sh`, x, y, BUILDING_SHADOW_DEPTH);
           continue;
         }
+        if (this.addBuilding(map, x, y)) continue;
         if (FLAT.has(name)) {
           this.drawGround(map, name, x, y);
           if (name === 'water') this.maybeGlint(x, y);
@@ -571,6 +553,20 @@ export class OverworldScene extends Phaser.Scene implements WorldPort {
         this.addImg(key, x, y, depthKey(x, y, layer));
       }
     }
+  }
+
+  /** Building tile (see world/engine/buildings.ts): shadow on the ground band, flat body, then its silhouette outline. */
+  private addBuilding(map: MapDef, x: number, y: number): boolean {
+    const b = buildingSprite(map, (tx, ty) => tileNameAt(map, tx, ty), x, y);
+    if (!b) return false;
+    const name = tileNameAt(map, x, y);
+    const d = depthKey(x, y, LAYER.block);
+    const body = this.pickTex([b.body, `${name}:0`]);
+    if (!body) return false;
+    if (b.shadow) this.addImg(b.shadow, x, y, BUILDING_SHADOW_DEPTH);
+    this.addImg(body, x, y, d);
+    if (body === b.body) this.addImg(b.edge, x, y, d + 1);
+    return true;
   }
 
   private addFence(map: MapDef, x: number, y: number): void {
@@ -1573,7 +1569,7 @@ export class OverworldScene extends Phaser.Scene implements WorldPort {
       cam.fadeOut(200, ...FADE);
     });
     const target = db.hasMap(mapId) ? mapId : fallbackMapId();
-    await ensureCharacters(this.textures, charactersForMap(target));
+    await Promise.all([ensureCharacters(this.textures, charactersForMap(target)), ensureMapArt(this.textures, target)]);
     this.loadMap(target, x, y, facing);
     game.save();
     cam.fadeIn(220, ...FADE);

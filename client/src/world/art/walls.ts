@@ -3,7 +3,7 @@
 // Cells are painted back to front; every cell draws its own fills, its own ink edges and then the decoration of the
 // face runs it terminates, so nearer cells correctly cover farther ones.
 import { ALL_MASKS, E, LOW_MASKS, N, S, W, hasFullFace, variantName } from '../engine/walls';
-import { DOOR_H, DOOR_U0, DOOR_U1, SILL_PX, STOREY_PX, WINDOW_H, P, circle, cuboidShadow, lcell, leftPlaneG, line3, poly3, pt, rcell, rightPlaneG, stroke, text, tileEntry, type ArtEntry } from './kit';
+import { DOOR_H, DOOR_U0, DOOR_U1, SILL_PX, STOREY_PX, WINDOW_H, P, circle, cuboidShadow, lcell, leftPlaneG, line3, poly3, pt, rcell, rect, rightPlaneG, stroke, text, tileEntry, type ArtEntry } from './kit';
 
 type Draw = (cx: number, cy: number) => string;
 
@@ -119,10 +119,6 @@ function slab(cx: number, cy: number, mask: number, h: number, pal: Pal, decor?:
   }
 
   let s = '';
-  if (pal.shadow) {
-    const [dx, dy] = pal.sd ?? [5, 4];
-    for (const [ia, ib] of cells) s += cuboidShadow(cx, cy, B[ia]!, B[ia + 1]!, B[ib]!, B[ib + 1]!, h, pal.shadow, dx, dy);
-  }
   const sealed = (f: string): string => `stroke="${f}" stroke-width="1" stroke-linejoin="round"`;
   for (const [ia, ib] of cells) {
     const a0 = B[ia]!, a1 = B[ia + 1]!, b0 = B[ib]!, b1 = B[ib + 1]!;
@@ -155,6 +151,28 @@ function slab(cx: number, cy: number, mask: number, h: number, pal: Pal, decor?:
     s += `<path d="${d}" fill="none" stroke="${P.ink}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>`;
     if (decor) for (const run of endsRun.get(`${ia},${ib}`) ?? []) s += decor(makeCtx(cx, cy, h, run));
   }
+  return s;
+}
+
+/** Slab cells of a mask (same occupancy rule as `slab`). */
+function slabCells(mask: number): [number, number][] {
+  const out: [number, number][] = [[1, 1]];
+  if (mask & W) out.push([0, 1]);
+  if (mask & E) out.push([2, 1]);
+  if (mask & N) out.push([1, 0]);
+  if (mask & S) out.push([1, 2]);
+  return out;
+}
+
+/**
+ * Hard offset shadow of a slab, as its own texture (`<key>:sh`): the scene lays it on the ground band under every block,
+ * so neighbouring slabs cover it and it never paints stripes across the next tile's face.
+ */
+function slabShadow(cx: number, cy: number, mask: number, h: number, pal: Pal): string {
+  if (!pal.shadow) return '';
+  const [dx, dy] = pal.sd ?? [5, 4];
+  let s = '';
+  for (const [ia, ib] of slabCells(mask)) s += cuboidShadow(cx, cy, B[ia]!, B[ia + 1]!, B[ib]!, B[ib + 1]!, h, pal.shadow, dx, dy);
   return s;
 }
 
@@ -198,50 +216,36 @@ const prisonDecor: Decor = (c) => {
 
 const CONCRETE_H = 84;
 const concretePal: Pal = { top: P.concreteL, left: P.concrete, right: P.concreteD, shadow: P.blue, sd: [4, 3] };
+/** v0.7 language on wall slabs too: dark socle, horizontal joints only (never vertical stripes), a light cap. */
+function slabDress(c: Ctx, h: number, cap: string, capDark: string, capH = 6): string {
+  let s = c.quad(0, 1, 0, 6, c.shade(P.ink2, '#4a4466')) + c.line(0, 1, 6, P.ink, 1.2);
+  s += c.quad(0, 1, h - capH, h, c.shade(capDark, cap)) + c.line(0, 1, h - capH, P.ink, 1.2);
+  return s;
+}
 const concreteDecor: Decor = (c) => {
-  let s = '';
-  for (const z of [27, 55]) s += c.line(0, 1, z, c.shade(P.concreteD, '#706e83'), 1.3);
-  if (c.full) {
-    s += c.vline(0.5, 0, CONCRETE_H, c.shade(P.concreteD, '#706e83'), 1.3);
-    for (const [u, z] of [[0.15, 13], [0.85, 13], [0.15, 69], [0.85, 69]] as const) {
-      const [x, y] = c.at(u, z);
-      s += circle(x, y, 1, P.concreteD, false);
-    }
-    if (c.run.side === 'left') s += c.quad(0.62, 0.7, 8, 48, '#9d9bb0');
-  }
+  let s = slabDress(c, CONCRETE_H, P.concreteL, '#c6c4d0');
+  for (const z of [30, 54]) s += c.line(0, 1, z, c.shade(P.concreteD, '#706e83'), 1.1);
   return s;
 };
 
 const AIACT_H = STOREY_PX;
 const aiactPal: Pal = { top: '#c4c2d0', left: '#a7a5b6', right: '#85839a', shadow: P.red, sd: [5, 4] };
-const aiactBase: Decor = (c) => {
-  let s = c.quad(0, 1, 0, 6, c.shade(P.ink2, P.ink)) + c.line(0, 1, AIACT_H - 12, '#706e83', 1.5);
-  for (const u of c.run.side === 'left' ? [0.22, 0.5, 0.78] : [0.3, 0.7]) s += c.quad(u - 0.04, u + 0.04, AIACT_H - 9, AIACT_H - 3, P.ink);
-  return s;
-};
-const aiactDecor: Decor = (c) => {
-  let s = aiactBase(c);
-  if (!c.full) return s;
-  if (c.run.side === 'left') {
-    s += c.quad(0.04, 0.96, 26, 56, P.ink2);
-    s += c.plane(0.04, 56, text(15.4, -9, 8.4, P.red, 'CONFORME', 'middle', `textLength="29" lengthAdjust="spacingAndGlyphs"`));
-  } else {
-    s += c.quad(0.1, 0.9, 26, 38, P.red);
-    for (const u of [0.25, 0.5, 0.75]) s += c.quad(u - 0.04, u + 0.04, 29, 35, P.paper);
-  }
-  return s;
-};
+/** AIACT compound walls: concrete with the red cornice of every AIACT building. */
+const aiactBase: Decor = (c) => slabDress(c, AIACT_H, P.red, P.redD, 8) + c.line(0, 1, 52, c.shade('#8f8da2', '#6f6d84'), 1.1);
+const aiactDecor: Decor = aiactBase;
 const doorDecor: Decor = (c) => {
   let s = aiactBase(c);
   if (!c.full) return s;
   const u0 = DOOR_U0;
   const u1 = DOOR_U1;
   const um = (u0 + u1) / 2;
-  s += c.quad(u0 - 0.03, u1 + 0.03, 0, DOOR_H + 3, P.ink, true) + c.quad(u0 + 0.03, um - 0.02, 0, DOOR_H - 2, '#5b5f7e') + c.quad(um + 0.02, u1 - 0.03, 0, DOOR_H - 2, '#5b5f7e');
-  s += c.quad(u0 + 0.06, um - 0.05, 6, 12, P.yellow) + c.quad(um + 0.05, u1 - 0.06, 6, 12, P.yellow);
-  s += c.quad(um - 0.03, um - 0.01, 30, 42, P.paper) + c.quad(um + 0.01, um + 0.03, 30, 42, P.paper);
-  const [x, y] = c.at(0.5, DOOR_H + 11);
-  return s + circle(x, y, 5.5, P.red) + stroke(`M${x - 2.8},${y - 2.8} l5.6,5.6 M${x + 2.8},${y - 2.8} l-5.6,5.6`, P.paper, 1.4);
+  // same door module as the buildings: accent frame, dark leaves, awning band, AIACT plaque
+  s += c.quad(u0 - 0.04, u1 + 0.04, 0, DOOR_H + 4, P.red, true) + c.quad(u0 + 0.03, um, 0, DOOR_H - 1, '#5b5f7e', true) + c.quad(um, u1 - 0.03, 0, DOOR_H - 1, '#5b5f7e', true);
+  s += c.quad(um - 0.07, um - 0.03, 32, 40, P.paper) + c.quad(um + 0.03, um + 0.07, 32, 40, P.paper);
+  s += c.quad(0.06, 0.94, DOOR_H + 5, DOOR_H + 9, P.redD, true);
+  s += c.quad(0.14, 0.86, DOOR_H + 11, DOOR_H + 23, P.paper, true);
+  s += c.plane(0.14, DOOR_H + 23, rect(1.6, 1.6, 3, 8.8, P.red, 0, false) + text(13.5, 8.6, 7, P.ink, 'AIACT', 'middle', 'textLength="15" lengthAdjust="spacingAndGlyphs"'));
+  return s;
 };
 
 /** A conformity poster hanging on a wall slab (the base family's decoration is replaced by the poster). */
@@ -278,18 +282,23 @@ export function thinWallEntries(): ArtEntry[] {
   const add = (key: string, up: number, draw: Draw): void => {
     out.push(tileEntry(key, up, draw));
   };
+  /** A full-height slab and, when its family casts one, its separate shadow texture. */
+  const addSlab = (key: string, up: number, m: number, h: number, pal: Pal, decor: Decor): void => {
+    add(key, up, (cx, cy) => slab(cx, cy, m, h, pal, decor));
+    if (pal.shadow) add(`${key}:sh`, up, (cx, cy) => slabShadow(cx, cy, m, h, pal));
+  };
   for (const [name, f] of Object.entries(FAMILIES) as [keyof typeof FAMILIES, Family][]) {
-    for (const m of ALL_MASKS) add(`${name}:${variantName(m)}`, f.up, (cx, cy) => slab(cx, cy, m, f.h, f.pal, f.decor));
+    for (const m of ALL_MASKS) addSlab(`${name}:${variantName(m)}`, f.up, m, f.h, f.pal, f.decor);
     for (const m of LOW_MASKS) add(`${name}:${variantName(m)}:low`, 20, (cx, cy) => slab(cx, cy, m, LOW_H, lowPal(f.pal), lowCap));
   }
   // decorated variants only exist where a full-width face is visible; other masks fall back to the base family
   for (const m of ALL_MASKS) {
     if (!hasFullFace(m)) continue;
     const v = variantName(m);
-    add(`wall_window:${v}`, ROOM_H + 14, (cx, cy) => slab(cx, cy, m, ROOM_H, roomPal, roomDecor(true)));
-    add(`aiact_door:${v}`, AIACT_H + 10, (cx, cy) => slab(cx, cy, m, AIACT_H, aiactPal, doorDecor));
+    addSlab(`wall_window:${v}`, ROOM_H + 14, m, ROOM_H, roomPal, roomDecor(true));
+    addSlab(`aiact_door:${v}`, AIACT_H + 10, m, AIACT_H, aiactPal, doorDecor);
     for (const [name, f] of Object.entries(FAMILIES) as [keyof typeof FAMILIES, Family][])
-      add(`poster_aiact:${name}:${v}`, f.up, (cx, cy) => slab(cx, cy, m, f.h, f.pal, posterDecor(f.decor)));
+      addSlab(`poster_aiact:${name}:${v}`, f.up, m, f.h, f.pal, posterDecor(f.decor));
   }
   return out;
 }

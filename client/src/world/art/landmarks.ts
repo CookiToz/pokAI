@@ -4,10 +4,18 @@
 import { LANDMARK_FOOTPRINT, type TileName } from '../../data/tiles';
 import { ENTRANCE_OFFSET } from './entrances';
 import {
-  DOOR_H, DOOR_U0, DOOR_U1, SILL_PX, STOREY_PX, WINDOW_H, doorLeft,
+  ACCENTS, DOOR_H, MATERIALS, STOREY_PX, boxDress, doorUnit, parapetRing, windowModule,
   P, circle, cuboid, cuboidShadow, ellipse, hash01, lcell, landmarkCanvas, leftPlaneG, line3, path, poly, poly3, pt, rcell, rect, rightPlaneG,
   stroke, svgDoc, text, topPlaneG, type ArtEntry,
 } from './kit';
+
+/** v0.7: landmark podiums speak the common building language (socle, accent cornice, window module, door module). */
+function facadeWindows(cx: number, cy: number, plane: number, cols: readonly number[], rows: readonly number[]): string {
+  let s = '';
+  for (const c of cols) s += windowModule(cx, cy, 'L', plane, c, 0);
+  for (const r of rows) s += windowModule(cx, cy, 'R', plane, r, 0);
+  return s;
+}
 
 type Draw = (cx: number, cy: number) => string;
 
@@ -65,40 +73,17 @@ function hfHub(cx: number, cy: number): string {
   const EN = ENTRANCE_OFFSET.lm_hf_hub!;
   let s = '';
 
-  // ground shadow: hard pink + blue offset footprints
-  const fpr = (dx: number, dy: number, col: string): string =>
-    `<polygon points="${[pt(cx, cy, -4.05, -4.05), pt(cx, cy, 1.05, -4.05), pt(cx, cy, 1.05, 1.05), pt(cx, cy, -4.05, 1.05)].map(([x, y]) => `${x + dx},${y + dy}`).join(' ')}" fill="${col}"/>`;
-  s += fpr(10, 8, P.blue) + fpr(5, 4, P.pink);
-
   // plaza apron
   s += poly3(cx, cy, [[-4.05, -4.05, 0], [1.05, -4.05, 0], [1.05, 1.05, 0], [-4.05, 1.05, 0]], P.paper2, false);
 
   // base block
   s += cuboidShadow(cx, cy, A0, A1, A0, A1, BH, P.pink, 7, 5);
-  s += cuboid(cx, cy, A0, A1, A0, A1, 0, BH, { top: '#ffe9a8', left: P.paper, right: P.paper3 });
-  s += lcell(cx, cy, A1, A0, A1, 0, 5, P.pink, false) + rcell(cx, cy, A1, A1, A0, 0, 5, '#c2257f', false);
-  s += lcell(cx, cy, A1, A0, A1, BH - 5, BH, P.yellow, false) + rcell(cx, cy, A1, A1, A0, BH - 5, BH, P.yellowD, false);
-  // windows on the front face leave the entrance column free
-  for (const col of [-4, -3, -1, 0]) {
-    const a = col + 0.2;
-    const i = col + 4;
-    s += lcell(cx, cy, A1, a, a + 0.6, SILL_PX, SILL_PX + WINDOW_H, P.yellowD);
-    s += lcell(cx, cy, A1, a + 0.06, a + 0.54, SILL_PX + 3, SILL_PX + WINDOW_H - 3, i % 2 ? P.glassL : '#fff1c9', false);
-    s += lcell(cx, cy, A1, a + 0.28, a + 0.32, SILL_PX + 3, SILL_PX + WINDOW_H - 3, P.yellowD, false);
-  }
-  for (let i = 0; i < 4; i++) {
-    const b = 0.3 - i * 1.05;
-    s += rcell(cx, cy, A1, b + 0.6, b, SILL_PX, SILL_PX + WINDOW_H, P.yellowD);
-    s += rcell(cx, cy, A1, b + 0.54, b + 0.06, SILL_PX + 3, SILL_PX + WINDOW_H - 3, i % 2 ? '#fff1c9' : P.glassL, false);
-  }
-
-  // bunting along the two front roof edges
-  const [lx0, ly0] = pt(cx, cy, A0, A1, BH);
-  const [fx0, fy0] = pt(cx, cy, A1, A1, BH);
-  const [rx0, ry0] = pt(cx, cy, A1, A0, BH);
-  const flags = [P.pink, P.blue, P.teal, P.orange, P.purple] as const;
-  s += bunting(lx0, ly0, fx0, fy0 - 2, 12, 9, flags);
-  s += bunting(fx0, fy0 - 2, rx0, ry0, 12, 9, flags);
+  const M = MATERIALS.paper;
+  s += cuboid(cx, cy, A0, A1, A0, A1, 0, BH, { top: M.top, left: M.left, right: M.right });
+  s += boxDress(cx, cy, A0, A1, A0, A1, BH, ACCENTS.yellow);
+  // the window module on the storey grid; the entrance column stays free
+  s += facadeWindows(cx, cy, A1, [-4, -3, -1, 0], [-4, -3, -2, -1, 0]);
+  s += parapetRing(cx, cy, A0, A1, A0, A1, BH);
 
   // ---- the face (screen-space, frontal) ----
   const fx = cx;
@@ -137,10 +122,7 @@ function hfHub(cx: number, cy: number): string {
   s += hearts(fx, fy, R);
 
   // ---- entrance: a real door on the front face, exactly on the entrance column ----
-  const door0 = EN.dx + DOOR_U0;
-  const door1 = EN.dx + DOOR_U1;
-  s += doorLeft(cx, cy, { frame: P.yellowD, leaf: P.tealL, glass: P.paper, split: true, mat: P.paper3 }, door0, door1, DOOR_H, A1);
-  s += lcell(cx, cy, A1, door0 - 0.05, door1 + 0.05, DOOR_H + 5, DOOR_H + 9, P.pink, false);
+  s += doorUnit(cx, cy, EN.dx, A1, ACCENTS.yellow, { leaf: P.glass, glass: P.glassL, split: true });
   const [ex, ey] = pt(cx, cy, EN.dx + 0.5, A1, 0);
 
   // ---- two big hugging hands around the entrance ----
@@ -185,16 +167,13 @@ function benchTower(cx: number, cy: number): string {
   s += cuboidShadow(cx, cy, -2.62, 0.62, -2.62, 0.62, SH + 30, P.pink, 9, 6);
   s += cuboidShadow(cx, cy, a0, a1, a0, a1, PH, P.blue, 8, 6);
   // podium: one storey, windows leave the entrance column free
-  s += cuboid(cx, cy, a0, a1, a0, a1, 0, PH, { top: P.purpleL, left: P.lav, right: P.lav2 });
-  s += lcell(cx, cy, a1, a0, a1, 0, 6, P.purpleD, false) + rcell(cx, cy, a1, a1, a0, 0, 6, P.ink2, false);
-  for (const col of [-3, -2, 0]) {
-    const u = col + 0.2;
-    s += lcell(cx, cy, a1, u, u + 0.6, SILL_PX, SILL_PX + WINDOW_H, P.glassN) + lcell(cx, cy, a1, u + 0.06, u + 0.54, SILL_PX + 3, SILL_PX + WINDOW_H - 3, P.glassL, false);
-  }
-  for (const v of [-2.4, -1.55, -0.7]) s += rcell(cx, cy, a1, v + 0.6, v, SILL_PX, SILL_PX + WINDOW_H, P.glassN) + rcell(cx, cy, a1, v + 0.54, v + 0.06, SILL_PX + 3, SILL_PX + WINDOW_H - 3, P.glass, false);
-  // entrance: glass double door on the entrance column + trophy plaque above
-  s += doorLeft(cx, cy, { frame: P.purpleD, leaf: P.yellow, glass: P.paper, split: true, mat: P.paper3 }, EN.dx + DOOR_U0, EN.dx + DOOR_U1, DOOR_H, a1);
-  s += lcell(cx, cy, a1, EN.dx + 0.3, EN.dx + 0.7, DOOR_H + 6, DOOR_H + 18, P.yellowD);
+  const M = MATERIALS.slab;
+  s += cuboid(cx, cy, a0, a1, a0, a1, 0, PH, { top: M.top, left: M.left, right: M.right });
+  s += boxDress(cx, cy, a0, a1, a0, a1, PH, ACCENTS.purple);
+  s += facadeWindows(cx, cy, a1, [-3, -2, 0], [-3, -2, -1, 0]);
+  s += parapetRing(cx, cy, a0, a1, a0, a1, PH);
+  // entrance: the shared door module with a BENCH plaque
+  s += doorUnit(cx, cy, EN.dx, a1, ACCENTS.purple, { leaf: P.glass, glass: P.glassL, split: true, label: 'BENCH' });
   // shaft: three more storeys of glass
   s += cuboid(cx, cy, s0, s1, s0, s1, PH, SH, { top: P.concreteL, left: '#83c3ef', right: '#5a8fd0' });
   const cols = 5;
@@ -209,7 +188,6 @@ function benchTower(cx: number, cy: number): string {
       s += rcell(cx, cy, s1, s1 - (u0 - s0), s1 - (u1 - s0), z0, z0 + rowH - 16, hash01(r, c, 9) < 0.2 ? '#ffd23f' : '#9fd0ee', false);
     }
   }
-  for (const u of [-1.4, -0.5]) s += lcell(cx, cy, s1, u, u + 0.06, PH, SH, P.purple, false);
   s += poly3(cx, cy, [[-2.1, s1, PH + 20], [-1.9, s1, PH + 20], [-1.1, s1, SH - 20], [-1.3, s1, SH - 20]], '#ffffff', false, 'opacity="0.3"');
   // setback bands (one per storey)
   for (const z of [PH + STOREY_PX, PH + 2 * STOREY_PX]) s += lcell(cx, cy, s1, s0, s1, z, z + 3, P.purpleD, false) + rcell(cx, cy, s1, s1, s0, z, z + 3, P.ink2, false);
@@ -264,16 +242,14 @@ function aiactTower(cx: number, cy: number): string {
   s += cuboidShadow(cx, cy, m0, m1, m0, m1, MH, P.red, 10, 6);
   s += cuboidShadow(cx, cy, a0, a1, a0, a1, PH, P.red, 8, 6);
   // podium
-  s += cuboid(cx, cy, a0, a1, a0, a1, 0, PH, { top: '#9b99ab', left: '#85839a', right: '#6a6880' });
-  s += lcell(cx, cy, a1, a0, a1, 0, 5, P.ink2, false) + rcell(cx, cy, a1, a1, a0, 0, 5, P.ink, false);
+  const M = MATERIALS.concrete;
+  s += cuboid(cx, cy, a0, a1, a0, a1, 0, PH, { top: M.top, left: M.left, right: M.right });
+  s += boxDress(cx, cy, a0, a1, a0, a1, PH, ACCENTS.red);
   // No door on this face: the compound is entered through the gate in its wall (an aiact_door tile).
-  for (const col of [-3, -2, -1, 0]) {
-    s += lcell(cx, cy, a1, col + 0.3, col + 0.7, SILL_PX, SILL_PX + WINDOW_H, P.ink, false);
-    s += lcell(cx, cy, a1, col + 0.38, col + 0.62, SILL_PX + 4, SILL_PX + 8, P.yellow, false);
-  }
-  s += lcell(cx, cy, a1, -3.6, 0.9, 62, 70, P.red, false);
+  s += facadeWindows(cx, cy, a1, [-3, -2, -1, 0], [-3, -2, -1, 0]);
+  s += parapetRing(cx, cy, a0, a1, a0, a1, PH);
   // monolith
-  s += cuboid(cx, cy, m0, m1, m0, m1, PH, MH, { top: '#c4c2d0', left: '#a7a5b6', right: '#85839a' });
+  s += cuboid(cx, cy, m0, m1, m0, m1, PH, MH, { top: M.top, left: M.left, right: M.right });
   const slitRows = 16;
   const slitH = (MH - PH - 24) / slitRows;
   for (let r = 0; r < slitRows; r++) {
@@ -357,12 +333,13 @@ function gpuStore(cx: number, cy: number): string {
   const EN = ENTRANCE_OFFSET.lm_gpu_store!;
   let s = '';
   s += cuboidShadow(cx, cy, a0, a1, a0, a1, H, P.pink, 8, 6);
-  s += cuboid(cx, cy, a0, a1, a0, a1, 0, H, { top: '#3a3550', left: '#2b2840', right: '#1d1a2b' });
-  s += lcell(cx, cy, a1, a0, a1, 0, 6, G, false) + rcell(cx, cy, a1, a1, a0, 0, 6, P.gpuD, false);
-  s += lcell(cx, cy, a1, a0, a1, H - 14, H - 10, G, false) + rcell(cx, cy, a1, a1, a0, H - 14, H - 10, P.gpuD, false);
+  const M = MATERIALS.night;
+  s += cuboid(cx, cy, a0, a1, a0, a1, 0, H, { top: M.top, left: M.left, right: M.right });
+  s += boxDress(cx, cy, a0, a1, a0, a1, H, ACCENTS.gpu);
+  s += parapetRing(cx, cy, a0, a1, a0, a1, H);
   // sign above the entrance column
   s += leftPlaneG(
-    cx, cy, EN.dx + 0.5 - 0.81, a1, DOOR_H + 20, rect(0, 0, 52, 14, '#0f0e1c', 1.5, false) + text(26, 11.5, 10.5, G, 'GPU STORE', 'middle', 'textLength="48" lengthAdjust="spacingAndGlyphs"'),
+    cx, cy, EN.dx + 0.5 - 0.81, a1, DOOR_H + 27, rect(0, 0, 52, 14, '#0f0e1c', 1.5, false) + text(26, 11.5, 10.5, G, 'GPU STORE', 'middle', 'textLength="48" lengthAdjust="spacingAndGlyphs"'),
   );
   // display windows with glowing cards (the entrance column stays free)
   for (const u of [-1.85, 0.15]) {
@@ -371,9 +348,9 @@ function gpuStore(cx: number, cy: number): string {
     s += lcell(cx, cy, a1, u + 0.12, u + 0.58, 20, 30, '#33533a', false);
   }
   // entrance door
-  s += doorLeft(cx, cy, { frame: G, leaf: '#14221a', glass: '#2c4a35', split: true, mat: P.slabD, bar: G }, EN.dx + DOOR_U0, EN.dx + DOOR_U1, DOOR_H, a1);
-  // right face: slim windows
-  for (const v of [-1.5, -0.8, -0.1]) s += rcell(cx, cy, a1, v + 0.5, v, SILL_PX - 10, SILL_PX + WINDOW_H + 10, G) + rcell(cx, cy, a1, v + 0.45, v + 0.05, SILL_PX - 7, SILL_PX + WINDOW_H + 7, '#14221a', false);
+  s += doorUnit(cx, cy, EN.dx, a1, ACCENTS.gpu, { leaf: '#14221a', glass: '#2c4a35', split: true, mat: P.slabD });
+  // right face: the common window module
+  for (const r of [-2, -1, 0]) s += windowModule(cx, cy, 'R', a1, r, 0);
   // supports + the giant GPU card
   for (const [a, bb] of [[-1.6, -1.2], [0.4, -1.2], [-1.6, -0.1], [0.4, -0.1]] as const) s += line3(cx, cy, [[a, bb, H], [a, bb, H + 8]], P.steel, 5);
   const g0 = -1.85;

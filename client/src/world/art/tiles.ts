@@ -6,40 +6,16 @@ import { landmark4Entries } from './landmarks4';
 import { FOREST_VARIANTS, forestEntries } from './forest';
 import { THEMED_VARIANTS, themedEntries } from './themed';
 import { thinWallEntries } from './walls';
+import { legacyBuildingEntries } from './buildings';
 import {
-  DOOR_H, LAMP_PX, SILL_PX, SIGN_PX, STOREY_PX, WINDOW_H, doorLeft,
+  LAMP_PX, SILL_PX, STOREY_PX, WINDOW_H,
   OUT, P, blockParts, blockShadow, circle, ellipse, groundDiamond, hash01, leftQuad, line3, path, planeB, poly, poly3, pt, rect, rightQuad,
-  stroke, svgDoc, tileEntry, type ArtEntry, type V3,
+  stroke, svgDoc, tileEntry, type ArtEntry,
 } from './kit';
 
-// ---------- palettes ----------
+// Exterior building constants live in buildings.ts (v0.7 architecture); re-exported for older imports.
+export { ROOF_H, WALL_H } from './buildings';
 
-export type RoofColour = 'red' | 'blue' | 'grey' | 'hub' | 'store' | 'bench' | 'wood';
-export const ROOF_COLOURS: readonly RoofColour[] = ['red', 'blue', 'grey', 'hub', 'store', 'bench', 'wood'];
-
-interface RoofPal {
-  base: string;
-  light: string;
-  dark: string;
-  line: string;
-}
-const ROOF: Record<RoofColour, RoofPal> = {
-  red: { base: P.red, light: P.redL, dark: P.redD, line: P.redD },
-  blue: { base: P.blue, light: P.blueL, dark: P.blueD, line: P.blueD },
-  grey: { base: P.steel, light: P.steelL, dark: P.steelD, line: P.steelD },
-  hub: { base: P.yellow, light: '#ffe27a', dark: P.yellowD, line: P.yellowD },
-  store: { base: P.teal, light: P.tealL, dark: P.tealD, line: P.tealD },
-  bench: { base: P.purple, light: P.purpleL, dark: P.purpleD, line: P.purpleD },
-  wood: { base: P.woodL, light: '#f0c987', dark: P.woodD, line: P.woodD },
-};
-
-export type RoofShape = 'single' | 'back' | 'front' | 'flat';
-export const ROOF_SHAPES: readonly RoofShape[] = ['single', 'back', 'front', 'flat'];
-
-/** Exterior walls are one storey tall; roofs sit just above and rise to a ridge. */
-export const WALL_H = STOREY_PX;
-export const ROOF_H = WALL_H + 14;
-const RIDGE = 24;
 /** Interior room walls: same storey height so doors, windows and furniture read at the same scale outdoors and in. */
 export const ROOM_WALL_H = STOREY_PX;
 const LOW_WALL_H = 10;
@@ -350,135 +326,6 @@ function dock(cx: number, cy: number): string {
   return s;
 }
 
-// --- houses ---
-
-function houseWall(c: RoofColour, kind: 'wall' | 'window' | 'door', style: 'house' | 'hub' | 'store' | 'bench' = 'house') {
-  return (cx: number, cy: number): string => {
-    const rp = ROOF[c];
-    const wood = c === 'wood';
-    const faceL = style === 'bench' ? P.lav : wood ? P.floorWood : P.paper2;
-    const faceR = style === 'bench' ? P.lav2 : wood ? P.wood : P.paper3;
-    const b = blockParts(cx, cy, WALL_H, { top: rp.base, left: faceL, right: faceR });
-    let s = blockShadow(cx, cy, WALL_H, P.blue) + b.left + b.right + b.top;
-    // eave strip
-    s += line3(cx, cy, [[0, 1, WALL_H - 6], [1, 1, WALL_H - 6]], rp.dark, 1.6);
-    s += line3(cx, cy, [[1, 1, WALL_H - 6], [1, 0, WALL_H - 6]], rp.dark, 1.6);
-    // base stripe
-    s += leftQuad(cx, cy, 0, 1, 0, 6, style === 'house' ? (wood ? P.woodD : P.paper3) : rp.light, false);
-    s += rightQuad(cx, cy, 0, 1, 0, 6, style === 'house' ? (wood ? '#7d5430' : P.steelL) : rp.base, false);
-    if (wood) for (const z of [30, 54, 78]) s += line3(cx, cy, [[0.02, 1, z], [0.98, 1, z]], P.woodD, 1.1) + line3(cx, cy, [[1, 0.98, z], [1, 0.02, z]], P.woodD, 1.1);
-    if (style === 'hub') s += leftQuad(cx, cy, 0, 1, DOOR_H + 5, DOOR_H + 11, P.yellow, false);
-    if (style === 'store') s += leftQuad(cx, cy, 0, 1, DOOR_H + 5, DOOR_H + 11, P.tealL, false);
-    if (style === 'bench') {
-      for (const u of [0.1, 0.5, 0.9]) s += leftQuad(cx, cy, u - 0.07, u + 0.07, 6, WALL_H - 6, P.purpleL);
-    }
-    if (kind === 'window') {
-      // one storey window: sill at SILL_PX, a cross bar and a flower-box ledge
-      const z0 = SILL_PX;
-      const z1 = SILL_PX + WINDOW_H;
-      s += leftQuad(cx, cy, 0.2, 0.8, z0, z1, P.blue);
-      s += leftQuad(cx, cy, 0.26, 0.48, z0 + 3, z1 - 3, P.blueL, false);
-      s += leftQuad(cx, cy, 0.52, 0.74, z0 + 3, z1 - 3, P.blueL, false);
-      s += leftQuad(cx, cy, 0.16, 0.84, z0 - 5, z0, P.paper3);
-      s += rightQuad(cx, cy, 0.25, 0.75, z0, z1, P.blueD);
-    }
-    if (kind === 'door') s += doorDeco(cx, cy, c, style);
-    return s;
-  };
-}
-
-/** Sign standing above the wall line (centre sits SIGN_PX/2 above the parapet). */
-function roofSign(cx: number, cy: number, draw: (x: number, y: number) => string): string {
-  const [px, py] = pt(cx, cy, 0.5, 1, WALL_H);
-  return stroke(`M${px - 5},${py} v-8 M${px + 5},${py} v-8`, P.ink, 2) + draw(px, py - 8 - SIGN_PX / 2 - 2);
-}
-
-function doorDeco(cx: number, cy: number, c: RoofColour, style: 'house' | 'hub' | 'store' | 'bench'): string {
-  let s = '';
-  if (style === 'house') {
-    const wood = c === 'wood';
-    s += doorLeft(cx, cy, { frame: wood ? P.woodD : P.paper3, leaf: P.orange, handle: P.yellow });
-    s += leftQuad(cx, cy, 0.3, 0.7, 44, 66, P.orangeD, false);
-    s += leftQuad(cx, cy, 0.3, 0.7, 12, 34, P.orangeD, false);
-    // little transom / house number above the door
-    s += leftQuad(cx, cy, 0.4, 0.6, DOOR_H + 6, DOOR_H + 15, P.paper, true);
-  } else if (style === 'hub') {
-    s += doorLeft(cx, cy, { frame: P.yellowD, leaf: P.tealL, glass: P.paper, split: true });
-    // hanging hugging-face sign on the roof line
-    s += roofSign(cx, cy, (sx, sy) => {
-      let t = circle(sx + 3, sy + 3, 14, P.pink, false);
-      t += circle(sx, sy, 14, P.yellow);
-      t += circle(sx - 5, sy - 3, 1.8, P.ink, false) + circle(sx + 5, sy - 3, 1.8, P.ink, false);
-      t += stroke(`M${sx - 5.5},${sy + 3} q5.5,6.5 11,0`, P.ink, 1.8);
-      t += ellipse(sx - 14, sy + 7, 3.4, 2.6, P.yellow) + ellipse(sx + 14, sy + 7, 3.4, 2.6, P.yellow);
-      return t;
-    });
-  } else if (style === 'store') {
-    s += doorLeft(cx, cy, { frame: P.tealD, leaf: P.tealL, glass: P.paper, split: true, mat: P.teal });
-    // striped awning over the door
-    const stripes = 6;
-    for (let i = 0; i < stripes; i++) {
-      const u0 = 0.06 + (0.88 * i) / stripes;
-      const u1 = 0.06 + (0.88 * (i + 1)) / stripes;
-      s += poly3(cx, cy, [[u0, 1, DOOR_H + 14], [u1, 1, DOOR_H + 14], [u1, 1.3, DOOR_H + 3], [u0, 1.3, DOOR_H + 3]], i % 2 ? P.paper : P.teal);
-    }
-    s += roofSign(cx, cy, (sx, sy) => {
-      let t = rect(sx - 12 + 3, sy - 12 + 3, 24, 24, P.pink, 3, false);
-      t += rect(sx - 12, sy - 12, 24, 24, P.teal, 3) + rect(sx - 6, sy - 6, 12, 12, P.ink, 1);
-      for (const d of [-7, -2.5, 2.5, 7]) t += stroke(`M${sx + d},${sy - 12} v-3 M${sx + d},${sy + 12} v3`, P.ink, 1.4);
-      return t;
-    });
-  } else {
-    s += doorLeft(cx, cy, { frame: P.purpleD, leaf: P.yellow, glass: P.paper, split: true, mat: P.purpleL });
-    s += roofSign(cx, cy, (sx, sy) => {
-      let t = path(`M${sx - 11 + 3},${sy - 10 + 3} h22 q0,15 -11,15 q-11,0 -11,-15 z`, P.pink, false);
-      t += path(`M${sx - 11},${sy - 10} h22 q0,15 -11,15 q-11,0 -11,-15 z`, P.yellow);
-      t += rect(sx - 2.4, sy + 5, 4.8, 6, P.yellowD, 0) + rect(sx - 7, sy + 11, 14, 4, P.ink2, 1);
-      t += stroke(`M${sx - 11},${sy - 6} q-7,0 -5,7 q2,4 7,4 M${sx + 11},${sy - 6} q7,0 5,7 q-2,4 -7,4`, P.ink, 1.8);
-      return t;
-    });
-  }
-  return s;
-}
-
-function roofTile(c: RoofColour, shape: RoofShape) {
-  return (cx: number, cy: number): string => {
-    const rp = ROOF[c];
-    const prof: [number, number][] =
-      shape === 'single' ? [[0, ROOF_H], [0.5, ROOF_H + RIDGE], [1, ROOF_H]]
-      : shape === 'back' ? [[0, ROOF_H], [1, ROOF_H + RIDGE]]
-      : shape === 'front' ? [[0, ROOF_H + RIDGE], [1, ROOF_H]]
-      : [[0, ROOF_H + RIDGE], [1, ROOF_H + RIDGE]];
-    const zFront = prof[prof.length - 1]![1];
-    let s = '';
-    // shadow silhouette
-    const sil: V3[] = [[0, 1, 0], [1, 1, 0], [1, 0, 0]];
-    for (const [b, z] of prof) sil.push([1, b, z]);
-    sil.push([0, 0, prof[0]![1]]);
-    const sp = sil.map(([a, b, z]) => pt(cx, cy, a, b, z)).map(([x, y]) => `${x + 4},${y + 3}`).join(' ');
-    s += `<polygon points="${sp}" fill="${P.blue}" stroke="${P.blue}" stroke-width="2" stroke-linejoin="round"/>`;
-    // left face (fascia under the eave)
-    s += poly3(cx, cy, [[0, 1, 0], [1, 1, 0], [1, 1, zFront], [0, 1, zFront]], rp.dark);
-    // right face (gable end)
-    const gable: V3[] = [[1, 1, 0], [1, 0, 0]];
-    for (const [b, z] of prof) gable.push([1, b, z]);
-    s += poly3(cx, cy, gable, rp.dark);
-    // top slopes
-    for (let i = 0; i < prof.length - 1; i++) {
-      const [b0, z0] = prof[i]!;
-      const [b1, z1] = prof[i + 1]!;
-      const col = z1 > z0 ? rp.light : z1 < z0 ? rp.base : rp.base;
-      s += poly3(cx, cy, [[0, b0, z0], [1, b0, z0], [1, b1, z1], [0, b1, z1]], col);
-      for (const t of [0.33, 0.66]) {
-        const b = b0 + (b1 - b0) * t;
-        const z = z0 + (z1 - z0) * t;
-        s += line3(cx, cy, [[0.03, b, z], [0.97, b, z]], rp.line, 1.2);
-      }
-    }
-    return s;
-  };
-}
-
 // --- interior ---
 
 function roomWall(kind: 'wall' | 'window', low: boolean) {
@@ -642,8 +489,6 @@ export const V04_AXIS_TILES: ReadonlySet<TileName> = new Set<TileName>(['bridge_
 /** v0.4 variant counts (merged into CITY_VARIANTS). signpost/crate_push/arena_line are chosen explicitly, not by position. */
 export const V04_VARIANTS: Readonly<Record<string, number>> = { ...FOREST_VARIANTS, ...THEMED_VARIANTS };
 
-const wallKinds = ['wall', 'door'] as const;
-
 export function buildTileArt(): ArtEntry[] {
   const out: ArtEntry[] = [];
   const add = (key: string, up: number, draw: (cx: number, cy: number) => string, w?: number): void => {
@@ -688,17 +533,7 @@ export function buildTileArt(): ArtEntry[] {
   add('wall_window:0', ROOM_WALL_H + 14, roomWall('window', false));
   add('wall:low', 20, roomWall('wall', true));
   add('wall_window:low', 20, roomWall('wall', true));
-  for (const c of ['red', 'blue', 'grey', 'wood'] as const) {
-    add(`house_wall:${c}`, WALL_H + 8, houseWall(c, 'wall'));
-    add(`house_window:${c}`, WALL_H + 8, houseWall(c, 'window'));
-    add(`house_door:${c}`, WALL_H + 8, houseWall(c, 'door'));
-  }
-  for (const k of wallKinds) {
-    add(`hub_${k}:hub`, WALL_H + 62, houseWall('hub', k, 'hub'));
-    add(`store_${k}:store`, WALL_H + 62, houseWall('store', k, 'store'));
-    add(`bench_${k}:bench`, WALL_H + 62, houseWall('bench', k, 'bench'));
-  }
-  for (const c of ROOF_COLOURS) for (const sh of ROOF_SHAPES) add(`roof:${c}:${sh}`, ROOF_H + RIDGE + 8, roofTile(c, sh));
+  out.push(...legacyBuildingEntries());
   out.push(...cityTileEntries(), ...thinWallEntries(), ...landmarkEntries(), ...forestEntries(), ...themedEntries(), ...landmark4Entries());
   return out;
 }

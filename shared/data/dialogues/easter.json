@@ -791,402 +791,6 @@
    ]
   },
   {
-   "id": "sign_hub_city_1_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_city_2_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_city_3_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_city_4_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_city_5_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_city_6_1",
-   "steps": [
-    {
-     "say": "PC Hugging Face — Repo de modèles. Tous tes PokAI attrapés sont stockés ici. Tu peux échanger avec ton équipe."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_city_8_1",
-   "steps": [
-    {
-     "say": "PC Hugging Face — Repo de modèles. Tous tes PokAI attrapés sont stockés ici. Tu peux échanger avec ton équipe."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_city_9_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_city_10_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_city_11_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_city_12_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_city_13_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_grove_1_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_grove_2_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_grove_3_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_grove_4_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_grove_5_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_grove_6_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_grove_7_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_grove_8_1",
-   "steps": [
-    {
-     "say": "PC Hugging Face — Repo de modèles. Tous tes PokAI attrapés sont stockés ici. Tu peux échanger avec ton équipe."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_grove_10_1",
-   "steps": [
-    {
-     "say": "PC Hugging Face — Repo de modèles. Tous tes PokAI attrapés sont stockés ici. Tu peux échanger avec ton équipe."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_grove_11_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_grove_12_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_grove_13_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_grove_14_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_grove_15_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_grove_16_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_grove_17_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_port_1_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_port_2_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_port_3_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_port_4_1",
-   "steps": [
-    {
-     "say": "PC Hugging Face — Repo de modèles. Tous tes PokAI attrapés sont stockés ici. Tu peux échanger avec ton équipe."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_port_6_1",
-   "steps": [
-    {
-     "say": "PC Hugging Face — Repo de modèles. Tous tes PokAI attrapés sont stockés ici. Tu peux échanger avec ton équipe."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_port_7_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_port_8_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
-   "id": "sign_hub_port_9_1",
-   "steps": [
-    {
-     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
-    },
-    {
-     "open": "repo"
-    }
-   ]
-  },
-  {
    "id": "sign_latentia_city_57_5",
    "steps": [
     {
@@ -1912,6 +1516,94 @@
    "steps": [
     {
      "say": "Un panneau : « Votre quota de calcul est dépassé. Merci de patienter 2 ans. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_city_1_6",
+   "steps": [
+    {
+     "say": "PC Hugging Face — Repo de modèles. Tous tes PokAI attrapés sont stockés ici. Tu peux échanger avec ton équipe."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_grove_1_7",
+   "steps": [
+    {
+     "say": "PC Hugging Face — Repo de modèles. Tous tes PokAI attrapés sont stockés ici. Tu peux échanger avec ton équipe."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_port_1_5",
+   "steps": [
+    {
+     "say": "PC Hugging Face — Repo de modèles. Tous tes PokAI attrapés sont stockés ici. Tu peux échanger avec ton équipe."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_city_1_5",
+   "steps": [
+    {
+     "say": "Armoire REPO : le stockage des modèles. Utilise le PC juste à côté."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_grove_1_6",
+   "steps": [
+    {
+     "say": "Armoire REPO : le stockage des modèles. Utilise le PC juste à côté."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_port_1_4",
+   "steps": [
+    {
+     "say": "Armoire REPO : le stockage des modèles. Utilise le PC juste à côté."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_dunes_1_4",
+   "steps": [
+    {
+     "say": "Armoire REPO : le stockage des modèles. Utilise le PC juste à côté."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_capitale_1_3",
+   "steps": [
+    {
+     "say": "Armoire REPO : le stockage des modèles. Utilise le PC juste à côté."
+    },
+    {
+     "open": "repo"
     }
    ]
   }

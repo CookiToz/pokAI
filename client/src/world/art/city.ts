@@ -1,7 +1,7 @@
 // v0.3 tile art: city ground, towers, shops, data highways, the AIACT detention centre and street props.
 // Same riso rules as tiles.ts: flat fills, 2px ink outlines, hard pink/blue offset shadows on tall objects.
 import {
-  DOOR_H, LAMP_PX, STOREY_PX, VENDING_PX, doorLeft,
+  LAMP_PX, VENDING_PX,
   OUT, P, blockParts, blockShadow, circle, cuboid, ellipse, groundDiamond, hash01, lcell, leftPlaneG, leftQuad, line3, path, poly, poly3, pt,
   rcell, rect, rightQuad, stroke, text, tileEntry, type ArtEntry,
 } from './kit';
@@ -328,193 +328,7 @@ function searchlight(cx: number, cy: number): string {
   return s;
 }
 
-// ---------- shops ----------
-
-/** Shops: one storey with a sign band on top; the door is a real DOOR_H door. */
-const SHOP_H = STOREY_PX;
-const SIGN_Z = DOOR_H + 6;
-const SHOP_TINTS = [
-  { main: P.teal, dark: P.tealD, light: P.tealL },
-  { main: P.pink, dark: '#c2257f', light: P.pinkL },
-  { main: P.yellow, dark: P.yellowD, light: '#ffe27a' },
-] as const;
-
-function shopBody(t: number, kind: 'wall' | 'window' | 'door'): Draw {
-  return (cx, cy) => {
-    const tint = SHOP_TINTS[t % SHOP_TINTS.length]!;
-    const b = blockParts(cx, cy, SHOP_H, { top: P.concreteL, left: '#f2ead8', right: P.paper3 });
-    let s = blockShadow(cx, cy, SHOP_H, P.blue) + b.left + b.right + b.top;
-    // sign fascia above the door line
-    s += leftQuad(cx, cy, 0, 1, SIGN_Z, SHOP_H, tint.main, false) + rightQuad(cx, cy, 0, 1, SIGN_Z, SHOP_H, tint.dark, false);
-    s += line3(cx, cy, [[0, 1, SIGN_Z], [1, 1, SIGN_Z]], P.ink, 1.6) + line3(cx, cy, [[1, 1, SIGN_Z], [1, 0, SIGN_Z]], P.ink, 1.6);
-    // plinth
-    s += leftQuad(cx, cy, 0, 1, 0, 6, tint.dark, false) + rightQuad(cx, cy, 0, 1, 0, 6, P.ink3, false);
-    // roof parapet line
-    s += line3(cx, cy, [[0.06, 0.06, SHOP_H], [0.94, 0.06, SHOP_H], [0.94, 0.94, SHOP_H]], P.concreteD, 1.4);
-    if (kind === 'wall') {
-      s += leftQuad(cx, cy, 0.18, 0.82, 16, 70, P.paper2, false);
-      s += rightQuad(cx, cy, 0.2, 0.8, 16, 70, P.paper2, false);
-      s += leftQuad(cx, cy, 0.24, 0.76, 24, 62, tint.light, false);
-    } else if (kind === 'window') {
-      s += leftQuad(cx, cy, 0.06, 0.94, 12, 76, tint.dark);
-      s += leftQuad(cx, cy, 0.1, 0.9, 16, 72, P.glassL);
-      s += leftQuad(cx, cy, 0.1, 0.9, 16, 36, '#fff1c9', false);
-      // display: shirts + boxes on a shelf
-      s += leftQuad(cx, cy, 0.1, 0.9, 36, 38, tint.dark, false);
-      const items = [P.pink, P.blue, P.yellow, P.leaf, P.orange];
-      items.forEach((c, i) => {
-        const u0 = 0.14 + i * 0.15;
-        s += leftQuad(cx, cy, u0, u0 + 0.1, 38, 38 + 12 + (i % 2) * 6, c, true);
-      });
-      s += leftQuad(cx, cy, 0.14, 0.26, 16, 34, c2(t), true);
-      s += poly3(cx, cy, [[0.18, 1, 56], [0.32, 1, 70], [0.3, 1, 70], [0.16, 1, 56]], P.paper, false);
-      s += poly3(cx, cy, [[0.4, 1, 52], [0.52, 1, 70], [0.47, 1, 70], [0.35, 1, 52]], '#ffffff', false);
-      s += rightQuad(cx, cy, 0.25, 0.75, 20, 70, tint.light, false);
-    } else {
-      s += doorLeft(cx, cy, { frame: tint.dark, leaf: P.glassL, glass: P.paper, split: true, mat: tint.main, bar: tint.main });
-      // "OUVERT" plaque beside the handle
-      s += leftQuad(cx, cy, 0.56, 0.74, 52, 62, P.pink, false);
-    }
-    return s;
-  };
-}
-const c2 = (t: number): string => [P.pinkL, P.tealL, P.blueL][t % 3] as string;
-
-function awning(colour: string): Draw {
-  return (cx, cy) => {
-    const ZT = DOOR_H + 14;
-    const ZB = DOOR_H + 2;
-    let s = poly3(cx, cy, [[0.08, 0.08, 0], [1.1, 0.08, 0], [1.1, 1.1, 0], [0.08, 1.1, 0]], P.blue, false, 'transform="translate(6 4)"');
-    for (const [a, b] of [[0.1, 0.1], [0.9, 0.1], [0.1, 0.9], [0.9, 0.9]] as const) s += line3(cx, cy, [[a, b, 0], [a, b, a < 0.5 && b < 0.5 ? ZT + 10 : ZB + 4]], P.ink2, 3.2);
-    const n = 6;
-    for (let i = 0; i < n; i++) {
-      const a0 = i / n;
-      const a1 = (i + 1) / n;
-      const c = i % 2 ? P.paper : colour;
-      s += poly3(cx, cy, [[a0, 0, ZT + 10], [a1, 0, ZT + 10], [a1, 1.1, ZT], [a0, 1.1, ZT]], c);
-      s += poly3(cx, cy, [[a0, 1.1, ZT], [a1, 1.1, ZT], [a1, 1.1, ZB], [a0, 1.1, ZB]], c);
-    }
-    // scalloped valance
-    for (let i = 0; i < n; i++) {
-      const [x, y] = pt(cx, cy, (i + 0.5) / n, 1.1, ZB);
-      s += circle(x, y, 2.8, i % 2 ? P.paper : colour);
-    }
-    return s;
-  };
-}
-
-// ---------- towers, concrete, AIACT facade ----------
-
-/** Towers are several storeys tall (3 x STOREY_PX). */
-export const TOWER_STOREYS = 3;
-export const TOWER_H = TOWER_STOREYS * STOREY_PX;
-const GLASS_TINTS = [
-  { l: '#7fd0ee', r: '#4a9fd0', cell: '#c4ecf8', cellR: '#8fd0ec', dark: '#2a5f9e' },
-  { l: '#74d8cc', r: '#40a89c', cell: '#c0f2ea', cellR: '#86d8cf', dark: '#1f6f78' },
-  { l: '#b69af0', r: '#8264cf', cell: '#e2d6fb', cellR: '#b9a2ee', dark: '#4b3590' },
-] as const;
-
-function towerBody(t: number, roof: boolean): Draw {
-  return (cx, cy) => {
-    const g = GLASS_TINTS[t % GLASS_TINTS.length]!;
-    const H = TOWER_H;
-    const b = blockParts(cx, cy, H, { top: P.concreteL, left: g.l, right: g.r });
-    let s = blockShadow(cx, cy, H, P.pink, 6, 4) + b.left + b.right + b.top;
-    const rows = TOWER_STOREYS;
-    const cols = 3;
-    for (let r = 0; r < rows; r++) {
-      const z0 = (r === 0 ? 24 : 34) + r * STOREY_PX - (r === 0 ? 0 : 6);
-      for (let c = 0; c < cols; c++) {
-        const u0 = 0.05 + (c * 0.9) / cols + 0.03;
-        const u1 = 0.05 + ((c + 1) * 0.9) / cols - 0.03;
-        const lit = hash01(r + t * 7, c, 21) < 0.22;
-        s += leftQuad(cx, cy, u0, u1, z0, z0 + 44, lit ? '#ffe27a' : g.cell, false);
-        const litR = hash01(r + t * 7, c, 33) < 0.22;
-        s += rightQuad(cx, cy, u0, u1, z0, z0 + 44, litR ? '#ffd23f' : g.cellR, false);
-      }
-    }
-    // floor bands (one per storey) and glare streaks
-    for (let r = 1; r < rows; r++) s += leftQuad(cx, cy, 0, 1, r * STOREY_PX - 3, r * STOREY_PX + 1, g.dark, false) + rightQuad(cx, cy, 0, 1, r * STOREY_PX - 3, r * STOREY_PX + 1, '#1d1a2b', false);
-    s += poly3(cx, cy, [[0.12, 1, 30], [0.2, 1, 30], [0.55, 1, H - 10], [0.47, 1, H - 10]], '#ffffff', false, 'opacity="0.28"');
-    // lobby band
-    s += leftQuad(cx, cy, 0, 1, 0, 10, g.dark, false) + rightQuad(cx, cy, 0, 1, 0, 10, '#1d1a2b', false);
-    s += leftQuad(cx, cy, 0.12, 0.88, 3, 8, P.yellow, false);
-    // crown ledge
-    s += leftQuad(cx, cy, 0, 1, H - 4, H, P.concrete, false) + rightQuad(cx, cy, 0, 1, H - 4, H, P.concreteD, false);
-    if (roof) s += towerRoofTop(t)(cx, cy);
-    return s;
-  };
-}
-
-function towerRoofTop(t: number): Draw {
-  return (cx, cy) => {
-    const H = TOWER_H;
-    let s = poly3(cx, cy, [[0.1, 0.1, H], [0.9, 0.1, H], [0.9, 0.9, H], [0.1, 0.9, H]], P.concrete, false);
-    if (t % 3 === 0) {
-      // antenna mast with blinking light
-      s += line3(cx, cy, [[0.5, 0.5, H], [0.5, 0.5, H + 46]], P.ink, 5);
-      s += line3(cx, cy, [[0.5, 0.5, H], [0.5, 0.5, H + 46]], P.steelL, 2);
-      s += line3(cx, cy, [[0.36, 0.5, H + 30], [0.64, 0.5, H + 30]], P.ink, 3.4);
-      const [x, y] = pt(cx, cy, 0.5, 0.5, H + 48);
-      s += `<circle cx="${x}" cy="${y}" r="6" fill="${P.red}" opacity="0.4"/>` + circle(x, y, 2.6, P.red);
-    } else if (t % 3 === 1) {
-      // helipad
-      const [x, y] = pt(cx, cy, 0.5, 0.5, H);
-      s += ellipse(x, y, 25, 12.5, P.ink2);
-      s += ellipse(x, y, 20, 10, P.yellow, false);
-      s += `<g transform="translate(${x} ${y}) scale(1 0.5)">${text(0, 6, 16, P.ink, 'H')}</g>`;
-    } else {
-      // rooftop AC + water tank
-      s += cuboid(cx, cy, 0.18, 0.46, 0.2, 0.5, H, H + 9, { top: P.steelL, left: P.steel, right: P.steelD });
-      s += cuboid(cx, cy, 0.56, 0.84, 0.5, 0.82, H, H + 7, { top: P.steelL, left: P.steel, right: P.steelD });
-      const [x, y] = pt(cx, cy, 0.7, 0.3, H);
-      s += rect(x - 6, y - 22, 12, 22, P.wood, 2) + ellipse(x, y - 22, 6, 3, P.woodL) + stroke(`M${x - 6},${y - 14} h12`, P.woodD, 1.4);
-      const [fx, fy] = pt(cx, cy, 0.32, 0.35, H + 9);
-      s += ellipse(fx, fy, 6, 3, P.ink2) + stroke(`M${fx - 5},${fy} l10,0`, P.steelL, 1);
-    }
-    return s;
-  };
-}
-
-/** The city perimeter wall: a bit taller than a person. */
-export const CONCRETE_WALL_H = 84;
-function concreteWall(cx: number, cy: number): string {
-  const H = CONCRETE_WALL_H;
-  const b = blockParts(cx, cy, H, { top: P.concreteL, left: P.concrete, right: P.concreteD });
-  let s = blockShadow(cx, cy, H, P.blue) + b.left + b.right + b.top;
-  for (const z of [27, 55]) s += line3(cx, cy, [[0, 1, z], [1, 1, z]], P.concreteD, 1.3) + line3(cx, cy, [[1, 1, z], [1, 0, z]], '#706e83', 1.3);
-  s += line3(cx, cy, [[0.5, 1, 0], [0.5, 1, H]], P.concreteD, 1.3) + line3(cx, cy, [[1, 0.5, 0], [1, 0.5, H]], '#706e83', 1.3);
-  for (const [u, z] of [[0.15, 13], [0.85, 13], [0.15, 69], [0.85, 69]] as const) {
-    const [x, y] = pt(cx, cy, u, 1, z);
-    s += circle(x, y, 1, P.concreteD, false);
-  }
-  s += leftQuad(cx, cy, 0.62, 0.7, 8, 48, '#9d9bb0', false);
-  return s;
-}
-
-const AIACT_H = STOREY_PX;
-function aiactBody(door: boolean): Draw {
-  return (cx, cy) => {
-    const b = blockParts(cx, cy, AIACT_H, { top: '#c4c2d0', left: '#a7a5b6', right: '#85839a' });
-    let s = blockShadow(cx, cy, AIACT_H, P.red, 5, 4) + b.left + b.right + b.top;
-    s += leftQuad(cx, cy, 0, 1, 0, 6, P.ink2, false) + rightQuad(cx, cy, 0, 1, 0, 6, P.ink, false);
-    s += line3(cx, cy, [[0, 1, AIACT_H - 12], [1, 1, AIACT_H - 12]], '#706e83', 1.5) + line3(cx, cy, [[1, 1, AIACT_H - 12], [1, 0, AIACT_H - 12]], '#706e83', 1.5);
-    // slit windows
-    for (const u of [0.22, 0.5, 0.78]) s += leftQuad(cx, cy, u - 0.04, u + 0.04, AIACT_H - 9, AIACT_H - 3, P.ink, false);
-    for (const u of [0.3, 0.7]) s += rightQuad(cx, cy, u - 0.04, u + 0.04, AIACT_H - 9, AIACT_H - 3, P.ink, false);
-    if (!door) {
-      s += leftQuad(cx, cy, 0.04, 0.96, 26, 56, P.ink2, false);
-      s += leftPlaneG(cx, cy, 0.04, 1, 56, text(15.4, -9, 8.4, P.red, 'CONFORME', 'middle', `textLength="29" lengthAdjust="spacingAndGlyphs"`));
-      s += rightQuad(cx, cy, 0.1, 0.9, 26, 38, P.red, false);
-      for (const u of [0.25, 0.5, 0.75]) s += rightQuad(cx, cy, u - 0.04, u + 0.04, 29, 35, P.paper, false);
-    } else {
-      s += doorLeft(cx, cy, { frame: P.ink, leaf: '#5b5f7e', split: true, mat: '#8a8ea6', bar: P.yellow, handle: P.paper });
-      const [x, y] = pt(cx, cy, 0.5, 1, DOOR_H + 10);
-      s += circle(x, y, 5.5, P.red) + stroke(`M${x - 2.8},${y - 2.8} l5.6,5.6 M${x + 2.8},${y - 2.8} l-5.6,5.6`, P.paper, 1.4);
-    }
-    return s;
-  };
-}
+// Shops, towers, awnings and the thick concrete / AIACT blocks are buildings: see buildings.ts (v0.7).
 
 // ---------- street props ----------
 
@@ -631,7 +445,7 @@ const blocker: Draw = () => '';
 // ---------- registry ----------
 
 /** Tile names that get a variant sequence :0..n-1 (the engine picks by hash); all others only have :0. */
-export const CITY_VARIANTS: Readonly<Record<string, number>> = { ...FOREST_VARIANTS, ...THEMED_VARIANTS, data_stream: 3, grass_park: 3, shop_wall: 3, shop_window: 3, shop_door: 3, tower_wall: 3, tower_roof: 3 };
+export const CITY_VARIANTS: Readonly<Record<string, number>> = { ...FOREST_VARIANTS, ...THEMED_VARIANTS, data_stream: 3, grass_park: 3 };
 
 export function cityTileEntries(): ArtEntry[] {
   const out: ArtEntry[] = [];
@@ -664,18 +478,6 @@ export function cityTileEntries(): ArtEntry[] {
   add('terminal:0', 52, terminal);
   add('guard_desk:0', 60, guardDesk);
   add('searchlight:0', 140, searchlight, 120);
-  for (let t = 0; t < 3; t++) {
-    add(`shop_wall:${t}`, SHOP_H + 8, shopBody(t, 'wall'));
-    add(`shop_window:${t}`, SHOP_H + 8, shopBody(t, 'window'));
-    add(`shop_door:${t}`, SHOP_H + 8, shopBody(t, 'door'));
-    add(`tower_wall:${t}`, TOWER_H + 14, towerBody(t, false));
-    add(`tower_roof:${t}`, TOWER_H + 66, towerBody(t, true));
-  }
-  add('awning_red:0', DOOR_H + 30, awning(P.red));
-  add('awning_teal:0', DOOR_H + 30, awning(P.teal));
-  add('concrete_wall:0', CONCRETE_WALL_H + 8, concreteWall);
-  add('aiact_wall:0', AIACT_H + 10, aiactBody(false));
-  add('aiact_door:0', AIACT_H + 10, aiactBody(true));
   add('street_lamp:0', LAMP_PX + 12, streetLamp);
   add('bench_seat:0', 36, benchSeat);
   add('planter:0', 46, planter);

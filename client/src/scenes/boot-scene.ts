@@ -1,7 +1,7 @@
 import Phaser from 'phaser';
 import { game } from '../state/store';
 import { ui } from '../ui-dom/facade';
-import { buildWorldTextures, charactersForMap, ensureAuxTextures, ensureCharacters } from '../world/textures';
+import { buildWorldTextures, charactersForMap, ensureAuxTextures, ensureCharacters, ensureMapArt } from '../world/textures';
 import { SCENES } from './keys';
 
 const FONT_TIMEOUT_MS = 2000;
@@ -33,7 +33,7 @@ export class BootScene extends Phaser.Scene {
       console.warn('[boot] ui.title() unavailable, starting directly:', e);
       if (!(game.hasSave() && game.load())) game.newGame('Vibeur', 'prompt_engineer');
     }
-    await ensureCharacters(this.textures, charactersForMap(game.state.map));
+    await Promise.all([ensureCharacters(this.textures, charactersForMap(game.state.map)), ensureMapArt(this.textures, game.state.map)]);
     this.scene.start(SCENES.Overworld);
   }
 }

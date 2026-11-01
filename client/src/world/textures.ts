@@ -8,7 +8,9 @@ import { characterEntries } from './art/characters';
 import type { PlayerAppearance } from '../state/types';
 import { game } from '../state/store';
 import { db } from '../data/db';
-import { fallbackMapId } from './iso';
+import { fallbackMapId, tileNameAt } from './iso';
+import { buildingKeys } from './engine/buildings';
+import { buildingArt } from './art/buildings';
 
 export const TEX_SCALE = 2;
 export const SPRITE_SCALE = 1 / TEX_SCALE;
@@ -70,6 +72,24 @@ export async function buildWorldTextures(textures: Phaser.Textures.TextureManage
   const seen = new Set<string>();
   const entries = [...allArtEntries(), ...packetArt()].filter((e) => !isCharKey(e.key) && !seen.has(e.key) && !!seen.add(e.key));
   await Promise.all(entries.map((e) => add(textures, e)));
+}
+
+/**
+ * Building textures (v0.7) are built per map, on demand: each building tile needs a body for its style / accent, an
+ * outline for its neighbour mask and a shadow, and only the combinations a map really uses are decoded.
+ */
+export async function ensureMapArt(textures: Phaser.Textures.TextureManager, mapId: string): Promise<void> {
+  const id = db.hasMap(mapId) ? mapId : fallbackMapId();
+  if (!db.hasMap(id)) return;
+  const map = db.map(id);
+  const jobs: Promise<void>[] = [];
+  for (const key of buildingKeys(map, (x, y) => tileNameAt(map, x, y))) {
+    if (textures.exists(worldKey(key))) continue;
+    const e = buildingArt(key);
+    if (e) jobs.push(add(textures, e));
+    else console.warn(`[world] no building art for ${key}`);
+  }
+  await Promise.all(jobs);
 }
 
 let charsById: Map<string, ArtEntry[]> | null = null;

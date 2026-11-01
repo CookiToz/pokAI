@@ -5,23 +5,24 @@
  "height": 8,
  "rows": [
   "###########",
-  "#tttajattt#",
+  "#ljjjjjjjl#",
   "#jjjjjjjjj#",
-  "#j0000000j#",
-  "#j;;;j;;;j#",
-  "#l;;;j;;;l#",
-  "#jjjjjjjjj#",
+  "#jjcc0ccjj#",
+  "#tjj;;;jjj#",
+  "#1jj;;;jjj#",
+  "#jjj;;;jjj#",
   "####XXX####"
  ],
  "legend": {
   "#": "wall",
   "0": "hub_reception",
+  "c": "counter",
+  "1": "pc",
+  "t": "repo_shelf",
   ";": "carpet",
   "X": "exit_mat",
   "j": "hub_floor",
-  "l": "plant",
-  "t": "repo_shelf",
-  "a": "pc"
+  "l": "plant"
  },
  "kind": "interior",
  "music": "hub",

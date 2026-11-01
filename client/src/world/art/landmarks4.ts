@@ -2,7 +2,7 @@
 import {
   DOOR_H, OUT, P, circle, cuboid, ellipse, hash01, line3, path, poly, poly3, pt, rect, stroke, type ArtEntry,
 } from './kit';
-import { BOX_H } from './themed';
+import { BOX_H } from './buildings';
 import { bunting, heart, landmark } from './landmarks';
 import { ENTRANCE_OFFSET } from './entrances';
 

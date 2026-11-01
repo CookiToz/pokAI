@@ -5,22 +5,24 @@
  "height": 8,
  "rows": [
   "###########",
-  "#eeejjjeee#",
+  "#ljjjjjjjl#",
   "#jjjjjjjjj#",
-  "#j0000000j#",
-  "#j;;;j;;;j#",
-  "#1;;;j;;;v#",
-  "#jjjjjjjjj#",
+  "#jjcc0ccjj#",
+  "#tjj;;;jjj#",
+  "#1jj;;;jjv#",
+  "#jjj;;;jjj#",
   "####XXX####"
  ],
  "legend": {
   "#": "wall",
   "0": "hub_reception",
+  "c": "counter",
   "1": "pc",
+  "t": "repo_shelf",
   ";": "carpet",
   "X": "exit_mat",
-  "e": "repo_shelf",
   "j": "hub_floor",
+  "l": "plant",
   "v": "vending"
  },
  "npcs": [
