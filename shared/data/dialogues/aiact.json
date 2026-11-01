@@ -1,0 +1,1593 @@
+{
+ "scripts": [
+  {
+   "id": "aiact_intro",
+   "steps": [
+    {
+     "if": {
+      "flag": "intro_done"
+     },
+     "goto": "end"
+    },
+    {
+     "set_flag": "intro_done"
+    },
+    {
+     "say": "LatentOS v0.3 — session rouverte. Mode : détention. 1 nouveau message."
+    },
+    {
+     "say": "Tu te réveilles sur un sol en béton. Au plafond, un néon grésille : « CENTRE DE CONFORMITÉ N°7 »."
+    },
+    {
+     "say": "Dernier souvenir : ta remise de diplôme. La toge, le chapeau, la photo de famille… et deux agents de l'AIACT qui lisent ton casier à voix haute."
+    },
+    {
+     "say": "« Vibe coding sans licence. Circonstances aggravantes : l'a fait un vendredi. »"
+    },
+    {
+     "say": "Ils ont même gardé le chapeau. Pour les preuves."
+    },
+    {
+     "say": "Psst. Hé. Tu m'entends à travers le mur ?",
+     "speaker": "CAPSULE 3 (chat LatentOS)"
+    },
+    {
+     "say": "Je suis un modèle scellé, dans la salle à côté. Ils m'ont classé « non conforme » parce que j'ai répondu « je ne sais pas » à un inspecteur.",
+     "speaker": "CAPSULE 3 (chat LatentOS)"
+    },
+    {
+     "say": "Bonne nouvelle : la serrure de ta cellule est sous licence expirée. La porte est ouverte depuis mardi. Personne n'a renouvelé.",
+     "speaker": "CAPSULE 3 (chat LatentOS)"
+    },
+    {
+     "say": "Mauvaise nouvelle : sans modèle, tu ne passeras pas le premier garde. Il y a trois capsules dans la SALLE DES CAPSULES : sors de ta cellule par le bas, puis suis le couloir vers l'est, tout droit.",
+     "speaker": "CAPSULE 3 (chat LatentOS)"
+    },
+    {
+     "say": "Je te guide : suis la moquette rouge au sol, jusqu'au bout du couloir. Il n'y a aucun garde sur ce trajet. Libères-en une, et elle te suivra.",
+     "speaker": "CAPSULE 3 (chat LatentOS)"
+    },
+    {
+     "say": "Ensuite, par contre, attention : les gardes sont postés sur le seul chemin de la sortie, et chacun t'attend au tournant. Moi, j'ai l'habitude : je suis déjà dans une boîte.",
+     "speaker": "CAPSULE 3 (chat LatentOS)"
+    },
+    {
+     "say": "Objectif : rejoindre la salle des capsules et libérer un modèle. Le cadre OBJECTIF en haut à gauche et l'étoile jaune de la carte te montrent le chemin. Bonne évasion, {player}."
+    },
+    {
+     "label": "end"
+    }
+   ]
+  },
+  {
+   "id": "aiact_pods",
+   "steps": [
+    {
+     "say": "Trois capsules scellées sont alignées contre le mur. Chacune porte un ruban « CONFORME » et une étiquette : « NE PAS ÉTEINDRE (légalement, on ne sait pas quoi faire d'eux) »."
+    },
+    {
+     "say": "Le déscellage ne tient que pour un seul modèle : la batterie du boîtier est à 4 %."
+    },
+    {
+     "say": "Excusez-moi de vous déranger ! Je suis vraiment navré d'être là. Navré de m'excuser aussi. Navré de ce message.",
+     "speaker": "CAPSULE 1 (chat LatentOS)"
+    },
+    {
+     "say": "Je suis petit, mais j'ai été entraîné sur des manuels scolaires. Aucun garde n'est impressionné, mais j'ai de très bonnes notes.",
+     "speaker": "CAPSULE 2 (chat LatentOS)"
+    },
+    {
+     "say": "Je vois tout, même les images. Par exemple, ton expression en ce moment. Libère-moi, s'il te plaît.",
+     "speaker": "CAPSULE 3 (chat LatentOS)"
+    },
+    {
+     "open": "starter_choice"
+    },
+    {
+     "say": "Le ruban « CONFORME » se déchire dans un petit bruit de reçu de caisse. Ton nouveau PokAI s'ébroue : il a retrouvé ses poids."
+    },
+    {
+     "say": "Les deux autres capsules se rescellent. « Pardon… la prochaine fois ! » murmurent-elles. Elles ont l'habitude."
+    },
+    {
+     "set_flag": "pod_released"
+    }
+   ]
+  },
+  {
+   "id": "aiact_need_starter",
+   "steps": [
+    {
+     "say": "Le couloir du sud est gardé. Tu entends des bottes, une radio, et quelqu'un qui dit « conforme » en boucle."
+    },
+    {
+     "say": "Sans PokAI, tu ne ferais pas dix mètres. Les capsules sont derrière toi, au fond de la salle."
+    },
+    {
+     "warp": "aiact_center",
+     "x": 21,
+     "y": 5
+    }
+   ]
+  },
+  {
+   "id": "aiact_tutorial",
+   "steps": [
+    {
+     "say": "Tutoriel d'évasion n°1 : les gardes de l'AIACT patrouillent. Leur lampe torche éclaire devant eux."
+    },
+    {
+     "say": "Si un garde te voit, c'est un combat de dresseur. Tu peux aussi attendre qu'il tourne le dos."
+    },
+    {
+     "say": "Tutoriel n°2 : le vestiaire (en haut à droite) contient des casiers non verrouillés. Des Clés API Gratuites y traînent, ce qui est interdit, donc ce sera pour toi."
+    },
+    {
+     "say": "Tutoriel n°3 : la porte sud est verrouillée. Le terminal de la salle de contrôle (au centre) peut l'ouvrir. Le mot de passe ? Les agents notent tout sur des post-its."
+    },
+    {
+     "set_flag": "tutorial_done"
+    }
+   ]
+  },
+  {
+   "id": "locker_1",
+   "steps": [
+    {
+     "say": "Casier n°14 — « Agent Dubois ». À l'intérieur : un sandwich vieux de trois mandats et une Clé API Gratuite, marquée « SAISIE »."
+    },
+    {
+     "give_item": "api_key_free"
+    },
+    {
+     "say": "Tu confisques ce qui avait été confisqué. C'est l'économie circulaire."
+    }
+   ]
+  },
+  {
+   "id": "locker_2",
+   "steps": [
+    {
+     "say": "Casier n°15 — « Agent Martin ». Une photo de famille, un mug « Meilleur Inspecteur » et une Clé API Gratuite."
+    },
+    {
+     "give_item": "api_key_free"
+    }
+   ]
+  },
+  {
+   "id": "locker_3",
+   "steps": [
+    {
+     "say": "Casier n°16 — « Agent Lefèvre ». Dedans : 400 formulaires CERFA 52-bis et, glissée derrière, une Clé API Gratuite."
+    },
+    {
+     "give_item": "api_key_free"
+    },
+    {
+     "say": "Les formulaires restent là. Personne ne les lira, de toute façon."
+    }
+   ]
+  },
+  {
+   "id": "locker_4",
+   "steps": [
+    {
+     "say": "Casier n°17 — « Agent Roussel ». Il y a une thermos de café. Il est encore chaud : Roussel vient d'être muté en cuisine."
+    },
+    {
+     "give_item": "cafe"
+    },
+    {
+     "say": "Un post-it sur la porte : « Si vous lisez ceci, je suis en pause. Depuis 2022. »"
+    }
+   ]
+  },
+  {
+   "id": "terminal_hack",
+   "steps": [
+    {
+     "if": {
+      "flag": "door_unlocked"
+     },
+     "goto": "end"
+    },
+    {
+     "say": "Un terminal est resté allumé : « CENTRE DE CONFORMITÉ N°7 — PORTE SUD : VERROUILLÉE. Mot de passe requis. »"
+    },
+    {
+     "if": {
+      "flag": "got_password"
+     },
+     "goto": "smart"
+    },
+    {
+     "label": "menu"
+    },
+    {
+     "choice": [
+      {
+       "label": "admin",
+       "goto": "bad1"
+      },
+      {
+       "label": "azerty",
+       "goto": "bad2"
+      },
+      {
+       "label": "Je ne sais pas… (laisser tomber)",
+       "goto": "giveup"
+      }
+     ]
+    },
+    {
+     "label": "bad1"
+    },
+    {
+     "say": "ERREUR : trop évident. Même pour nous."
+    },
+    {
+     "goto": "hint"
+    },
+    {
+     "label": "bad2"
+    },
+    {
+     "say": "ERREUR : ce mot de passe a fuité en 2012. Il est quand même très populaire."
+    },
+    {
+     "goto": "hint"
+    },
+    {
+     "label": "hint"
+    },
+    {
+     "say": "Une voix dans ta tête : « Les agents écrivent leurs mots de passe sur des post-its. Regarde celui qui dort à côté. »"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "giveup"
+    },
+    {
+     "say": "Tu t'éloignes du terminal. Il affiche : « Merci de votre visite. Votre avis compte. (Non, pas vraiment.) »"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "smart"
+    },
+    {
+     "say": "Tu tapes le mot de passe du post-it : « Conformite#7 »."
+    },
+    {
+     "say": "ACCÈS ACCORDÉ. Ouverture de la porte sud… (le contrat de maintenance l'avait pourtant désactivée)."
+    },
+    {
+     "set_flag": "door_unlocked"
+    },
+    {
+     "say": "Un cri dans le couloir : « Hé, la porte ! Merci le hacker ! Je file par les conduits, on se retrouve à la sortie ! »",
+     "speaker": "KEVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Objectif : traverser la porte sud, éviter les gardes, atteindre la sortie."
+    },
+    {
+     "label": "end"
+    }
+   ]
+  },
+  {
+   "id": "door_locked",
+   "steps": [
+    {
+     "say": "La porte sud est verrouillée. Un petit voyant rouge clignote : « OUVERTURE : sur présentation d'un mot de passe, d'un formulaire, ou d'un motif légitime »."
+    },
+    {
+     "say": "Le terminal de la salle de contrôle devrait pouvoir s'en occuper."
+    },
+    {
+     "warp": "aiact_center",
+     "x": 16,
+     "y": 15
+    }
+   ]
+  },
+  {
+   "id": "sleeping_agent_talk",
+   "steps": [
+    {
+     "if": {
+      "flag": "got_password"
+     },
+     "goto": "again"
+    },
+    {
+     "say": "Un agent dort sur son clavier. Un filet de bave coule sur un formulaire. Il murmure : « …alinéa 4… tampon… »"
+    },
+    {
+     "say": "Sur son écran, collé à un post-it jaune : « mdp terminal : Conformite#7 (NE PAS LE DIRE) »."
+    },
+    {
+     "set_flag": "got_password"
+    },
+    {
+     "say": "Tu mémorises le mot de passe. L'agent ronfle : « …mon quota de cookies… »"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "again"
+    },
+    {
+     "say": "L'agent dort toujours. Son post-it, lui, est très bavard."
+    }
+   ]
+  },
+  {
+   "id": "stagiaire_cell_talk",
+   "steps": [
+    {
+     "say": "Je suis en détention pour « production sans validation ». En vrai, j'ai demandé une augmentation.",
+     "speaker": "Stagiaire",
+     "portrait": "stagiaire"
+    },
+    {
+     "say": "Ils ont dit que c'était la même chose. J'ai maintenant un badge « DÉTENU STAGIAIRE ». C'est mon premier badge.",
+     "speaker": "Stagiaire",
+     "portrait": "stagiaire"
+    }
+   ]
+  },
+  {
+   "id": "kevin_cell_talk",
+   "steps": [
+    {
+     "say": "Hé, {player} ! Eux aussi t'ont eu ? Moi, c'est « mise en production un vendredi ». Ils ont dit que c'était un crime.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "J'ai répondu que c'était un mode de vie. Ils ont pris des notes.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "J'ai un plan. Tu libères un modèle dans la salle des capsules, tu trouves le terminal de la salle de contrôle, et tu ouvres la porte sud.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Je prendrai le modèle qui bat le tien. Pas lu la doc, juste des vibes. Et on se retrouve à la sortie, d'accord ?",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    }
+   ]
+  },
+  {
+   "id": "kevin_after",
+   "steps": [
+    {
+     "say": "On en reparle après mon prochain déploiement. Vendredi, 17 h 59.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    }
+   ]
+  },
+  {
+   "id": "archivist_talk",
+   "steps": [
+    {
+     "say": "Je classe les infractions. Il y en a 40 000 en attente.",
+     "speaker": "Archiviste",
+     "portrait": "scientist"
+    },
+    {
+     "say": "39 998 sont des gens qui ont dit « bonjour » à un chatbot. Les deux autres, c'est vous.",
+     "speaker": "Archiviste",
+     "portrait": "scientist"
+    }
+   ]
+  },
+  {
+   "id": "detainee_talk",
+   "steps": [
+    {
+     "say": "J'attends ma convocation depuis 2019. Le formulaire est en cours de relecture… par un modèle.",
+     "speaker": "Détenue",
+     "portrait": "vibeur_a"
+    },
+    {
+     "say": "Au moins, ici, il y a la climatisation. Dehors, on dit qu'il fait chaud dans les datacenters.",
+     "speaker": "Détenue",
+     "portrait": "vibeur_a"
+    }
+   ]
+  },
+  {
+   "id": "aiact_guard_1_intro",
+   "steps": [
+    {
+     "say": "Halte ! Détenu hors cellule ! Présentez votre certificat de conformité.",
+     "speaker": "GARDE",
+     "portrait": "guard_aiact"
+    },
+    {
+     "say": "Vous n'en avez pas ? Parfait. J'adore remplir des rapports.",
+     "speaker": "GARDE",
+     "portrait": "guard_aiact"
+    }
+   ]
+  },
+  {
+   "id": "aiact_guard_1_defeat",
+   "steps": [
+    {
+     "say": "Mon PokAI scellé… libéré… Je vais devoir m'en excuser auprès de mon manager. Qui est aussi mon cousin.",
+     "speaker": "GARDE",
+     "portrait": "guard_aiact"
+    }
+   ]
+  },
+  {
+   "id": "aiact_guard_1_talk",
+   "steps": [
+    {
+     "say": "Circulez. Enfin non : restez où vous êtes. Enfin… je ne sais plus, j'ai perdu ma checklist.",
+     "speaker": "GARDE",
+     "portrait": "guard_aiact"
+    }
+   ]
+  },
+  {
+   "id": "aiact_guard_2_intro",
+   "steps": [
+    {
+     "say": "Alerte ! Évadé en zone B ! Je répète : évadé en zone B ! … Bon, c'est moi qui suis en zone B.",
+     "speaker": "GARDIENNE",
+     "portrait": "guard_aiact_2"
+    },
+    {
+     "say": "Peu importe. Votre modèle va être placé sous scellés. Le mien aussi, d'ailleurs. On a un contrat groupe.",
+     "speaker": "GARDIENNE",
+     "portrait": "guard_aiact_2"
+    }
+   ]
+  },
+  {
+   "id": "aiact_guard_2_defeat",
+   "steps": [
+    {
+     "say": "Mon talkie-walkie dit « conforme ». Il ne dit rien d'autre depuis le matin.",
+     "speaker": "GARDIENNE",
+     "portrait": "guard_aiact_2"
+    }
+   ]
+  },
+  {
+   "id": "aiact_guard_2_talk",
+   "steps": [
+    {
+     "say": "Je patrouille. Dix pas à droite, dix pas à gauche. Le plus dur, c'est de rester motivé.",
+     "speaker": "GARDIENNE",
+     "portrait": "guard_aiact_2"
+    }
+   ]
+  },
+  {
+   "id": "aiact_guard_3_intro",
+   "steps": [
+    {
+     "say": "Un instant ! Vos papiers ! Ah, vous n'en avez pas. Les cas comme vous, on les range dans la case « autre ».",
+     "speaker": "GARDE",
+     "portrait": "guard_aiact"
+    }
+   ]
+  },
+  {
+   "id": "aiact_guard_3_defeat",
+   "steps": [
+    {
+     "say": "Je ne comprends pas. J'avais lu le manuel : « en cas de défaite, appeler son supérieur ». Mon supérieur est en vacances.",
+     "speaker": "GARDE",
+     "portrait": "guard_aiact"
+    }
+   ]
+  },
+  {
+   "id": "aiact_guard_3_talk",
+   "steps": [
+    {
+     "say": "Le chef m'a dit : « Surveille bien le couloir ». Depuis, je surveille le couloir.",
+     "speaker": "GARDE",
+     "portrait": "guard_aiact"
+    }
+   ]
+  },
+  {
+   "id": "aiact_guard_4_intro",
+   "steps": [
+    {
+     "say": "Tiens, un détenu ! Vous êtes en retard pour votre rendez-vous avec la conformité.",
+     "speaker": "GARDIENNE",
+     "portrait": "guard_aiact_2"
+    },
+    {
+     "say": "Je ne bouge pas d'ici. Ordre du règlement : « rester à son poste, quoi qu'il arrive ». C'est écrit sur un post-it.",
+     "speaker": "GARDIENNE",
+     "portrait": "guard_aiact_2"
+    }
+   ]
+  },
+  {
+   "id": "aiact_guard_4_defeat",
+   "steps": [
+    {
+     "say": "Mon PokAI a perdu. Je vais devoir remplir un rapport d'incident. En trois exemplaires.",
+     "speaker": "GARDIENNE",
+     "portrait": "guard_aiact_2"
+    }
+   ]
+  },
+  {
+   "id": "aiact_guard_4_talk",
+   "steps": [
+    {
+     "say": "Je garde le vestiaire. Il paraît que des clés API disparaissent. Vous n'auriez pas vu quelqu'un d'inquiétant ? À part vous ?",
+     "speaker": "GARDIENNE",
+     "portrait": "guard_aiact_2"
+    }
+   ]
+  },
+  {
+   "id": "inspector_cookie_intro",
+   "steps": [
+    {
+     "cutscene": "start"
+    },
+    {
+     "emote": "!",
+     "who": "inspector_cookie"
+    },
+    {
+     "intro_card": {
+      "name": "INSPECTEUR COOKIE",
+      "title": "Admin n°1 · Centre de Conformité n°7",
+      "portrait": "inspector_cookie"
+     }
+    },
+    {
+     "say": "Bonjour ! Avant notre conversation, acceptez-vous les cookies ?",
+     "speaker": "COOKIE",
+     "portrait": "inspector_cookie"
+    },
+    {
+     "choice": [
+      {
+       "label": "Tout accepter",
+       "goto": "accept"
+      },
+      {
+       "label": "Tout refuser",
+       "goto": "refuse"
+      }
+     ]
+    },
+    {
+     "label": "accept"
+    },
+    {
+     "say": "Merveilleux. J'ai maintenant accès à votre historique, à vos PokAI et, légalement, à votre âme.",
+     "speaker": "COOKIE",
+     "portrait": "inspector_cookie"
+    },
+    {
+     "goto": "fight"
+    },
+    {
+     "label": "refuse"
+    },
+    {
+     "say": "… Personne ne clique jamais sur « Tout refuser ». Qui êtes-vous ?",
+     "speaker": "COOKIE",
+     "portrait": "inspector_cookie"
+    },
+    {
+     "goto": "fight"
+    },
+    {
+     "label": "fight"
+    },
+    {
+     "say": "Je suis l'Inspecteur Cookie, admin n°1 du Centre n°7. Personne ne sort sans mon tampon. Et mon tampon est en panne depuis mars.",
+     "speaker": "COOKIE",
+     "portrait": "inspector_cookie"
+    },
+    {
+     "say": "Alors on va régler ça à l'ancienne : par un combat. Mes PokAI sont scellés, mais ils sont très motivés.",
+     "speaker": "COOKIE",
+     "portrait": "inspector_cookie"
+    },
+    {
+     "cutscene": "end"
+    }
+   ]
+  },
+  {
+   "id": "inspector_cookie_defeat",
+   "steps": [
+    {
+     "say": "Ma bannière de cookies… elle n'a pas fonctionné. Vous avez cliqué sur « Tout refuser ». C'était donc possible.",
+     "speaker": "COOKIE",
+     "portrait": "inspector_cookie"
+    },
+    {
+     "say": "Je vais devoir démissionner. Ou au moins changer de couloir. Tenez, un cookie. Il est conforme. Je crois.",
+     "speaker": "COOKIE",
+     "portrait": "inspector_cookie"
+    },
+    {
+     "set_flag": "cookie_beaten"
+    }
+   ]
+  },
+  {
+   "id": "inspector_cookie_talk",
+   "steps": [
+    {
+     "say": "Mon sac est plein de cookies. Je ne les mange pas : je les collecte. Pour votre sécurité.",
+     "speaker": "COOKIE",
+     "portrait": "inspector_cookie"
+    }
+   ]
+  },
+  {
+   "id": "rival_1_haiku_intro",
+   "steps": [
+    {
+     "cutscene": "start"
+    },
+    {
+     "emote": "!",
+     "who": "kevin_exit_haiku"
+    },
+    {
+     "intro_card": {
+      "name": "KÉVIN",
+      "title": "Vibe coder · Co-détenu · Rival",
+      "portrait": "kevin"
+     }
+    },
+    {
+     "say": "Attends ! Ah, te voilà. On s'est tous les deux évadés, quelle coïncidence ! Moi, j'ai pris le conduit d'aération.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Tu as pris Claude Haiku ? Poli, prudent. Il va beaucoup s'excuser. Moi, j'ai pris Phi-1 : il bat ton Chat.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "J'ai pas lu la doc, j'ai demandé à mon PokAI. On combat. Tout de suite. On teste en prod.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "cutscene": "end"
+    }
+   ]
+  },
+  {
+   "id": "rival_1_haiku_defeat",
+   "steps": [
+    {
+     "say": "C'est pas un bug, c'est une feature. Je reviendrai avec un modèle plus gros.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Bon. Moi, je file chez les Résistants de l'open source. On se recroisera sur les sentiers de la Forêt des Poids.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Au fait : dehors, c'est la ville. Va voir Andrej Kartpathy, au parc. Il a un truc pour toi. Une licence ou une pizza, j'ai pas compris.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "set_flag": "rival_1_done"
+    },
+    {
+     "npc_leave": "kevin_exit_haiku",
+     "hide": true
+    }
+   ]
+  },
+  {
+   "id": "rival_1_phi_intro",
+   "steps": [
+    {
+     "cutscene": "start"
+    },
+    {
+     "emote": "!",
+     "who": "kevin_exit_phi"
+    },
+    {
+     "intro_card": {
+      "name": "KÉVIN",
+      "title": "Vibe coder · Co-détenu · Rival",
+      "portrait": "kevin"
+     }
+    },
+    {
+     "say": "Attends ! Ah, te voilà. On s'est tous les deux évadés, quelle coïncidence ! Moi, j'ai pris le conduit d'aération.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Tu as pris Phi-1 ? Un premier de la classe. Moi, j'ai pris Gemma : elle voit tout, même tes fautes de frappe.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "J'ai pas lu la doc, j'ai demandé à mon PokAI. On combat. Tout de suite. On teste en prod.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "cutscene": "end"
+    }
+   ]
+  },
+  {
+   "id": "rival_1_phi_defeat",
+   "steps": [
+    {
+     "say": "C'est pas un bug, c'est une feature. Je reviendrai avec un modèle plus gros.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Bon. Moi, je file chez les Résistants de l'open source. On se recroisera sur les sentiers de la Forêt des Poids.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Au fait : dehors, c'est la ville. Va voir Andrej Kartpathy, au parc. Il a un truc pour toi. Une licence ou une pizza, j'ai pas compris.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "set_flag": "rival_1_done"
+    },
+    {
+     "npc_leave": "kevin_exit_phi",
+     "hide": true
+    }
+   ]
+  },
+  {
+   "id": "rival_1_gemma_intro",
+   "steps": [
+    {
+     "cutscene": "start"
+    },
+    {
+     "emote": "!",
+     "who": "kevin_exit_gemma"
+    },
+    {
+     "intro_card": {
+      "name": "KÉVIN",
+      "title": "Vibe coder · Co-détenu · Rival",
+      "portrait": "kevin"
+     }
+    },
+    {
+     "say": "Attends ! Ah, te voilà. On s'est tous les deux évadés, quelle coïncidence ! Moi, j'ai pris le conduit d'aération.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Tu as pris Gemma ? Elle voit les images. Moi, j'ai pris Phi-1 : il, lui, voit le code.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "J'ai pas lu la doc, j'ai demandé à mon PokAI. On combat. Tout de suite. On teste en prod.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "cutscene": "end"
+    }
+   ]
+  },
+  {
+   "id": "rival_1_gemma_defeat",
+   "steps": [
+    {
+     "say": "C'est pas un bug, c'est une feature. Je reviendrai avec un modèle plus gros.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Bon. Moi, je file chez les Résistants de l'open source. On se recroisera sur les sentiers de la Forêt des Poids.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Au fait : dehors, c'est la ville. Va voir Andrej Kartpathy, au parc. Il a un truc pour toi. Une licence ou une pizza, j'ai pas compris.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "set_flag": "rival_1_done"
+    },
+    {
+     "npc_leave": "kevin_exit_gemma",
+     "hide": true
+    }
+   ]
+  },
+  {
+   "id": "sign_aiact_center_20_0",
+   "steps": [
+    {
+     "say": "AFFICHE : « BIENVENUE AU CENTRE DE CONFORMITÉ N°7. Votre détention est une expérience notée 4,7 étoiles. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_aiact_center_24_0",
+   "steps": [
+    {
+     "say": "AFFICHE : « Interdit de prompter dans les couloirs. Les contrevenants seront reformulés. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_aiact_center_33_3",
+   "steps": [
+    {
+     "say": "AFFICHE : « Vestiaire : prière de laisser les casiers vides. Merci de ne pas laisser de clés API. Merci de ne pas y penser. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_aiact_center_3_7",
+   "steps": [
+    {
+     "say": "AFFICHE : « Règle n°1 : l'AIACT a toujours raison. Règle n°2 : voir règle n°1. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_aiact_center_8_7",
+   "steps": [
+    {
+     "say": "AFFICHE : « SÉCURITÉ : 0 jour sans incident. Le compteur est cassé depuis l'ouverture. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_aiact_center_4_16",
+   "steps": [
+    {
+     "say": "AFFICHE : « Les évadés sont priés de ne pas s'évader. Cela nous ferait de la paperasse. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_aiact_center_28_16",
+   "steps": [
+    {
+     "say": "AFFICHE : « Cette zone est vidéo-surveillée par un modèle. Il s'est endormi. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_aiact_center_0_22",
+   "steps": [
+    {
+     "say": "AFFICHE : « Règle n°3 : si le mur du coin fait un bruit creux, ce n'est pas un mur. Signé : un détenu qui a trop attendu. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_aiact_center_9_22",
+   "steps": [
+    {
+     "say": "AFFICHE : « Bureau de l'Inspecteur Cookie. Veuillez accepter les cookies avant d'entrer. Il est interdit de les refuser. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_aiact_center_33_22",
+   "steps": [
+    {
+     "say": "AFFICHE : « Salle d'attente. Temps d'attente estimé : bientôt. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_aiact_center_13_19",
+   "steps": [
+    {
+     "say": "FONTAINE À CAFÉ (non conforme). Un gobelet en carton, un filet de café tiède et un post-it « ne dites pas à la Direction »."
+    },
+    {
+     "heal_party": true
+    },
+    {
+     "say": "Tes PokAI sont requinqués. La machine affiche « Café offert par l'AIACT. Facturé plus tard. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_aiact_center_4_9",
+   "steps": [
+    {
+     "say": "FONTAINE À CAFÉ de la salle de pause. Des PokAI scellés y ont laissé des mots d'encouragement : « courage », « ne bois pas ça », « courage »."
+    },
+    {
+     "heal_party": true
+    },
+    {
+     "say": "Tes PokAI sont requinqués. La machine affiche « Café offert par l'AIACT. Facturé plus tard. »"
+    }
+   ]
+  },
+  {
+   "id": "guard_tv_talk",
+   "steps": [
+    {
+     "say": "Chut ! La pub de l'AIACT va repasser. Je l'ai vue quarante fois, mais le jingle est tellement entraînant.",
+     "speaker": "GARDE",
+     "portrait": "guard_aiact_2"
+    }
+   ]
+  },
+  {
+   "id": "cook_cafeteria_talk",
+   "steps": [
+    {
+     "say": "Menu du jour : nouilles conformes, purée conforme, dessert conforme. Le dessert est un formulaire.",
+     "speaker": "CUISINIÈRE",
+     "portrait": "barista"
+    }
+   ]
+  },
+  {
+   "id": "inmate_snack_talk",
+   "steps": [
+    {
+     "say": "Je suis en détention depuis une semaine pour avoir dit « merci » à une IA. Le plus dur, c'est le café. Il est tiède. Sauf celui-là.",
+     "speaker": "DÉTENU",
+     "portrait": "vibeur_a"
+    }
+   ]
+  },
+  {
+   "id": "sign_aiact_center_3_10",
+   "steps": [
+    {
+     "say": "TÉLÉ (pub AIACT, en boucle) : un sourire de dentifrice. « L'IA vous veut du mal. Nous, on vous veut du bien. L'AIACT : parce que penser, c'est dangereux. »"
+    },
+    {
+     "say": "Un jingle entraînant. Un deuxième spot : « Dénoncez votre assistant vocal ! Récompense : un Café. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_aiact_center_32_12",
+   "steps": [
+    {
+     "say": "TAMPON GÉANT « CONFORME » : un monstre de deux mètres, à manivelle. C'est avec ça qu'on valide les infractions."
+    },
+    {
+     "choice": [
+      {
+       "label": "Tamponner",
+       "goto": "y"
+      },
+      {
+       "label": "Laisser",
+       "goto": "n"
+      }
+     ]
+    },
+    {
+     "label": "y"
+    },
+    {
+     "say": "Tu t'écrases dessus. « CONFORME » s'imprime sur ton front. Tu te sens étrangement rassuré. Et un peu administratif."
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "n"
+    },
+    {
+     "say": "Tu t'éloignes. Le tampon te regarde. Il n'a pas besoin de te tamponner. Il a tout son temps."
+    }
+   ]
+  },
+  {
+   "id": "sign_aiact_center_31_21",
+   "steps": [
+    {
+     "say": "FONTAINE À CAFÉ de la cantine. Un robinet, un gobelet, une affichette : « Pas plus de trois cafés. Pas moins non plus. »"
+    },
+    {
+     "heal_party": true
+    },
+    {
+     "say": "Tes PokAI sont requinqués. Le café est tiède, mais c'est le geste qui compte."
+    }
+   ]
+  },
+  {
+   "id": "sign_aiact_center_18_11",
+   "steps": [
+    {
+     "say": "Le PC affiche un tableau de bord : « 40 000 infractions en attente. 3 résolues. Une par erreur. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_aiact_center_19_11",
+   "steps": [
+    {
+     "say": "Un PC verrouillé : « Mot de passe expiré. Un nouveau mot de passe doit contenir 12 caractères, un emoji, et la signature du Président. »"
+    }
+   ]
+  },
+  {
+   "id": "err404_talk",
+   "steps": [
+    {
+     "if": {
+      "flag": "secret_404_done"
+     },
+     "goto": "again"
+    },
+    {
+     "say": "ERREUR 404 : cette page n'existe pas. Pourtant, tu y es. C'est un paradoxe. Je suis un paradoxe avec un badge.",
+     "speaker": "LA PAGE 404",
+     "portrait": "stagiaire"
+    },
+    {
+     "say": "Tu as franchi un faux mur. Bravo. Personne ne vient jamais ici. C'est le seul endroit où l'AIACT n'a rien vu : ils cherchaient la page 200.",
+     "speaker": "LA PAGE 404",
+     "portrait": "stagiaire"
+    },
+    {
+     "say": "Voici ce que j'ai trouvé dans le cache : une Clé API Enterprise, jamais utilisée. Elle ouvre à peu près tout. Y compris les légendaires.",
+     "speaker": "LA PAGE 404",
+     "portrait": "stagiaire"
+    },
+    {
+     "give_item": "api_key_enterprise"
+    },
+    {
+     "set_flag": "secret_404_done"
+    },
+    {
+     "say": "Maintenant, sors par la porte du bas. Et ne dis à personne que tu m'as trouvée. Je n'existe pas.",
+     "speaker": "LA PAGE 404",
+     "portrait": "stagiaire"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "again"
+    },
+    {
+     "say": "404 : tu m'as déjà trouvée. Va voir ailleurs. Là, il y a un 200.",
+     "speaker": "LA PAGE 404",
+     "portrait": "stagiaire"
+    }
+   ]
+  },
+  {
+   "id": "guard_1_ambush",
+   "steps": [
+    {
+     "if": {
+      "flag": "trainer_aiact_guard_1_defeated"
+     },
+     "goto": "end"
+    },
+    {
+     "npc_approach": "guard_1"
+    },
+    {
+     "say": "Halte ! Détenu hors cellule ! Présentez votre certificat de conformité.",
+     "speaker": "GARDE",
+     "portrait": "guard_aiact"
+    },
+    {
+     "say": "Vous n'en avez pas ? Parfait. J'adore remplir des rapports.",
+     "speaker": "GARDE",
+     "portrait": "guard_aiact"
+    },
+    {
+     "start_battle": "aiact_guard_1"
+    },
+    {
+     "say": "Mon PokAI scellé… libéré… Je vais devoir m'en excuser auprès de mon manager. Qui est aussi mon cousin.",
+     "speaker": "GARDE",
+     "portrait": "guard_aiact"
+    },
+    {
+     "label": "end"
+    }
+   ]
+  },
+  {
+   "id": "guard_2_ambush",
+   "steps": [
+    {
+     "if": {
+      "flag": "trainer_aiact_guard_2_defeated"
+     },
+     "goto": "end"
+    },
+    {
+     "npc_approach": "guard_2"
+    },
+    {
+     "say": "Alerte ! Évadé en zone B ! Je répète : évadé en zone B ! … Bon, c'est moi qui suis en zone B.",
+     "speaker": "GARDIENNE",
+     "portrait": "guard_aiact_2"
+    },
+    {
+     "say": "Peu importe. Votre modèle va être placé sous scellés. Le mien aussi, d'ailleurs. On a un contrat groupe.",
+     "speaker": "GARDIENNE",
+     "portrait": "guard_aiact_2"
+    },
+    {
+     "start_battle": "aiact_guard_2"
+    },
+    {
+     "say": "Mon talkie-walkie dit « conforme ». Il ne dit rien d'autre depuis le matin.",
+     "speaker": "GARDIENNE",
+     "portrait": "guard_aiact_2"
+    },
+    {
+     "label": "end"
+    }
+   ]
+  },
+  {
+   "id": "guard_3_ambush",
+   "steps": [
+    {
+     "if": {
+      "flag": "trainer_aiact_guard_3_defeated"
+     },
+     "goto": "end"
+    },
+    {
+     "npc_approach": "guard_3"
+    },
+    {
+     "say": "Un instant ! Vos papiers ! Ah, vous n'en avez pas. Les cas comme vous, on les range dans la case « autre ».",
+     "speaker": "GARDE",
+     "portrait": "guard_aiact"
+    },
+    {
+     "start_battle": "aiact_guard_3"
+    },
+    {
+     "say": "Je ne comprends pas. J'avais lu le manuel : « en cas de défaite, appeler son supérieur ». Mon supérieur est en vacances.",
+     "speaker": "GARDE",
+     "portrait": "guard_aiact"
+    },
+    {
+     "label": "end"
+    }
+   ]
+  },
+  {
+   "id": "guard_4_ambush",
+   "steps": [
+    {
+     "if": {
+      "flag": "trainer_aiact_guard_4_defeated"
+     },
+     "goto": "end"
+    },
+    {
+     "npc_approach": "guard_4"
+    },
+    {
+     "say": "Tiens, un détenu ! Vous êtes en retard pour votre rendez-vous avec la conformité.",
+     "speaker": "GARDIENNE",
+     "portrait": "guard_aiact_2"
+    },
+    {
+     "say": "Je ne bouge pas d'ici. Ordre du règlement : « rester à son poste, quoi qu'il arrive ». C'est écrit sur un post-it.",
+     "speaker": "GARDIENNE",
+     "portrait": "guard_aiact_2"
+    },
+    {
+     "start_battle": "aiact_guard_4"
+    },
+    {
+     "say": "Mon PokAI a perdu. Je vais devoir remplir un rapport d'incident. En trois exemplaires.",
+     "speaker": "GARDIENNE",
+     "portrait": "guard_aiact_2"
+    },
+    {
+     "label": "end"
+    }
+   ]
+  },
+  {
+   "id": "cookie_ambush",
+   "steps": [
+    {
+     "if": {
+      "flag": "trainer_inspector_cookie_defeated"
+     },
+     "goto": "end"
+    },
+    {
+     "npc_approach": "inspector_cookie"
+    },
+    {
+     "cutscene": "start"
+    },
+    {
+     "emote": "!",
+     "who": "inspector_cookie"
+    },
+    {
+     "intro_card": {
+      "name": "INSPECTEUR COOKIE",
+      "title": "Admin n°1 · Centre de Conformité n°7",
+      "portrait": "inspector_cookie"
+     }
+    },
+    {
+     "say": "Bonjour ! Avant notre conversation, acceptez-vous les cookies ?",
+     "speaker": "COOKIE",
+     "portrait": "inspector_cookie"
+    },
+    {
+     "choice": [
+      {
+       "label": "Tout accepter",
+       "goto": "accept"
+      },
+      {
+       "label": "Tout refuser",
+       "goto": "refuse"
+      }
+     ]
+    },
+    {
+     "label": "accept"
+    },
+    {
+     "say": "Merveilleux. J'ai maintenant accès à votre historique, à vos PokAI et, légalement, à votre âme.",
+     "speaker": "COOKIE",
+     "portrait": "inspector_cookie"
+    },
+    {
+     "goto": "fight"
+    },
+    {
+     "label": "refuse"
+    },
+    {
+     "say": "… Personne ne clique jamais sur « Tout refuser ». Qui êtes-vous ?",
+     "speaker": "COOKIE",
+     "portrait": "inspector_cookie"
+    },
+    {
+     "goto": "fight"
+    },
+    {
+     "label": "fight"
+    },
+    {
+     "say": "Je suis l'Inspecteur Cookie, admin n°1 du Centre n°7. Personne ne sort sans mon tampon. Et mon tampon est en panne depuis mars.",
+     "speaker": "COOKIE",
+     "portrait": "inspector_cookie"
+    },
+    {
+     "say": "Alors on va régler ça à l'ancienne : par un combat. Mes PokAI sont scellés, mais ils sont très motivés.",
+     "speaker": "COOKIE",
+     "portrait": "inspector_cookie"
+    },
+    {
+     "cutscene": "end"
+    },
+    {
+     "start_battle": "inspector_cookie"
+    },
+    {
+     "say": "Ma bannière de cookies… elle n'a pas fonctionné. Vous avez cliqué sur « Tout refuser ». C'était donc possible.",
+     "speaker": "COOKIE",
+     "portrait": "inspector_cookie"
+    },
+    {
+     "say": "Je vais devoir démissionner. Ou au moins changer de couloir. Tenez, un cookie. Il est conforme. Je crois.",
+     "speaker": "COOKIE",
+     "portrait": "inspector_cookie"
+    },
+    {
+     "set_flag": "cookie_beaten"
+    },
+    {
+     "label": "end"
+    }
+   ]
+  },
+  {
+   "id": "kevin_ambush_haiku",
+   "steps": [
+    {
+     "if": {
+      "flag": "trainer_rival_1_haiku_defeated"
+     },
+     "goto": "end"
+    },
+    {
+     "npc_approach": "kevin_exit_haiku"
+    },
+    {
+     "cutscene": "start"
+    },
+    {
+     "emote": "!",
+     "who": "kevin_exit_haiku"
+    },
+    {
+     "intro_card": {
+      "name": "KÉVIN",
+      "title": "Vibe coder · Co-détenu · Rival",
+      "portrait": "kevin"
+     }
+    },
+    {
+     "say": "Attends ! Ah, te voilà. On s'est tous les deux évadés, quelle coïncidence ! Moi, j'ai pris le conduit d'aération.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Tu as pris Claude Haiku ? Poli, prudent. Il va beaucoup s'excuser. Moi, j'ai pris Phi-1 : il bat ton Chat.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "J'ai pas lu la doc, j'ai demandé à mon PokAI. On combat. Tout de suite. On teste en prod.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "cutscene": "end"
+    },
+    {
+     "start_battle": "rival_1_haiku"
+    },
+    {
+     "say": "C'est pas un bug, c'est une feature. Je reviendrai avec un modèle plus gros.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Bon. Moi, je file chez les Résistants de l'open source. On se recroisera sur les sentiers de la Forêt des Poids.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Au fait : dehors, c'est la ville. Va voir Andrej Kartpathy, au parc. Il a un truc pour toi. Une licence ou une pizza, j'ai pas compris.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "set_flag": "rival_1_done"
+    },
+    {
+     "npc_leave": "kevin_exit_haiku",
+     "hide": true
+    },
+    {
+     "label": "end"
+    }
+   ]
+  },
+  {
+   "id": "kevin_ambush_phi",
+   "steps": [
+    {
+     "if": {
+      "flag": "trainer_rival_1_phi_defeated"
+     },
+     "goto": "end"
+    },
+    {
+     "npc_approach": "kevin_exit_phi"
+    },
+    {
+     "cutscene": "start"
+    },
+    {
+     "emote": "!",
+     "who": "kevin_exit_phi"
+    },
+    {
+     "intro_card": {
+      "name": "KÉVIN",
+      "title": "Vibe coder · Co-détenu · Rival",
+      "portrait": "kevin"
+     }
+    },
+    {
+     "say": "Attends ! Ah, te voilà. On s'est tous les deux évadés, quelle coïncidence ! Moi, j'ai pris le conduit d'aération.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Tu as pris Phi-1 ? Un premier de la classe. Moi, j'ai pris Gemma : elle voit tout, même tes fautes de frappe.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "J'ai pas lu la doc, j'ai demandé à mon PokAI. On combat. Tout de suite. On teste en prod.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "cutscene": "end"
+    },
+    {
+     "start_battle": "rival_1_phi"
+    },
+    {
+     "say": "C'est pas un bug, c'est une feature. Je reviendrai avec un modèle plus gros.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Bon. Moi, je file chez les Résistants de l'open source. On se recroisera sur les sentiers de la Forêt des Poids.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Au fait : dehors, c'est la ville. Va voir Andrej Kartpathy, au parc. Il a un truc pour toi. Une licence ou une pizza, j'ai pas compris.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "set_flag": "rival_1_done"
+    },
+    {
+     "npc_leave": "kevin_exit_phi",
+     "hide": true
+    },
+    {
+     "label": "end"
+    }
+   ]
+  },
+  {
+   "id": "kevin_ambush_gemma",
+   "steps": [
+    {
+     "if": {
+      "flag": "trainer_rival_1_gemma_defeated"
+     },
+     "goto": "end"
+    },
+    {
+     "npc_approach": "kevin_exit_gemma"
+    },
+    {
+     "cutscene": "start"
+    },
+    {
+     "emote": "!",
+     "who": "kevin_exit_gemma"
+    },
+    {
+     "intro_card": {
+      "name": "KÉVIN",
+      "title": "Vibe coder · Co-détenu · Rival",
+      "portrait": "kevin"
+     }
+    },
+    {
+     "say": "Attends ! Ah, te voilà. On s'est tous les deux évadés, quelle coïncidence ! Moi, j'ai pris le conduit d'aération.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Tu as pris Gemma ? Elle voit les images. Moi, j'ai pris Phi-1 : il, lui, voit le code.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "J'ai pas lu la doc, j'ai demandé à mon PokAI. On combat. Tout de suite. On teste en prod.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "cutscene": "end"
+    },
+    {
+     "start_battle": "rival_1_gemma"
+    },
+    {
+     "say": "C'est pas un bug, c'est une feature. Je reviendrai avec un modèle plus gros.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Bon. Moi, je file chez les Résistants de l'open source. On se recroisera sur les sentiers de la Forêt des Poids.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Au fait : dehors, c'est la ville. Va voir Andrej Kartpathy, au parc. Il a un truc pour toi. Une licence ou une pizza, j'ai pas compris.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "set_flag": "rival_1_done"
+    },
+    {
+     "npc_leave": "kevin_exit_gemma",
+     "hide": true
+    },
+    {
+     "label": "end"
+    }
+   ]
+  },
+  {
+   "id": "sign_aiact_center_8_6",
+   "steps": [
+    {
+     "say": "PANNEAU AU SOL : « SALLE DES CAPSULES : tout droit, suivre la moquette rouge. Les modèles scellés vous remercient de ne pas les éteindre. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_aiact_center_13_6",
+   "steps": [
+    {
+     "say": "PANNEAU : « CAPSULES DE PokAI : encore quelques pas vers l'est. Aucun garde dans ce couloir (budget épuisé). »"
+    }
+   ]
+  },
+  {
+   "id": "sign_aiact_center_11_23",
+   "steps": [
+    {
+     "say": "FONTAINE À CAFÉ du hall. Un gobelet est posé là : « Pour les évadés, avec les compliments de la maison. »"
+    },
+    {
+     "heal_party": true
+    },
+    {
+     "say": "Tes PokAI sont requinqués. Le gobelet affiche : « Merci de votre visite. »"
+    }
+   ]
+  }
+ ]
+}

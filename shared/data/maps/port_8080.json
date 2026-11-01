@@ -1,0 +1,699 @@
+{
+ "id": "port_8080",
+ "name": "Port 8080",
+ "width": 60,
+ "height": 52,
+ "rows": [
+  "kkkkkkkkkkkkkkkkkkkkkkkkkkkkaakkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+  "KKKKKKKKKKKKKKKKKKKKKKKKKKKKaaKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+  "kkkkkkkkkkkkkkkkkkkkkkkkkkkkaakkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+  "KKKKKKKKKKKKKKKKKKKKKKKKKKKKaaKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK",
+  "kkkkkkkkkkkkkkkkkkkkkkkkkkkkaakkkkkkkkkkkkkkkkkkkkkkkkkkkkkk",
+  "KKiiiiiiiiiiiiiiiiiiiiiiAAAAaaAAAAiiiiiiiiiiiiiiiiiiiiiiiiKK",
+  "kkiiiiiiiiiiiiiiiiiiiiiiAAAAaaAAAAiiiiiiiiiiqqqqqqqqqqqqqikk",
+  "KKikkkkiikkkkiikkkkiiiiiAQAAaaAAQAiiiiiiiiivqaaaaaaaaaaaqiKK",
+  "kkiKKKKiiKKKKiiKKKKcccciiiiNaaNiiBiiiiiiiiiiqaaGGaaGGaaQqikk",
+  "KKiiiiiiiiiiiiiiiiicccciiioaaaaoiiiiiiiiiiiiqaaGaaaaGaaaqiKK",
+  "kkiiiiiiiiiiiiiiiiicccciiiIaaaaiiiiiiiiiiioiqaaaaaaaaaaaqikk",
+  "KKiiiiiiiiiiiiiiiiicccciiiiaaaaiiiiiiiiiiiiiqaaaaaaaaaaaqiKK",
+  "kkikkkkiiiiiiiikkkkcccciiimaaaamxxxxiiiiiiiBpaaaaaaaaaGaqikk",
+  "KKiKKKKiiiiiiiiKKKKcccciviiaaaaixxxxiiiiiiiipaaaaaaaaaGaqiKK",
+  "kkiiiiiiiiiiiiiiiiicccciiiiaaaaixxxxiiiiiiiIqaaaaaaaaaaaqikk",
+  "KKiiiiiiiiiiiiiiiiicccciiiiaaaaixxx!iiiinmniqaaaaaaaaaaaqiKK",
+  "kkiiiiiiiiiiiiiiiiicccciiiiaaaaPPPbPPiiiiSiiqaaGGaaaaaaaqikk",
+  "KKikkkkiikkkkiikkkkcccciiiiaaaImPPPPmiiiiiiGqaaaaaaGGGaaqiKK",
+  "kkiKKKKiiKKKKiiKKKKcccciiiiaaaaPPPPPPiiiiiiiqaaaaaaaaaaaqikk",
+  "KKiiiiiiivioiiiiiiicccciiiiaaaaPPPPPPBiioiiiqQaaaaaaaaaaqiKK",
+  "kkiiiiioiGBiiiiiiioiiiiiimiaaaaPPPPPPviiiiiiqqqqqqqqqqqqqikk",
+  "KKiiBiiiISiiiiiviiiiviiiiiIaaaaviviiiiiiiiiiiiGiBiBvvSviiiKK",
+  "kkaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaakk",
+  "KKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaKK",
+  "kkaaaaaaaaaaaaaaaaaaaaSaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaakk",
+  "KKaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaKK",
+  "kkiivGiomiiiBiiioioimiiiiiiaaaaioiiiiimiiiiiiiiiiomioiiiiikk",
+  "KKggggggmgviiiiiiioiiiiiiinaaaaiiiiiioiiiiiiiii999999999GiKK",
+  "kkggggGogggi777777iiioiiiiiaaaaiiiinioo444444Bn999999999iikk",
+  "KKgcccccccgi777777iiBiiiiioaaaaiimiiiiG444444oiCCCCCCCCCiiKK",
+  "kkgcccccccvi666666iiiiiiiimaaaamiiiiiii333333BiCCCCCCCCCiikk",
+  "KKgcccccccgi668666iiiiiiiiiaaaaiiiionni335333iiiiiiiiiiiiiKK",
+  "kkgcccccccgiPPPPPPiiiiiiiiiaaaaiiiioiiiPPPPPPiiiiiiiiiiiiikk",
+  "KKgcccccccgiiIiiiiPPPPnBSPPPPPPPPnPPPPIiiiiiiomgggggggggiiKK",
+  "kkgcccccccgiiiiiiiPmPPPnPPPPPPPPPPPPmPiioooimovBcccccccgiikk",
+  "KKgcccccccBiiiiviiPPPPPBPPPPPPPPBPPPPPiiiSiiiiiocccccccgiiKK",
+  "kkgcccccccgiiiGGiiPPPPPPPPPPPPPPPPPPPPiiiiiiiiigcccccccgiikk",
+  "KKgggggggggiiiGoSoPmPPPPPPPPPPPPPPPPmPiiiiiiiiigcccccccgiiKK",
+  "kkgggggggggiiiiiiiPPPPPPPPmPPPPmPPPPPPiiiiiiiiigggggggggiikk",
+  "KKiiiiiiiSiiiiiomiiiiiiiiiIaaaamiiiiiiiiiiiiiiiiiiiiiiiiiiKK",
+  "kkddddddddxxxdddddddddddddddddddddddddddddddxxxdddddddddddkk",
+  "ddddddddddxxxdddddddddddkkkddddkkkddddddkkkkxxxdddddddddddKK",
+  "ddddddddddxx$dddddddddddKKKddddKKKddddddKKKKxx$dddddddddddkk",
+  "ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddKK",
+  "~~~~~~~~~~~~~~~~~~~~dd~~~~~~~~~~~~dd~~~~~~~~~~~~~~~~ddxxdd~~",
+  "~~~~~~~~~~~~~~~~~~~~dd~~~~~~~~~~~~dd~~~~~~~~~~~~~~~~ddx^dd~~",
+  "~~~~~~~~~~~~~~~~~~~~dd~~~~~~~~~~~~dd~~~~~~~~~~~~~~~~dddddd~~",
+  "~~~~~~~~~~~~~~~~~~~~GG~~~~~~~~~~~~dG~~~~~~~~~~~~~~~~dddddd~~",
+  "~~~~~~~~~~~~~~~~~~~~dd~~~~~~~~~~~~GG~~~~~~~~~~~~~~~~~~~~~~~~",
+  "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~dd~~~~~~~~~~~~~~~~~~~~~~~~",
+  "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+  "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+ ],
+ "legend": {
+  "!": "lm_bench_tower",
+  "$": "lm_crane",
+  "3": "store_wall",
+  "4": "store_roof",
+  "5": "store_door",
+  "6": "hub_wall",
+  "7": "hub_roof",
+  "8": "hub_door",
+  "9": "roof_grey",
+  "A": "aiact_wall",
+  "B": "bench_seat",
+  "C": "concrete_wall",
+  "G": "gpu_crate",
+  "I": "signpost",
+  "K": "container_wall",
+  "N": "guard_desk",
+  "P": "plaza",
+  "Q": "poster_aiact",
+  "S": "sign",
+  "^": "lm_lighthouse",
+  "a": "asphalt",
+  "c": "cable",
+  "d": "dock",
+  "g": "grass_park",
+  "i": "sidewalk",
+  "k": "container_roof",
+  "m": "street_lamp",
+  "n": "planter",
+  "o": "traffic_cone",
+  "p": "path",
+  "q": "fence",
+  "v": "vending",
+  "x": "blocker",
+  "~": "water",
+  "b": "exit_mat"
+ },
+ "kind": "city",
+ "music": "city_day",
+ "npcs": [
+  {
+   "id": "grunt_1",
+   "sprite": "agent_conformite",
+   "x": 28,
+   "y": 11,
+   "facing": "down",
+   "dialogue": "grunt_1_talk",
+   "trainer": "aiact_grunt_port_1",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_aiact_grunt_port_1_defeated"
+    }
+   }
+  },
+  {
+   "id": "grunt_2",
+   "sprite": "agent_conformite",
+   "x": 29,
+   "y": 11,
+   "facing": "down",
+   "dialogue": "grunt_2_talk",
+   "trainer": "aiact_grunt_port_2",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_aiact_grunt_port_2_defeated"
+    }
+   }
+  },
+  {
+   "id": "grunt_3",
+   "sprite": "agent_conformite",
+   "x": 46,
+   "y": 12,
+   "facing": "left",
+   "dialogue": "grunt_3_talk",
+   "trainer": "aiact_grunt_port_3",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_aiact_grunt_port_3_defeated"
+    }
+   }
+  },
+  {
+   "id": "grunt_4",
+   "sprite": "agent_conformite",
+   "x": 46,
+   "y": 13,
+   "facing": "left",
+   "dialogue": "grunt_4_talk",
+   "trainer": "aiact_grunt_port_4",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_aiact_grunt_port_4_defeated"
+    }
+   }
+  },
+  {
+   "id": "gourou",
+   "sprite": "gourou",
+   "x": 33,
+   "y": 27,
+   "facing": "left",
+   "dialogue": "gourou_1"
+  },
+  {
+   "id": "pt_sailor_1",
+   "sprite": "sailor",
+   "x": 13,
+   "y": 10,
+   "facing": "left",
+   "dialogue": "pt_sailor_1_talk",
+   "trainer": "pt_sailor_1",
+   "sightRange": 4
+  },
+  {
+   "id": "pt_rider_1",
+   "sprite": "delivery_rider",
+   "x": 8,
+   "y": 15,
+   "facing": "right",
+   "dialogue": "pt_rider_1_talk",
+   "trainer": "pt_rider_1",
+   "sightRange": 4
+  },
+  {
+   "id": "pt_dev_1",
+   "sprite": "dev_phone",
+   "x": 34,
+   "y": 30,
+   "facing": "left",
+   "dialogue": "pt_dev_1_talk",
+   "trainer": "pt_dev_1",
+   "sightRange": 4
+  },
+  {
+   "id": "pt_scientist_1",
+   "sprite": "scientist",
+   "x": 45,
+   "y": 36,
+   "facing": "left",
+   "dialogue": "pt_scientist_1_talk",
+   "trainer": "pt_scientist_1",
+   "sightRange": 3
+  },
+  {
+   "id": "sailor_port",
+   "sprite": "sailor",
+   "x": 40,
+   "y": 38,
+   "facing": "left",
+   "dialogue": "sailor_port"
+  },
+  {
+   "id": "kid_port",
+   "sprite": "kid",
+   "x": 22,
+   "y": 38,
+   "facing": "up",
+   "dialogue": "kid_port"
+  },
+  {
+   "id": "stagiaire_port",
+   "sprite": "stagiaire",
+   "x": 36,
+   "y": 18,
+   "facing": "down",
+   "dialogue": "stagiaire_port"
+  },
+  {
+   "id": "amb_1_delivery_rider",
+   "sprite": "delivery_rider",
+   "x": 29,
+   "y": 28,
+   "facing": "down",
+   "dialogue": "amb_port_1",
+   "wander": 4,
+   "ambient": true
+  },
+  {
+   "id": "amb_2_citizen_a",
+   "sprite": "citizen_a",
+   "x": 20,
+   "y": 35,
+   "facing": "down",
+   "dialogue": "amb_port_2",
+   "wander": 4,
+   "ambient": true
+  },
+  {
+   "id": "amb_3_tourist",
+   "sprite": "tourist",
+   "x": 30,
+   "y": 37,
+   "facing": "down",
+   "dialogue": "amb_port_3",
+   "wander": 4,
+   "ambient": true
+  },
+  {
+   "id": "amb_4_citizen_b",
+   "sprite": "citizen_b",
+   "x": 24,
+   "y": 24,
+   "facing": "down",
+   "dialogue": "amb_port_4",
+   "wander": 4,
+   "ambient": true
+  },
+  {
+   "id": "amb_5_dev_phone",
+   "sprite": "dev_phone",
+   "x": 36,
+   "y": 24,
+   "facing": "down",
+   "dialogue": "amb_port_5",
+   "wander": 4,
+   "ambient": true
+  },
+  {
+   "id": "amb_6_citizen_c",
+   "sprite": "citizen_c",
+   "x": 16,
+   "y": 23,
+   "facing": "down",
+   "dialogue": "amb_port_6",
+   "wander": 4,
+   "ambient": true
+  },
+  {
+   "id": "amb_7_citizen_d",
+   "sprite": "citizen_d",
+   "x": 48,
+   "y": 24,
+   "facing": "down",
+   "dialogue": "amb_port_7",
+   "wander": 4,
+   "ambient": true
+  },
+  {
+   "id": "amb_8_sailor",
+   "sprite": "sailor",
+   "x": 18,
+   "y": 42,
+   "facing": "down",
+   "dialogue": "amb_port_8",
+   "wander": 4,
+   "ambient": true
+  },
+  {
+   "id": "amb_9_sailor",
+   "sprite": "sailor",
+   "x": 38,
+   "y": 42,
+   "facing": "down",
+   "dialogue": "amb_port_9",
+   "wander": 4,
+   "ambient": true
+  },
+  {
+   "id": "amb_10_citizen_a",
+   "sprite": "citizen_a",
+   "x": 28,
+   "y": 18,
+   "facing": "down",
+   "dialogue": "amb_port_10",
+   "wander": 4,
+   "ambient": true
+  },
+  {
+   "id": "jensen_port",
+   "sprite": "jensen_cuir",
+   "x": 43,
+   "y": 33,
+   "facing": "left",
+   "dialogue": "jensen_port"
+  },
+  {
+   "id": "cookie_port",
+   "sprite": "inspector_cookie",
+   "x": 52,
+   "y": 24,
+   "facing": "left",
+   "dialogue": "cookie_port",
+   "condition": {
+    "all": [
+     {
+      "flag": "cookie_beaten"
+     },
+     {
+      "not": {
+       "flag": "cookie_port_met"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "kevin_pt_haiku",
+   "sprite": "kevin",
+   "x": 30,
+   "y": 24,
+   "facing": "up",
+   "dialogue": "kevin_after_3",
+   "trainer": "rival_3_haiku",
+   "sightRange": 4,
+   "condition": {
+    "all": [
+     {
+      "flag": "starter_claude_haiku"
+     },
+     {
+      "not": {
+       "flag": "trainer_rival_3_haiku_defeated"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "kevin_pt_phi",
+   "sprite": "kevin",
+   "x": 30,
+   "y": 24,
+   "facing": "up",
+   "dialogue": "kevin_after_3",
+   "trainer": "rival_3_phi",
+   "sightRange": 4,
+   "condition": {
+    "all": [
+     {
+      "flag": "starter_phi_1"
+     },
+     {
+      "not": {
+       "flag": "trainer_rival_3_phi_defeated"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "kevin_pt_gemma",
+   "sprite": "kevin",
+   "x": 30,
+   "y": 24,
+   "facing": "up",
+   "dialogue": "kevin_after_3",
+   "trainer": "rival_3_gemma",
+   "sightRange": 4,
+   "condition": {
+    "all": [
+     {
+      "flag": "starter_gemma"
+     },
+     {
+      "not": {
+       "flag": "trainer_rival_3_gemma_defeated"
+      }
+     }
+    ]
+   }
+  }
+ ],
+ "warps": [
+  {
+   "x": 28,
+   "y": 0,
+   "to": "sentier_cotier",
+   "toX": 13,
+   "toY": 54,
+   "facing": "up"
+  },
+  {
+   "x": 29,
+   "y": 0,
+   "to": "sentier_cotier",
+   "toX": 14,
+   "toY": 54,
+   "facing": "up"
+  },
+  {
+   "x": 14,
+   "y": 31,
+   "to": "hub_port",
+   "toX": 4,
+   "toY": 6,
+   "facing": "up"
+  },
+  {
+   "x": 41,
+   "y": 31,
+   "to": "store_port",
+   "toX": 4,
+   "toY": 5,
+   "facing": "up"
+  },
+  {
+   "x": 34,
+   "y": 16,
+   "to": "bench_arcagi",
+   "toX": 10,
+   "toY": 19,
+   "facing": "up"
+  },
+  {
+   "x": 0,
+   "y": 41,
+   "to": "route_cables_sous_marins",
+   "toX": 1,
+   "toY": 11,
+   "facing": "right"
+  },
+  {
+   "x": 0,
+   "y": 42,
+   "to": "route_cables_sous_marins",
+   "toX": 1,
+   "toY": 12,
+   "facing": "right"
+  },
+  {
+   "x": 0,
+   "y": 43,
+   "to": "route_cables_sous_marins",
+   "toX": 1,
+   "toY": 13,
+   "facing": "right"
+  }
+ ],
+ "triggers": [
+  {
+   "x": 27,
+   "y": 12,
+   "w": 4,
+   "script": "port_cargo_freed",
+   "condition": {
+    "all": [
+     {
+      "flag": "trainer_aiact_grunt_port_1_defeated"
+     },
+     {
+      "flag": "trainer_aiact_grunt_port_2_defeated"
+     }
+    ]
+   },
+   "once": true
+  },
+  {
+   "x": 40,
+   "y": 33,
+   "script": "jensen_port",
+   "w": 4,
+   "condition": {
+    "not": {
+     "flag": "jensen_port_met"
+    }
+   },
+   "once": true
+  },
+  {
+   "x": 26,
+   "y": 23,
+   "script": "cookie_port",
+   "w": 6,
+   "condition": {
+    "all": [
+     {
+      "flag": "cookie_beaten"
+     },
+     {
+      "not": {
+       "flag": "cookie_port_met"
+      }
+     }
+    ]
+   },
+   "once": true
+  },
+  {
+   "x": 54,
+   "y": 46,
+   "script": "secret_port_8080_54_46",
+   "once": true
+  },
+  {
+   "x": 20,
+   "y": 48,
+   "script": "secret_port_8080_20_48",
+   "once": true
+  },
+  {
+   "x": 34,
+   "y": 49,
+   "script": "secret_port_8080_34_49",
+   "once": true
+  }
+ ],
+ "encounters": [
+  {
+   "form": "qwen",
+   "minLevel": 20,
+   "maxLevel": 23,
+   "weight": 22,
+   "group": 3
+  },
+  {
+   "form": "midjourney_v5",
+   "minLevel": 20,
+   "maxLevel": 23,
+   "weight": 18
+  },
+  {
+   "form": "copilot",
+   "minLevel": 20,
+   "maxLevel": 23,
+   "weight": 16
+  },
+  {
+   "form": "gpt_3_5",
+   "minLevel": 21,
+   "maxLevel": 24,
+   "weight": 16
+  },
+  {
+   "form": "deepseek_v2",
+   "minLevel": 21,
+   "maxLevel": 24,
+   "weight": 12
+  },
+  {
+   "form": "copilot_chat",
+   "minLevel": 22,
+   "maxLevel": 25,
+   "weight": 10
+  },
+  {
+   "form": "qwen_2_5",
+   "minLevel": 22,
+   "maxLevel": 25,
+   "weight": 10,
+   "group": 3
+  },
+  {
+   "form": "midjourney_v6",
+   "minLevel": 23,
+   "maxLevel": 26,
+   "weight": 8
+  },
+  {
+   "form": "whisper_base",
+   "minLevel": 20,
+   "maxLevel": 23,
+   "weight": 10,
+   "night": true
+  },
+  {
+   "form": "deepseek_v3",
+   "minLevel": 24,
+   "maxLevel": 26,
+   "weight": 4
+  },
+  {
+   "form": "gpt_4o",
+   "minLevel": 25,
+   "maxLevel": 26,
+   "weight": 2
+  }
+ ],
+ "encounterRate": 0.17,
+ "landmarks": [
+  {
+   "x": 35,
+   "y": 15,
+   "label": "Benchmark ARC-AGI"
+  },
+  {
+   "x": 14,
+   "y": 31,
+   "label": "Hub 🤗"
+  },
+  {
+   "x": 41,
+   "y": 31,
+   "label": "Store"
+  },
+  {
+   "x": 12,
+   "y": 42,
+   "label": "Grue 1"
+  },
+  {
+   "x": 46,
+   "y": 42,
+   "label": "Grue 2"
+  },
+  {
+   "x": 55,
+   "y": 45,
+   "label": "Phare"
+  },
+  {
+   "x": 50,
+   "y": 13,
+   "label": "Dépôt AIACT (GPU saisis)"
+  },
+  {
+   "x": 8,
+   "y": 14,
+   "label": "Cour des conteneurs"
+  },
+  {
+   "x": 28,
+   "y": 9,
+   "label": "Checkpoint AIACT"
+  },
+  {
+   "x": 54,
+   "y": 46,
+   "label": "Pied du phare (secret ?)"
+  }
+ ],
+ "exits": [
+  {
+   "x": 28,
+   "y": 0,
+   "to": "sentier_cotier",
+   "label": "Sentier Côtier → Hugging Grove"
+  },
+  {
+   "x": 2,
+   "y": 42,
+   "to": "route_cables_sous_marins",
+   "label": "Route des Câbles Sous-Marins"
+  }
+ ]
+}

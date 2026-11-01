@@ -1,0 +1,77 @@
+{
+ "id": "hub_port",
+ "name": "Hub 🤗 du Port 8080",
+ "width": 11,
+ "height": 8,
+ "rows": [
+  "###########",
+  "#tttajattt#",
+  "#jjjjjjjjj#",
+  "#j0000000j#",
+  "#j;;;j;;;j#",
+  "#l;;;j;;;l#",
+  "#jjjjjjjjj#",
+  "####XXX####"
+ ],
+ "legend": {
+  "#": "wall",
+  "0": "hub_reception",
+  ";": "carpet",
+  "X": "exit_mat",
+  "j": "hub_floor",
+  "l": "plant",
+  "t": "repo_shelf",
+  "a": "pc"
+ },
+ "kind": "interior",
+ "music": "hub",
+ "hub": {
+  "x": 5,
+  "y": 4
+ },
+ "npcs": [
+  {
+   "id": "nurse",
+   "sprite": "nurse_hugging",
+   "x": 5,
+   "y": 2,
+   "facing": "down",
+   "dialogue": "nurse_hugging"
+  },
+  {
+   "id": "dockhand_hub",
+   "sprite": "sailor",
+   "x": 8,
+   "y": 5,
+   "facing": "left",
+   "dialogue": "hub_port_sailor"
+  }
+ ],
+ "warps": [
+  {
+   "x": 4,
+   "y": 7,
+   "to": "port_8080",
+   "toX": 14,
+   "toY": 32,
+   "facing": "down"
+  },
+  {
+   "x": 5,
+   "y": 7,
+   "to": "port_8080",
+   "toX": 14,
+   "toY": 32,
+   "facing": "down"
+  },
+  {
+   "x": 6,
+   "y": 7,
+   "to": "port_8080",
+   "toX": 14,
+   "toY": 32,
+   "facing": "down"
+  }
+ ],
+ "triggers": []
+}

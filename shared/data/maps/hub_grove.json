@@ -1,0 +1,124 @@
+{
+ "id": "hub_grove",
+ "name": "Hub 🤗 : le Grand Arbre",
+ "width": 19,
+ "height": 12,
+ "rows": [
+  "###################",
+  "#tttttttajattttttt#",
+  "#jjjjjjjjjjjjjjjjj#",
+  "#jjjjj0000000jjjjj#",
+  "#jjjjjjjjjjjjjjjjj#",
+  "#ljjjjjjjjjjjjjjjl#",
+  "#jjjjjjjjjjjjjjjjj#",
+  "#jjjjjjjjjjjjjjjjj#",
+  "#j;;;jjjjjjjjj;;;j#",
+  "#l;;;jjjjjjjjj;;;l#",
+  "#jjjjjjjjjjjjjjjjj#",
+  "########XXX########"
+ ],
+ "legend": {
+  "#": "wall",
+  "0": "hub_reception",
+  ";": "carpet",
+  "X": "exit_mat",
+  "j": "hub_floor",
+  "l": "plant",
+  "t": "repo_shelf",
+  "a": "pc"
+ },
+ "kind": "interior",
+ "music": "hub",
+ "hub": {
+  "x": 9,
+  "y": 8
+ },
+ "npcs": [
+  {
+   "id": "nurse",
+   "sprite": "nurse_hugging",
+   "x": 9,
+   "y": 2,
+   "facing": "down",
+   "dialogue": "nurse_hugging"
+  },
+  {
+   "id": "clem_grove",
+   "sprite": "clem_delangouste",
+   "x": 14,
+   "y": 5,
+   "facing": "left",
+   "dialogue": "clem_grove"
+  },
+  {
+   "id": "resistance_hub_grove",
+   "sprite": "resistance_dev",
+   "x": 4,
+   "y": 6,
+   "facing": "right",
+   "dialogue": "resistance_grove_hub"
+  },
+  {
+   "id": "amb_1_citizen_c",
+   "sprite": "citizen_c",
+   "x": 9,
+   "y": 7,
+   "facing": "down",
+   "dialogue": "amb_grove_hub_1",
+   "wander": 3,
+   "ambient": true
+  }
+ ],
+ "warps": [
+  {
+   "x": 8,
+   "y": 11,
+   "to": "hugging_grove",
+   "toX": 31,
+   "toY": 13,
+   "facing": "down"
+  },
+  {
+   "x": 9,
+   "y": 11,
+   "to": "hugging_grove",
+   "toX": 31,
+   "toY": 13,
+   "facing": "down"
+  },
+  {
+   "x": 10,
+   "y": 11,
+   "to": "hugging_grove",
+   "toX": 31,
+   "toY": 13,
+   "facing": "down"
+  }
+ ],
+ "triggers": [
+  {
+   "x": 8,
+   "y": 8,
+   "script": "clem_grove",
+   "w": 3,
+   "condition": {
+    "not": {
+     "flag": "clem_grove_met"
+    }
+   },
+   "once": true
+  }
+ ],
+ "landmarks": [
+  {
+   "x": 9,
+   "y": 3,
+   "label": "Accueil 🤗"
+  },
+  {
+   "x": 9,
+   "y": 1,
+   "label": "Repo (stockage)"
+  }
+ ]
+}

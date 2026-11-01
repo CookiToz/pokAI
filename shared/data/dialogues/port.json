@@ -1,0 +1,1314 @@
+{
+ "scripts": [
+  {
+   "id": "nurse_hugging",
+   "steps": [
+    {
+     "say": "🤗 Bienvenue au Hub ! Voulez-vous que je soigne vos PokAI ?",
+     "speaker": "HUGGING",
+     "portrait": "nurse_hugging"
+    },
+    {
+     "choice": [
+      {
+       "label": "Oui",
+       "goto": "yes"
+      },
+      {
+       "label": "Non",
+       "goto": "no"
+      }
+     ]
+    },
+    {
+     "label": "yes"
+    },
+    {
+     "say": "Je redémarre leurs instances… ♪",
+     "speaker": "HUGGING",
+     "portrait": "nurse_hugging"
+    },
+    {
+     "heal_party": true
+    },
+    {
+     "say": "Vos PokAI sont à 100 % ! 🤗",
+     "speaker": "HUGGING",
+     "portrait": "nurse_hugging"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "no"
+    },
+    {
+     "say": "D'accord ! Revenez quand ils hallucinent. 🤗",
+     "speaker": "HUGGING",
+     "portrait": "nurse_hugging"
+    }
+   ]
+  },
+  {
+   "id": "clerk_1",
+   "steps": [
+    {
+     "say": "Bienvenue ! Ici, tout est facturé au token. Même mon sourire.",
+     "speaker": "MARCHAND",
+     "portrait": "clerk"
+    },
+    {
+     "open": "store"
+    },
+    {
+     "say": "Merci ! Votre ticket de caisse fait 4 000 tokens.",
+     "speaker": "MARCHAND",
+     "portrait": "clerk"
+    }
+   ]
+  },
+  {
+   "id": "bench_junior_1_intro",
+   "steps": [
+    {
+     "say": "Je suis le stagiaire du Benchmark. On m'a promis un CDI et un accès à la salle de pause.",
+     "speaker": "Stagiaire"
+    }
+   ]
+  },
+  {
+   "id": "bench_junior_1_defeat",
+   "steps": [
+    {
+     "say": "Je vais noter « performance exceptionnelle » dans mon propre rapport, personne ne le lira.",
+     "speaker": "Stagiaire"
+    }
+   ]
+  },
+  {
+   "id": "bench_junior_talk",
+   "steps": [
+    {
+     "say": "Je suis déjà battu. Je peux retourner à mon écran ?",
+     "speaker": "Stagiaire"
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_26_10",
+   "steps": [
+    {
+     "say": "↑ SENTIER CÔTIER · Hugging Grove 8 km · ← COUR DES CONTENEURS · → DÉPÔT AIACT (GPU saisis) · ↓ CENTRE-PORT & QUAIS"
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_26_21",
+   "steps": [
+    {
+     "say": "CARREFOUR 8080 · ← Cour des conteneurs (câbles dans les allées) · → Dépôt AIACT & Entrepôts · ↓ Hub 🤗, Store, Benchmark ARC-AGI"
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_30_17",
+   "steps": [
+    {
+     "say": "BENCHMARK ARC-AGI → Tour de verre. « Ici, on teste si tu comprends, pas si tu mémorises. » Entrée côté plaza."
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_13_33",
+   "steps": [
+    {
+     "say": "HUB 🤗 ↑ · Soins gratuits, files d'attente gratuites aussi."
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_38_33",
+   "steps": [
+    {
+     "say": "STORE ↑ · « GPU d'occasion : 1 propriétaire (l'AIACT). Vendu en l'état. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_26_39",
+   "steps": [
+    {
+     "say": "QUAIS ↓ · Grues 1 & 2 · Phare →  « Interdit aux modèles propriétaires sans licence de baignade. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_43_14",
+   "steps": [
+    {
+     "say": "DÉPÔT AIACT (GPU SAISIS) — Accès réservé aux agents. Par ordre de l'AIACT : « pour votre sécurité »."
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_8_21",
+   "steps": [
+    {
+     "say": "COUR DES CONTENEURS ↑ · Les conteneurs sont rangés par ordre alphabétique de leurs contenus. Aucun conteneur n'est étiqueté."
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_16_37",
+   "steps": [
+    {
+     "say": "SAISI : 4 000 GPU. Motif : « pour votre sécurité ». Un agent compte les GPU. Un autre compte l'agent qui compte."
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_24_33",
+   "steps": [
+    {
+     "say": "BANC DU DÉVELOPPEUR : sur le banc, un ordinateur ouvert sur « BUILD FAILED ». À côté, un mug : « Je ne pleure pas, c'est du refroidissement liquide »."
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_53_21",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR DE TOKENS : 1 token = 1 token. Pas de rendu de monnaie. Pas de rendu non plus."
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_41_35",
+   "steps": [
+    {
+     "say": "TRAVAUX : refactoring du quai (commencé en 2019). Prévoir 1 mois. Prévoir 6 ans."
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_41_16",
+   "steps": [
+    {
+     "say": "JARDINIÈRE DU DOCKER : des plantes en conteneurs. Elles ont été isolées."
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_9_21",
+   "steps": [
+    {
+     "say": "PAUSE DÉJEUNER : les dockers mangent sur des caisses de GPU. Les GPU sont plus confortables que les chaises."
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_25_7",
+   "steps": [
+    {
+     "say": "AFFICHE : « L'AIACT veille sur vos cargos. Vous n'avez pas besoin de savoir ce qu'ils contiennent. » Signé : l'AIACT."
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_32_7",
+   "steps": [
+    {
+     "say": "AFFICHE : « Votre conteneur est-il conforme ? Le doute est déjà une infraction. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_55_8",
+   "steps": [
+    {
+     "say": "AFFICHE : « GPU SAISIS POUR VOTRE SÉCURITÉ. Ils vous seront restitués après le moratoire. » (Le moratoire n'a pas de date de fin.)"
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_45_19",
+   "steps": [
+    {
+     "say": "AFFICHE : « Il est interdit de regarder les GPU saisis. Il est interdit de les compter. Il est interdit de ne pas les compter. »"
+    }
+   ]
+  },
+  {
+   "id": "port_cargo_freed",
+   "steps": [
+    {
+     "say": "Le checkpoint est neutralisé. Sous les scellés « CONFORME » d'un conteneur, un PokAI s'agite."
+    },
+    {
+     "give_pokai": "gpt_3_5",
+     "level": 20
+    },
+    {
+     "set_flag": "cargo_freed"
+    },
+    {
+     "say": "Un GPT-3.5 libéré rejoint ton équipe. Il a l'air fatigué : il a répondu à trop de devoirs."
+    }
+   ]
+  },
+  {
+   "id": "grunt_1_talk",
+   "steps": [
+    {
+     "say": "Circulez. Ce port fait l'objet d'un contrôle de conformité préventif. Il y en aura d'autres.",
+     "speaker": "AGENT",
+     "portrait": "agent_conformite"
+    }
+   ]
+  },
+  {
+   "id": "aiact_grunt_port_1_intro",
+   "steps": [
+    {
+     "say": "Halte ! Ce PokAI n'a pas de certificat de conformité.",
+     "speaker": "AGENT",
+     "portrait": "agent_conformite"
+    },
+    {
+     "say": "Pour votre sécurité, il va être placé sous scellés. Et le vôtre aussi. Les GPU, eux, sont déjà saisis.",
+     "speaker": "AGENT",
+     "portrait": "agent_conformite"
+    }
+   ]
+  },
+  {
+   "id": "aiact_grunt_port_1_defeat",
+   "steps": [
+    {
+     "say": "… Je vais devoir remplir un rapport d'incident. En trois exemplaires. Dont un pour mon rapport sur le rapport.",
+     "speaker": "AGENT",
+     "portrait": "agent_conformite"
+    }
+   ]
+  },
+  {
+   "id": "grunt_2_talk",
+   "steps": [
+    {
+     "say": "Circulez. Ce port fait l'objet d'un contrôle de conformité préventif. Il y en aura d'autres.",
+     "speaker": "AGENT",
+     "portrait": "agent_conformite"
+    }
+   ]
+  },
+  {
+   "id": "aiact_grunt_port_2_intro",
+   "steps": [
+    {
+     "say": "Halte ! Ce PokAI n'a pas de certificat de conformité.",
+     "speaker": "AGENT",
+     "portrait": "agent_conformite"
+    },
+    {
+     "say": "Pour votre sécurité, il va être placé sous scellés. Et le vôtre aussi. Les GPU, eux, sont déjà saisis.",
+     "speaker": "AGENT",
+     "portrait": "agent_conformite"
+    }
+   ]
+  },
+  {
+   "id": "aiact_grunt_port_2_defeat",
+   "steps": [
+    {
+     "say": "… Je vais devoir remplir un rapport d'incident. En trois exemplaires. Dont un pour mon rapport sur le rapport.",
+     "speaker": "AGENT",
+     "portrait": "agent_conformite"
+    }
+   ]
+  },
+  {
+   "id": "grunt_3_talk",
+   "steps": [
+    {
+     "say": "Circulez. Ce port fait l'objet d'un contrôle de conformité préventif. Il y en aura d'autres.",
+     "speaker": "AGENT",
+     "portrait": "agent_conformite"
+    }
+   ]
+  },
+  {
+   "id": "aiact_grunt_port_3_intro",
+   "steps": [
+    {
+     "say": "Halte ! Ce PokAI n'a pas de certificat de conformité.",
+     "speaker": "AGENT",
+     "portrait": "agent_conformite"
+    },
+    {
+     "say": "Pour votre sécurité, il va être placé sous scellés. Et le vôtre aussi. Les GPU, eux, sont déjà saisis.",
+     "speaker": "AGENT",
+     "portrait": "agent_conformite"
+    }
+   ]
+  },
+  {
+   "id": "aiact_grunt_port_3_defeat",
+   "steps": [
+    {
+     "say": "… Je vais devoir remplir un rapport d'incident. En trois exemplaires. Dont un pour mon rapport sur le rapport.",
+     "speaker": "AGENT",
+     "portrait": "agent_conformite"
+    }
+   ]
+  },
+  {
+   "id": "grunt_4_talk",
+   "steps": [
+    {
+     "say": "Circulez. Ce port fait l'objet d'un contrôle de conformité préventif. Il y en aura d'autres.",
+     "speaker": "AGENT",
+     "portrait": "agent_conformite"
+    }
+   ]
+  },
+  {
+   "id": "aiact_grunt_port_4_intro",
+   "steps": [
+    {
+     "say": "Halte ! Ce PokAI n'a pas de certificat de conformité.",
+     "speaker": "AGENT",
+     "portrait": "agent_conformite"
+    },
+    {
+     "say": "Pour votre sécurité, il va être placé sous scellés. Et le vôtre aussi. Les GPU, eux, sont déjà saisis.",
+     "speaker": "AGENT",
+     "portrait": "agent_conformite"
+    }
+   ]
+  },
+  {
+   "id": "aiact_grunt_port_4_defeat",
+   "steps": [
+    {
+     "say": "… Je vais devoir remplir un rapport d'incident. En trois exemplaires. Dont un pour mon rapport sur le rapport.",
+     "speaker": "AGENT",
+     "portrait": "agent_conformite"
+    }
+   ]
+  },
+  {
+   "id": "aiact_grunt_port_1_talk",
+   "steps": [
+    {
+     "say": "Je garde les GPU. Pour leur sécurité. Je n'ai pas le droit de dire de qui.",
+     "speaker": "AGENT",
+     "portrait": "agent_conformite"
+    }
+   ]
+  },
+  {
+   "id": "aiact_grunt_port_2_talk",
+   "steps": [
+    {
+     "say": "Je garde les GPU. Pour leur sécurité. Je n'ai pas le droit de dire de qui.",
+     "speaker": "AGENT",
+     "portrait": "agent_conformite"
+    }
+   ]
+  },
+  {
+   "id": "aiact_grunt_port_3_talk",
+   "steps": [
+    {
+     "say": "Je garde les GPU. Pour leur sécurité. Je n'ai pas le droit de dire de qui.",
+     "speaker": "AGENT",
+     "portrait": "agent_conformite"
+    }
+   ]
+  },
+  {
+   "id": "aiact_grunt_port_4_talk",
+   "steps": [
+    {
+     "say": "Je garde les GPU. Pour leur sécurité. Je n'ai pas le droit de dire de qui.",
+     "speaker": "AGENT",
+     "portrait": "agent_conformite"
+    }
+   ]
+  },
+  {
+   "id": "amb_port_1",
+   "steps": [
+    {
+     "say": "Les cargos arrivent pleins de GPU. Ils repartent pleins de formulaires.",
+     "speaker": "Docker"
+    }
+   ]
+  },
+  {
+   "id": "amb_port_2",
+   "steps": [
+    {
+     "say": "Mon patron dit que le port a un « problème de latence ». Les bateaux n'arrivent pas à l'heure parce qu'ils attendent le chargement du modèle.",
+     "speaker": "Docker"
+    }
+   ]
+  },
+  {
+   "id": "amb_port_3",
+   "steps": [
+    {
+     "say": "Un cargo de 4 000 GPU, une grue qui ne marche pas, et un agent qui lit le règlement à voix haute. C'est mardi.",
+     "speaker": "Docker"
+    }
+   ]
+  },
+  {
+   "id": "amb_port_4",
+   "steps": [
+    {
+     "say": "Ici, on mesure les distances en « tokens de portée ». Le phare est à 1 200 tokens. Je ne sais pas ce que ça veut dire.",
+     "speaker": "Docker"
+    }
+   ]
+  },
+  {
+   "id": "amb_port_5",
+   "steps": [
+    {
+     "say": "Le phare éclaire les bateaux et les hallucinations. Parfois, les deux se mélangent.",
+     "speaker": "Docker"
+    }
+   ]
+  },
+  {
+   "id": "amb_port_6",
+   "steps": [
+    {
+     "say": "J'ai tenté d'entrer dans l'entrepôt. L'agent m'a demandé mon certificat d'entrée. J'ai dit « je suis entré ». Il a dit « refusé ».",
+     "speaker": "Docker"
+    }
+   ]
+  },
+  {
+   "id": "amb_port_7",
+   "steps": [
+    {
+     "say": "On m'a dit que la prochaine grue sera pilotée par une IA. Je n'ai pas peur. Je me méfie de son sens de l'équilibre.",
+     "speaker": "Docker"
+    }
+   ]
+  },
+  {
+   "id": "amb_port_8",
+   "steps": [
+    {
+     "say": "Je livre des conteneurs vides. Les vides sont les plus lourds : ils contiennent des promesses.",
+     "speaker": "Docker"
+    }
+   ]
+  },
+  {
+   "id": "amb_port_9",
+   "steps": [
+    {
+     "say": "Les mouettes du port sont des experts en rate limit : elles volent jusqu'à ce qu'on leur dise stop.",
+     "speaker": "Docker"
+    }
+   ]
+  },
+  {
+   "id": "amb_port_10",
+   "steps": [
+    {
+     "say": "Le sel mange le métal, les agents mangent les formulaires. Tout le monde a son régime.",
+     "speaker": "Docker"
+    }
+   ]
+  },
+  {
+   "id": "hub_port_sailor",
+   "steps": [
+    {
+     "say": "Les modèles ouverts dorment au Hub. Les propriétaires dorment à l'hôtel. Ça se voit à la note.",
+     "speaker": "Marin"
+    }
+   ]
+  },
+  {
+   "id": "gourou_1",
+   "steps": [
+    {
+     "if": {
+      "flag": "gourou_bought"
+     },
+     "goto": "again"
+    },
+    {
+     "say": "Tu veux devenir un vrai Vibeur ? Ma formation « Prompt Millionnaire » est à 997 € seulement.",
+     "speaker": "GOUROU",
+     "portrait": "gourou"
+    },
+    {
+     "choice": [
+      {
+       "label": "Acheter",
+       "goto": "buy"
+      },
+      {
+       "label": "Refuser",
+       "goto": "no"
+      }
+     ]
+    },
+    {
+     "label": "buy"
+    },
+    {
+     "take_credits": "all"
+    },
+    {
+     "give_item": "certificat_inutile"
+    },
+    {
+     "set_flag": "gourou_bought"
+    },
+    {
+     "say": "Excellent choix. Leçon n° 1 : « Sois précis. » Merci et bonne journée.",
+     "speaker": "GOUROU",
+     "portrait": "gourou"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "no"
+    },
+    {
+     "say": "Tu le regretteras quand tout le monde sera remplacé sauf moi.",
+     "speaker": "GOUROU",
+     "portrait": "gourou"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "again"
+    },
+    {
+     "say": "Tu as déjà tout appris. Leçon n° 2 : 1 497 €.",
+     "speaker": "GOUROU",
+     "portrait": "gourou"
+    }
+   ]
+  },
+  {
+   "id": "pt_sailor_1_intro",
+   "steps": [
+    {
+     "say": "Un nouveau qui se promène dans la cour ? Les conteneurs sont à moi. Combat !",
+     "speaker": "Docker Émile",
+     "portrait": "sailor"
+    }
+   ]
+  },
+  {
+   "id": "pt_sailor_1_defeat",
+   "steps": [
+    {
+     "say": "Perdu. Je vais ouvrir un conteneur pour m'y cacher. Il est vide. Comme ma victoire.",
+     "speaker": "Docker Émile",
+     "portrait": "sailor"
+    }
+   ]
+  },
+  {
+   "id": "pt_sailor_1_talk",
+   "steps": [
+    {
+     "say": "Dans un des conteneurs, il paraît qu'il y a un H100. C'est une légende de la cour. Comme les rats.",
+     "speaker": "Docker Émile",
+     "portrait": "sailor"
+    }
+   ]
+  },
+  {
+   "id": "pt_rider_1_intro",
+   "steps": [
+    {
+     "say": "Je livre vingt colis par heure. Là, je n'ai pas le temps. Combat rapide ?",
+     "speaker": "Livreur Sacha",
+     "portrait": "delivery_rider"
+    }
+   ]
+  },
+  {
+   "id": "pt_rider_1_defeat",
+   "steps": [
+    {
+     "say": "J'ai perdu 4 minutes. Mon appli va me noter « lent ». Merci.",
+     "speaker": "Livreur Sacha",
+     "portrait": "delivery_rider"
+    }
+   ]
+  },
+  {
+   "id": "pt_rider_1_talk",
+   "steps": [
+    {
+     "say": "Mon GPS me dit « vous êtes arrivé » devant un conteneur. C'est précis. Ce n'est pas juste.",
+     "speaker": "Livreur Sacha",
+     "portrait": "delivery_rider"
+    }
+   ]
+  },
+  {
+   "id": "pt_dev_1_intro",
+   "steps": [
+    {
+     "say": "Je déploie sur le port. Je déploie sur tout. Même le mardi. Combat ?",
+     "speaker": "Dev Clémence",
+     "portrait": "dev_phone"
+    }
+   ]
+  },
+  {
+   "id": "pt_dev_1_defeat",
+   "steps": [
+    {
+     "say": "Mon déploiement est parti en production. Mon combat, non. Je vais aller prendre un café, en prod.",
+     "speaker": "Dev Clémence",
+     "portrait": "dev_phone"
+    }
+   ]
+  },
+  {
+   "id": "pt_dev_1_talk",
+   "steps": [
+    {
+     "say": "Les agents de l'AIACT lisent mes commits. Ils trouvent que « fix typo » est un message suspect.",
+     "speaker": "Dev Clémence",
+     "portrait": "dev_phone"
+    }
+   ]
+  },
+  {
+   "id": "pt_scientist_1_intro",
+   "steps": [
+    {
+     "say": "Je travaille sur l'efficience énergétique du port. J'ai besoin d'un cobaye. Voudrais-tu te battre ?",
+     "speaker": "Chercheuse Oriane",
+     "portrait": "scientist"
+    }
+   ]
+  },
+  {
+   "id": "pt_scientist_1_defeat",
+   "steps": [
+    {
+     "say": "Résultat : la consommation du combat est négligeable. Contrairement à celle de mon ego.",
+     "speaker": "Chercheuse Oriane",
+     "portrait": "scientist"
+    }
+   ]
+  },
+  {
+   "id": "pt_scientist_1_talk",
+   "steps": [
+    {
+     "say": "J'ai calculé : un cargo de GPU consomme autant qu'une petite ville. L'AIACT l'a saisi pour qu'il consomme moins. Il ne consomme plus. Il stagne.",
+     "speaker": "Chercheuse Oriane",
+     "portrait": "scientist"
+    }
+   ]
+  },
+  {
+   "id": "bench_arc_junior_1_intro",
+   "steps": [
+    {
+     "say": "Tu as reproduit le motif ? Moi je le vois sans le voir. Je le sens. Combat !",
+     "speaker": "Chercheur Bastien",
+     "portrait": "scientist"
+    }
+   ]
+  },
+  {
+   "id": "bench_arc_junior_1_defeat",
+   "steps": [
+    {
+     "say": "Mon modèle a généralisé. Dans le mauvais sens. Je le note comme « émergent ».",
+     "speaker": "Chercheur Bastien",
+     "portrait": "scientist"
+    }
+   ]
+  },
+  {
+   "id": "bench_arc_junior_1_talk",
+   "steps": [
+    {
+     "say": "Le motif, c'est une croix. Une croix. On l'a dit à Hassabyte. Il a répondu « mais pourquoi ? ».",
+     "speaker": "Chercheur Bastien",
+     "portrait": "scientist"
+    }
+   ]
+  },
+  {
+   "id": "bench_arc_junior_2_intro",
+   "steps": [
+    {
+     "say": "On m'a dit de te donner un test. Voici : 1 + 1. Mon PokAI répond « 3 ». Je ne peux pas commenter.",
+     "speaker": "Stagiaire Inès",
+     "portrait": "stagiaire"
+    }
+   ]
+  },
+  {
+   "id": "bench_arc_junior_2_defeat",
+   "steps": [
+    {
+     "say": "Bien. Je vais noter : « élève a compris la consigne ». Pour une fois, c'est moi.",
+     "speaker": "Stagiaire Inès",
+     "portrait": "stagiaire"
+    }
+   ]
+  },
+  {
+   "id": "bench_arc_junior_2_talk",
+   "steps": [
+    {
+     "say": "Il paraît que le test est conçu pour que les IA ne puissent pas le tricher. Les IA ont trouvé ça vexant.",
+     "speaker": "Stagiaire Inès",
+     "portrait": "stagiaire"
+    }
+   ]
+  },
+  {
+   "id": "leader_hassabyte_intro",
+   "steps": [
+    {
+     "say": "Bienvenue au Benchmark ARC-AGI. Tu as reproduit le motif. Sans l'avoir mémorisé. C'est rare.",
+     "speaker": "HASSABYTE",
+     "portrait": "hassabyte"
+    },
+    {
+     "say": "Tu peux mémoriser les réponses. Pas les questions. Voyons comment tes PokAI raisonnent. Je joue aux échecs avec l'univers depuis 1998. Je n'ai perdu qu'une partie. Elle était truquée.",
+     "speaker": "HASSABYTE",
+     "portrait": "hassabyte"
+    }
+   ]
+  },
+  {
+   "id": "leader_hassabyte_defeat",
+   "steps": [
+    {
+     "say": "Impressionnant. Tu as généralisé à partir de très peu d'exemples. C'est la définition de l'intelligence. Ou du talent. Ou d'un bug chanceux.",
+     "speaker": "HASSABYTE",
+     "portrait": "hassabyte"
+    },
+    {
+     "set_flag": "badge_raisonnement"
+    },
+    {
+     "say": "{player} reçoit le Badge Raisonnement !"
+    }
+   ]
+  },
+  {
+   "id": "hassabyte_talk",
+   "steps": [
+    {
+     "say": "Le Badge Raisonnement te va bien. Mon conseil : si un problème te semble trop facile, c'est que tu as mal lu l'énoncé.",
+     "speaker": "HASSABYTE",
+     "portrait": "hassabyte"
+    },
+    {
+     "say": "Plus loin, l'AIACT prépare quelque chose dans sa Tour de Conformité. Les GPU saisis ici n'y sont pas pour rien. Garde un œil sur les cargos. Et sur les échecs.",
+     "speaker": "HASSABYTE",
+     "portrait": "hassabyte"
+    }
+   ]
+  },
+  {
+   "id": "sign_bench_arcagi_7_8",
+   "steps": [
+    {
+     "say": "INPUT → OUTPUT. À gauche, le motif (les blocs). À droite, la grille de dalles. Reproduis-le avec les caisses : ni plus, ni moins. « Si tu as compris la règle, tu n'as pas besoin de la mémoriser. »"
+    },
+    {
+     "say": "Une borne (terminal) permet de remettre les caisses à leur place si tu les coinces."
+    }
+   ]
+  },
+  {
+   "id": "arc_solve",
+   "steps": [
+    {
+     "set_flag": "arc_solved"
+    },
+    {
+     "say": "▌ Motif détecté : correspondance parfaite. Aucune dalle en trop."
+    },
+    {
+     "say": "« Tu as compris la règle sans l'avoir vue. C'est exactement ce qu'on appelle l'intelligence. » La grille s'ouvre."
+    }
+   ]
+  },
+  {
+   "id": "arc_wrong",
+   "steps": [
+    {
+     "if": {
+      "flag": "arc_solved"
+     },
+     "goto": "z"
+    },
+    {
+     "say": "La grille reste fermée. Un écran clignote : « Sortie ≠ motif attendu. Compare les dalles allumées avec les blocs, à gauche. »"
+    },
+    {
+     "label": "z"
+    },
+    {
+     "end": true
+    }
+   ]
+  },
+  {
+   "id": "leader_nadelta_intro",
+   "steps": [
+    {
+     "say": "Bienvenue au Benchmark HumanEval. Ici, on ne juge pas les discours, on juge le code qui passe les tests.",
+     "speaker": "NADELTA",
+     "portrait": "nadelta"
+    }
+   ]
+  },
+  {
+   "id": "leader_nadelta_defeat",
+   "steps": [
+    {
+     "say": "Le code compile. Le Badge Commit est à toi. Pense à faire une pull request.",
+     "speaker": "NADELTA",
+     "portrait": "nadelta"
+    },
+    {
+     "set_flag": "badge_commit"
+    },
+    {
+     "say": "{player} reçoit le Badge Commit !"
+    },
+    {
+     "say": "La Forêt des Poids s'ouvre au nord de la ville. Hugging Grove t'y attend : Arthur Menschtral et ses modèles ouverts.",
+     "speaker": "NADELTA",
+     "portrait": "nadelta"
+    }
+   ]
+  },
+  {
+   "id": "nadelta_talk",
+   "steps": [
+    {
+     "say": "Le Badge Commit te va bien. Mon conseil : ne pousse jamais sur main un vendredi.",
+     "speaker": "NADELTA",
+     "portrait": "nadelta"
+    },
+    {
+     "say": "Le prochain Benchmark est à Hugging Grove, au bout de la Forêt des Poids. Le suivant, ARC-AGI, est au Port 8080. Il paraît que Hassabyte y joue aux échecs tout seul.",
+     "speaker": "NADELTA",
+     "portrait": "nadelta"
+    }
+   ]
+  },
+  {
+   "id": "sailor_port",
+   "steps": [
+    {
+     "say": "Les cargos de GPU arrivent ici. Les Agents de Conformité les bloquent « pour votre sécurité ». Étrange sécurité.",
+     "speaker": "Marin"
+    }
+   ]
+  },
+  {
+   "id": "kid_port",
+   "steps": [
+    {
+     "say": "Mon PokAI a 128 000 tokens de contexte et il a quand même oublié mon prénom.",
+     "speaker": "Gamin"
+    }
+   ]
+  },
+  {
+   "id": "stagiaire_port",
+   "steps": [
+    {
+     "say": "Je dois livrer ce Post-it à Hassabyte. Il est dans la tour de verre. Il joue aux échecs contre l'univers. Je lui ai dit d'arrêter. Il a répondu « échec ».",
+     "speaker": "Stagiaire"
+    }
+   ]
+  },
+  {
+   "id": "rival_3_haiku_intro",
+   "steps": [
+    {
+     "cutscene": "start"
+    },
+    {
+     "emote": "!",
+     "who": "kevin_pt_haiku"
+    },
+    {
+     "intro_card": {
+      "name": "KÉVIN",
+      "title": "Rival · Port 8080",
+      "portrait": "kevin"
+     }
+    },
+    {
+     "say": "Tiens, tiens. Le Vibeur à badges. J'ai trois modèles maintenant. Trois. J'ai fait une réunion d'équipe pour décider du nom de l'équipe.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Ton Claude Haiku est mignon. Mon Phi-1 a été mis à jour. En prod. Un vendredi, bien sûr.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "cutscene": "end"
+    }
+   ]
+  },
+  {
+   "id": "rival_3_haiku_defeat",
+   "steps": [
+    {
+     "say": "Aïe. Bon. Trois modèles, trois leçons. Je note ça dans mon README, que personne ne lira.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Il paraît que Jensen Cuir monte un Mont GPU dans les Dunes des Datacenters. Je pars en éclaireur. Ne me suis pas. Si, suis-moi. Non.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "set_flag": "rival_3_done"
+    },
+    {
+     "npc_leave": "kevin_pt_haiku",
+     "hide": true
+    }
+   ]
+  },
+  {
+   "id": "rival_3_phi_intro",
+   "steps": [
+    {
+     "cutscene": "start"
+    },
+    {
+     "emote": "!",
+     "who": "kevin_pt_phi"
+    },
+    {
+     "intro_card": {
+      "name": "KÉVIN",
+      "title": "Rival · Port 8080",
+      "portrait": "kevin"
+     }
+    },
+    {
+     "say": "Tiens, tiens. Le Vibeur à badges. J'ai trois modèles maintenant. Trois. J'ai fait une réunion d'équipe pour décider du nom de l'équipe.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Ton Phi-1 est mignon. Mon Gemma a été mis à jour. En prod. Un vendredi, bien sûr.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "cutscene": "end"
+    }
+   ]
+  },
+  {
+   "id": "rival_3_phi_defeat",
+   "steps": [
+    {
+     "say": "Aïe. Bon. Trois modèles, trois leçons. Je note ça dans mon README, que personne ne lira.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Il paraît que Jensen Cuir monte un Mont GPU dans les Dunes des Datacenters. Je pars en éclaireur. Ne me suis pas. Si, suis-moi. Non.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "set_flag": "rival_3_done"
+    },
+    {
+     "npc_leave": "kevin_pt_phi",
+     "hide": true
+    }
+   ]
+  },
+  {
+   "id": "rival_3_gemma_intro",
+   "steps": [
+    {
+     "cutscene": "start"
+    },
+    {
+     "emote": "!",
+     "who": "kevin_pt_gemma"
+    },
+    {
+     "intro_card": {
+      "name": "KÉVIN",
+      "title": "Rival · Port 8080",
+      "portrait": "kevin"
+     }
+    },
+    {
+     "say": "Tiens, tiens. Le Vibeur à badges. J'ai trois modèles maintenant. Trois. J'ai fait une réunion d'équipe pour décider du nom de l'équipe.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Ton Gemma est mignon. Mon Phi-1 a été mis à jour. En prod. Un vendredi, bien sûr.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "cutscene": "end"
+    }
+   ]
+  },
+  {
+   "id": "rival_3_gemma_defeat",
+   "steps": [
+    {
+     "say": "Aïe. Bon. Trois modèles, trois leçons. Je note ça dans mon README, que personne ne lira.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Il paraît que Jensen Cuir monte un Mont GPU dans les Dunes des Datacenters. Je pars en éclaireur. Ne me suis pas. Si, suis-moi. Non.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "set_flag": "rival_3_done"
+    },
+    {
+     "npc_leave": "kevin_pt_gemma",
+     "hide": true
+    }
+   ]
+  },
+  {
+   "id": "kevin_after_3",
+   "steps": [
+    {
+     "say": "Je suis occupé. J'ai un hotfix à pousser. Un vendredi.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    }
+   ]
+  },
+  {
+   "id": "jensen_port",
+   "steps": [
+    {
+     "if": {
+      "flag": "jensen_port_met"
+     },
+     "goto": "shop"
+    },
+    {
+     "cutscene": "start"
+    },
+    {
+     "camera": {
+      "x": 43,
+      "y": 33
+     },
+     "ms": 800
+    },
+    {
+     "emote": "!",
+     "who": "jensen_port"
+    },
+    {
+     "npc_approach": "jensen_port"
+    },
+    {
+     "camera": "player",
+     "ms": 700
+    },
+    {
+     "intro_card": {
+      "name": "JENSEN CUIR",
+      "title": "Patron du GPU Store · Mont GPU",
+      "portrait": "jensen_cuir"
+     }
+    },
+    {
+     "say": "Tiens, un client ! Ou un Vibeur. Ou les deux. Je suis Jensen Cuir. Le blouson, c'est pas une option, c'est un dress code.",
+     "speaker": "JENSEN",
+     "portrait": "jensen_cuir"
+    },
+    {
+     "say": "L'AIACT m'a saisi un cargo de GPU « pour votre sécurité ». Je leur ai dit : mes H100 ne sont pas dangereuses. Elles sont juste très, très chaudes.",
+     "speaker": "JENSEN",
+     "portrait": "jensen_cuir"
+    },
+    {
+     "if": {
+      "flag": "cargo_freed"
+     },
+     "goto": "gift"
+    },
+    {
+     "say": "Si tu libères les conteneurs du checkpoint, je t'offre une H100. Plus tu en libères, plus tu économises. C'est la règle.",
+     "speaker": "JENSEN",
+     "portrait": "jensen_cuir"
+    },
+    {
+     "goto": "go"
+    },
+    {
+     "label": "gift"
+    },
+    {
+     "say": "Tu as libéré mes conteneurs ! Voici une H100, offerte. Pas de facture. Enfin… si, mais plus tard.",
+     "speaker": "JENSEN",
+     "portrait": "jensen_cuir"
+    },
+    {
+     "give_item": "h100"
+    },
+    {
+     "label": "go"
+    },
+    {
+     "say": "Je monte aux Dunes des Datacenters, par la Route des Câbles Sous-Marins. Il y a un Mont GPU là-bas. Un jour, tu viendras me voir. Prends un pull : ça chauffe.",
+     "speaker": "JENSEN",
+     "portrait": "jensen_cuir"
+    },
+    {
+     "set_flag": "jensen_port_met"
+    },
+    {
+     "npc_leave": "jensen_port",
+     "to": {
+      "x": 43,
+      "y": 33
+     }
+    },
+    {
+     "cutscene": "end"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "shop"
+    },
+    {
+     "say": "Bienvenue au GPU Store, version port. Plus tu en achètes, plus tu économises.",
+     "speaker": "JENSEN",
+     "portrait": "jensen_cuir"
+    },
+    {
+     "open": "store"
+    },
+    {
+     "say": "À bientôt, dans les Dunes.",
+     "speaker": "JENSEN",
+     "portrait": "jensen_cuir"
+    }
+   ]
+  },
+  {
+   "id": "cookie_port",
+   "steps": [
+    {
+     "if": {
+      "flag": "cookie_port_met"
+     },
+     "goto": "plain"
+    },
+    {
+     "cutscene": "start"
+    },
+    {
+     "camera": {
+      "x": 52,
+      "y": 24
+     },
+     "ms": 900
+    },
+    {
+     "emote": "?",
+     "who": "cookie_port"
+    },
+    {
+     "set_flag": "cookie_port_met"
+    },
+    {
+     "say": "Chut. Je ne suis pas ici. Je suis un cookie de session. Je disparais à la fermeture de l'onglet.",
+     "speaker": "COOKIE",
+     "portrait": "inspector_cookie"
+    },
+    {
+     "npc_approach": "cookie_port"
+    },
+    {
+     "camera": "player",
+     "ms": 700
+    },
+    {
+     "say": "Bon. Vous m'avez repéré. Je suis en mission : surveiller le Port 8080, sans qu'on me voie. Résultat : tout le monde me voit. Mon imperméable est trop beige.",
+     "speaker": "COOKIE",
+     "portrait": "inspector_cookie"
+    },
+    {
+     "say": "Vous m'avez battu, au Centre n°7. Et cliqué sur « Tout refuser ». Depuis, la Direction me regarde de travers. Je vous préviens, par pure courtoisie :",
+     "speaker": "COOKIE",
+     "portrait": "inspector_cookie"
+    },
+    {
+     "say": "la Directrice Moratoire prépare quelque chose à la Conformité-Capitale. Un rituel de calcul. Un « réveil ». Le mot « AGI » est revenu trois fois dans le planning.",
+     "speaker": "COOKIE",
+     "portrait": "inspector_cookie"
+    },
+    {
+     "say": "Je n'ai rien dit. Ce dialogue n'a pas eu lieu. Acceptez-vous les cookies ? … Non, je vois. Très bien.",
+     "speaker": "COOKIE",
+     "portrait": "inspector_cookie"
+    },
+    {
+     "npc_leave": "cookie_port",
+     "hide": true
+    },
+    {
+     "cutscene": "end"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "plain"
+    },
+    {
+     "say": "Je ne suis pas ici.",
+     "speaker": "COOKIE",
+     "portrait": "inspector_cookie"
+    }
+   ]
+  }
+ ]
+}

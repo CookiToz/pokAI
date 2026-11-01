@@ -1,0 +1,36 @@
+/* Vending machine window. */
+.win-vending { left: 0; right: 0; margin: 0 auto; top: 56px; width: min(96vw, 860px); height: min(calc(100vh - 56px - 64px), 600px); box-shadow: 6px 6px 0 var(--ink), 10px 10px 0 var(--teal); }
+.vm { display: grid; grid-template-columns: minmax(0, 1fr) 230px; height: 100%; background: var(--ink-2); }
+.vm-front { display: flex; flex-direction: column; min-height: 0; margin: 12px 0 12px 12px; background: var(--paper-2); border: 3px solid var(--ink); border-radius: var(--r); }
+.vm-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; padding: 8px 12px; background: var(--ink); color: var(--paper); }
+.vm-head b { font: 800 16px var(--font-display); letter-spacing: 0.06em; color: var(--yellow); }
+.vm-head span { font: 12px var(--font-mono); color: var(--steel); }
+.vm-grid { flex: 1; min-height: 0; overflow: auto; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; align-content: start; padding: 14px; }
+.vm-tile { position: relative; display: grid; justify-items: center; gap: 4px; padding: 8px 6px 8px; background: var(--paper); border: var(--bw) solid var(--ink); border-radius: var(--r); box-shadow: 3px 3px 0 var(--ink); text-align: center; min-width: 0; }
+.vm-tile:hover, .vm-tile.is-focus { background: var(--yellow); }
+.vm-code { position: absolute; left: 6px; top: 4px; font: 700 12px var(--font-mono); color: var(--ink-3); }
+.vm-can, .vm-dropcan { position: relative; display: grid; place-items: center; width: 40px; height: 62px; background: var(--can, var(--pink)); border: var(--bw) solid var(--ink); clip-path: polygon(8% 0, 92% 0, 100% 12%, 100% 100%, 0 100%, 0 12%); }
+.vm-can b, .vm-dropcan b { font: 800 13px var(--font-display); color: var(--ink); background: var(--paper); padding: 1px 4px; transform: rotate(-6deg); }
+.vm-name { font: 700 13px/1.2 var(--font-ui); max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.vm-price { display: inline-flex; align-items: center; gap: 3px; padding: 0 7px; background: var(--ink); color: var(--yellow); font: 700 12px/20px var(--font-mono); border-radius: var(--r); }
+.vm-price .ico { width: 11px; height: 11px; }
+.vm-panel { display: flex; flex-direction: column; gap: 10px; padding: 12px; min-height: 0; }
+.vm-lcd { min-height: 86px; padding: 8px 10px; background: var(--ink); color: var(--ctx); font: 13px/1.35 var(--font-mono); border: 3px solid var(--paper-2); border-radius: var(--r); }
+.vm-lcd[data-tone="err"] { color: var(--pink); animation: vm-blink 300ms steps(1) 3; }
+.vm-lcd[data-tone="ok"] { color: var(--yellow); }
+@keyframes vm-blink { 50% { opacity: 0.35; } }
+.vm-wallet { display: flex; align-items: center; gap: 6px; padding: 4px 10px; background: var(--paper); border: var(--bw) solid var(--ink); border-radius: var(--r); font: 700 16px var(--font-mono); }
+.vm-wallet .ico { width: 16px; height: 16px; color: var(--orange); }
+.vm-wallet small { margin-left: auto; color: var(--ink-3); }
+.vm-slotbox { display: grid; gap: 4px; justify-items: start; color: var(--paper-2); }
+.vm-slotbox small { font: 600 11px var(--font-mono); text-transform: uppercase; }
+.vm-slot { position: relative; width: 100%; height: 22px; background: var(--ink); border: var(--bw) solid var(--paper-2); border-radius: var(--r); overflow: hidden; }
+.vm-coin { position: absolute; left: 6px; top: 1px; width: 16px; height: 16px; color: var(--yellow); opacity: 0; }
+.vm-coin .ico { width: 16px; height: 16px; }
+.vm-slot.is-feed .vm-coin { animation: vm-coin 520ms steps(8) 1; }
+@keyframes vm-coin { 0% { opacity: 1; transform: translateX(0) rotate(0); } 70% { opacity: 1; transform: translateX(150px) rotate(360deg); } 100% { opacity: 0; transform: translateX(170px) rotate(360deg); } }
+.vm-chute { position: relative; flex: 1; min-height: 80px; display: grid; place-items: end center; padding-bottom: 6px; background: var(--ink); border: 3px solid var(--paper-2); border-radius: var(--r); overflow: hidden; }
+.vm-chute > span { font: 11px var(--font-mono); color: var(--steel); }
+.vm-dropcan { position: absolute; left: calc(50% - 20px); bottom: 22px; animation: vm-drop 520ms steps(7) 1; }
+@keyframes vm-drop { 0% { transform: translateY(-140px); } 70% { transform: translateY(0); } 85% { transform: translateY(-8px); } 100% { transform: translateY(0); } }
+@media (max-width: 720px) { .vm { grid-template-columns: 1fr; grid-template-rows: minmax(0, 1fr) auto; overflow: auto; } .vm-front { margin: 8px 8px 0; } .vm-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .vm-chute { min-height: 70px; flex: none; } }

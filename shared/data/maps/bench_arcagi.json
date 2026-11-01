@@ -1,0 +1,451 @@
+{
+ "id": "bench_arcagi",
+ "name": "Benchmark ARC-AGI",
+ "width": 19,
+ "height": 21,
+ "rows": [
+  "#V##ZZZZZZZZZZZ##V#",
+  "#OOOOOOOOOOOOOOOOO#",
+  "#OOOOOOOEEEOOOOOOO#",
+  "#OOOOOOOOOOOOOOOOO#",
+  "#OOOOOOOOOOOOOOOOO#",
+  "#OOOOOOOOOOOOOOOOO#",
+  "########www########",
+  "#ROOOOOOOOOOOOOOOR#",
+  "#EEEEEESOOOOOOOOOO#",
+  "#EZOOOZEOOOyyyyyOO#",
+  "#EOOOOOEOOOyyyyyOO#",
+  "#EOOZOOEOOOyyyyyOO#",
+  "#EOOOOOEOOOyyyyyOO#",
+  "#EZOOOZEOOOyyyyyOO#",
+  "#EEEEEEEOOOOOOOOOO#",
+  "#OOOOOOOOOOOOOOOOO#",
+  "#OOOOOOOOOOOOOOOOO#",
+  "#OOlOOOOOOOOOOOOOO#",
+  "#OOOOOOOOOOOOOOOOO#",
+  "#ROOOOOOOOOOOOOJOR#",
+  "########XXX########"
+ ],
+ "legend": {
+  "#": "wall",
+  "E": "arena_line",
+  "J": "terminal",
+  "O": "arena_floor",
+  "R": "server_rack",
+  "S": "sign",
+  "V": "wall_window",
+  "X": "exit_mat",
+  "Z": "scoreboard",
+  "l": "plant",
+  "w": "gate",
+  "y": "switch_plate"
+ },
+ "kind": "interior",
+ "music": "interior",
+ "npcs": [
+  {
+   "id": "arc_junior_1",
+   "sprite": "scientist",
+   "x": 4,
+   "y": 17,
+   "facing": "right",
+   "dialogue": "bench_arc_junior_1_talk",
+   "trainer": "bench_arc_junior_1",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_bench_arc_junior_1_defeated"
+    }
+   }
+  },
+  {
+   "id": "arc_junior_2",
+   "sprite": "stagiaire",
+   "x": 14,
+   "y": 11,
+   "facing": "left",
+   "dialogue": "bench_arc_junior_2_talk",
+   "trainer": "bench_arc_junior_2",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_bench_arc_junior_2_defeated"
+    }
+   }
+  },
+  {
+   "id": "hassabyte",
+   "sprite": "hassabyte",
+   "x": 9,
+   "y": 3,
+   "facing": "down",
+   "dialogue": "hassabyte_talk",
+   "trainer": "leader_hassabyte",
+   "sightRange": 2
+  }
+ ],
+ "warps": [
+  {
+   "x": 8,
+   "y": 20,
+   "to": "port_8080",
+   "toX": 34,
+   "toY": 17,
+   "facing": "down"
+  },
+  {
+   "x": 9,
+   "y": 20,
+   "to": "port_8080",
+   "toX": 34,
+   "toY": 17,
+   "facing": "down"
+  },
+  {
+   "x": 10,
+   "y": 20,
+   "to": "port_8080",
+   "toX": 34,
+   "toY": 17,
+   "facing": "down"
+  }
+ ],
+ "triggers": [
+  {
+   "x": 7,
+   "y": 7,
+   "w": 5,
+   "h": 1,
+   "script": "arc_solve",
+   "condition": {
+    "all": [
+     {
+      "flag": "arc_p00"
+     },
+     {
+      "flag": "arc_p40"
+     },
+     {
+      "flag": "arc_p22"
+     },
+     {
+      "flag": "arc_p04"
+     },
+     {
+      "flag": "arc_p44"
+     },
+     {
+      "not": {
+       "flag": "arc_p10"
+      }
+     },
+     {
+      "not": {
+       "flag": "arc_p20"
+      }
+     },
+     {
+      "not": {
+       "flag": "arc_p30"
+      }
+     },
+     {
+      "not": {
+       "flag": "arc_p01"
+      }
+     },
+     {
+      "not": {
+       "flag": "arc_p11"
+      }
+     },
+     {
+      "not": {
+       "flag": "arc_p21"
+      }
+     },
+     {
+      "not": {
+       "flag": "arc_p31"
+      }
+     },
+     {
+      "not": {
+       "flag": "arc_p41"
+      }
+     },
+     {
+      "not": {
+       "flag": "arc_p02"
+      }
+     },
+     {
+      "not": {
+       "flag": "arc_p12"
+      }
+     },
+     {
+      "not": {
+       "flag": "arc_p32"
+      }
+     },
+     {
+      "not": {
+       "flag": "arc_p42"
+      }
+     },
+     {
+      "not": {
+       "flag": "arc_p03"
+      }
+     },
+     {
+      "not": {
+       "flag": "arc_p13"
+      }
+     },
+     {
+      "not": {
+       "flag": "arc_p23"
+      }
+     },
+     {
+      "not": {
+       "flag": "arc_p33"
+      }
+     },
+     {
+      "not": {
+       "flag": "arc_p43"
+      }
+     },
+     {
+      "not": {
+       "flag": "arc_p14"
+      }
+     },
+     {
+      "not": {
+       "flag": "arc_p24"
+      }
+     },
+     {
+      "not": {
+       "flag": "arc_p34"
+      }
+     },
+     {
+      "not": {
+       "flag": "arc_solved"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "x": 7,
+   "y": 7,
+   "w": 5,
+   "h": 1,
+   "script": "arc_wrong",
+   "condition": {
+    "not": {
+     "flag": "arc_solved"
+    }
+   }
+  }
+ ],
+ "gates": [
+  {
+   "x": 8,
+   "y": 6,
+   "flag": "arc_solved"
+  },
+  {
+   "x": 9,
+   "y": 6,
+   "flag": "arc_solved"
+  },
+  {
+   "x": 10,
+   "y": 6,
+   "flag": "arc_solved"
+  }
+ ],
+ "switches": [
+  {
+   "x": 11,
+   "y": 9,
+   "flag": "arc_p00"
+  },
+  {
+   "x": 12,
+   "y": 9,
+   "flag": "arc_p01"
+  },
+  {
+   "x": 13,
+   "y": 9,
+   "flag": "arc_p02"
+  },
+  {
+   "x": 14,
+   "y": 9,
+   "flag": "arc_p03"
+  },
+  {
+   "x": 15,
+   "y": 9,
+   "flag": "arc_p04"
+  },
+  {
+   "x": 11,
+   "y": 10,
+   "flag": "arc_p10"
+  },
+  {
+   "x": 12,
+   "y": 10,
+   "flag": "arc_p11"
+  },
+  {
+   "x": 13,
+   "y": 10,
+   "flag": "arc_p12"
+  },
+  {
+   "x": 14,
+   "y": 10,
+   "flag": "arc_p13"
+  },
+  {
+   "x": 15,
+   "y": 10,
+   "flag": "arc_p14"
+  },
+  {
+   "x": 11,
+   "y": 11,
+   "flag": "arc_p20"
+  },
+  {
+   "x": 12,
+   "y": 11,
+   "flag": "arc_p21"
+  },
+  {
+   "x": 13,
+   "y": 11,
+   "flag": "arc_p22"
+  },
+  {
+   "x": 14,
+   "y": 11,
+   "flag": "arc_p23"
+  },
+  {
+   "x": 15,
+   "y": 11,
+   "flag": "arc_p24"
+  },
+  {
+   "x": 11,
+   "y": 12,
+   "flag": "arc_p30"
+  },
+  {
+   "x": 12,
+   "y": 12,
+   "flag": "arc_p31"
+  },
+  {
+   "x": 13,
+   "y": 12,
+   "flag": "arc_p32"
+  },
+  {
+   "x": 14,
+   "y": 12,
+   "flag": "arc_p33"
+  },
+  {
+   "x": 15,
+   "y": 12,
+   "flag": "arc_p34"
+  },
+  {
+   "x": 11,
+   "y": 13,
+   "flag": "arc_p40"
+  },
+  {
+   "x": 12,
+   "y": 13,
+   "flag": "arc_p41"
+  },
+  {
+   "x": 13,
+   "y": 13,
+   "flag": "arc_p42"
+  },
+  {
+   "x": 14,
+   "y": 13,
+   "flag": "arc_p43"
+  },
+  {
+   "x": 15,
+   "y": 13,
+   "flag": "arc_p44"
+  }
+ ],
+ "pushables": [
+  {
+   "id": "arc_crate_1",
+   "x": 8,
+   "y": 17
+  },
+  {
+   "id": "arc_crate_2",
+   "x": 10,
+   "y": 17
+  },
+  {
+   "id": "arc_crate_3",
+   "x": 12,
+   "y": 17
+  },
+  {
+   "id": "arc_crate_4",
+   "x": 14,
+   "y": 17
+  },
+  {
+   "id": "arc_crate_5",
+   "x": 16,
+   "y": 17
+  },
+  {
+   "id": "arc_crate_6",
+   "x": 6,
+   "y": 15
+  },
+  {
+   "id": "arc_crate_7",
+   "x": 17,
+   "y": 13
+  }
+ ],
+ "landmarks": [
+  {
+   "x": 9,
+   "y": 3,
+   "label": "Demis Hassabyte"
+  },
+  {
+   "x": 3,
+   "y": 11,
+   "label": "Motif à reproduire"
+  }
+ ]
+}

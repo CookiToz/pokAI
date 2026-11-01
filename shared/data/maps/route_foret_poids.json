@@ -1,0 +1,434 @@
+{
+ "id": "route_foret_poids",
+ "name": "Forêt des Poids",
+ "width": 28,
+ "height": 64,
+ "rows": [
+  "TTYTYTTYTYTTYppTTYTYTTYTYTTY",
+  "YTTYTYTTYT...pp,.,YTYTTYT.TT",
+  "TYTTY.YTU.T.,pp.,T,YTYTTYTYT",
+  "YTYUT..YTTYfIppp,YT,YT...YTY",
+  "TY...f....,L.pp..TIT,Y...TYT",
+  "TT.ccccccfTFppp.,,.......TTY",
+  "YT.cccccc.YUppp.,bYT,.TYT.TT",
+  "TY.cccccc.Tbppp.,T.YTYTTY.YT",
+  "YT.cccccc..Fpppf.,FTYT.TTYTY",
+  "TY.cccccc...FpppL.,T.Y..TTYT",
+  "TT.cccccc.T.FppppF.UTTYT.TTY",
+  "YT.cccccc..L.ppppF........TT",
+  "T.........I..Uppp.bcccccc.YT",
+  "Y...........bbpppb.cccccc.TY",
+  "T...bT,TYT.YI.pppF.cccccc.YT",
+  "TTYT.TTYTYTT..UpppFcccccc.TY",
+  "YTTYTYTT.,FFFFppp.bcccccc.TT",
+  "TY..YT.b,,.BS.pppbUcccccc.YT",
+  "YTYTT.,Y.FpppppppLF.......TY",
+  "TY.YTTYTUFpppppppb.TbbbbbbYT",
+  "TT.,YU.Ybppp.U,.,,FYb,,,,bTY",
+  "YTTY,...Fppp.F..,f,,,,,f,bTT",
+  "TYb,YbYTFppp..,TY,F,,,,,fbYT",
+  "YT.......ppp,.T..YTTb,,,,bTY",
+  "TY.ccccccppp,,UUL,,,bbbbbbYT",
+  "TT.ccccccpppppUmSFL.,.YTY.TY",
+  "YT.ccccccFppppppppp..UTYTYTT",
+  "TY.ccccccFpppppppppb,.,T,TYT",
+  "YT.cccccc.UFb,ppppp,f.,TTYTY",
+  "TY.cccccc.,....Lppp...F.TTYT",
+  "TT.cccccc.TLYTY,Upp.,B,mYTTY",
+  "YTb....bb.Y,TYT.IppF..FfTYTT",
+  "TY,TY.Y.,YTYT.b..pp.,..TY.YT",
+  "T~~~~~~~~~~~~~~~~==~~~~~~~~T",
+  "T~~~~~~~~~~~~~~~~==~~~~~~~~T",
+  "T~~~~~~~~~~~~~~~~==~~~~~~~~T",
+  "YT.YTY,TYT...YT..pppbTT.TYTT",
+  "TY.......Y.YTTY,IpppF,.T,,YT",
+  "YTccccc.TT.TYTLLLpppFT,T.YTY",
+  "TYccccc.,TTYTYFS.pppF.....YT",
+  "TTccccc.TYTTYTY.FpppccccccTY",
+  "YTccccc....b.....pppccccccTT",
+  "TYccccc........,.pppccccccYT",
+  "YTccccc..TYTY,T.FpppccccccTY",
+  "TY...b.BS,Ubbb..bpppccccccYT",
+  "TT.TY.Ufb,LpppppppppF..fb.TY",
+  "YTTYTYTSpppppppppppL.T.YT,TT",
+  "TYT...ffpppppppppppb.Y.T,TYT",
+  "YTY.T.bpppYTYTFTYUbFF.Y.TYTY",
+  "TYT.TF,bppTYTY,YTF...F....YT",
+  "TTYTYLFbppYTYT,TYY.cccccc.TY",
+  "YTTYTYFpppTYTY,YTT.cccccc.TT",
+  "TYTTYTFpppYTYT,TYT.cccccc.YT",
+  "YTYTTYbpppp,I,,,,bfcccccc.TY",
+  "TYFY,T,Fppppppp...fcccccc.YT",
+  "TT.,YT.bpppppppb,Ybcccccc.TY",
+  "YT....ff...,.pppbT........TT",
+  "TY.cccccc.,..pppF.T,T,.TY,YT",
+  "YTbcccccc.YL,pppFYT.YTYTT,TY",
+  "TY.ccccccfF..ppL.T..FYTYTTYT",
+  "TT.cccccc...bpppbYTYT.YTY,TY",
+  "YT.cccccc.Y.Ipp..TYTYTT..YTT",
+  "TY....b....,,pp.,T.YTYTTYTYT",
+  "YTYTTYTYTTYTYppYTYTTYTYTTYTY"
+ ],
+ "legend": {
+  ",": "grass_alt",
+  ".": "grass",
+  "=": "bridge_wood",
+  "B": "bench_seat",
+  "F": "flower_bed",
+  "I": "signpost",
+  "L": "log",
+  "S": "sign",
+  "T": "tree_pine",
+  "U": "stump",
+  "Y": "tree_birch",
+  "b": "bush",
+  "c": "cable",
+  "f": "flowers",
+  "m": "street_lamp",
+  "p": "path",
+  "~": "water"
+ },
+ "kind": "route",
+ "music": "route_a",
+ "npcs": [
+  {
+   "id": "fp_scout_1",
+   "sprite": "kid",
+   "x": 12,
+   "y": 58,
+   "facing": "right",
+   "dialogue": "fp_scout_1_talk",
+   "trainer": "fp_scout_1",
+   "sightRange": 4
+  },
+  {
+   "id": "fp_hiker_1",
+   "sprite": "tourist",
+   "x": 15,
+   "y": 42,
+   "facing": "right",
+   "dialogue": "fp_hiker_1_talk",
+   "trainer": "fp_hiker_1",
+   "sightRange": 4
+  },
+  {
+   "id": "fp_dev_1",
+   "sprite": "dev_phone",
+   "x": 14,
+   "y": 22,
+   "facing": "left",
+   "dialogue": "fp_dev_1_talk",
+   "trainer": "fp_dev_1",
+   "sightRange": 4
+  },
+  {
+   "id": "aiact_agent_fp_1",
+   "sprite": "agent_conformite",
+   "x": 16,
+   "y": 6,
+   "facing": "left",
+   "dialogue": "aiact_agent_fp_1_talk",
+   "trainer": "aiact_agent_fp_1",
+   "sightRange": 4,
+   "condition": {
+    "not": {
+     "flag": "trainer_aiact_agent_fp_1_defeated"
+    }
+   }
+  },
+  {
+   "id": "amb_1_citizen_b",
+   "sprite": "citizen_b",
+   "x": 22,
+   "y": 30,
+   "facing": "down",
+   "dialogue": "amb_fp_rest",
+   "wander": 2,
+   "ambient": true
+  },
+  {
+   "id": "amb_2_tourist",
+   "sprite": "tourist",
+   "x": 20,
+   "y": 30,
+   "facing": "down",
+   "dialogue": "amb_fp_rest_2",
+   "wander": 2,
+   "ambient": true
+  },
+  {
+   "id": "kevin_fp_haiku",
+   "sprite": "kevin",
+   "x": 16,
+   "y": 41,
+   "facing": "right",
+   "dialogue": "kevin_after_2",
+   "trainer": "rival_2_haiku",
+   "sightRange": 4,
+   "condition": {
+    "all": [
+     {
+      "flag": "starter_claude_haiku"
+     },
+     {
+      "not": {
+       "flag": "trainer_rival_2_haiku_defeated"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "kevin_fp_phi",
+   "sprite": "kevin",
+   "x": 16,
+   "y": 41,
+   "facing": "right",
+   "dialogue": "kevin_after_2",
+   "trainer": "rival_2_phi",
+   "sightRange": 4,
+   "condition": {
+    "all": [
+     {
+      "flag": "starter_phi_1"
+     },
+     {
+      "not": {
+       "flag": "trainer_rival_2_phi_defeated"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "kevin_fp_gemma",
+   "sprite": "kevin",
+   "x": 16,
+   "y": 41,
+   "facing": "right",
+   "dialogue": "kevin_after_2",
+   "trainer": "rival_2_gemma",
+   "sightRange": 4,
+   "condition": {
+    "all": [
+     {
+      "flag": "starter_gemma"
+     },
+     {
+      "not": {
+       "flag": "trainer_rival_2_gemma_defeated"
+      }
+     }
+    ]
+   }
+  }
+ ],
+ "warps": [
+  {
+   "x": 13,
+   "y": 63,
+   "to": "latentia_city",
+   "toX": 31,
+   "toY": 1,
+   "facing": "down"
+  },
+  {
+   "x": 13,
+   "y": 0,
+   "to": "hugging_grove",
+   "toX": 12,
+   "toY": 54,
+   "facing": "up"
+  },
+  {
+   "x": 14,
+   "y": 63,
+   "to": "latentia_city",
+   "toX": 32,
+   "toY": 1,
+   "facing": "down"
+  },
+  {
+   "x": 14,
+   "y": 0,
+   "to": "hugging_grove",
+   "toX": 13,
+   "toY": 54,
+   "facing": "up"
+  }
+ ],
+ "triggers": [
+  {
+   "x": 23,
+   "y": 21,
+   "script": "foret_hidden_stash",
+   "once": true
+  },
+  {
+   "x": 24,
+   "y": 3,
+   "script": "secret_route_foret_poids_24_3",
+   "once": true
+  },
+  {
+   "x": 23,
+   "y": 5,
+   "script": "secret_route_foret_poids_23_5",
+   "once": true
+  },
+  {
+   "x": 2,
+   "y": 13,
+   "script": "secret_route_foret_poids_2_13",
+   "once": true
+  },
+  {
+   "x": 2,
+   "y": 36,
+   "script": "secret_route_foret_poids_2_36",
+   "once": true
+  },
+  {
+   "x": 3,
+   "y": 22,
+   "script": "secret_route_foret_poids_3_22",
+   "once": true
+  },
+  {
+   "x": 5,
+   "y": 2,
+   "script": "secret_route_foret_poids_5_2",
+   "once": true
+  },
+  {
+   "x": 10,
+   "y": 14,
+   "script": "secret_route_foret_poids_10_14",
+   "once": true
+  }
+ ],
+ "encounters": [
+  {
+   "form": "smollm",
+   "minLevel": 8,
+   "maxLevel": 10,
+   "weight": 24
+  },
+  {
+   "form": "llama_2",
+   "minLevel": 9,
+   "maxLevel": 12,
+   "weight": 22
+  },
+  {
+   "form": "mistral_7b",
+   "minLevel": 9,
+   "maxLevel": 12,
+   "weight": 20
+  },
+  {
+   "form": "falcon_7b",
+   "minLevel": 9,
+   "maxLevel": 12,
+   "weight": 16
+  },
+  {
+   "form": "sd_1_5",
+   "minLevel": 10,
+   "maxLevel": 13,
+   "weight": 14
+  },
+  {
+   "form": "codestral",
+   "minLevel": 11,
+   "maxLevel": 13,
+   "weight": 8
+  },
+  {
+   "form": "bert",
+   "minLevel": 8,
+   "maxLevel": 10,
+   "weight": 10
+  },
+  {
+   "form": "qwen",
+   "minLevel": 10,
+   "maxLevel": 13,
+   "weight": 10,
+   "group": 3
+  },
+  {
+   "form": "whisper_tiny",
+   "minLevel": 9,
+   "maxLevel": 12,
+   "weight": 10,
+   "night": true
+  },
+  {
+   "form": "smollm_2",
+   "minLevel": 12,
+   "maxLevel": 14,
+   "weight": 4
+  },
+  {
+   "form": "llama_3",
+   "minLevel": 13,
+   "maxLevel": 14,
+   "weight": 2
+  }
+ ],
+ "encounterRate": 0.18,
+ "pushables": [
+  {
+   "id": "crate_fp_1",
+   "x": 14,
+   "y": 52
+  }
+ ],
+ "landmarks": [
+  {
+   "x": 18,
+   "y": 34,
+   "label": "Pont de la Latence"
+  },
+  {
+   "x": 22,
+   "y": 30,
+   "label": "Aire de repos"
+  },
+  {
+   "x": 14,
+   "y": 51,
+   "label": "Raccourci (caisse)"
+  },
+  {
+   "x": 23,
+   "y": 21,
+   "label": "Clairière cachée"
+  },
+  {
+   "x": 24,
+   "y": 3,
+   "label": "Clairière secrète"
+  },
+  {
+   "x": 2,
+   "y": 13,
+   "label": "Impasse (H100 ?)"
+  }
+ ],
+ "exits": [
+  {
+   "x": 13,
+   "y": 63,
+   "to": "latentia_city",
+   "label": "Latentia City"
+  },
+  {
+   "x": 13,
+   "y": 0,
+   "to": "hugging_grove",
+   "label": "Hugging Grove"
+  }
+ ]
+}

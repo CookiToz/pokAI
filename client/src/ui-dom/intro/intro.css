@@ -1,0 +1,156 @@
+/* Intro cinematic: letterboxed SVG scenes, transform/opacity animations only. */
+.intro { position: fixed; inset: 0; z-index: 900; background: var(--ink); overflow: hidden; opacity: 0; transition: opacity 260ms; user-select: none; cursor: pointer; }
+.intro.is-open { opacity: 1; }
+.in-stage { position: absolute; left: 0; right: 0; top: 9vh; bottom: 17vh; overflow: hidden; background: var(--paper); }
+.in-scene { position: absolute; inset: 0; }
+.in-scene svg { display: block; width: 100%; height: 100%; }
+.in-bar-top, .in-bar-bot { position: absolute; left: 0; right: 0; background: var(--ink); z-index: 4; }
+.in-bar-top { top: 0; height: 9vh; }
+.in-bar-bot { bottom: 0; height: 17vh; display: flex; flex-direction: column; justify-content: center; gap: 10px; padding: 0 clamp(16px, 8vw, 140px); }
+.in-cap { min-height: 2.8em; font: 500 clamp(15px, 2.1vw, 26px)/1.4 var(--font-mono); color: var(--paper); max-width: 70ch; }
+.in-cap::after { content: '▌'; margin-left: 3px; color: var(--pink); animation: in-caret 0.9s steps(1) infinite; }
+@keyframes in-caret { 50% { opacity: 0; } }
+.in-ticks { display: flex; gap: 4px; }
+.in-ticks i { width: 14px; height: 5px; background: var(--ink-2); }
+.in-ticks i.is-done { background: var(--paper); }
+.in-ticks i.is-now { background: var(--pink); }
+.in-skip { position: absolute; right: clamp(12px, 3vw, 40px); bottom: 3.2vh; z-index: 6; display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; font: 600 12px var(--font-mono); letter-spacing: 0.05em; text-transform: uppercase; color: var(--paper); background: transparent; border: 2px solid var(--paper); border-radius: var(--r); overflow: hidden; }
+.in-skip:hover, .in-skip.is-hold { color: var(--ink); background: var(--yellow); border-color: var(--yellow); }
+.in-skip i { position: absolute; left: 0; bottom: 0; height: 3px; width: 100%; background: var(--pink); transform: scaleX(var(--p, 0)); transform-origin: 0 50%; }
+.in-meta { display: flex; align-items: center; gap: 18px; }
+.in-hint { font: 11px var(--font-mono); color: var(--ink-3); }
+/* riso colour flash between cuts */
+.in-flash { position: absolute; inset: 0; z-index: 5; pointer-events: none; opacity: 0; will-change: opacity; }
+.in-flash.go { animation: in-flash 300ms cubic-bezier(.2, 0, .4, 1) both; }
+@keyframes in-flash { 0% { opacity: 0; } 25% { opacity: 1; } 100% { opacity: 0; } }
+/* camera: the director (intro.ts) writes the scene transform every frame (eased push / pull + hit punch), parallax layers move on their own */
+.in-scene { will-change: transform; }
+.plx { will-change: transform; }
+.in-fx { position: absolute; inset: 0; z-index: 2; pointer-events: none; overflow: hidden; }
+.in-fx svg { display: block; width: 100%; height: 100%; }
+.in-vig { position: absolute; inset: 0; z-index: 3; pointer-events: none; background: radial-gradient(ellipse at 50% 50%, transparent 58%, rgba(8, 8, 12, .42) 100%); }
+/* breathing letterbox lids inside the frame: they close with the tension and snap on the hits */
+.in-lid { position: absolute; left: 0; right: 0; height: 7%; background: var(--ink); z-index: 3; transform: scaleY(0); will-change: transform; pointer-events: none; }
+.in-lid-t { top: 0; transform-origin: 50% 0; }
+.in-lid-b { bottom: 0; transform-origin: 50% 100%; }
+/* riso misregistration frame that jumps on every hit, and a light sweep */
+.in-rg { position: absolute; inset: 0; z-index: 4; pointer-events: none; opacity: 0; border: 14px solid; will-change: transform, opacity; }
+.in-rg-a { color: var(--pink); background: color-mix(in srgb, var(--pink) 12%, transparent); }
+.in-rg-b { color: var(--blue); background: color-mix(in srgb, var(--blue) 12%, transparent); }
+.in-rg-a.go { animation: in-rga 420ms cubic-bezier(.2, .8, .2, 1) both; }
+.in-rg-b.go { animation: in-rgb 420ms cubic-bezier(.2, .8, .2, 1) both; }
+@keyframes in-rga { 0% { opacity: .9; transform: translate3d(-22px, 8px, 0); } 100% { opacity: 0; transform: translate3d(0, 0, 0); } }
+@keyframes in-rgb { 0% { opacity: .9; transform: translate3d(22px, -8px, 0); } 100% { opacity: 0; transform: translate3d(0, 0, 0); } }
+.in-sweep { position: absolute; top: -10%; bottom: -10%; left: 0; width: 34%; z-index: 4; pointer-events: none; opacity: 0; will-change: transform, opacity;
+  background: linear-gradient(100deg, transparent 0, rgba(255, 255, 255, .06) 25%, rgba(255, 255, 255, .34) 50%, rgba(255, 255, 255, .06) 75%, transparent 100%); transform: translate3d(-120%, 0, 0) skewX(-16deg); }
+.in-sweep.go { animation: in-sweep 900ms cubic-bezier(.3, .1, .2, 1) both; }
+@keyframes in-sweep { 0% { opacity: 1; transform: translate3d(-120%, 0, 0) skewX(-16deg); } 85% { opacity: 1; } 100% { opacity: 0; transform: translate3d(380%, 0, 0) skewX(-16deg); } }
+/* particles */
+.fxUp, .fxDown, .fxOut, .fxIn, .fxFloat { animation-duration: var(--dur, 6s); animation-delay: var(--t, 0s); animation-iteration-count: infinite; animation-timing-function: linear; will-change: transform, opacity; }
+.fxUp { animation-name: a-fxup; }
+.fxDown { animation-name: a-fxdown; }
+.fxOut { animation-name: a-fxout; animation-duration: calc(var(--dur, 6s) * .35); animation-timing-function: cubic-bezier(.2, .7, .3, 1); }
+.fxIn { animation-name: a-fxin; animation-duration: calc(var(--dur, 6s) * .45); animation-timing-function: cubic-bezier(.6, 0, .9, .5); }
+.fxFloat { animation-name: a-fxfloat; }
+@keyframes a-fxup { 0% { opacity: 0; transform: translate3d(0, 0, 0) rotate(0deg); } 10% { opacity: 1; } 85% { opacity: .9; } 100% { opacity: 0; transform: translate3d(var(--sx, 40px), -820px, 0) rotate(40deg); } }
+@keyframes a-fxdown { 0% { transform: translate3d(0, 0, 0) rotate(0deg); } 100% { transform: translate3d(var(--sx, 40px), 780px, 0) rotate(360deg); } }
+@keyframes a-fxout { 0% { opacity: 0; transform: translate3d(0, 0, 0) scale(.3); } 12% { opacity: 1; } 100% { opacity: 0; transform: translate3d(calc(var(--sx, 40px) * 4.5), calc(var(--sy, 40px) * 2.6), 0) scale(1.3) rotate(120deg); } }
+@keyframes a-fxin { 0% { opacity: 0; transform: translate3d(calc(var(--sx, 40px) * 5), calc(var(--sy, 40px) * 2.4), 0) scale(1.4); } 15% { opacity: 1; } 100% { opacity: 0; transform: translate3d(0, 0, 0) scale(.2); } }
+@keyframes a-fxfloat { 0% { opacity: 0; transform: translate3d(0, 0, 0); } 25% { opacity: 1; } 100% { opacity: 0; transform: translate3d(calc(var(--sx, 40px) * .5), -110px, 0); } }
+.in-cap:empty::after { display: none; }
+/* ---- animation vocabulary (SVG groups; transform-box makes origins relative to the group) */
+.a { transform-box: fill-box; transform-origin: 50% 100%; animation-duration: var(--dur, 0.7s); animation-delay: var(--t, 0s); animation-fill-mode: both; animation-timing-function: cubic-bezier(.2, .9, .3, 1.15); will-change: transform; }
+.rise { animation-name: a-rise; }
+.pop { animation-name: a-pop; transform-origin: 50% 50%; }
+.fadeIn, .lineIn { animation-name: a-fade; animation-timing-function: ease-out; }
+.lineIn { animation-name: a-line; }
+.slam { animation-name: a-slam; transform-origin: 50% 50%; --dur: 0.2s; animation-timing-function: cubic-bezier(.1, .85, .2, 1); }
+.ghostP { animation-name: a-gp; --dur: 0.55s; transform-origin: 50% 50%; animation-timing-function: cubic-bezier(.2, .8, .2, 1); }
+.ghostB { animation-name: a-gb; --dur: 0.55s; transform-origin: 50% 50%; animation-timing-function: cubic-bezier(.2, .8, .2, 1); }
+.slideInL { animation-name: a-inl; --dur: 0.6s; }
+.slideInR { animation-name: a-inr; --dur: 0.6s; }
+.slideUp { animation-name: a-up; }
+.slideDown { animation-name: a-down; }
+.march { animation-name: a-march; --dur: 0.9s; }
+.towerUp { animation-name: a-tower; --dur: 1.2s; transform-origin: 50% 100%; }
+.bobby { animation-name: a-rise, a-bob; animation-duration: 0.7s, 0.7s; animation-delay: var(--t, 0s), calc(var(--t, 0s) + 0.9s); animation-iteration-count: 1, infinite; animation-fill-mode: both, none; animation-timing-function: cubic-bezier(.2, .9, .3, 1.15), ease-in-out; animation-direction: normal, alternate; }
+.pop.bobby { animation-name: a-pop, a-bob; }
+.float { animation-name: a-pop, a-float; animation-duration: 0.5s, 2.6s; animation-delay: var(--t, 0s), calc(var(--t, 0s) + 0.6s); animation-iteration-count: 1, infinite; animation-fill-mode: both, none; animation-direction: normal, alternate; animation-timing-function: cubic-bezier(.2, .9, .3, 1.4), ease-in-out; }
+.drift-a { animation: a-drift-a 6s linear both; transform-origin: 50% 50%; }
+.drift-b { animation: a-drift-b 6s linear both; transform-origin: 50% 50%; }
+.marq { animation: a-marq 5s linear infinite; transform-origin: 0 0; }
+.fall { animation-name: a-fall; animation-timing-function: linear; animation-fill-mode: backwards; animation-iteration-count: infinite; transform-origin: 50% 50%; }
+.flashA { animation: a-flash 0.6s steps(1) infinite; }
+.flashB { animation: a-flash 0.6s steps(1) 0.3s infinite; }
+.sweepL { animation: a-sweep 3s ease-in-out infinite alternate; }
+.sweepR { animation: a-sweep 3s ease-in-out -1.5s infinite alternate reverse; }
+.shakeSoft { animation-name: a-pop, a-shake; animation-duration: 0.6s, 0.22s; animation-delay: var(--t, 0s), 0.9s; animation-iteration-count: 1, 3; animation-fill-mode: both; animation-timing-function: cubic-bezier(.2, .9, .3, 1.4), steps(2); transform-origin: 50% 50%; }
+.shakeHit { animation: a-shake 0.28s steps(2) var(--t, 0s) 2 both; transform-origin: 50% 50%; }
+.flick { animation: a-flick 1.1s steps(1) infinite; animation-delay: var(--t, 0s); animation-fill-mode: none; }
+.scan { animation: a-scan 2.2s linear infinite alternate; animation-fill-mode: none; }
+.doorL { animation-name: a-doorl; --dur: 0.55s; animation-timing-function: cubic-bezier(.6, 0, 1, .6); }
+.doorR { animation-name: a-doorr; --dur: 0.55s; animation-timing-function: cubic-bezier(.6, 0, 1, .6); }
+.spill { animation: a-spill 1.9s ease-in both; animation-delay: 0.1s; transform-origin: 50% 100%; }
+.lock { animation-name: a-pop; }
+.dim { animation-name: a-fade; --dur: 0.5s; }
+.regP { animation-name: a-regp; --dur: 0.4s; animation-delay: 0s; transform-origin: 50% 50%; animation-timing-function: cubic-bezier(.12, .85, .2, 1); }
+.regB { animation-name: a-regb; --dur: 0.4s; animation-delay: 0s; transform-origin: 50% 50%; animation-timing-function: cubic-bezier(.12, .85, .2, 1); }
+.logoIn { animation-name: a-logo; --dur: 0.35s; animation-delay: 0.12s; transform-origin: 50% 50%; animation-timing-function: cubic-bezier(.2, .9, .3, 1.25); }
+.blink { animation-name: a-fade, a-blink; animation-duration: 0.4s, 1s; animation-delay: var(--t, 0s), calc(var(--t, 0s) + 0.4s); animation-iteration-count: 1, infinite; animation-fill-mode: both, none; animation-timing-function: ease-out, steps(1); }
+
+@keyframes a-rise { from { transform: translate3d(0, 70px, 0); opacity: 0; } }
+@keyframes a-pop { from { transform: scale(0.01); opacity: 0; } 60% { opacity: 1; } }
+@keyframes a-fade { from { opacity: 0; } }
+@keyframes a-line { from { opacity: 0; transform: translate3d(-24px, 0, 0); } }
+@keyframes a-slam { from { transform: scale(3.2) rotate(8deg); opacity: 0; } 40% { opacity: 1; } }
+@keyframes a-gp { from { transform: translate3d(54px, 36px, 0); } }
+@keyframes a-gb { from { transform: translate3d(-54px, -26px, 0); } }
+@keyframes a-inl { from { transform: translate3d(-500px, 0, 0); opacity: 0; } }
+@keyframes a-inr { from { transform: translate3d(500px, 0, 0); opacity: 0; } }
+@keyframes a-up { from { transform: translate3d(0, 160px, 0); opacity: 0; } }
+@keyframes a-down { from { transform: translate3d(0, -160px, 0); opacity: 0; } }
+@keyframes a-march { from { transform: translate3d(-260px, 0, 0); opacity: 0; } }
+@keyframes a-tower { from { transform: scaleY(0.02); } }
+@keyframes a-bob { to { transform: translate3d(0, -14px, 0); } }
+@keyframes a-float { to { transform: translate3d(0, -16px, 0); } }
+@keyframes a-drift-a { from { transform: translate3d(0, 0, 0) scale(1.02); } to { transform: translate3d(-70px, -16px, 0) scale(1.06); } }
+@keyframes a-drift-b { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-150px, 0, 0); } }
+@keyframes a-marq { to { transform: translate3d(-1010px, 0, 0); } }
+@keyframes a-fall { from { transform: translate3d(0, 0, 0) rotate(0); } to { transform: translate3d(var(--sx, 40px), 780px, 0) rotate(540deg); } }
+@keyframes a-flash { 0% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes a-sweep { from { transform: rotate(-9deg); } to { transform: rotate(9deg); } }
+@keyframes a-shake { 0% { transform: translate3d(-8px, 3px, 0); } 50% { transform: translate3d(8px, -3px, 0); } 100% { transform: none; } }
+@keyframes a-flick { 0% { opacity: 1; } 78% { opacity: 0.35; } 84% { opacity: 1; } }
+@keyframes a-scan { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(0, 440px, 0); } }
+@keyframes a-doorl { from { transform: translate3d(-250px, 0, 0); } }
+@keyframes a-doorr { from { transform: translate3d(250px, 0, 0); } }
+@keyframes a-spill { to { opacity: 0; transform: scaleX(0.3); } }
+@keyframes a-regp { from { transform: translate3d(340px, -230px, 0) scale(1.5) rotate(7deg); opacity: 0; } 55% { opacity: 1; } to { transform: translate3d(10px, 8px, 0); } }
+@keyframes a-regb { from { transform: translate3d(-340px, -170px, 0) scale(1.5) rotate(-7deg); opacity: 0; } 55% { opacity: 1; } to { transform: translate3d(-8px, 6px, 0); } }
+@keyframes a-logo { from { transform: scale(1.22); opacity: 0; } 35% { opacity: 1; } }
+@keyframes a-blink { 50% { opacity: 0.25; } }
+.glow { animation-name: a-glow; --dur: 1.4s; animation-iteration-count: infinite; animation-direction: alternate; animation-timing-function: ease-in-out; transform-origin: 50% 50%; }
+@keyframes a-glow { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1.15); opacity: 1; } }
+.thump { animation-name: a-thump; --dur: 0.75s; animation-iteration-count: 2; animation-timing-function: ease-out; transform-origin: 50% 50%; }
+@keyframes a-thump { 0% { transform: scale(0.85); } 10% { transform: scale(1.18); } 22% { transform: scale(0.95); } 36% { transform: scale(1.1); } 60%, 100% { transform: scale(0.88); } }
+.rays { animation: a-fade 0.5s ease-out var(--t, 0s) both, a-spin 24s linear var(--t, 0s) infinite; transform-origin: 50% 50%; }
+.ringSpin { animation: a-fade 0.4s ease-out var(--t, 0s) both, a-spin 9s linear var(--t, 0s) infinite; transform-origin: 50% 50%; }
+@keyframes a-spin { to { transform: rotate(360deg); } }
+.lidT { animation-name: a-lidt; --dur: 2.1s; animation-timing-function: linear; transform-origin: 50% 50%; }
+.lidB { animation-name: a-lidb; --dur: 2.1s; animation-timing-function: linear; transform-origin: 50% 50%; }
+@keyframes a-lidt { 0% { transform: translate3d(0, 0, 0); } 12% { transform: translate3d(0, -14px, 0); } 22% { transform: translate3d(0, 0, 0); } 36% { transform: translate3d(0, -30px, 0); } 48% { transform: translate3d(0, 0, 0); } 62% { transform: translate3d(0, -10px, 0); } 72%, 81% { transform: translate3d(0, 0, 0); animation-timing-function: cubic-bezier(.1, .9, .2, 1); } 100% { transform: translate3d(0, -195px, 0); } }
+@keyframes a-lidb { 0% { transform: translate3d(0, 0, 0); } 12% { transform: translate3d(0, 10px, 0); } 22% { transform: translate3d(0, 0, 0); } 36% { transform: translate3d(0, 20px, 0); } 48% { transform: translate3d(0, 0, 0); } 62% { transform: translate3d(0, 7px, 0); } 72%, 81% { transform: translate3d(0, 0, 0); animation-timing-function: cubic-bezier(.1, .9, .2, 1); } 100% { transform: translate3d(0, 195px, 0); } }
+.irisLook { animation-name: a-iris; --dur: 3.2s; animation-timing-function: ease-in-out; transform-origin: 50% 50%; }
+@keyframes a-iris { 0% { transform: translate3d(0, 0, 0); } 22% { transform: translate3d(-48px, -6px, 0); } 48% { transform: translate3d(52px, 8px, 0); } 72% { transform: translate3d(-18px, 0, 0); } 100% { transform: translate3d(0, 0, 0); } }
+.pupil { animation-name: a-pupil; --dur: 0.9s; transform-origin: 50% 50%; animation-timing-function: cubic-bezier(.2, .9, .3, 1); }
+@keyframes a-pupil { from { transform: scale(1.7); } to { transform: scale(0.75); } }
+.shock { animation-name: a-shock; --dur: 0.9s; transform-origin: 50% 50%; animation-timing-function: cubic-bezier(.1, .7, .3, 1); }
+@keyframes a-shock { from { transform: scale(0.2); opacity: 1; } to { transform: scale(8); opacity: 0; } }
+.ruleIn { animation-name: a-rule; --dur: 0.5s; transform-origin: 50% 50%; animation-timing-function: cubic-bezier(.2, .9, .3, 1); }
+@keyframes a-rule { from { transform: scaleX(0); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .in-fx, .in-lid, .in-rg, .in-sweep { display: none; }
+  .in-flash.go { animation-duration: 760ms; animation-timing-function: ease-in-out; }
+  .a { animation-duration: 1ms !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; }
+}

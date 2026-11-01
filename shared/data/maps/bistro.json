@@ -1,0 +1,79 @@
+{
+ "id": "bistro",
+ "name": "Le Token Bistro",
+ "width": 13,
+ "height": 9,
+ "rows": [
+  "#############",
+  "#hh+hhhhh+hh#",
+  "#++a++++++++#",
+  "#+++NNNNN+++#",
+  "#+++++++++++#",
+  "#+tt+++++tt+#",
+  "#+++++++++++#",
+  "#l+++++++++l#",
+  "######xx#####"
+ ],
+ "legend": {
+  "#": "wall",
+  "+": "floor_tile",
+  "N": "counter",
+  "P": "pc",
+  "h": "shelf",
+  "l": "plant",
+  "x": "exit_mat",
+  "G": "gpu_crate",
+  "R": "server_rack",
+  "t": "table",
+  "K": "carpet",
+  "k": "counter",
+  "a": "sign"
+ },
+ "npcs": [
+  {
+   "id": "chef",
+   "sprite": "chef",
+   "x": 6,
+   "y": 2,
+   "facing": "down",
+   "dialogue": "chef_bistro"
+  },
+  {
+   "id": "waiter",
+   "sprite": "stagiaire",
+   "x": 10,
+   "y": 6,
+   "facing": "left",
+   "dialogue": "bistro_waiter"
+  },
+  {
+   "id": "diner",
+   "sprite": "citizen_a",
+   "x": 2,
+   "y": 6,
+   "facing": "right",
+   "dialogue": "bistro_diner"
+  }
+ ],
+ "warps": [
+  {
+   "x": 6,
+   "y": 8,
+   "to": "latentia_city",
+   "toX": 49,
+   "toY": 23,
+   "facing": "down"
+  },
+  {
+   "x": 7,
+   "y": 8,
+   "to": "latentia_city",
+   "toX": 49,
+   "toY": 23,
+   "facing": "down"
+  }
+ ],
+ "triggers": [],
+ "kind": "interior",
+ "music": "interior"
+}

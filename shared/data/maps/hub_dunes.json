@@ -1,0 +1,84 @@
+{
+ "id": "hub_dunes",
+ "name": "Hub 🤗 des Dunes",
+ "width": 11,
+ "height": 8,
+ "rows": [
+  "###########",
+  "#eeejjjeee#",
+  "#jjjjjjjjj#",
+  "#j0000000j#",
+  "#j;;;j;;;j#",
+  "#1;;;j;;;v#",
+  "#jjjjjjjjj#",
+  "####XXX####"
+ ],
+ "legend": {
+  "#": "wall",
+  "0": "hub_reception",
+  "1": "pc",
+  ";": "carpet",
+  "X": "exit_mat",
+  "e": "repo_shelf",
+  "j": "hub_floor",
+  "v": "vending"
+ },
+ "npcs": [
+  {
+   "id": "nurse",
+   "sprite": "nurse_hugging",
+   "x": 5,
+   "y": 2,
+   "facing": "down",
+   "dialogue": "hub_dunes_nurse"
+  },
+  {
+   "id": "hub_dunes_techie",
+   "sprite": "scientist",
+   "x": 8,
+   "y": 6,
+   "facing": "left",
+   "dialogue": "hub_dunes_techie"
+  },
+  {
+   "id": "hub_dunes_intern",
+   "sprite": "stagiaire",
+   "x": 2,
+   "y": 6,
+   "facing": "right",
+   "dialogue": "hub_dunes_intern",
+   "wander": 1
+  }
+ ],
+ "warps": [
+  {
+   "x": 4,
+   "y": 7,
+   "to": "dunes_datacenters",
+   "toX": 8,
+   "toY": 18,
+   "facing": "down"
+  },
+  {
+   "x": 5,
+   "y": 7,
+   "to": "dunes_datacenters",
+   "toX": 8,
+   "toY": 18,
+   "facing": "down"
+  },
+  {
+   "x": 6,
+   "y": 7,
+   "to": "dunes_datacenters",
+   "toX": 8,
+   "toY": 18,
+   "facing": "down"
+  }
+ ],
+ "triggers": [],
+ "kind": "interior",
+ "music": "hub",
+ "landmarks": [],
+ "exits": []
+}

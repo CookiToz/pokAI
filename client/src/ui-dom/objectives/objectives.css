@@ -1,0 +1,32 @@
+/* LatentOS objective card: left, under the top bar. Same tokens as the shell: paper + ink, hard shadow, 4px radius. */
+.objhud { position: fixed; top: 52px; left: 12px; z-index: 25; width: min(300px, calc(100vw - 24px)); background: var(--paper); border: var(--bw) solid var(--ink); border-radius: var(--r); box-shadow: var(--shadow); font-family: var(--font-ui); color: var(--ink); opacity: 0; transform: translateY(-6px); pointer-events: none; transition: opacity var(--dur), transform var(--dur); }
+.objhud.is-on { opacity: 1; transform: none; pointer-events: auto; }
+#ui.in-cutscene .objhud { opacity: 0; pointer-events: none; }
+.obj-head { display: flex; align-items: center; gap: 6px; padding: 3px 4px 3px 8px; background: var(--ink); color: var(--paper); font: 600 11px var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; user-select: none; }
+.obj-kicker { flex: 1; color: var(--yellow); }
+.obj-count { color: var(--paper); opacity: 0.8; }
+.obj-btn { width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--paper); border-radius: 2px; color: var(--paper); font: 700 12px/1 var(--font-mono); }
+.obj-btn:hover { background: var(--pink); border-color: var(--pink); color: var(--ink); }
+.obj-body { display: grid; gap: 4px; padding: 8px 10px 9px; }
+.obj-title { font: 700 14px/1.25 var(--font-ui); }
+.obj-hint { font-size: 12px; line-height: 1.35; color: var(--ink-2); }
+.obj-nav { display: flex; align-items: center; gap: 8px; margin-top: 2px; padding: 4px 6px; background: var(--paper-2); border: 1px solid var(--ink); border-radius: var(--r); font: 600 12px var(--font-mono); }
+.obj-arrow { width: 22px; height: 22px; flex: none; display: inline-block; background: var(--pink); border: 2px solid var(--ink); clip-path: polygon(100% 50%, 15% 8%, 40% 50%, 15% 92%); }
+.obj-arrow.is-here { clip-path: none; border-radius: 50%; animation: obj-beat 900ms steps(2) infinite; }
+@keyframes obj-beat { 50% { background: var(--yellow); } }
+.objhud.is-folded .obj-body, .objhud.is-folded .obj-journal { display: none; }
+.objhud.is-pulse { animation: obj-pulse 900ms steps(1) 1; }
+@keyframes obj-pulse { 0% { box-shadow: 0 0 0 4px var(--pink), var(--shadow); } 25% { box-shadow: 0 0 0 4px var(--yellow), var(--shadow); } 50% { box-shadow: 0 0 0 4px var(--pink), var(--shadow); } 75% { box-shadow: 0 0 0 4px var(--yellow), var(--shadow); } 100% { box-shadow: var(--shadow); } }
+.obj-journal { display: none; max-height: 40vh; overflow: auto; padding: 4px 8px 8px; border-top: var(--bw) solid var(--ink); background: var(--paper-2); }
+.objhud.is-journal .obj-journal { display: block; }
+.obj-chapter { margin: 6px 0 2px; font: 600 10px var(--font-mono); text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-3); }
+.obj-row { display: flex; gap: 6px; align-items: baseline; padding: 2px 0; font-size: 12px; line-height: 1.3; }
+.obj-mark { width: 12px; flex: none; font-family: var(--font-mono); font-weight: 700; }
+.obj-rtitle { flex: 1; min-width: 0; }
+.obj-opt { flex: none; padding: 0 4px; border: 1px solid var(--ink-3); border-radius: 2px; font: 600 9px var(--font-mono); text-transform: uppercase; color: var(--ink-3); }
+.obj-row.is-done { color: var(--ink-3); }
+.obj-row.is-done .obj-rtitle { text-decoration: line-through; }
+.obj-row.is-done .obj-mark { color: var(--ctx); }
+.obj-row.is-current { font-weight: 700; }
+.obj-row.is-current .obj-mark { color: var(--pink); }
+@media (max-width: 720px) { .objhud { top: 48px; width: min(260px, calc(100vw - 24px)); } }

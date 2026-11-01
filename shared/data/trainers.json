@@ -1,0 +1,985 @@
+{
+ "trainers": [
+  {
+   "id": "rival_1_haiku",
+   "name": "Kévin",
+   "sprite": "kevin",
+   "team": [
+    {
+     "form": "phi_1",
+     "level": 5
+    }
+   ],
+   "reward": 300,
+   "introDialogue": "rival_1_haiku_intro",
+   "defeatDialogue": "rival_1_haiku_defeat"
+  },
+  {
+   "id": "rival_1_phi",
+   "name": "Kévin",
+   "sprite": "kevin",
+   "team": [
+    {
+     "form": "gemma",
+     "level": 5
+    }
+   ],
+   "reward": 300,
+   "introDialogue": "rival_1_phi_intro",
+   "defeatDialogue": "rival_1_phi_defeat"
+  },
+  {
+   "id": "rival_1_gemma",
+   "name": "Kévin",
+   "sprite": "kevin",
+   "team": [
+    {
+     "form": "phi_1",
+     "level": 5
+    }
+   ],
+   "reward": 300,
+   "introDialogue": "rival_1_gemma_intro",
+   "defeatDialogue": "rival_1_gemma_defeat"
+  },
+  {
+   "id": "aiact_guard_1",
+   "name": "Garde Bernard",
+   "sprite": "guard_aiact",
+   "team": [
+    {
+     "form": "smollm",
+     "level": 2,
+     "sealed": true
+    }
+   ],
+   "reward": 90,
+   "introDialogue": "aiact_guard_1_intro",
+   "defeatDialogue": "aiact_guard_1_defeat",
+   "aiact": true
+  },
+  {
+   "id": "aiact_guard_2",
+   "name": "Gardienne Chantal",
+   "sprite": "guard_aiact_2",
+   "team": [
+    {
+     "form": "smollm",
+     "level": 3,
+     "sealed": true
+    }
+   ],
+   "reward": 110,
+   "introDialogue": "aiact_guard_2_intro",
+   "defeatDialogue": "aiact_guard_2_defeat",
+   "aiact": true
+  },
+  {
+   "id": "aiact_guard_3",
+   "name": "Garde Jean-Michel",
+   "sprite": "guard_aiact",
+   "team": [
+    {
+     "form": "qwen",
+     "level": 3,
+     "sealed": true
+    }
+   ],
+   "reward": 130,
+   "introDialogue": "aiact_guard_3_intro",
+   "defeatDialogue": "aiact_guard_3_defeat",
+   "aiact": true
+  },
+  {
+   "id": "aiact_guard_4",
+   "name": "Gardienne Nadine",
+   "sprite": "guard_aiact_2",
+   "team": [
+    {
+     "form": "whisper_tiny",
+     "level": 3,
+     "sealed": true
+    }
+   ],
+   "reward": 150,
+   "introDialogue": "aiact_guard_4_intro",
+   "defeatDialogue": "aiact_guard_4_defeat",
+   "aiact": true
+  },
+  {
+   "id": "inspector_cookie",
+   "name": "Inspecteur Cookie",
+   "sprite": "inspector_cookie",
+   "team": [
+    {
+     "form": "qwen",
+     "level": 5,
+     "sealed": true
+    }
+   ],
+   "reward": 400,
+   "introDialogue": "inspector_cookie_intro",
+   "defeatDialogue": "inspector_cookie_defeat",
+   "aiact": true
+  },
+  {
+   "id": "city_kid_1",
+   "name": "Gamin Kylian",
+   "sprite": "kid",
+   "team": [
+    {
+     "form": "smollm",
+     "level": 3
+    },
+    {
+     "form": "smollm",
+     "level": 4
+    }
+   ],
+   "reward": 120,
+   "introDialogue": "city_kid_1_intro",
+   "defeatDialogue": "city_kid_1_defeat"
+  },
+  {
+   "id": "city_vibeur_1",
+   "name": "Vibeuse Léa",
+   "sprite": "vibeur_a",
+   "team": [
+    {
+     "form": "qwen",
+     "level": 4
+    },
+    {
+     "form": "smollm",
+     "level": 4
+    }
+   ],
+   "reward": 170,
+   "introDialogue": "city_vibeur_1_intro",
+   "defeatDialogue": "city_vibeur_1_defeat"
+  },
+  {
+   "id": "city_dev_1",
+   "name": "Dev Tom",
+   "sprite": "dev_phone",
+   "team": [
+    {
+     "form": "copilot",
+     "level": 5
+    },
+    {
+     "form": "gpt_2",
+     "level": 5
+    }
+   ],
+   "reward": 190,
+   "introDialogue": "city_dev_1_intro",
+   "defeatDialogue": "city_dev_1_defeat"
+  },
+  {
+   "id": "city_scientist_1",
+   "name": "Chercheur Alban",
+   "sprite": "scientist",
+   "team": [
+    {
+     "form": "sd_1_5",
+     "level": 5
+    },
+    {
+     "form": "mistral_7b",
+     "level": 6
+    }
+   ],
+   "reward": 210,
+   "introDialogue": "city_scientist_1_intro",
+   "defeatDialogue": "city_scientist_1_defeat"
+  },
+  {
+   "id": "aiact_agent_city_1",
+   "name": "Agent de Conformité",
+   "sprite": "agent_conformite",
+   "team": [
+    {
+     "form": "whisper_tiny",
+     "level": 5,
+     "sealed": true
+    },
+    {
+     "form": "midjourney_v5",
+     "level": 6,
+     "sealed": true
+    }
+   ],
+   "reward": 250,
+   "introDialogue": "aiact_agent_city_1_intro",
+   "defeatDialogue": "aiact_agent_city_1_defeat",
+   "aiact": true
+  },
+  {
+   "id": "aiact_agent_city_2",
+   "name": "Agent de Conformité",
+   "sprite": "agent_conformite",
+   "team": [
+    {
+     "form": "gpt_2",
+     "level": 6,
+     "sealed": true
+    },
+    {
+     "form": "qwen",
+     "level": 6,
+     "sealed": true
+    }
+   ],
+   "reward": 280,
+   "introDialogue": "aiact_agent_city_2_intro",
+   "defeatDialogue": "aiact_agent_city_2_defeat",
+   "aiact": true
+  },
+  {
+   "id": "bench_junior_1",
+   "name": "Vibeur junior Max",
+   "sprite": "vibeur_b",
+   "team": [
+    {
+     "form": "copilot",
+     "level": 7
+    },
+    {
+     "form": "phi_1",
+     "level": 8
+    },
+    {
+     "form": "codestral",
+     "level": 9
+    }
+   ],
+   "reward": 400,
+   "introDialogue": "bench_junior_1_intro",
+   "defeatDialogue": "bench_junior_1_defeat"
+  },
+  {
+   "id": "leader_nadelta",
+   "name": "Satya Nadelta",
+   "sprite": "nadelta",
+   "team": [
+    {
+     "form": "copilot",
+     "level": 10
+    },
+    {
+     "form": "gpt_2",
+     "level": 10
+    },
+    {
+     "form": "o1_mini",
+     "level": 13
+    }
+   ],
+   "reward": 1500,
+   "introDialogue": "leader_nadelta_intro",
+   "defeatDialogue": "leader_nadelta_defeat",
+   "badge": "badge_commit"
+  },
+  {
+   "id": "fp_scout_1",
+   "name": "Scout Théo",
+   "sprite": "kid",
+   "team": [
+    {
+     "form": "smollm",
+     "level": 7
+    },
+    {
+     "form": "bert",
+     "level": 8
+    }
+   ],
+   "reward": 220,
+   "introDialogue": "fp_scout_1_intro",
+   "defeatDialogue": "fp_scout_1_defeat"
+  },
+  {
+   "id": "fp_hiker_1",
+   "name": "Randonneuse Camille",
+   "sprite": "tourist",
+   "team": [
+    {
+     "form": "sd_1_5",
+     "level": 9
+    },
+    {
+     "form": "whisper_tiny",
+     "level": 9
+    },
+    {
+     "form": "llama_2",
+     "level": 10
+    }
+   ],
+   "reward": 280,
+   "introDialogue": "fp_hiker_1_intro",
+   "defeatDialogue": "fp_hiker_1_defeat"
+  },
+  {
+   "id": "fp_dev_1",
+   "name": "Dev Noé",
+   "sprite": "dev_phone",
+   "team": [
+    {
+     "form": "codestral",
+     "level": 11
+    },
+    {
+     "form": "mistral_7b",
+     "level": 12
+    }
+   ],
+   "reward": 340,
+   "introDialogue": "fp_dev_1_intro",
+   "defeatDialogue": "fp_dev_1_defeat"
+  },
+  {
+   "id": "aiact_agent_fp_1",
+   "name": "Agent de Conformité",
+   "sprite": "agent_conformite",
+   "team": [
+    {
+     "form": "midjourney_v5",
+     "level": 11,
+     "sealed": true
+    },
+    {
+     "form": "gpt_2",
+     "level": 12,
+     "sealed": true
+    },
+    {
+     "form": "qwen",
+     "level": 12,
+     "sealed": true
+    }
+   ],
+   "reward": 400,
+   "introDialogue": "aiact_agent_fp_1_intro",
+   "defeatDialogue": "aiact_agent_fp_1_defeat",
+   "aiact": true
+  },
+  {
+   "id": "grove_scientist_1",
+   "name": "Chercheuse Mélusine",
+   "sprite": "scientist",
+   "team": [
+    {
+     "form": "sd_1_5",
+     "level": 13
+    },
+    {
+     "form": "mistral_7b",
+     "level": 14
+    },
+    {
+     "form": "whisper_base",
+     "level": 14
+    }
+   ],
+   "reward": 440,
+   "introDialogue": "grove_scientist_1_intro",
+   "defeatDialogue": "grove_scientist_1_defeat"
+  },
+  {
+   "id": "grove_resistance_1",
+   "name": "Maquisard Karim",
+   "sprite": "resistance_dev",
+   "team": [
+    {
+     "form": "llama_2",
+     "level": 14
+    },
+    {
+     "form": "falcon_7b",
+     "level": 14
+    },
+    {
+     "form": "smollm_2",
+     "level": 15
+    }
+   ],
+   "reward": 480,
+   "introDialogue": "grove_resistance_1_intro",
+   "defeatDialogue": "grove_resistance_1_defeat"
+  },
+  {
+   "id": "grove_dev_1",
+   "name": "Dev Anaïs",
+   "sprite": "dev_phone",
+   "team": [
+    {
+     "form": "codestral",
+     "level": 15
+    },
+    {
+     "form": "llama_2",
+     "level": 15
+    },
+    {
+     "form": "devstral",
+     "level": 16
+    }
+   ],
+   "reward": 540,
+   "introDialogue": "grove_dev_1_intro",
+   "defeatDialogue": "grove_dev_1_defeat"
+  },
+  {
+   "id": "bench_ow_junior_1",
+   "name": "Apprenti Lucas",
+   "sprite": "resistance_dev",
+   "team": [
+    {
+     "form": "llama_2",
+     "level": 14
+    },
+    {
+     "form": "falcon_7b",
+     "level": 14
+    },
+    {
+     "form": "smollm_2",
+     "level": 15
+    }
+   ],
+   "reward": 600,
+   "introDialogue": "bench_ow_junior_1_intro",
+   "defeatDialogue": "bench_ow_junior_1_defeat"
+  },
+  {
+   "id": "bench_ow_junior_2",
+   "name": "Apprentie Sofia",
+   "sprite": "dev_phone",
+   "team": [
+    {
+     "form": "codestral",
+     "level": 15
+    },
+    {
+     "form": "mistral_7b",
+     "level": 15
+    },
+    {
+     "form": "sd_1_5",
+     "level": 16
+    }
+   ],
+   "reward": 680,
+   "introDialogue": "bench_ow_junior_2_intro",
+   "defeatDialogue": "bench_ow_junior_2_defeat"
+  },
+  {
+   "id": "leader_menschtral",
+   "name": "Arthur Menschtral",
+   "sprite": "menschtral",
+   "team": [
+    {
+     "form": "mistral_7b",
+     "level": 21
+    },
+    {
+     "form": "llama_2",
+     "level": 22
+    },
+    {
+     "form": "codestral",
+     "level": 21
+    },
+    {
+     "form": "mixtral_8x7b",
+     "level": 21
+    }
+   ],
+   "reward": 2400,
+   "introDialogue": "leader_menschtral_intro",
+   "defeatDialogue": "leader_menschtral_defeat",
+   "badge": "badge_vent"
+  },
+  {
+   "id": "sc_sailor_1",
+   "name": "Marin Gaël",
+   "sprite": "sailor",
+   "team": [
+    {
+     "form": "gpt_3_5",
+     "level": 18
+    },
+    {
+     "form": "whisper_base",
+     "level": 19
+    }
+   ],
+   "reward": 520,
+   "introDialogue": "sc_sailor_1_intro",
+   "defeatDialogue": "sc_sailor_1_defeat"
+  },
+  {
+   "id": "sc_tourist_1",
+   "name": "Touriste Odile",
+   "sprite": "tourist",
+   "team": [
+    {
+     "form": "sdxl",
+     "level": 19
+    },
+    {
+     "form": "midjourney_v5",
+     "level": 20
+    },
+    {
+     "form": "copilot_chat",
+     "level": 20
+    }
+   ],
+   "reward": 580,
+   "introDialogue": "sc_tourist_1_intro",
+   "defeatDialogue": "sc_tourist_1_defeat"
+  },
+  {
+   "id": "sc_scientist_1",
+   "name": "Chercheur Anselme",
+   "sprite": "scientist",
+   "team": [
+    {
+     "form": "llama_3",
+     "level": 21
+    },
+    {
+     "form": "mixtral_8x7b",
+     "level": 22
+    },
+    {
+     "form": "qwen_2_5",
+     "level": 21
+    }
+   ],
+   "reward": 680,
+   "introDialogue": "sc_scientist_1_intro",
+   "defeatDialogue": "sc_scientist_1_defeat"
+  },
+  {
+   "id": "sc_resistance_1",
+   "name": "Maquisarde Inès",
+   "sprite": "resistance_dev",
+   "team": [
+    {
+     "form": "falcon_40b",
+     "level": 22
+    },
+    {
+     "form": "llama_3",
+     "level": 23
+    },
+    {
+     "form": "deepseek_v2",
+     "level": 22
+    }
+   ],
+   "reward": 740,
+   "introDialogue": "sc_resistance_1_intro",
+   "defeatDialogue": "sc_resistance_1_defeat"
+  },
+  {
+   "id": "aiact_agent_sc_1",
+   "name": "Agent de Conformité",
+   "sprite": "agent_conformite",
+   "team": [
+    {
+     "form": "gpt_3_5",
+     "level": 22,
+     "sealed": true
+    },
+    {
+     "form": "midjourney_v6",
+     "level": 23,
+     "sealed": true
+    },
+    {
+     "form": "whisper_base",
+     "level": 22,
+     "sealed": true
+    }
+   ],
+   "reward": 800,
+   "introDialogue": "aiact_agent_sc_1_intro",
+   "defeatDialogue": "aiact_agent_sc_1_defeat",
+   "aiact": true
+  },
+  {
+   "id": "aiact_grunt_port_1",
+   "name": "Agent de Conformité",
+   "sprite": "agent_conformite",
+   "team": [
+    {
+     "form": "copilot",
+     "level": 22,
+     "sealed": true
+    },
+    {
+     "form": "midjourney_v5",
+     "level": 23,
+     "sealed": true
+    }
+   ],
+   "reward": 700,
+   "introDialogue": "aiact_grunt_port_1_intro",
+   "defeatDialogue": "aiact_grunt_port_1_defeat",
+   "aiact": true
+  },
+  {
+   "id": "aiact_grunt_port_2",
+   "name": "Agent de Conformité",
+   "sprite": "agent_conformite",
+   "team": [
+    {
+     "form": "whisper_base",
+     "level": 23,
+     "sealed": true
+    },
+    {
+     "form": "gpt_3_5",
+     "level": 24,
+     "sealed": true
+    }
+   ],
+   "reward": 760,
+   "introDialogue": "aiact_grunt_port_2_intro",
+   "defeatDialogue": "aiact_grunt_port_2_defeat",
+   "aiact": true
+  },
+  {
+   "id": "aiact_grunt_port_3",
+   "name": "Agent de Conformité",
+   "sprite": "agent_conformite",
+   "team": [
+    {
+     "form": "deepseek_v2",
+     "level": 24,
+     "sealed": true
+    },
+    {
+     "form": "qwen_2_5",
+     "level": 24,
+     "sealed": true
+    },
+    {
+     "form": "midjourney_v6",
+     "level": 25,
+     "sealed": true
+    }
+   ],
+   "reward": 860,
+   "introDialogue": "aiact_grunt_port_3_intro",
+   "defeatDialogue": "aiact_grunt_port_3_defeat",
+   "aiact": true
+  },
+  {
+   "id": "aiact_grunt_port_4",
+   "name": "Agent de Conformité",
+   "sprite": "agent_conformite",
+   "team": [
+    {
+     "form": "copilot_chat",
+     "level": 25,
+     "sealed": true
+    },
+    {
+     "form": "gpt_3_5",
+     "level": 25,
+     "sealed": true
+    },
+    {
+     "form": "qwen_2_5",
+     "level": 26,
+     "sealed": true
+    }
+   ],
+   "reward": 940,
+   "introDialogue": "aiact_grunt_port_4_intro",
+   "defeatDialogue": "aiact_grunt_port_4_defeat",
+   "aiact": true
+  },
+  {
+   "id": "pt_sailor_1",
+   "name": "Docker Émile",
+   "sprite": "sailor",
+   "team": [
+    {
+     "form": "qwen",
+     "level": 21
+    },
+    {
+     "form": "midjourney_v5",
+     "level": 22
+    }
+   ],
+   "reward": 640,
+   "introDialogue": "pt_sailor_1_intro",
+   "defeatDialogue": "pt_sailor_1_defeat"
+  },
+  {
+   "id": "pt_rider_1",
+   "name": "Livreur Sacha",
+   "sprite": "delivery_rider",
+   "team": [
+    {
+     "form": "copilot",
+     "level": 22
+    },
+    {
+     "form": "gpt_3_5",
+     "level": 22
+    },
+    {
+     "form": "qwen_2_5",
+     "level": 23
+    }
+   ],
+   "reward": 680,
+   "introDialogue": "pt_rider_1_intro",
+   "defeatDialogue": "pt_rider_1_defeat"
+  },
+  {
+   "id": "pt_dev_1",
+   "name": "Dev Clémence",
+   "sprite": "dev_phone",
+   "team": [
+    {
+     "form": "copilot_chat",
+     "level": 23
+    },
+    {
+     "form": "codestral",
+     "level": 23
+    },
+    {
+     "form": "deepseek_v2",
+     "level": 23
+    }
+   ],
+   "reward": 740,
+   "introDialogue": "pt_dev_1_intro",
+   "defeatDialogue": "pt_dev_1_defeat"
+  },
+  {
+   "id": "pt_scientist_1",
+   "name": "Chercheuse Oriane",
+   "sprite": "scientist",
+   "team": [
+    {
+     "form": "whisper_base",
+     "level": 24
+    },
+    {
+     "form": "sdxl",
+     "level": 24
+    },
+    {
+     "form": "gemma_2",
+     "level": 24
+    }
+   ],
+   "reward": 820,
+   "introDialogue": "pt_scientist_1_intro",
+   "defeatDialogue": "pt_scientist_1_defeat"
+  },
+  {
+   "id": "bench_arc_junior_1",
+   "name": "Chercheur Bastien",
+   "sprite": "scientist",
+   "team": [
+    {
+     "form": "gemma_2",
+     "level": 20
+    },
+    {
+     "form": "gemini_nano",
+     "level": 21
+    },
+    {
+     "form": "o1_mini",
+     "level": 21
+    }
+   ],
+   "reward": 900,
+   "introDialogue": "bench_arc_junior_1_intro",
+   "defeatDialogue": "bench_arc_junior_1_defeat"
+  },
+  {
+   "id": "bench_arc_junior_2",
+   "name": "Stagiaire Inès",
+   "sprite": "stagiaire",
+   "team": [
+    {
+     "form": "gemini_flash",
+     "level": 21
+    },
+    {
+     "form": "gemma_2",
+     "level": 22
+    },
+    {
+     "form": "whisper_base",
+     "level": 22
+    }
+   ],
+   "reward": 1000,
+   "introDialogue": "bench_arc_junior_2_intro",
+   "defeatDialogue": "bench_arc_junior_2_defeat"
+  },
+  {
+   "id": "leader_hassabyte",
+   "name": "Demis Hassabyte",
+   "sprite": "hassabyte",
+   "team": [
+    {
+     "form": "gemini_flash",
+     "level": 22
+    },
+    {
+     "form": "qwen_2_5",
+     "level": 23
+    },
+    {
+     "form": "o1_mini",
+     "level": 19
+    },
+    {
+     "form": "deepseek_v3",
+     "level": 24
+    }
+   ],
+   "reward": 3200,
+   "introDialogue": "leader_hassabyte_intro",
+   "defeatDialogue": "leader_hassabyte_defeat",
+   "badge": "badge_raisonnement"
+  },
+  {
+   "id": "rival_2_haiku",
+   "name": "Kévin",
+   "sprite": "kevin",
+   "team": [
+    {
+     "form": "phi_1",
+     "level": 14
+    },
+    {
+     "form": "mistral_7b",
+     "level": 12
+    }
+   ],
+   "reward": 700,
+   "introDialogue": "rival_2_haiku_intro",
+   "defeatDialogue": "rival_2_haiku_defeat"
+  },
+  {
+   "id": "rival_3_haiku",
+   "name": "Kévin",
+   "sprite": "kevin",
+   "team": [
+    {
+     "form": "phi_3",
+     "level": 26
+    },
+    {
+     "form": "llama_2",
+     "level": 23
+    },
+    {
+     "form": "qwen",
+     "level": 23
+    }
+   ],
+   "reward": 1400,
+   "introDialogue": "rival_3_haiku_intro",
+   "defeatDialogue": "rival_3_haiku_defeat"
+  },
+  {
+   "id": "rival_2_phi",
+   "name": "Kévin",
+   "sprite": "kevin",
+   "team": [
+    {
+     "form": "gemma",
+     "level": 14
+    },
+    {
+     "form": "llama_2",
+     "level": 12
+    }
+   ],
+   "reward": 700,
+   "introDialogue": "rival_2_phi_intro",
+   "defeatDialogue": "rival_2_phi_defeat"
+  },
+  {
+   "id": "rival_3_phi",
+   "name": "Kévin",
+   "sprite": "kevin",
+   "team": [
+    {
+     "form": "gemma_2",
+     "level": 26
+    },
+    {
+     "form": "llama_2",
+     "level": 23
+    },
+    {
+     "form": "mistral_7b",
+     "level": 23
+    }
+   ],
+   "reward": 1400,
+   "introDialogue": "rival_3_phi_intro",
+   "defeatDialogue": "rival_3_phi_defeat"
+  },
+  {
+   "id": "rival_2_gemma",
+   "name": "Kévin",
+   "sprite": "kevin",
+   "team": [
+    {
+     "form": "phi_1",
+     "level": 14
+    },
+    {
+     "form": "qwen",
+     "level": 12
+    }
+   ],
+   "reward": 700,
+   "introDialogue": "rival_2_gemma_intro",
+   "defeatDialogue": "rival_2_gemma_defeat"
+  },
+  {
+   "id": "rival_3_gemma",
+   "name": "Kévin",
+   "sprite": "kevin",
+   "team": [
+    {
+     "form": "phi_3",
+     "level": 26
+    },
+    {
+     "form": "llama_2",
+     "level": 23
+    },
+    {
+     "form": "qwen",
+     "level": 23
+    }
+   ],
+   "reward": 1400,
+   "introDialogue": "rival_3_gemma_intro",
+   "defeatDialogue": "rival_3_gemma_defeat"
+  }
+ ]
+}

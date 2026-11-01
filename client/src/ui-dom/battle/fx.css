@@ -1,0 +1,157 @@
+/* Attack animations overlay. Hard shapes, offset ghosts, transforms and opacity only. */
+.bfx-layer { position: absolute; inset: 0; z-index: 20; pointer-events: none; overflow: hidden; }
+.bfx {
+  position: absolute; left: 0; top: 0;
+  --anim: fx-fly; --ease: linear;
+  --col: var(--c, var(--ink));
+  will-change: transform, opacity;
+  animation: var(--anim) var(--dur) var(--ease) var(--d) both;
+  transform: translate3d(var(--x0), var(--y0), 0) translate(-50%, -50%);
+  font-family: var(--font-mono);
+  line-height: 1;
+}
+@keyframes fx-fly {
+  0% { transform: translate3d(var(--x0), var(--y0), 0) translate(-50%, -50%) rotate(var(--r0)) scale(var(--s0)); opacity: 0; }
+  12% { opacity: 1; }
+  50% { transform: translate3d(var(--xm), var(--ym), 0) translate(-50%, -50%) rotate(calc((var(--r0) + var(--r1)) / 2)) scale(1); }
+  82% { opacity: 1; }
+  100% { transform: translate3d(var(--x1), var(--y1), 0) translate(-50%, -50%) rotate(var(--r1)) scale(var(--s1)); opacity: 0; }
+}
+@keyframes fx-pop {
+  0% { transform: translate3d(var(--x0), var(--y0), 0) translate(-50%, -50%) rotate(var(--rot, 0deg)) scale(0.2); opacity: 0; }
+  22% { transform: translate3d(var(--x0), var(--y0), 0) translate(-50%, -50%) rotate(var(--rot, 0deg)) scale(1.18); opacity: 1; }
+  38% { transform: translate3d(var(--x0), var(--y0), 0) translate(-50%, -50%) rotate(var(--rot, 0deg)) scale(1); }
+  80% { opacity: 1; }
+  100% { transform: translate3d(var(--x1), var(--y1), 0) translate(-50%, -50%) rotate(var(--rot, 0deg)) scale(1); opacity: 0; }
+}
+@keyframes fx-snap {
+  0% { transform: translate3d(var(--x0), var(--y0), 0) translate(-50%, -50%) scale(0.3); opacity: 1; }
+  30% { transform: translate3d(var(--x0), var(--y0), 0) translate(-50%, -50%) scale(1.25); }
+  60% { transform: translate3d(var(--x0), var(--y0), 0) translate(-50%, -50%) scale(1); opacity: 1; }
+  100% { transform: translate3d(var(--x0), var(--y0), 0) translate(-50%, -50%) scale(1.05); opacity: 0; }
+}
+@keyframes fx-ring {
+  0% { transform: translate3d(var(--x0), var(--y0), 0) translate(-50%, -50%) scale(0.3); opacity: 1; }
+  100% { transform: translate3d(var(--x0), var(--y0), 0) translate(-50%, -50%) scale(1.7); opacity: 0; }
+}
+@keyframes fx-stamp {
+  0% { transform: translate3d(var(--x0), var(--y0), 0) translate(-50%, -50%) rotate(var(--rot, 0deg)) scale(2.6); opacity: 0; }
+  14% { transform: translate3d(var(--x0), var(--y0), 0) translate(-50%, -50%) rotate(var(--rot, 0deg)) scale(1); opacity: 1; }
+  22% { transform: translate3d(var(--x0), var(--y0), 0) translate(-50%, -50%) rotate(var(--rot, 0deg)) scale(1.08); }
+  30% { transform: translate3d(var(--x0), var(--y0), 0) translate(-50%, -50%) rotate(var(--rot, 0deg)) scale(1); }
+  82% { opacity: 1; }
+  100% { transform: translate3d(var(--x0), var(--y0), 0) translate(-50%, -50%) rotate(var(--rot, 0deg)) scale(1); opacity: 0; }
+}
+@keyframes fx-thump {
+  0% { transform: translate3d(var(--x0), var(--y0), 0) translate(-50%, -50%) scale(0.2); opacity: 0; }
+  20% { transform: translate3d(var(--x0), var(--y0), 0) translate(-50%, -50%) scale(1.2); opacity: 1; }
+  32% { transform: translate3d(var(--x0), var(--y0), 0) translate(-50%, -50%) scale(1); }
+  76% { opacity: 1; transform: translate3d(var(--x0), var(--y0), 0) translate(-50%, -50%) scale(1); }
+  100% { transform: translate3d(var(--x0), var(--y0), 0) translate(-50%, -50%) scale(1.1); opacity: 0; }
+}
+@keyframes fx-flash {
+  0% { transform: translate3d(var(--x0), var(--y0), 0) translate(-50%, -50%); opacity: 0; }
+  10% { opacity: 1; } 28% { opacity: 0; } 46% { opacity: 1; } 64% { opacity: 0.4; } 82% { opacity: 0.9; }
+  100% { transform: translate3d(var(--x0), var(--y0), 0) translate(-50%, -50%); opacity: 0; }
+}
+@keyframes fx-jitter {
+  0% { transform: translate3d(var(--x0), var(--y0), 0) translate(-50%, -50%); opacity: 0; }
+  15% { opacity: 1; transform: translate3d(calc(var(--x0) + var(--jx)), var(--y0), 0) translate(-50%, -50%); }
+  35% { transform: translate3d(calc(var(--x0) - var(--jx)), var(--y0), 0) translate(-50%, -50%); }
+  55% { transform: translate3d(calc(var(--x0) + var(--jx) * 0.5), var(--y0), 0) translate(-50%, -50%); opacity: 1; }
+  75% { transform: translate3d(calc(var(--x0) - var(--jx) * 1.4), var(--y0), 0) translate(-50%, -50%); }
+  100% { transform: translate3d(var(--x0), var(--y0), 0) translate(-50%, -50%); opacity: 0; }
+}
+@keyframes fx-bolt {
+  0% { transform: translate3d(var(--x0), calc(var(--y0) - 1.2em), 0) translate(-50%, 0) scaleY(0.2); opacity: 0; transform-origin: top; }
+  14% { transform: translate3d(var(--x0), var(--y0), 0) translate(-50%, 0) scaleY(1); opacity: 1; }
+  30% { opacity: 0.2; } 44% { opacity: 1; } 62% { opacity: 0.3; } 78% { opacity: 1; }
+  100% { transform: translate3d(var(--x0), var(--y0), 0) translate(-50%, 0) scaleY(1); opacity: 0; }
+}
+
+/* ---- shared looks ---- */
+.bfx-tag { padding: 0.25em 0.5em; background: var(--paper); border: 3px solid var(--ink); box-shadow: 3px 3px 0 var(--pink); font-weight: 700; letter-spacing: 0.06em; white-space: nowrap; }
+.bfx-crit { background: var(--yellow); border-color: var(--red); color: var(--red); box-shadow: 4px 4px 0 var(--ink); font-family: var(--font-display); font-weight: 800; letter-spacing: 0.12em; font-size: 1em; }
+.bfx-miss { background: var(--paper-2); color: var(--ink-2); box-shadow: 3px 3px 0 var(--blue); }
+.bfx-sorry { border-color: var(--red); color: var(--red); background: var(--paper); box-shadow: 3px 3px 0 var(--ink); }
+.bfx-build { background: var(--paper); color: var(--type-code); box-shadow: 3px 3px 0 var(--ink); }
+.bfx-nosig { background: var(--ink); color: var(--paper); border-color: var(--paper); box-shadow: 3px 3px 0 var(--steel); }
+.bfx-still { border: 4px solid var(--c, var(--ink)); box-shadow: 4px 4px 0 var(--pink); transform: translate(-50%, -50%); animation: none !important; }
+.bfx-spark { width: 1em; height: 1em; color: var(--col); }
+.bfx-spark svg, .bfx-arrow svg, .bfx-hex svg, .bfx-bolt svg { display: block; }
+.bfx-ray { width: 0.5em; height: 3.2em; background: var(--ink); }
+.bfx-token { width: 0.9em; height: 0.9em; background: var(--col); border: 2px solid var(--ink); }
+.bfx-ring { width: 1em; height: 1em; border: 0.08em solid var(--col); border-radius: 50%; }
+
+/* chat */
+.bfx-bubble { padding: 0.35em 0.7em; background: var(--c); color: var(--ink); border: 2px solid var(--ink); border-radius: 0.9em 0.9em 0.9em 0.15em; box-shadow: 3px 3px 0 var(--pink); font-weight: 700; font-size: max(0.9em, 11px); white-space: nowrap; }
+.bfx-bubble.is-alt { background: var(--paper); box-shadow: 3px 3px 0 var(--blue); border-radius: 0.9em 0.9em 0.15em 0.9em; }
+/* code */
+.bfx-glyph { color: var(--c); font-weight: 800; font-size: max(1em, 12px); white-space: nowrap; text-shadow: 2px 2px 0 var(--pink); }
+.bfx-codeline { height: 0.32em; width: calc(var(--w, 4) * 1em); background: var(--c); box-shadow: 2px 2px 0 var(--ink); }
+.bfx-codeline.is-alt { background: var(--ink); box-shadow: 2px 2px 0 var(--c); }
+.bfx-compile { width: 9em; height: 9em; background: var(--c); border: 3px solid var(--ink); mix-blend-mode: multiply; }
+/* reasoning */
+.bfx-thought { width: calc(var(--k) * 1.4em); height: calc(var(--k) * 1.4em); background: var(--paper); border: 3px solid var(--c); border-radius: 50%; box-shadow: 3px 3px 0 var(--pink); }
+.bfx-bolt { width: 3em; height: 6em; color: var(--c); transform-origin: top; }
+.bfx-gate { padding: 0.3em 0.5em; background: var(--c); color: var(--paper); border: 2px solid var(--ink); font-weight: 800; font-size: max(0.9em, 11px); box-shadow: 2px 2px 0 var(--yellow); }
+/* media */
+.bfx-corner { width: 1.6em; height: 1.6em; border: 0 solid var(--pink); }
+.bfx-corner[style*='--sx: -1'][style*='--sy: -1'] { border-top-width: 5px; border-left-width: 5px; }
+.bfx-corner[style*='--sx: 1'][style*='--sy: -1'] { border-top-width: 5px; border-right-width: 5px; }
+.bfx-corner[style*='--sx: -1'][style*='--sy: 1'] { border-bottom-width: 5px; border-left-width: 5px; }
+.bfx-corner[style*='--sx: 1'][style*='--sy: 1'] { border-bottom-width: 5px; border-right-width: 5px; }
+.bfx-camflash { width: 9em; height: 9em; background: var(--paper); border: 4px solid var(--ink); }
+.bfx-shard { width: 0.9em; height: 0.9em; background: var(--col); border: 2px solid var(--ink); }
+.bfx-splash { width: 1em; height: 1em; background: var(--col); mix-blend-mode: multiply; clip-path: polygon(50% 0, 62% 18%, 90% 8%, 82% 36%, 100% 50%, 80% 62%, 92% 90%, 62% 80%, 50% 100%, 38% 82%, 8% 92%, 22% 62%, 0 46%, 24% 34%, 12% 8%, 38% 20%); }
+/* agent */
+.bfx-cursor { width: 0.9em; height: 1.3em; background: var(--c); clip-path: polygon(0 0, 100% 62%, 58% 66%, 78% 100%, 54% 100%, 36% 70%, 0 92%); filter: drop-shadow(2px 2px 0 var(--ink)); }
+.bfx-drone { width: 1.1em; height: 0.55em; background: var(--c); border: 2px solid var(--ink); }
+.bfx-drone::before, .bfx-drone::after { content: ''; position: absolute; top: -0.45em; width: 0.7em; height: 0.12em; background: var(--ink); }
+.bfx-drone::before { left: -0.35em; } .bfx-drone::after { right: -0.35em; }
+/* chaos */
+.bfx-slice { width: calc(var(--w) * 1em); height: 0.8em; background: var(--col); mix-blend-mode: multiply; }
+.bfx-shape { width: 1em; height: 1em; background: var(--col); border: 2px solid var(--ink); }
+.bfx-shape.is-tri { clip-path: polygon(50% 0, 100% 100%, 0 100%); border: 0; }
+.bfx-shape.is-circ { border-radius: 50%; }
+.bfx-shape.is-cross { clip-path: polygon(35% 0, 65% 0, 65% 35%, 100% 35%, 100% 65%, 65% 65%, 65% 100%, 35% 100%, 35% 65%, 0 65%, 0 35%, 35% 35%); border: 0; }
+.bfx-shape.is-bar { height: 0.3em; width: 1.6em; }
+.bfx-shape.is-diamond { clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); border: 0; }
+/* legacy */
+.bfx-floppy { width: 1.1em; height: 1.1em; background: var(--ink); border: 2px solid var(--ink); }
+.bfx-floppy b { position: absolute; left: 22%; top: 0; width: 56%; height: 38%; background: var(--steel); }
+.bfx-floppy i { position: absolute; left: 14%; bottom: 0; width: 72%; height: 42%; background: var(--paper); }
+.bfx-crt { width: 9em; height: 9em; background: var(--ink); opacity: 0.4; background-image: repeating-linear-gradient(0deg, var(--ink) 0 3px, var(--steel) 3px 6px); border: 3px solid var(--ink); }
+.bfx-scan { width: 9em; height: 0.8em; background: var(--paper); border-block: 3px solid var(--ink); }
+/* aura, heal, shield, buffs */
+.bfx-aura { width: 10em; height: 10em; border: 0.28em solid var(--col); border-radius: 50%; }
+.bfx-aura.is-pink { --col: var(--pink); } .bfx-aura.is-blue { --col: var(--blue); }
+.bfx-plus { width: 1em; height: 1em; background: var(--col); clip-path: polygon(35% 0, 65% 0, 65% 35%, 100% 35%, 100% 65%, 65% 65%, 65% 100%, 35% 100%, 35% 65%, 0 65%, 0 35%, 35% 35%); }
+.bfx-hex { width: 1em; height: 1em; color: var(--col); }
+.bfx-hex.is-ghost { opacity: 0.6; }
+.bfx-arrow { width: 0.75em; height: 1em; color: var(--col); }
+.bfx-arrow.is-down svg { transform: scaleY(-1); }
+.bfx-arrow.is-ghost { opacity: 0.7; }
+
+/* full-screen misregistration bands (super effective) */
+.bfx-bands { position: absolute; inset: 0; mix-blend-mode: multiply; animation: fx-bands 240ms steps(2) both; }
+.bfx-bands i { position: absolute; left: 0; right: 0; height: 9%; }
+.bfx-bands i:nth-child(1) { top: 24%; background: var(--pink); }
+.bfx-bands i:nth-child(2) { top: 44%; background: var(--yellow); height: 6%; }
+.bfx-bands i:nth-child(3) { top: 62%; background: var(--blue); }
+@keyframes fx-bands { 0% { opacity: 0.8; transform: translateX(-3%); } 50% { opacity: 0.6; transform: translateX(2%); } 100% { opacity: 0; transform: translateX(0); } }
+
+/* quake and freeze are toggled on .bt-duel-body */
+.bt-duel-body.is-quake { animation: fx-quake 320ms linear 1; }
+@keyframes fx-quake {
+  0%, 100% { transform: translate(0, 0); }
+  12% { transform: translate(-7px, 3px); } 28% { transform: translate(6px, -3px); } 44% { transform: translate(-5px, 2px); }
+  60% { transform: translate(4px, -2px); } 78% { transform: translate(-2px, 1px); }
+}
+.bt-duel-body.is-freeze .bt-mcard * { animation-play-state: paused !important; }
+.bt-duel-body.is-freeze .bt-arena { filter: contrast(1.25) saturate(1.5); }
+.bt-duel-body.is-freeze::after { content: ''; position: absolute; inset: 0; box-shadow: inset 0 0 0 8px var(--red); pointer-events: none; z-index: 5; }
+
+/* dodge on miss */
+.bt-mart.is-dodge { animation: bt-dodge 380ms ease-out 1; }
+@keyframes bt-dodge { 30% { transform: translateY(-14%) rotate(-8deg); } 60% { transform: translateY(-4%) rotate(3deg); } }

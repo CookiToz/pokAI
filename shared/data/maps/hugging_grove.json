@@ -1,0 +1,616 @@
+{
+ "id": "hugging_grove",
+ "name": "Hugging Grove",
+ "width": 60,
+ "height": 56,
+ "rows": [
+  "TTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYY",
+  "YTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTY",
+  "YYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTT",
+  "TYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYT",
+  "TTYY,.YYT.Y..,..T,....,..T.YT...TTY,.TY,TT...,...,,,.....TYY",
+  "YTT...........,..,T...,........,,.....T......T..cccccc...TTY",
+  "YYT...cccccc.YTT......,..fxxxxxx,...,.T.Y.T,.Y,.cccccc.TYYTT",
+  "TYY...cccccc.mY.,,Y.......xxxxxx...,...T..Y,.FF.cccccc,.,YYT",
+  "TTYY..cccccc,....TY.ff....xxxxxx.,....,,,,YYbpppcccccc..,TYY",
+  "YTTY.,ccccccFbUFFb,FFb....xxxxxx....f..YY.T.Ypppcccccc...TTY",
+  "YYT.Y.ccccccppppppppppUfUfxxxxxx..mB.,..f.,fYFpppFb......YTT",
+  "TYYT.........LFbbFFLfd.,..xxxxx*.Fm.,LY,..,..FpppY...Y,.,YYT",
+  "TTY.,T,.T.Y.b.YYT..F.dmPPPPPPPPaPPPm....T.Y.bpppb,..T.f..TYY",
+  "YTT.......,...,.U....dPPPPPPPPPPPPPPf.,.....FpppF....TTY.TTY",
+  "YYT.HHHHHdHHHHHdHHHHHdPPFPPPPPPPPFPPm.11111111pppF.....T.YTT",
+  "TYY.HHHHHdHHHHHdHHHHHdPPPPPPPPPPPPPP..11111111pppF...Y...YYT",
+  "TTYUhhDhhdhhDhhdhhDhhdPFPBPPPPPPBPFPbfuuu2uuuupp..F.U...TTYY",
+  "YTT.ddddddddddddddddddPPPPPPPPPPPPPPpppppppppppp.fpFY..Y,TTY",
+  "YYT.ddddddddddddddddddPPFPPPPPPPP,PPppppppppppppppp..Y.ffYTT",
+  "TYY.b,..fd...f.d.b..bdPPPPPPPPPPPPPPpppppppppppppppbTbFbTYYT",
+  "TTY.HHHHHdHHHHHdHHHHHdmPPPPPPPPPPPPmb.L.,,..pp.,..Fm.TSY.TYY",
+  "YTT,HHHHHdHHHHHdHHHHHd.,F...pppF......T.,.f.pppYYT.f.f,YYTTY",
+  "YYTbhhDhhdhhDhhdhhDhhd.UUUBIpppT..,TYmT..,.,ppp,L.,T.Y,TYYTT",
+  "TYY.ddddddddddddddddddfTm.S.pppb.YY.Tf.bT.,Ipppb.YY.TY.TTYYT",
+  "TTY.dddddddddddddddddd....Y.pppFb...T.,Y.L.,pppL.TF.BFY.TTYY",
+  "YTT,BS...d.FFbpdp,...d.I,.bppppppp.,,..ppppppppFFppB.T.,.TTY",
+  "YYT.fFpppppppppppppppppppppppppppppppppppppppppppppp.Y.TYYTT",
+  "TYY.TFpppppppppppppppppppppppppppppppppppppppppppppp.Y..TYYT",
+  "TTYm..BBS.pppp...p....bppUpppp.f....,..Fb.FFb.Bpp..,.F.YTTYY",
+  "YTTbm.T..T.ppp,44444.,.FYTrrpp,.Y...YTf.YTT...Ipp,T.Y..YfTTY",
+  "YYT,U...F.bppp.44444..T..,S.pp,..,TT.YT,YY,TY..pp,T..Y.fYYTT",
+  "TYYT.Y....Yppp.33533.Y....Ybpp..T...ff.,,..qqqqppqqqqqqqqYYT",
+  "TTY...YY.,LLpppppppp..F.F.Fppp.,F.F...,,.TYq,Fb,,,,L,,,,qTYY",
+  "YTT...,..TfSppI..,.,~~~~~~~~==~~~~~~~~.....q,,,,,,,f,,,,qTTY",
+  "YYT..YTTY...pp.mFm..~~~~~~~~==~~~~~~~~.TYY.q,,,,,,,,,,,,qYTT",
+  "TYY,.....F,Ippp.SF..~~~~~~~~==~~~~~~~~.T.Y,q,,,,,,,,,,,,qYYT",
+  "TTY.........pppcccc.~~~~~~~~==~~~~~~~~f,.TYq,,f,,,,,f,,,qTYY",
+  "YTT,r....r..ppbcccc.~~~~~~~~==~~~~~~~~..Y..q,,,,cccccc,,qTTY",
+  "YYT.,...f,.,pppcccc.~~~~~~~~==~~~~~~~~.....q,,,,cccccc,,qYTT",
+  "TYY...U.....pppcccc.~~~~~~~~==~~~~~~~~...Y.q,f,,cccccc,,qYYT",
+  "TTY....,m.FFpppcccc.~~~~~~~~==~~~~~~~~.Y.f.q,,f,cccccc,,qTYY",
+  "YTTr.....U.ppp.cccc.~~~~~~~~==~~~~~~~~.Y,T.q,,,,cccccc,,qTTY",
+  "YYT..L....U.pppcccc.~~~~~~~~==~~~~~~~~..YY.q,,,,,,,,,,,,qYTT",
+  "TYY,...U..B.ppp....,~~~~~~~~==~~~~~~~~..TYYq,,,,,,f,,,,,qYYT",
+  "TTY..,.f.,..pppYT.,.~~~~~~~~==~~~~~~~~...,.q,,,,,,,,,,,,qTYY",
+  "YTT..r,,..r,pppF.T....,,..,.pp.cccccccc....q,,,,,,,,,,,,qTTY",
+  "YYT....f....pppT..TTUYTTY.T.pp.cccccccc.Y.mq,,,,,f,,,,,,qYTT",
+  "TYY....,...bpppbTFFbT,,..FF.pp.ccccccccb.FFqqqqqqqqqqqqqqYYT",
+  "TTY.,,..T.Fppppppppp.,...pp.pp..pppppLmppppUppFL..YY.TY..TYY",
+  "YTT..TTYYTTFppppppppppppppppppppppppppppppppppppF.U.,....TTY",
+  "YYTTY.T.,Y..ppppppppppppppppppppppppppppppppppppF.U.,.T,,YTT",
+  "TYY.......Yfpp.b.Fbb.....FFp.Fpp.FFb.ppb.FFpFSpppF..Tf...YYT",
+  "TTY..,Y..TYIpp..T.Y.T.Yf.TYFTTFFT...T,F.T.FFFIppp..YTT...TYY",
+  "YTTYYTTYYTTYppTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTppYTTYYTTYYTTY",
+  "YYTTYYTTYYTTppTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYYppYYTTYYTTYYTT",
+  "TYYTTYYTTYYTppYTTYYTTYYTTYYTTYYTTYYTTYYTTYYTTYppTYYTTYYTTYYT"
+ ],
+ "legend": {
+  "*": "lm_great_tree",
+  ",": "grass_alt",
+  ".": "grass",
+  "1": "bench_roof",
+  "2": "bench_door",
+  "3": "store_wall",
+  "4": "store_roof",
+  "5": "store_door",
+  "=": "bridge_wood",
+  "B": "bench_seat",
+  "D": "house_door",
+  "F": "flower_bed",
+  "H": "treehouse_roof",
+  "I": "signpost",
+  "L": "log",
+  "P": "plaza",
+  "S": "sign",
+  "T": "tree_pine",
+  "U": "stump",
+  "Y": "tree_birch",
+  "b": "bush",
+  "c": "cable",
+  "d": "dock",
+  "f": "flowers",
+  "h": "treehouse_wall",
+  "m": "street_lamp",
+  "p": "path",
+  "q": "fence",
+  "r": "rock",
+  "u": "bench_wall",
+  "x": "blocker",
+  "~": "water",
+  "a": "exit_mat"
+ },
+ "kind": "city",
+ "music": "hub",
+ "npcs": [
+  {
+   "id": "zuckerbot",
+   "sprite": "zuckerbot",
+   "x": 48,
+   "y": 34,
+   "facing": "down",
+   "dialogue": "zuckerbot_ranch"
+  },
+  {
+   "id": "clem_plaza",
+   "sprite": "clem_delangouste",
+   "x": 29,
+   "y": 15,
+   "facing": "down",
+   "dialogue": "clem_plaza"
+  },
+  {
+   "id": "grove_resistance_a",
+   "sprite": "resistance_dev",
+   "x": 7,
+   "y": 40,
+   "facing": "right",
+   "dialogue": "resistance_camp_a"
+  },
+  {
+   "id": "grove_resistance_b",
+   "sprite": "resistance_dev",
+   "x": 9,
+   "y": 44,
+   "facing": "left",
+   "dialogue": "resistance_camp_b"
+  },
+  {
+   "id": "grove_resistance_c",
+   "sprite": "resistance_dev",
+   "x": 40,
+   "y": 21,
+   "facing": "down",
+   "dialogue": "resistance_arena_c"
+  },
+  {
+   "id": "grove_scientist_1",
+   "sprite": "scientist",
+   "x": 24,
+   "y": 25,
+   "facing": "down",
+   "dialogue": "grove_scientist_1_talk",
+   "trainer": "grove_scientist_1",
+   "sightRange": 3
+  },
+  {
+   "id": "grove_resistance_1",
+   "sprite": "resistance_dev",
+   "x": 11,
+   "y": 38,
+   "facing": "right",
+   "dialogue": "grove_resistance_1_talk",
+   "trainer": "grove_resistance_1",
+   "sightRange": 3
+  },
+  {
+   "id": "grove_dev_1",
+   "sprite": "dev_phone",
+   "x": 51,
+   "y": 28,
+   "facing": "left",
+   "dialogue": "grove_dev_1_talk",
+   "trainer": "grove_dev_1",
+   "sightRange": 3
+  },
+  {
+   "id": "amb_1_citizen_a",
+   "sprite": "citizen_a",
+   "x": 25,
+   "y": 17,
+   "facing": "down",
+   "dialogue": "amb_grove_1",
+   "wander": 4,
+   "ambient": true
+  },
+  {
+   "id": "amb_2_citizen_b",
+   "sprite": "citizen_b",
+   "x": 33,
+   "y": 18,
+   "facing": "down",
+   "dialogue": "amb_grove_2",
+   "wander": 4,
+   "ambient": true
+  },
+  {
+   "id": "amb_3_tourist",
+   "sprite": "tourist",
+   "x": 30,
+   "y": 14,
+   "facing": "down",
+   "dialogue": "amb_grove_3",
+   "wander": 4,
+   "ambient": true
+  },
+  {
+   "id": "amb_4_citizen_c",
+   "sprite": "citizen_c",
+   "x": 8,
+   "y": 24,
+   "facing": "down",
+   "dialogue": "amb_grove_4",
+   "wander": 4,
+   "ambient": true
+  },
+  {
+   "id": "amb_5_citizen_d",
+   "sprite": "citizen_d",
+   "x": 19,
+   "y": 24,
+   "facing": "down",
+   "dialogue": "amb_grove_5",
+   "wander": 4,
+   "ambient": true
+  },
+  {
+   "id": "amb_6_dev_phone",
+   "sprite": "dev_phone",
+   "x": 15,
+   "y": 19,
+   "facing": "down",
+   "dialogue": "amb_grove_6",
+   "wander": 4,
+   "ambient": true
+  },
+  {
+   "id": "amb_7_citizen_a",
+   "sprite": "citizen_a",
+   "x": 41,
+   "y": 22,
+   "facing": "down",
+   "dialogue": "amb_grove_7",
+   "wander": 4,
+   "ambient": true
+  },
+  {
+   "id": "amb_8_delivery_rider",
+   "sprite": "delivery_rider",
+   "x": 30,
+   "y": 30,
+   "facing": "down",
+   "dialogue": "amb_grove_8",
+   "wander": 4,
+   "ambient": true
+  },
+  {
+   "id": "amb_9_citizen_b",
+   "sprite": "citizen_b",
+   "x": 36,
+   "y": 27,
+   "facing": "down",
+   "dialogue": "amb_grove_9",
+   "wander": 4,
+   "ambient": true
+  },
+  {
+   "id": "amb_10_tourist",
+   "sprite": "tourist",
+   "x": 14,
+   "y": 29,
+   "facing": "down",
+   "dialogue": "amb_grove_10",
+   "wander": 4,
+   "ambient": true
+  },
+  {
+   "id": "amb_11_citizen_d",
+   "sprite": "citizen_d",
+   "x": 29,
+   "y": 47,
+   "facing": "down",
+   "dialogue": "amb_grove_11",
+   "wander": 4,
+   "ambient": true
+  },
+  {
+   "id": "amb_12_citizen_c",
+   "sprite": "citizen_c",
+   "x": 22,
+   "y": 49,
+   "facing": "down",
+   "dialogue": "amb_grove_12",
+   "wander": 4,
+   "ambient": true
+  },
+  {
+   "id": "amb_13_dev_phone",
+   "sprite": "dev_phone",
+   "x": 47,
+   "y": 18,
+   "facing": "down",
+   "dialogue": "amb_grove_13",
+   "wander": 4,
+   "ambient": true
+  },
+  {
+   "id": "amb_14_citizen_a",
+   "sprite": "citizen_a",
+   "x": 20,
+   "y": 26,
+   "facing": "down",
+   "dialogue": "amb_grove_14",
+   "wander": 4,
+   "ambient": true
+  },
+  {
+   "id": "kartpathy_grove",
+   "sprite": "kartpathy",
+   "x": 24,
+   "y": 27,
+   "facing": "down",
+   "dialogue": "kartpathy_grove",
+   "condition": {
+    "all": [
+     {
+      "flag": "badge_commit"
+     },
+     {
+      "not": {
+       "flag": "kartpathy_grove_gone"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "lecube_grove",
+   "sprite": "lecube",
+   "x": 20,
+   "y": 32,
+   "facing": "right",
+   "dialogue": "lecube_grove",
+   "condition": {
+    "flag": "lecube_left"
+   }
+  },
+  {
+   "id": "llama_nft",
+   "sprite": "tourist",
+   "x": 42,
+   "y": 35,
+   "facing": "left",
+   "dialogue": "llama_nft"
+  }
+ ],
+ "warps": [
+  {
+   "x": 31,
+   "y": 12,
+   "to": "hub_grove",
+   "toX": 9,
+   "toY": 10,
+   "facing": "up"
+  },
+  {
+   "x": 17,
+   "y": 31,
+   "to": "store_grove",
+   "toX": 5,
+   "toY": 6,
+   "facing": "up"
+  },
+  {
+   "x": 41,
+   "y": 16,
+   "to": "bench_openweights",
+   "toX": 9,
+   "toY": 15,
+   "facing": "up"
+  },
+  {
+   "x": 12,
+   "y": 55,
+   "to": "route_foret_poids",
+   "toX": 13,
+   "toY": 1,
+   "facing": "down"
+  },
+  {
+   "x": 13,
+   "y": 55,
+   "to": "route_foret_poids",
+   "toX": 14,
+   "toY": 1,
+   "facing": "down"
+  },
+  {
+   "x": 46,
+   "y": 55,
+   "to": "sentier_cotier",
+   "toX": 13,
+   "toY": 1,
+   "facing": "down"
+  },
+  {
+   "x": 47,
+   "y": 55,
+   "to": "sentier_cotier",
+   "toX": 14,
+   "toY": 1,
+   "facing": "down"
+  }
+ ],
+ "triggers": [
+  {
+   "x": 46,
+   "y": 55,
+   "w": 2,
+   "script": "grove_sentier_closed",
+   "condition": {
+    "not": {
+     "flag": "badge_vent"
+    }
+   }
+  },
+  {
+   "x": 12,
+   "y": 51,
+   "w": 2,
+   "script": "grove_welcome",
+   "once": true
+  },
+  {
+   "x": 3,
+   "y": 15,
+   "script": "secret_hugging_grove_3_15",
+   "once": true
+  },
+  {
+   "x": 4,
+   "y": 28,
+   "script": "secret_hugging_grove_4_28",
+   "once": true
+  },
+  {
+   "x": 10,
+   "y": 50,
+   "script": "secret_hugging_grove_10_50",
+   "once": true
+  },
+  {
+   "x": 32,
+   "y": 23,
+   "script": "secret_hugging_grove_32_23",
+   "once": true
+  },
+  {
+   "x": 35,
+   "y": 52,
+   "script": "secret_hugging_grove_35_52",
+   "once": true
+  },
+  {
+   "x": 6,
+   "y": 16,
+   "script": "grove_door_0"
+  },
+  {
+   "x": 12,
+   "y": 16,
+   "script": "grove_door_1"
+  },
+  {
+   "x": 18,
+   "y": 16,
+   "script": "grove_door_2"
+  },
+  {
+   "x": 6,
+   "y": 22,
+   "script": "grove_door_3"
+  },
+  {
+   "x": 12,
+   "y": 22,
+   "script": "grove_door_4"
+  },
+  {
+   "x": 18,
+   "y": 22,
+   "script": "grove_door_5"
+  }
+ ],
+ "encounters": [
+  {
+   "form": "llama_2",
+   "minLevel": 12,
+   "maxLevel": 15,
+   "weight": 24
+  },
+  {
+   "form": "mistral_7b",
+   "minLevel": 12,
+   "maxLevel": 15,
+   "weight": 20
+  },
+  {
+   "form": "sd_1_5",
+   "minLevel": 12,
+   "maxLevel": 15,
+   "weight": 16
+  },
+  {
+   "form": "falcon_7b",
+   "minLevel": 13,
+   "maxLevel": 16,
+   "weight": 16
+  },
+  {
+   "form": "smollm_2",
+   "minLevel": 12,
+   "maxLevel": 14,
+   "weight": 12
+  },
+  {
+   "form": "codestral",
+   "minLevel": 13,
+   "maxLevel": 15,
+   "weight": 10
+  },
+  {
+   "form": "whisper_tiny",
+   "minLevel": 12,
+   "maxLevel": 14,
+   "weight": 8,
+   "night": true
+  },
+  {
+   "form": "qwen_2_5",
+   "minLevel": 14,
+   "maxLevel": 16,
+   "weight": 6
+  },
+  {
+   "form": "llama_3",
+   "minLevel": 15,
+   "maxLevel": 16,
+   "weight": 4
+  },
+  {
+   "form": "bert",
+   "minLevel": 12,
+   "maxLevel": 14,
+   "weight": 8
+  },
+  {
+   "form": "mixtral_8x7b",
+   "minLevel": 16,
+   "maxLevel": 16,
+   "weight": 2
+  }
+ ],
+ "encounterRate": 0.16,
+ "landmarks": [
+  {
+   "x": 31,
+   "y": 11,
+   "label": "Grand Arbre (Hub 🤗)"
+  },
+  {
+   "x": 17,
+   "y": 31,
+   "label": "Store"
+  },
+  {
+   "x": 41,
+   "y": 16,
+   "label": "Benchmark Open-Weights"
+  },
+  {
+   "x": 47,
+   "y": 38,
+   "label": "Ranch des Lamas"
+  },
+  {
+   "x": 6,
+   "y": 41,
+   "label": "QG Résistance"
+  },
+  {
+   "x": 28,
+   "y": 38,
+   "label": "Étang"
+  },
+  {
+   "x": 28,
+   "y": 16,
+   "label": "Place du Grand Arbre"
+  },
+  {
+   "x": 42,
+   "y": 35,
+   "label": "Lama à NFT"
+  }
+ ],
+ "exits": [
+  {
+   "x": 12,
+   "y": 55,
+   "to": "route_foret_poids",
+   "label": "Forêt des Poids → Latentia City"
+  },
+  {
+   "x": 46,
+   "y": 55,
+   "to": "sentier_cotier",
+   "label": "Sentier Côtier → Port 8080"
+  }
+ ]
+}

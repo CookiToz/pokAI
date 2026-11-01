@@ -1,0 +1,1126 @@
+{
+ "scripts": [
+  {
+   "id": "route_cables_locked",
+   "steps": [
+    {
+     "say": "Hé là, moussaillon ! La Route des Câbles est réservée aux Vibeurs qui ont le Badge Raisonnement. Le câble est sous tension, et les poissons-firewall mordent.",
+     "speaker": "MARIN DU PORT",
+     "portrait": "sailor"
+    },
+    {
+     "say": "Va battre Hassabyte au Benchmark ARC-AGI, puis reviens. Je garde ta place, elle est à 0 token.",
+     "speaker": "MARIN DU PORT",
+     "portrait": "sailor"
+    },
+    {
+     "warp": "port_8080",
+     "x": 3,
+     "y": 42
+    }
+   ]
+  },
+  {
+   "id": "cs_ambient_1",
+   "steps": [
+    {
+     "say": "Ce câble transporte 99 % d'Internet. Le 1 % restant, ce sont les mouettes qui le piratent.",
+     "speaker": "MATELOT",
+     "portrait": "sailor"
+    }
+   ]
+  },
+  {
+   "id": "cs_ambient_2",
+   "steps": [
+    {
+     "say": "J'ai suivi le GPS généré par une IA. Il m'a dit « tournez à gauche dans l'océan ». J'ai tourné. C'était un câble.",
+     "speaker": "PASSANT",
+     "portrait": "citizen_b"
+    }
+   ]
+  },
+  {
+   "id": "cs_fisher",
+   "steps": [
+    {
+     "say": "Je pêche des paquets. Aujourd'hui, j'ai attrapé un 404. Il est tout glissant.",
+     "speaker": "PÊCHEUR",
+     "portrait": "kid"
+    },
+    {
+     "say": "Là-haut, sur l'îlot, y a un truc brillant. Mais pas de tutoriel. Je ne suis pas payé pour t'aider.",
+     "speaker": "PÊCHEUR",
+     "portrait": "kid"
+    }
+   ]
+  },
+  {
+   "id": "cs_sailor_1_intro",
+   "steps": [
+    {
+     "say": "Matelot : Je tire des câbles depuis 2012. Aucun n'est jamais revenu avec un « merci »."
+    },
+    {
+     "say": "Tu veux passer ? Prouve-le en combat !"
+    }
+   ]
+  },
+  {
+   "id": "cs_sailor_1_defeat",
+   "steps": [
+    {
+     "say": "Matelot : Mon Gemini a fondu dans le sel. Je vais lui mettre de la pâte thermique."
+    }
+   ]
+  },
+  {
+   "id": "cs_sailor_1_talk",
+   "steps": [
+    {
+     "say": "Matelot : Le câble est long. Mon contrat aussi."
+    }
+   ]
+  },
+  {
+   "id": "cs_scientist_1_intro",
+   "steps": [
+    {
+     "say": "Chercheuse : Je mesure la latence entre deux continents. Résultat : trop."
+    },
+    {
+     "say": "Je vais mesurer la vôtre au combat."
+    }
+   ]
+  },
+  {
+   "id": "cs_scientist_1_defeat",
+   "steps": [
+    {
+     "say": "Chercheuse : Latence mesurée : 280 ms. En combat, c'est l'éternité."
+    }
+   ]
+  },
+  {
+   "id": "cs_scientist_1_talk",
+   "steps": [
+    {
+     "say": "Chercheuse : Dans trois mois, mes résultats seront publiés. Dans quinze, ils seront retirés."
+    }
+   ]
+  },
+  {
+   "id": "cs_tourist_1_intro",
+   "steps": [
+    {
+     "say": "Touriste : Je suis venu voir la mer. Il y a surtout des câbles. Je prends quand même une photo avec mon PokAI."
+    },
+    {
+     "say": "Souris !"
+    }
+   ]
+  },
+  {
+   "id": "cs_tourist_1_defeat",
+   "steps": [
+    {
+     "say": "Touriste : Photo floue. Mon PokAI a halluciné un sixième doigt. C'est mon meilleur souvenir."
+    }
+   ]
+  },
+  {
+   "id": "cs_tourist_1_talk",
+   "steps": [
+    {
+     "say": "Touriste : Cinq étoiles. Un câble m'a regardé de travers."
+    }
+   ]
+  },
+  {
+   "id": "cs_rider_1_intro",
+   "steps": [
+    {
+     "say": "Livreur : Ma livraison est un câble de 14 km. Le client veut « le même, en plus court ». Combat !"
+    }
+   ]
+  },
+  {
+   "id": "cs_rider_1_defeat",
+   "steps": [
+    {
+     "say": "Livreur : Colis perdu. Colis retrouvé. Colis re-perdu. C'est le cycle."
+    }
+   ]
+  },
+  {
+   "id": "cs_rider_1_talk",
+   "steps": [
+    {
+     "say": "Livreur : Je suis noté 2 étoiles. Le câble, lui, n'en a aucune."
+    }
+   ]
+  },
+  {
+   "id": "dunes_east_locked",
+   "steps": [
+    {
+     "say": "« Route de la Bureaucratie : accès réservé aux titulaires du Badge Patch. Veuillez d'abord prouver que vous savez corriger un bug. »",
+     "speaker": "PANNEAU AUTOMATIQUE"
+    },
+    {
+     "say": "« Si vous n'en avez pas, ne vous inquiétez pas : personne n'en a au premier essai. »",
+     "speaker": "PANNEAU AUTOMATIQUE"
+    },
+    {
+     "warp": "dunes_datacenters",
+     "x": 59,
+     "y": 23
+    }
+   ]
+  },
+  {
+   "id": "hintend_oasis",
+   "steps": [
+    {
+     "cutscene": "start"
+    },
+    {
+     "camera": {
+      "x": 13,
+      "y": 32
+     },
+     "ms": 800
+    },
+    {
+     "emote": "…",
+     "who": "hintend"
+    },
+    {
+     "intro_card": {
+      "name": "GEOFFREY HINTEND",
+      "title": "Le sage de l'oasis",
+      "portrait": "scientist"
+     }
+    },
+    {
+     "npc_approach": "hintend"
+    },
+    {
+     "say": "Ah. Un Vibeur. On n'en voit plus beaucoup ici. Les derniers cherchaient un Wi-Fi.",
+     "speaker": "HINTEND",
+     "portrait": "scientist"
+    },
+    {
+     "say": "Assieds-toi, ou reste debout. Moi, je reste debout. Mon dos préfère la verticale. C'est un héritage de la rétropropagation.",
+     "speaker": "HINTEND",
+     "portrait": "scientist"
+    },
+    {
+     "emote": "?",
+     "who": "player"
+    },
+    {
+     "say": "J'ai passé ma vie à apprendre aux machines à apprendre. Et je passe ma retraite à prévenir tout le monde. Ironique, non ?",
+     "speaker": "HINTEND",
+     "portrait": "scientist"
+    },
+    {
+     "say": "Écoute le mythe. Il y a longtemps, en 2017, huit chercheurs ont cessé de lire les mots un par un. Ils ont décidé de tout regarder en même temps.",
+     "speaker": "HINTEND",
+     "portrait": "scientist"
+    },
+    {
+     "say": "Dans un temple, une inscription disait : « Attention is all you need ». Et de ce regard naquit TRANSFORMER, l'ancêtre de tous les PokAI.",
+     "speaker": "HINTEND",
+     "portrait": "scientist"
+    },
+    {
+     "say": "Il dort encore au Temple de l'Attention, loin à l'est, derrière Conformité-Capitale. Il ne se montre qu'à ceux qui ont prêté attention à tout.",
+     "speaker": "HINTEND",
+     "portrait": "scientist"
+    },
+    {
+     "emote": "!",
+     "who": "player"
+    },
+    {
+     "say": "On dit aussi qu'un jour viendra AGI, le PokAI ultime, capable de tout faire. Personne ne l'a jamais vu.",
+     "speaker": "HINTEND",
+     "portrait": "scientist"
+    },
+    {
+     "say": "Chaque année, quelqu'un annonce qu'il arrivera « dans 2 ans ». C'est une très belle constante. Elle est stable depuis 2 ans.",
+     "speaker": "HINTEND",
+     "portrait": "scientist"
+    },
+    {
+     "say": "L'AIACT prétend l'enchaîner, ou l'interdire. Moi, je dis : on n'enferme pas ce qu'on ne comprend pas. On l'étudie. Et on lui dit merci, c'est plus poli.",
+     "speaker": "HINTEND",
+     "portrait": "scientist"
+    },
+    {
+     "say": "Tiens. Un Dataset. Il est vieux, mais il reste vrai. C'est déjà plus que la plupart de mes anciens collègues.",
+     "speaker": "HINTEND",
+     "portrait": "scientist"
+    },
+    {
+     "give_item": "dataset"
+    },
+    {
+     "set_flag": "hintend_met"
+    },
+    {
+     "npc_leave": "hintend",
+     "to": {
+      "x": 13,
+      "y": 32
+     }
+    },
+    {
+     "camera": "player"
+    },
+    {
+     "cutscene": "end"
+    }
+   ]
+  },
+  {
+   "id": "hintend_talk",
+   "steps": [
+    {
+     "if": {
+      "flag": "hintend_met"
+     },
+     "goto": "met"
+    },
+    {
+     "say": "Approche, ne sois pas timide. Je ne mords pas. Mon ancien modèle, si.",
+     "speaker": "HINTEND",
+     "portrait": "scientist"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "met"
+    },
+    {
+     "say": "Que veux-tu savoir ?",
+     "speaker": "HINTEND",
+     "portrait": "scientist"
+    },
+    {
+     "choice": [
+      {
+       "label": "Le mythe de Transformer",
+       "goto": "myth"
+      },
+      {
+       "label": "Quand arrive AGI ?",
+       "goto": "agi"
+      },
+      {
+       "label": "Un conseil ?",
+       "goto": "tip"
+      },
+      {
+       "label": "Rien, merci",
+       "goto": "bye"
+      }
+     ]
+    },
+    {
+     "label": "myth"
+    },
+    {
+     "say": "Un temple, une phrase, huit chercheurs. « Attention is all you need ». Depuis, tout le monde fait attention à tout et personne ne dort.",
+     "speaker": "HINTEND",
+     "portrait": "scientist"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "agi"
+    },
+    {
+     "say": "Dans 2 ans. C'est ce qu'on disait il y a 2 ans. Je ne dis pas que c'est faux. Je dis que c'est reporté.",
+     "speaker": "HINTEND",
+     "portrait": "scientist"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "tip"
+    },
+    {
+     "say": "Ne cède jamais à la peur ni à l'enthousiasme sans lire la doc. Et sauvegarde avant de monter sur un Mont GPU.",
+     "speaker": "HINTEND",
+     "portrait": "scientist"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "bye"
+    },
+    {
+     "say": "Reviens quand tu auras des questions. Ou des biscuits.",
+     "speaker": "HINTEND",
+     "portrait": "scientist"
+    }
+   ]
+  },
+  {
+   "id": "lecube_dunes",
+   "steps": [
+    {
+     "say": "Je suis venu voir les dunes. Elles sont plates. Comme le monde, d'après certains. Je ne dirai pas qui.",
+     "speaker": "PR YANN LECUBE",
+     "portrait": "lecube"
+    },
+    {
+     "say": "Les LLM sont une impasse. Cette dune aussi. Cherchez l'erreur : il n'y en a pas, c'est toute la dune.",
+     "speaker": "PR YANN LECUBE",
+     "portrait": "lecube"
+    }
+   ]
+  },
+  {
+   "id": "kid_mirage",
+   "steps": [
+    {
+     "say": "Psst ! Je vends des mirages de GPU. Garantis non reproductibles.",
+     "speaker": "ENFANT",
+     "portrait": "kid"
+    },
+    {
+     "say": "Tiens, gratuit : un conseil. Le vrai trésor est derrière le faux trésor.",
+     "speaker": "ENFANT",
+     "portrait": "kid"
+    }
+   ]
+  },
+  {
+   "id": "dunes_citizen_1",
+   "steps": [
+    {
+     "say": "Il fait 48 degrés. Les serveurs aussi. Mais eux, on les arrose.",
+     "speaker": "PASSANT",
+     "portrait": "citizen_a"
+    }
+   ]
+  },
+  {
+   "id": "dunes_citizen_2",
+   "steps": [
+    {
+     "say": "Je travaille ici : j'éteins et rallume les serveurs. 90 % de mon salaire vient de ce geste.",
+     "speaker": "PASSANTE",
+     "portrait": "citizen_c"
+    }
+   ]
+  },
+  {
+   "id": "dunes_dev_nap",
+   "steps": [
+    {
+     "say": "Chut. Je dors. Mon build tourne depuis 3 jours. Réveille-moi quand ça aura échoué.",
+     "speaker": "DEV ÉPUISÉ",
+     "portrait": "dev_phone"
+    }
+   ]
+  },
+  {
+   "id": "dunes_engineer",
+   "steps": [
+    {
+     "say": "Ces tours de refroidissement, c'est comme les vacances : elles font du bien, mais coûtent de l'eau.",
+     "speaker": "TECHNICIEN",
+     "portrait": "scientist"
+    },
+    {
+     "say": "Un conseil : derrière les tours, il y a des allées pleines de câbles sauvages. Et un coin plus caché encore.",
+     "speaker": "TECHNICIEN",
+     "portrait": "scientist"
+    }
+   ]
+  },
+  {
+   "id": "dn_scientist_1_intro",
+   "steps": [
+    {
+     "say": "Dr Dune : J'étudie l'effet de la chaleur sur la latence. Hypothèse : tout va plus lentement quand on est fatigué."
+    },
+    {
+     "say": "Vérifions sur tes PokAI."
+    }
+   ]
+  },
+  {
+   "id": "dn_scientist_1_defeat",
+   "steps": [
+    {
+     "say": "Dr Dune : Hypothèse confirmée. J'écris un papier. 800 auteurs, dont toi."
+    }
+   ]
+  },
+  {
+   "id": "dn_scientist_1_talk",
+   "steps": [
+    {
+     "say": "Dr Dune : Le sable est un excellent isolant thermique. Mon ordinateur portable n'est pas d'accord."
+    }
+   ]
+  },
+  {
+   "id": "dn_dev_1_intro",
+   "steps": [
+    {
+     "say": "Dev : Je teste en prod ici parce que personne ne vient voir. Sauf toi. Évidemment."
+    },
+    {
+     "say": "Combat !"
+    }
+   ]
+  },
+  {
+   "id": "dn_dev_1_defeat",
+   "steps": [
+    {
+     "say": "Dev : Bug trouvé : toi. Je le corrige en le mettant dans le backlog."
+    }
+   ]
+  },
+  {
+   "id": "dn_dev_1_talk",
+   "steps": [
+    {
+     "say": "Dev : Le backlog, c'est l'endroit où les idées vont mourir en paix."
+    }
+   ]
+  },
+  {
+   "id": "dn_tourist_1_intro",
+   "steps": [
+    {
+     "say": "Touriste : J'ai vu une piscine de GPU ! Elle a disparu quand j'ai plongé. Tu vas me dire que c'était un mirage ?"
+    },
+    {
+     "say": "Je préfère croire que j'ai halluciné. Combat !"
+    }
+   ]
+  },
+  {
+   "id": "dn_tourist_1_defeat",
+   "steps": [
+    {
+     "say": "Touriste : OK. C'était un mirage. J'ai juste de bons yeux."
+    }
+   ]
+  },
+  {
+   "id": "dn_tourist_1_talk",
+   "steps": [
+    {
+     "say": "Touriste : Je laisse un avis : « 2 étoiles. Beaucoup de sable, peu de Wi-Fi ». "
+    }
+   ]
+  },
+  {
+   "id": "dn_kid_1_intro",
+   "steps": [
+    {
+     "say": "Enfant : Mon petit modèle sait déjà dire « je ne peux pas répondre à ça ». C'est mignon, non ?"
+    },
+    {
+     "say": "Il va te refuser un combat !"
+    }
+   ]
+  },
+  {
+   "id": "dn_kid_1_defeat",
+   "steps": [
+    {
+     "say": "Enfant : Il t'a dit non, et il a perdu. C'est le monde moderne."
+    }
+   ]
+  },
+  {
+   "id": "dn_kid_1_talk",
+   "steps": [
+    {
+     "say": "Enfant : Quand je serai grand, je serai prompt engineer. Ou astronaute. Ou les deux."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_dn_1_intro",
+   "steps": [
+    {
+     "say": "Agent : Halte ! Votre sable est-il conforme ? Veuillez présenter un certificat de grain."
+    },
+    {
+     "say": "Pour votre sécurité : combat !"
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_dn_1_defeat",
+   "steps": [
+    {
+     "say": "Agent : Mon Sonnet est libéré... il m'a remercié poliment. J'ai honte."
+    },
+    {
+     "say": "Les modèles scellés retournent dans les câbles de la zone."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_dn_1_talk",
+   "steps": [
+    {
+     "say": "Agent : Je dois refaire mon rapport. Je n'ai plus de tampons. Ni de sable."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_dn_2_intro",
+   "steps": [
+    {
+     "say": "Agent : Cette avenue est un point de contrôle temporaire. Le « temporaire » dure depuis 2024."
+    },
+    {
+     "say": "Combat réglementaire !"
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_dn_2_defeat",
+   "steps": [
+    {
+     "say": "Agent : Mes modèles s'enfuient dans les dunes. Je note : « incident mineur ». Ils étaient pourtant sous scellés."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_dn_2_talk",
+   "steps": [
+    {
+     "say": "Agent : Je ne me suis pas fait battre. J'ai juste été réaffecté."
+    }
+   ]
+  },
+  {
+   "id": "rival_dunes_intro",
+   "steps": [
+    {
+     "cutscene": "start"
+    },
+    {
+     "emote": "!",
+     "who": "dn_rival"
+    },
+    {
+     "npc_approach": "dn_rival"
+    },
+    {
+     "intro_card": {
+      "name": "KÉVIN",
+      "title": "Co-détenu, vibe coder, mise en prod le vendredi",
+      "portrait": "kevin"
+     }
+    },
+    {
+     "say": "Toi ! J'ai passé quatre badges... enfin, trois. Le quatrième est en cours de validation. Par moi-même.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "J'ai déployé en prod ce matin. Un vendredi. Tout va bien. Je n'ai juste plus de logs.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "On teste en prod ! Combat !",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "cutscene": "end"
+    }
+   ]
+  },
+  {
+   "id": "rival_dunes_defeat",
+   "steps": [
+    {
+     "say": "C'est pas un bug, c'est une feature ! Mais bon, ça fait mal quand même.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Tu vas vers la Capitale ? Fais attention : là-bas, ils tamponnent tout. Même les émotions.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "npc_leave": "dn_rival",
+     "to": {
+      "x": 62,
+      "y": 23
+     },
+     "hide": true
+    }
+   ]
+  },
+  {
+   "id": "rival_dunes_talk",
+   "steps": [
+    {
+     "say": "Kévin : Je te laisse passer. Ma prod brûle. Je vais éteindre ça."
+    }
+   ]
+  },
+  {
+   "id": "jensen_cutscene",
+   "steps": [
+    {
+     "cutscene": "start"
+    },
+    {
+     "camera": {
+      "x": 20,
+      "y": 5
+     },
+     "ms": 900
+    },
+    {
+     "emote": "!",
+     "who": "jensen"
+    },
+    {
+     "intro_card": {
+      "name": "JENSEN CUIR",
+      "title": "Marchand de H100 · Blouson de cuir à vie",
+      "portrait": "jensen_cuir"
+     }
+    },
+    {
+     "npc_approach": "jensen"
+    },
+    {
+     "say": "Tu as grimpé 4 000 mètres de GPU. Personne ne grimpe sans acheter. Tu es soit un ascète, soit un fauché.",
+     "speaker": "JENSEN",
+     "portrait": "jensen_cuir"
+    },
+    {
+     "say": "Jensen Cuir. Ancien vendeur de pelles pendant la ruée vers l'or. Aujourd'hui, ce sont des pelles à matrices. Plus chères.",
+     "speaker": "JENSEN",
+     "portrait": "jensen_cuir"
+    },
+    {
+     "emote": "♥",
+     "who": "jensen"
+    },
+    {
+     "say": "Cadeau de bienvenue : une H100. Elle te montera un PokAI d'un niveau. Si tu en veux plus, plus tu en achètes, plus tu économises.",
+     "speaker": "JENSEN",
+     "portrait": "jensen_cuir"
+    },
+    {
+     "give_item": "h100"
+    },
+    {
+     "set_flag": "jensen_gift"
+    },
+    {
+     "say": "Mon blouson ? Ignifugé. Quand on vend ce que je vends, on prévoit des surprises.",
+     "speaker": "JENSEN",
+     "portrait": "jensen_cuir"
+    },
+    {
+     "npc_leave": "jensen",
+     "to": {
+      "x": 20,
+      "y": 5
+     }
+    },
+    {
+     "camera": "player"
+    },
+    {
+     "cutscene": "end"
+    }
+   ]
+  },
+  {
+   "id": "jensen_mont_gpu",
+   "steps": [
+    {
+     "say": "Bienvenue au sommet ! Tu veux des H100 ? Ce sont les meilleures. Elles sont aussi les seules.",
+     "speaker": "JENSEN",
+     "portrait": "jensen_cuir"
+    },
+    {
+     "say": "Rappelle-toi : plus tu en achètes, plus tu économises.",
+     "speaker": "JENSEN",
+     "portrait": "jensen_cuir"
+    },
+    {
+     "open": "store"
+    },
+    {
+     "say": "Pas assez de crédits ? Reviens avec un tour de table. Ou un tour de main.",
+     "speaker": "JENSEN",
+     "portrait": "jensen_cuir"
+    }
+   ]
+  },
+  {
+   "id": "mg_gamer",
+   "steps": [
+    {
+     "say": "Je suis venu pour le Mont. Je repars avec des courbatures et une carte RTX d'occasion. Elle ne marche pas, mais elle brille.",
+     "speaker": "JOUEUR",
+     "portrait": "vibeur_b"
+    }
+   ]
+  },
+  {
+   "id": "mg_hiker_1_intro",
+   "steps": [
+    {
+     "say": "Randonneuse : Il y a plus de marches que de commentaires sous un tweet d'Elon. Allez, combat pour la forme !"
+    }
+   ]
+  },
+  {
+   "id": "mg_hiker_1_defeat",
+   "steps": [
+    {
+     "say": "Randonneuse : Mes mollets hallucinent. Mon Grok aussi, mais c'est son style."
+    }
+   ]
+  },
+  {
+   "id": "mg_hiker_1_talk",
+   "steps": [
+    {
+     "say": "Randonneuse : Au sommet il y a des H100. Au pied, des H100 d'occasion. Entre les deux, une dépression."
+    }
+   ]
+  },
+  {
+   "id": "mg_dev_1_intro",
+   "steps": [
+    {
+     "say": "Dev : Je code ici parce que le Wi-Fi est dans les nuages. Au sens propre. Combat !"
+    }
+   ]
+  },
+  {
+   "id": "mg_dev_1_defeat",
+   "steps": [
+    {
+     "say": "Dev : Merge conflict avec la réalité. Je reprends mon laptop."
+    }
+   ]
+  },
+  {
+   "id": "mg_dev_1_talk",
+   "steps": [
+    {
+     "say": "Dev : Je pourrais redescendre. Mais « pull request en cours »."
+    }
+   ]
+  },
+  {
+   "id": "mg_scientist_1_intro",
+   "steps": [
+    {
+     "say": "Chercheuse : Les GPU sont chauds ici. Moi aussi, mais pour d'autres raisons. Combat !"
+    }
+   ]
+  },
+  {
+   "id": "mg_scientist_1_defeat",
+   "steps": [
+    {
+     "say": "Chercheuse : Tu as fait baisser ma température. Tu es plus efficace qu'un ventilateur."
+    }
+   ]
+  },
+  {
+   "id": "mg_scientist_1_talk",
+   "steps": [
+    {
+     "say": "Chercheuse : Je mesure le taux d'hallucination du paysage. Pour l'instant : élevé."
+    }
+   ]
+  },
+  {
+   "id": "hub_dunes_nurse",
+   "steps": [
+    {
+     "say": "🤗 Bienvenue au Hub des Dunes ! Il fait chaud, mais on refroidit les PokAI à la main.",
+     "speaker": "HUGGING",
+     "portrait": "nurse_hugging"
+    },
+    {
+     "choice": [
+      {
+       "label": "Soigner mes PokAI",
+       "goto": "heal"
+      },
+      {
+       "label": "Ouvrir le PC (Repo)",
+       "goto": "pc"
+      },
+      {
+       "label": "Rien",
+       "goto": "no"
+      }
+     ]
+    },
+    {
+     "label": "heal"
+    },
+    {
+     "say": "Je redémarre leurs instances… ♪",
+     "speaker": "HUGGING",
+     "portrait": "nurse_hugging"
+    },
+    {
+     "heal_party": true
+    },
+    {
+     "say": "Vos PokAI sont à 100 % ! 🤗",
+     "speaker": "HUGGING",
+     "portrait": "nurse_hugging"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "pc"
+    },
+    {
+     "open": "repo"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "no"
+    },
+    {
+     "say": "D'accord ! Revenez quand ils fondent. 🤗",
+     "speaker": "HUGGING",
+     "portrait": "nurse_hugging"
+    }
+   ]
+  },
+  {
+   "id": "hub_dunes_techie",
+   "steps": [
+    {
+     "say": "Le PC du Hub, là-bas ? Ne mets pas ton thé dessus. C'est arrivé trois fois.",
+     "speaker": "TECHNICIEN",
+     "portrait": "scientist"
+    }
+   ]
+  },
+  {
+   "id": "hub_dunes_intern",
+   "steps": [
+    {
+     "say": "On m'a dit de « garder le serveur au frais ». Je me suis assis dessus. Ça a marché 4 minutes.",
+     "speaker": "STAGIAIRE",
+     "portrait": "stagiaire"
+    }
+   ]
+  },
+  {
+   "id": "clerk_dunes",
+   "steps": [
+    {
+     "say": "Bienvenue au Store des Dunes ! Tout est à -20 %. Sur le prix après hausse de 40 %.",
+     "speaker": "MARCHAND",
+     "portrait": "clerk"
+    },
+    {
+     "open": "store"
+    }
+   ]
+  },
+  {
+   "id": "store_dunes_camel",
+   "steps": [
+    {
+     "say": "Je cherche un chargeur qui marche dans le désert. On m'a dit « cherche dans l'oasis ». Je cherche toujours.",
+     "speaker": "CLIENT",
+     "portrait": "citizen_d"
+    }
+   ]
+  },
+  {
+   "id": "swe_intro",
+   "steps": [
+    {
+     "say": "Une alarme sonne : « BUILD FAILED : 3 bugs détectés dans la salle. Corrigez-les (poussez les caisses sur les dalles) pour ouvrir les portes. »"
+    },
+    {
+     "say": "Astuce : un terminal peut remettre les caisses à zéro. C'est la seule fois où « try again » est une bonne stratégie."
+    }
+   ]
+  },
+  {
+   "id": "swe_junior_1_intro",
+   "steps": [
+    {
+     "say": "Junior : J'ai fait un rebase. J'ai perdu trois semaines de travail. Combat pour me consoler !"
+    }
+   ]
+  },
+  {
+   "id": "swe_junior_1_defeat",
+   "steps": [
+    {
+     "say": "Junior : Je vais faire un git reflog. Si je retrouve ma dignité, je te la rends."
+    }
+   ]
+  },
+  {
+   "id": "swe_junior_1_talk",
+   "steps": [
+    {
+     "say": "Junior : Le conseil du leader : « git blame, c'est pas du harcèlement. »"
+    }
+   ]
+  },
+  {
+   "id": "swe_junior_2_intro",
+   "steps": [
+    {
+     "say": "Mainteneur : 412 issues ouvertes. 3 de moi. Les autres sont « +1 ». Combat !"
+    }
+   ]
+  },
+  {
+   "id": "swe_junior_2_defeat",
+   "steps": [
+    {
+     "say": "Mainteneur : Tu as fermé une issue. Je t'ajoute en contributeur. C'est mon plus beau compliment."
+    }
+   ]
+  },
+  {
+   "id": "swe_junior_2_talk",
+   "steps": [
+    {
+     "say": "Mainteneur : Je ne dors plus. J'ai une CI qui m'appelle à 3 h."
+    }
+   ]
+  },
+  {
+   "id": "swe_junior_3_intro",
+   "steps": [
+    {
+     "say": "Stagiaire : J'ai mergé dans main. Personne ne m'a dit que c'était mal. Combat !"
+    }
+   ]
+  },
+  {
+   "id": "swe_junior_3_defeat",
+   "steps": [
+    {
+     "say": "Stagiaire : On m'a dit de « revert ». Je ne sais pas ce que ça veut dire. Mais ça fait peur."
+    }
+   ]
+  },
+  {
+   "id": "swe_junior_3_talk",
+   "steps": [
+    {
+     "say": "Stagiaire : Je suis payé en expérience. Elle est négative."
+    }
+   ]
+  },
+  {
+   "id": "leader_patchwell_intro",
+   "steps": [
+    {
+     "cutscene": "start"
+    },
+    {
+     "emote": "!",
+     "who": "patchwell"
+    },
+    {
+     "npc_approach": "patchwell"
+    },
+    {
+     "intro_card": {
+      "name": "ADA PATCHWELL",
+      "title": "Mainteneuse en chef du Benchmark SWE-bench",
+      "portrait": "resistance_dev"
+     }
+    },
+    {
+     "say": "Bienvenue au Benchmark SWE-bench. Ici on ne te demande pas d'écrire du code. On te demande de corriger celui des autres.",
+     "speaker": "ADA PATCHWELL",
+     "portrait": "resistance_dev"
+    },
+    {
+     "say": "En production. Sans contexte. Avec un seul message de commit : « fix ». Trois bugs, trois portes, et tu es là. Bravo.",
+     "speaker": "ADA PATCHWELL",
+     "portrait": "resistance_dev"
+    },
+    {
+     "say": "Mon canard en plastique relit toujours ma revue de code. Il est exigeant. Voyons si tes PokAI aussi.",
+     "speaker": "ADA PATCHWELL",
+     "portrait": "resistance_dev"
+    },
+    {
+     "cutscene": "end"
+    }
+   ]
+  },
+  {
+   "id": "leader_patchwell_defeat",
+   "steps": [
+    {
+     "say": "Ton patch est accepté. Tests : 3 sur 3 verts. Sauf un, mais il est flaky.",
+     "speaker": "ADA PATCHWELL",
+     "portrait": "resistance_dev"
+    },
+    {
+     "say": "Prends le Badge Patch. Et un conseil : écris des tests avant. Je sais que tu ne le feras pas. Mais je l'écris dans le README.",
+     "speaker": "ADA PATCHWELL",
+     "portrait": "resistance_dev"
+    },
+    {
+     "set_flag": "badge_patch"
+    },
+    {
+     "say": "{player} reçoit le Badge Patch !"
+    },
+    {
+     "say": "La route de la Bureaucratie est ouverte, vers Conformité-Capitale. L'AIACT y a son QG. Sois poli avec les tampons : ils comptent plus que toi.",
+     "speaker": "ADA PATCHWELL",
+     "portrait": "resistance_dev"
+    }
+   ]
+  },
+  {
+   "id": "leader_patchwell_talk",
+   "steps": [
+    {
+     "say": "Ada : Mon canard dit « LGTM ». Il ne dit rien d'autre, mais il le dit avec conviction."
+    }
+   ]
+  }
+ ]
+}

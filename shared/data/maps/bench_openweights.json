@@ -1,0 +1,173 @@
+{
+ "id": "bench_openweights",
+ "name": "Benchmark Open-Weights",
+ "width": 19,
+ "height": 17,
+ "rows": [
+  "#V##ZZZZZZZZZZZ##V#",
+  "#OOOOOOOEEEOOOOOOO#",
+  "#OOOOOOOOOOOOOOOOO#",
+  "#OOOOOOOOOOOOOOOOO#",
+  "########www########",
+  "#OOOyOOOOyOOOOyOOO#",
+  "#OOOOOOOOOOOSOOOOO#",
+  "#RORRRRORRRRRRRROR#",
+  "#OOOOOOOOOOOOOOOOO#",
+  "#OOOOOOOOOOOOOOOOO#",
+  "#OOOOOOOOOOOOOOOOO#",
+  "#OOOOOOOOOOOOOOOOO#",
+  "#lOOOOOOOOOOOOOOOl#",
+  "#OOOOOOOOOOOOOOOOO#",
+  "#OOOOOOOOOOOOOOOOO#",
+  "#ZOOOOOOOOOOOOOOOJ#",
+  "########XXX########"
+ ],
+ "legend": {
+  "#": "wall",
+  "E": "arena_line",
+  "J": "terminal",
+  "O": "arena_floor",
+  "R": "server_rack",
+  "S": "sign",
+  "V": "wall_window",
+  "X": "exit_mat",
+  "Z": "scoreboard",
+  "l": "plant",
+  "w": "gate",
+  "y": "switch_plate"
+ },
+ "kind": "interior",
+ "music": "interior",
+ "npcs": [
+  {
+   "id": "ow_junior_1",
+   "sprite": "resistance_dev",
+   "x": 5,
+   "y": 14,
+   "facing": "right",
+   "dialogue": "bench_ow_junior_1_talk",
+   "trainer": "bench_ow_junior_1",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_bench_ow_junior_1_defeated"
+    }
+   }
+  },
+  {
+   "id": "ow_junior_2",
+   "sprite": "dev_phone",
+   "x": 14,
+   "y": 14,
+   "facing": "left",
+   "dialogue": "bench_ow_junior_2_talk",
+   "trainer": "bench_ow_junior_2",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_bench_ow_junior_2_defeated"
+    }
+   }
+  },
+  {
+   "id": "menschtral",
+   "sprite": "menschtral",
+   "x": 9,
+   "y": 2,
+   "facing": "down",
+   "dialogue": "menschtral_talk",
+   "trainer": "leader_menschtral",
+   "sightRange": 2
+  }
+ ],
+ "warps": [
+  {
+   "x": 8,
+   "y": 16,
+   "to": "hugging_grove",
+   "toX": 41,
+   "toY": 17,
+   "facing": "down"
+  },
+  {
+   "x": 9,
+   "y": 16,
+   "to": "hugging_grove",
+   "toX": 41,
+   "toY": 17,
+   "facing": "down"
+  },
+  {
+   "x": 10,
+   "y": 16,
+   "to": "hugging_grove",
+   "toX": 41,
+   "toY": 17,
+   "facing": "down"
+  }
+ ],
+ "triggers": [],
+ "gates": [
+  {
+   "x": 8,
+   "y": 4,
+   "flag": "ow_weights"
+  },
+  {
+   "x": 9,
+   "y": 4,
+   "flag": "ow_weights"
+  },
+  {
+   "x": 10,
+   "y": 4,
+   "flag": "ow_weights"
+  }
+ ],
+ "switches": [
+  {
+   "x": 4,
+   "y": 5,
+   "flag": "ow_weights"
+  },
+  {
+   "x": 9,
+   "y": 5,
+   "flag": "ow_weights"
+  },
+  {
+   "x": 14,
+   "y": 5,
+   "flag": "ow_weights"
+  }
+ ],
+ "pushables": [
+  {
+   "id": "weights_1",
+   "x": 4,
+   "y": 9
+  },
+  {
+   "id": "weights_2",
+   "x": 9,
+   "y": 10
+  },
+  {
+   "id": "weights_3",
+   "x": 14,
+   "y": 9
+  },
+  {
+   "id": "weights_4",
+   "x": 11,
+   "y": 12
+  }
+ ],
+ "landmarks": [
+  {
+   "x": 9,
+   "y": 2,
+   "label": "Arthur Menschtral"
+  }
+ ]
+}

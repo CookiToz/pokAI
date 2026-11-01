@@ -1,0 +1,54 @@
+/* Duel backdrops. Everything is flat colour or SVG tiles; motion is transform-only. */
+.bt-screen[data-arena] { background-image: none; }
+.bt-screen[data-arena='cables'] { background-color: #e9e1d0; }
+.bt-screen[data-arena='forest'], .bt-screen[data-arena='openweights'] { background-color: #e4e6cc; }
+.bt-screen[data-arena='city'] { background-color: #f1e6c3; }
+.bt-screen[data-arena='trainer'] { background-color: var(--paper-2); }
+.bt-screen[data-arena='aiact'] { background-color: #c9ccd3; }
+.bt-screen[data-arena='code'] { background-color: #e6e8ea; }
+.bt-screen[data-arena='arc'] { background-color: #e9e1d0; }
+.bt-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.bt-screen[data-arena] > .bt-titlebar, .bt-screen[data-arena] > .bt-duel-body { position: relative; z-index: 1; }
+.bt-duel-body { position: relative; z-index: 1; }
+
+.bg-l { position: absolute; left: 0; width: calc(100% + var(--tw, 0px)); background-repeat: repeat-x; will-change: transform; }
+.bg-drift { animation: bg-drift 30s linear infinite; }
+@keyframes bg-drift { to { transform: translate3d(calc(var(--tw) * -1), 0, 0); } }
+.bg-rise { top: 0; height: calc(100% + var(--th)); width: 100%; background-repeat: repeat; animation: bg-rise 30s linear infinite; }
+@keyframes bg-rise { to { transform: translate3d(0, calc(var(--th) * -1), 0); } }
+
+.bg-ground { position: absolute; left: 0; right: 0; bottom: 0; height: 30%; background: color-mix(in srgb, var(--teal) 22%, var(--paper-2)); border-top: 3px solid var(--ink); }
+.bg-ground.is-forest { height: 26%; background: color-mix(in srgb, var(--ctx) 30%, var(--paper-2)); }
+.bg-ground.is-street { height: 18%; background: #b9b09a; }
+.bg-ground.is-court { height: 34%; background: var(--paper); }
+.bg-ground-top { bottom: 30%; height: 28px; }
+.bg-cable { height: 28px; }
+.bg-cable-a { bottom: 18%; }
+.bg-cable-b { bottom: 8%; opacity: 0.7; }
+.bg-trees { bottom: 22%; height: 150px; }
+.bg-locks { opacity: 0.5; }
+.bg-sun { position: absolute; top: 12%; right: 10%; width: 11vmin; aspect-ratio: 1; border-radius: 50%; background: var(--yellow); border: 3px solid var(--ink); box-shadow: 5px 5px 0 var(--pink); }
+.bg-sky1, .bg-sky2, .bg-windows { bottom: 18%; height: 150px; }
+.bg-windows { animation-name: bg-drift, bg-blink; animation-duration: 70s, 2.4s; animation-timing-function: linear, steps(1); animation-iteration-count: infinite; }
+@keyframes bg-blink { 0% { opacity: 1; } 55% { opacity: 0.45; } 70% { opacity: 1; } }
+.bg-diag { inset: 0; width: calc(100% + 120px); height: calc(100% + 120px); animation: bg-diag 16s linear infinite; }
+@keyframes bg-diag { to { transform: translate3d(-120px, 120px, 0); } }
+.bg-circle { position: absolute; left: 50%; bottom: 6%; width: 38vmin; height: 12vmin; margin-left: -19vmin; border: 3px solid var(--ink); border-radius: 50%; opacity: 0.35; }
+.bg-paper { top: 0; height: calc(100% + 240px); width: calc(100% + 300px); background-repeat: repeat; animation: bg-paper 50s linear infinite; }
+@keyframes bg-paper { to { transform: translate3d(-300px, -240px, 0); } }
+.bg-hole { position: absolute; inset: 0; border: 12px solid #8c93a3; opacity: 0.35; }
+
+.bg-rain { position: absolute; inset: 0; }
+.bg-col { position: absolute; top: 0; width: 3.6%; font-family: var(--font-mono); font-size: 15px; line-height: 1.5; color: var(--blue); opacity: 0.35; text-align: center; will-change: transform; animation: bg-fall var(--dur, 12s) linear var(--off, 0s) infinite; }
+.bg-col i { display: block; font-style: normal; }
+.bg-col .ok { color: var(--teal); font-weight: 800; }
+.bg-col .ko { color: var(--red); font-weight: 800; }
+@keyframes bg-fall { from { transform: translate3d(0, -50%, 0); } to { transform: translate3d(0, 0, 0); } }
+.bg-col { height: 200%; }
+
+.bg-grid { inset: 0; width: 100%; height: 100%; background-repeat: repeat; }
+.bg-arc { position: absolute; inset: 0; }
+.bg-obj { position: absolute; display: grid; gap: 2px; opacity: 0.6; animation: bg-hop 4.4s steps(1) infinite; will-change: transform; }
+.bg-obj i { display: block; }
+@keyframes bg-hop { 0% { transform: translateX(0); } 50% { transform: translateX(var(--step)); } }
+@media (max-height: 640px) { .bg-col { font-size: 12px; } }

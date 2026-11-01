@@ -1,0 +1,623 @@
+{
+ "id": "aiact_center",
+ "name": "Centre de Conformité n°7",
+ "width": 34,
+ "height": 26,
+ "rows": [
+  "####################Q###Q#########",
+  "#b...#b...#b...##SlRllRllRS#LLpLL#",
+  "#....#....#....##llllllllll#,,,,,#",
+  "#....#....#....##lRRlTTlRRl#,,,,,Q",
+  "#BB.B#B.BB#B.BB##lRRllllRRl#,,t,,#",
+  "#,,==============llllllllll#,,,,,#",
+  "#,,,,,,,F,,,,F,,,lllllllllp#,,,,,#",
+  "###Q####Q############,,#######,,##",
+  "#S,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,S#",
+  "#,,,F,,,,,,,,,,,,,,,,,,,,,,p,,,,,#",
+  "#wwiwwwp##WWW####WWW#WWW#WWW,,WWW#",
+  "#wwwwwwv#lDDDlllTlccllRR#llllllll#",
+  "#wwwwwww,lllllllllllllll#llnttnlF#",
+  "#wnnnwtw#lllllllllllttlp#mllllllp#",
+  "#wwwwwwh##########################",
+  "#p,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,p#",
+  "####Q####WW#####d#####WW####Q#####",
+  "#p,,,,DD,,,,,,======,,,,,DD,,,,,p#",
+  "#,,,,,,,,,,,,,======,,,,,,,,,,,,,#",
+  "#S,,,,,,,,,,,F======,,,,,,,,,,,,S#",
+  "####,###########=###########,#####",
+  "#hhh,,,hh#hhh=======hhh##jkkjkkFv#",
+  "Q,,,,,,,,Q====t===t====##jjjjjjjjQ",
+  "#,,,,,,,,#=F===========##jntnjntn#",
+  "#xtt,,,,p#p===========p##jjjjjjjp#",
+  "################xx################"
+ ],
+ "legend": {
+  "#": "prison_wall",
+  ".": "cell_floor",
+  ",": "floor_tile",
+  "=": "carpet",
+  "B": "cell_bars",
+  "b": "bed",
+  "L": "locker",
+  "T": "terminal",
+  "D": "guard_desk",
+  "S": "searchlight",
+  "R": "server_rack",
+  "d": "aiact_door",
+  "x": "exit_mat",
+  "p": "plant",
+  "Q": "poster_aiact",
+  "k": "counter",
+  "t": "table",
+  "c": "pc",
+  "h": "shelf",
+  "n": "bench_seat",
+  "v": "vending",
+  "F": "sign",
+  "W": "wall_window",
+  "l": "floor_lab",
+  "w": "floor_wood",
+  "j": "hub_floor",
+  "i": "billboard",
+  "m": "lamp"
+ },
+ "npcs": [
+  {
+   "id": "kevin_cell",
+   "sprite": "kevin",
+   "x": 7,
+   "y": 3,
+   "facing": "down",
+   "dialogue": "kevin_cell_talk",
+   "condition": {
+    "not": {
+     "flag": "door_unlocked"
+    }
+   }
+  },
+  {
+   "id": "stagiaire_cell",
+   "sprite": "stagiaire",
+   "x": 12,
+   "y": 3,
+   "facing": "down",
+   "dialogue": "stagiaire_cell_talk"
+  },
+  {
+   "id": "sleeping_agent",
+   "sprite": "agent_conformite",
+   "x": 13,
+   "y": 12,
+   "facing": "down",
+   "dialogue": "sleeping_agent_talk"
+  },
+  {
+   "id": "guard_1",
+   "sprite": "guard_aiact",
+   "x": 2,
+   "y": 12,
+   "facing": "right",
+   "dialogue": "aiact_guard_1_talk",
+   "trainer": "aiact_guard_1",
+   "sightRange": 3,
+   "patrol": [
+    {
+     "x": 2,
+     "y": 12
+    },
+    {
+     "x": 6,
+     "y": 12
+    }
+   ],
+   "condition": {
+    "not": {
+     "flag": "trainer_aiact_guard_1_defeated"
+    }
+   }
+  },
+  {
+   "id": "guard_2",
+   "sprite": "guard_aiact_2",
+   "x": 2,
+   "y": 15,
+   "facing": "right",
+   "dialogue": "aiact_guard_2_talk",
+   "trainer": "aiact_guard_2",
+   "sightRange": 3,
+   "patrol": [
+    {
+     "x": 3,
+     "y": 15
+    },
+    {
+     "x": 30,
+     "y": 15
+    }
+   ],
+   "condition": {
+    "not": {
+     "flag": "trainer_aiact_guard_2_defeated"
+    }
+   }
+  },
+  {
+   "id": "guard_3",
+   "sprite": "guard_aiact",
+   "x": 18,
+   "y": 17,
+   "facing": "left",
+   "dialogue": "aiact_guard_3_talk",
+   "trainer": "aiact_guard_3",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_aiact_guard_3_defeated"
+    }
+   }
+  },
+  {
+   "id": "guard_4",
+   "sprite": "guard_aiact_2",
+   "x": 18,
+   "y": 19,
+   "facing": "left",
+   "dialogue": "aiact_guard_4_talk",
+   "trainer": "aiact_guard_4",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_aiact_guard_4_defeated"
+    }
+   }
+  },
+  {
+   "id": "archivist",
+   "sprite": "scientist",
+   "x": 5,
+   "y": 22,
+   "facing": "down",
+   "dialogue": "archivist_talk"
+  },
+  {
+   "id": "detainee",
+   "sprite": "vibeur_a",
+   "x": 29,
+   "y": 22,
+   "facing": "left",
+   "dialogue": "detainee_talk"
+  },
+  {
+   "id": "inspector_cookie",
+   "sprite": "inspector_cookie",
+   "x": 16,
+   "y": 22,
+   "facing": "up",
+   "dialogue": "inspector_cookie_talk",
+   "trainer": "inspector_cookie",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_inspector_cookie_defeated"
+    }
+   }
+  },
+  {
+   "id": "kevin_exit_haiku",
+   "sprite": "kevin",
+   "x": 13,
+   "y": 24,
+   "facing": "right",
+   "dialogue": "kevin_after",
+   "trainer": "rival_1_haiku",
+   "sightRange": 4,
+   "condition": {
+    "all": [
+     {
+      "flag": "starter_claude_haiku"
+     },
+     {
+      "flag": "door_unlocked"
+     },
+     {
+      "not": {
+       "flag": "trainer_rival_1_haiku_defeated"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "kevin_exit_phi",
+   "sprite": "kevin",
+   "x": 13,
+   "y": 24,
+   "facing": "right",
+   "dialogue": "kevin_after",
+   "trainer": "rival_1_phi",
+   "sightRange": 4,
+   "condition": {
+    "all": [
+     {
+      "flag": "starter_phi_1"
+     },
+     {
+      "flag": "door_unlocked"
+     },
+     {
+      "not": {
+       "flag": "trainer_rival_1_phi_defeated"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "kevin_exit_gemma",
+   "sprite": "kevin",
+   "x": 13,
+   "y": 24,
+   "facing": "right",
+   "dialogue": "kevin_after",
+   "trainer": "rival_1_gemma",
+   "sightRange": 4,
+   "condition": {
+    "all": [
+     {
+      "flag": "starter_gemma"
+     },
+     {
+      "flag": "door_unlocked"
+     },
+     {
+      "not": {
+       "flag": "trainer_rival_1_gemma_defeated"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "id": "guard_tv",
+   "sprite": "guard_aiact_2",
+   "x": 5,
+   "y": 11,
+   "facing": "up",
+   "dialogue": "guard_tv_talk"
+  },
+  {
+   "id": "cook_cafeteria",
+   "sprite": "barista",
+   "x": 30,
+   "y": 22,
+   "facing": "down",
+   "dialogue": "cook_cafeteria_talk"
+  },
+  {
+   "id": "inmate_snack",
+   "sprite": "vibeur_b",
+   "x": 26,
+   "y": 22,
+   "facing": "right",
+   "dialogue": "inmate_snack_talk"
+  }
+ ],
+ "warps": [
+  {
+   "x": 16,
+   "y": 25,
+   "to": "latentia_city",
+   "toX": 31,
+   "toY": 51,
+   "facing": "down"
+  },
+  {
+   "x": 17,
+   "y": 25,
+   "to": "latentia_city",
+   "toX": 31,
+   "toY": 51,
+   "facing": "down"
+  },
+  {
+   "x": 1,
+   "y": 24,
+   "to": "secret_404",
+   "toX": 4,
+   "toY": 6,
+   "facing": "up"
+  }
+ ],
+ "triggers": [
+  {
+   "x": 3,
+   "y": 2,
+   "script": "aiact_intro",
+   "condition": {
+    "not": {
+     "flag": "intro_done"
+    }
+   }
+  },
+  {
+   "x": 1,
+   "y": 3,
+   "script": "aiact_intro",
+   "w": 4,
+   "h": 1,
+   "condition": {
+    "not": {
+     "flag": "intro_done"
+    }
+   }
+  },
+  {
+   "x": 18,
+   "y": 2,
+   "script": "aiact_pods",
+   "w": 9,
+   "h": 1,
+   "condition": {
+    "not": {
+     "flag": "got_starter"
+    }
+   }
+  },
+  {
+   "x": 21,
+   "y": 7,
+   "script": "aiact_need_starter",
+   "w": 2,
+   "h": 1,
+   "condition": {
+    "not": {
+     "flag": "got_starter"
+    }
+   }
+  },
+  {
+   "x": 21,
+   "y": 8,
+   "script": "aiact_tutorial",
+   "w": 2,
+   "h": 1,
+   "condition": {
+    "all": [
+     {
+      "flag": "got_starter"
+     },
+     {
+      "not": {
+       "flag": "tutorial_done"
+      }
+     }
+    ]
+   },
+   "once": true
+  },
+  {
+   "x": 28,
+   "y": 2,
+   "script": "locker_1",
+   "once": true
+  },
+  {
+   "x": 29,
+   "y": 2,
+   "script": "locker_2",
+   "once": true
+  },
+  {
+   "x": 31,
+   "y": 2,
+   "script": "locker_3",
+   "once": true
+  },
+  {
+   "x": 32,
+   "y": 2,
+   "script": "locker_4",
+   "once": true
+  },
+  {
+   "x": 16,
+   "y": 12,
+   "script": "terminal_hack",
+   "condition": {
+    "not": {
+     "flag": "door_unlocked"
+    }
+   }
+  },
+  {
+   "x": 16,
+   "y": 16,
+   "script": "door_locked",
+   "condition": {
+    "not": {
+     "flag": "door_unlocked"
+    }
+   }
+  },
+  {
+   "x": 1,
+   "y": 10,
+   "w": 6,
+   "h": 1,
+   "script": "guard_1_ambush",
+   "condition": {
+    "not": {
+     "flag": "trainer_aiact_guard_1_defeated"
+    }
+   }
+  },
+  {
+   "x": 16,
+   "y": 15,
+   "script": "guard_2_ambush",
+   "condition": {
+    "not": {
+     "flag": "trainer_aiact_guard_2_defeated"
+    }
+   }
+  },
+  {
+   "x": 16,
+   "y": 17,
+   "script": "guard_3_ambush",
+   "condition": {
+    "not": {
+     "flag": "trainer_aiact_guard_3_defeated"
+    }
+   }
+  },
+  {
+   "x": 16,
+   "y": 19,
+   "script": "guard_4_ambush",
+   "condition": {
+    "not": {
+     "flag": "trainer_aiact_guard_4_defeated"
+    }
+   }
+  },
+  {
+   "x": 16,
+   "y": 20,
+   "script": "cookie_ambush",
+   "condition": {
+    "not": {
+     "flag": "trainer_inspector_cookie_defeated"
+    }
+   }
+  },
+  {
+   "x": 16,
+   "y": 24,
+   "w": 2,
+   "h": 1,
+   "script": "kevin_ambush_haiku",
+   "condition": {
+    "all": [
+     {
+      "flag": "starter_claude_haiku"
+     },
+     {
+      "not": {
+       "flag": "trainer_rival_1_haiku_defeated"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "x": 16,
+   "y": 24,
+   "w": 2,
+   "h": 1,
+   "script": "kevin_ambush_phi",
+   "condition": {
+    "all": [
+     {
+      "flag": "starter_phi_1"
+     },
+     {
+      "not": {
+       "flag": "trainer_rival_1_phi_defeated"
+      }
+     }
+    ]
+   }
+  },
+  {
+   "x": 16,
+   "y": 24,
+   "w": 2,
+   "h": 1,
+   "script": "kevin_ambush_gemma",
+   "condition": {
+    "all": [
+     {
+      "flag": "starter_gemma"
+     },
+     {
+      "not": {
+       "flag": "trainer_rival_1_gemma_defeated"
+      }
+     }
+    ]
+   }
+  }
+ ],
+ "kind": "dungeon",
+ "music": "prison",
+ "hub": {
+  "x": 3,
+  "y": 5
+ },
+ "exits": [
+  {
+   "x": 16,
+   "y": 25,
+   "to": "latentia_city",
+   "label": "Sortie -> Centre de Conformité (Latentia City)"
+  }
+ ],
+ "landmarks": [
+  {
+   "x": 3,
+   "y": 2,
+   "label": "Cellule"
+  },
+  {
+   "x": 22,
+   "y": 2,
+   "label": "Capsules de PokAI"
+  },
+  {
+   "x": 18,
+   "y": 11,
+   "label": "Salle de contrôle"
+  },
+  {
+   "x": 30,
+   "y": 2,
+   "label": "Vestiaire"
+  },
+  {
+   "x": 16,
+   "y": 22,
+   "label": "Bureau de l'Inspecteur Cookie"
+  },
+  {
+   "x": 28,
+   "y": 12,
+   "label": "Salle d'interrogatoire"
+  },
+  {
+   "x": 3,
+   "y": 11,
+   "label": "Salle de pause (télé)"
+  },
+  {
+   "x": 28,
+   "y": 22,
+   "label": "Cantine"
+  },
+  {
+   "x": 13,
+   "y": 19,
+   "label": "Fontaine à café"
+  },
+  {
+   "x": 4,
+   "y": 9,
+   "label": "Fontaine à café"
+  },
+  {
+   "x": 31,
+   "y": 21,
+   "label": "Fontaine à café (cantine)"
+  }
+ ]
+}

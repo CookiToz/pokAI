@@ -1,0 +1,36 @@
+/* LatentOS design tokens — the only colours, fonts and radii the UI may use. */
+:root {
+  /* Riso palette: paper + few inks. Misregistered offset shadows are the signature effect. */
+  --paper: #f4efe4;
+  --paper-2: #e9e1d0;
+  --ink: #1d1a2b;
+  --ink-2: #3a3550;
+  --ink-3: #6e6888;
+  --pink: #ff48b0;   /* riso fluorescent pink: focus, accents */
+  --blue: #0078bf;   /* riso blue: system, links */
+  --yellow: #ffd23f; /* riso yellow: highlights, credits */
+  --teal: #00a095;
+  --orange: #ff6c2f;
+  --red: #e0283c;    /* danger, AIACT */
+  --steel: #8c93a3;  /* AIACT grey */
+  --ctx: #2fbf71;    /* context (HP) */
+
+  --type-chat: #ff6c2f;
+  --type-code: #0078bf;
+  --type-reasoning: #7a4fd6;
+  --type-media: #ff48b0;
+  --type-agent: #00a095;
+  --type-chaos: #1d1a2b;
+  --type-legacy: #8c93a3;
+
+  --font-ui: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  --font-display: 'Bricolage Grotesque', 'IBM Plex Sans', sans-serif;
+
+  --r: 4px;          /* the only radius */
+  --bw: 2px;         /* border width */
+  --shadow: 4px 4px 0 var(--ink);          /* hard offset shadow, never blurred */
+  --shadow-pink: 4px 4px 0 var(--pink);
+  --gap: 8px;
+  --dur: 160ms;      /* default transition */
+}

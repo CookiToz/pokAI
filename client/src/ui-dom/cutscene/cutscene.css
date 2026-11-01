@@ -1,0 +1,42 @@
+/* Cutscene chrome: riso letterbox, cinematic dialogue, slanted name card. Tokens only, hard shadows, no blur. */
+.cine-bar { position: fixed; left: 0; right: 0; height: 11vh; min-height: 56px; background: var(--ink); z-index: 25; pointer-events: none; transition: transform 380ms steps(8); }
+.cine-bar.is-top { top: 0; transform: translateY(-110%); box-shadow: 0 4px 0 var(--pink), 0 8px 0 var(--blue); }
+.cine-bar.is-bottom { bottom: 0; transform: translateY(110%); box-shadow: 0 -4px 0 var(--pink), 0 -8px 0 var(--blue); }
+.cine-bar.is-on { transform: none; }
+
+#ui.in-cutscene .topbar, #ui.in-cutscene .dock, #ui.in-cutscene .minimap, #ui.in-cutscene .map-banner { opacity: 0; pointer-events: none; transition: opacity var(--dur); }
+#ui.in-cutscene .hints { display: none; }
+
+/* Wider, more cinematic dialogue panel sitting on top of the bottom bar. */
+#ui.in-cutscene .chat { left: 0; right: 0; margin: 0 auto; bottom: calc(11vh + 20px); width: min(92vw, 1040px); min-width: 0; box-shadow: 8px 8px 0 var(--blue), 8px 8px 0 2px var(--ink); }
+#ui.in-cutscene .chat-head { background: var(--ink); color: var(--paper); border-bottom-color: var(--ink); }
+#ui.in-cutscene .chat-head .chat-status, #ui.in-cutscene .chat-app { color: var(--yellow); }
+#ui.in-cutscene .chat-avatar { width: 72px; height: 72px; box-shadow: 4px 4px 0 var(--pink); }
+#ui.in-cutscene .chat-name { font-size: 22px; letter-spacing: 0.02em; }
+#ui.in-cutscene .bubble { font-size: 20px; }
+
+/* Name card */
+.introcard { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; pointer-events: auto; background: transparent; transition: background 200ms steps(4); overflow: hidden; }
+.introcard.is-in { background: rgba(29, 26, 43, 0.45); }
+.ic-band { position: relative; width: min(94vw, 980px); transform: skewX(-8deg); }
+.ic-main, .ic-ghost { transition: transform 360ms steps(9), opacity 160ms; }
+.ic-main { position: relative; display: flex; align-items: center; gap: 22px; padding: 18px 28px 18px 22px; background: var(--paper); border: 3px solid var(--ink); border-radius: var(--r); transform: translateX(-120vw); }
+.ic-ghost { position: absolute; inset: 0; border-radius: var(--r); transform: translateX(-120vw); }
+.ic-ghost.is-pink { background: var(--pink); margin: 8px -10px -8px 10px; transition-delay: 60ms; }
+.ic-ghost.is-blue { background: var(--blue); margin: 16px -20px -16px 20px; transition-delay: 130ms; }
+.introcard.is-in .ic-main { transform: none; }
+.introcard.is-in .ic-ghost { transform: none; }
+.introcard.is-out .ic-main, .introcard.is-out .ic-ghost { transform: translateX(120vw); transition-duration: 220ms; }
+.introcard.is-out { background: transparent; }
+.ic-face, .ic-text { transform: skewX(8deg); }
+.ic-face { display: grid; place-items: center; flex: none; width: clamp(84px, 14vw, 148px); height: clamp(84px, 14vw, 148px); background: var(--yellow); border: 3px solid var(--ink); border-radius: var(--r); box-shadow: 5px 5px 0 var(--pink); overflow: hidden; }
+.ic-face svg { display: block; width: 100%; height: 100%; }
+.ic-initials { font: 800 48px var(--font-display); }
+.ic-text { min-width: 0; display: grid; gap: 6px; }
+.ic-kicker { font: 600 12px var(--font-mono); text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-3); }
+.ic-name { font: 800 clamp(28px, 5.2vw, 68px)/0.98 var(--font-display); color: var(--ink); letter-spacing: -0.01em; text-shadow: 14px 0 0 var(--pink), -14px 0 0 var(--blue); transition: text-shadow 520ms steps(7) 260ms; overflow-wrap: anywhere; }
+.introcard.is-in .ic-name { text-shadow: 3px 3px 0 var(--pink); }
+.ic-title { justify-self: start; max-width: 100%; padding: 4px 12px; background: var(--ink); color: var(--yellow); font: 600 clamp(13px, 1.6vw, 18px)/1.3 var(--font-mono); border-radius: var(--r); }
+@media (prefers-reduced-motion: reduce) {
+  .cine-bar, .ic-main, .ic-ghost, .ic-name, .introcard { transition-duration: 1ms; }
+}

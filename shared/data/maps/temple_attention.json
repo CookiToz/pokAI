@@ -1,0 +1,216 @@
+{
+ "id": "temple_attention",
+ "name": "Temple de l'Attention",
+ "width": 36,
+ "height": 44,
+ "rows": [
+  "tttttttttttwwwwwwwwwwwwwwwwwtttttttt",
+  "tggtgggggggwwwwwwwwwwwwwwwwwgggggggt",
+  "tgggggtggggWWWWWWWWWWWWWWWWWgggggggt",
+  "tggggggFgtgWWWWWWPcPWWWWWWWWggFggggt",
+  "tggggggggggWWWWWWPPPWWWWWWWWgtgggggt",
+  "tgggggggggPPPPPPPPPPPPPPPPPPPgggtggt",
+  "ttggggggFgPWPmPPPPPPPPPPPmPWPggFgggt",
+  "tgggggggggPPPPPPPPPPPPPPPPPPPggggggt",
+  "tFggggggggPPPPPPPPPPPPPPPPPPPggggggt",
+  "tggggggggFPPPPPPPPPPPPPPPPPPPgggFggt",
+  "tgggggggggPPPPPPPPPPPPPPPPPPPgtggggt",
+  "tgFgggggggPWPPPPPPPPPPPPPPPWPggggtgt",
+  "tgtgggggggPPPPBPSPPPBPPPPPPPPggggFgt",
+  "tggggtggggWWWWWWWHHHWWWWWWWWWggggggt",
+  "tggFggggtgg~~~~gJpppW~~~~tFggggggggt",
+  "tgggggggggg~~~~ggpppg~~~~gggtgggggFt",
+  "tgggggggggg~~~~ggpppg~~~~ggggggtgggt",
+  "tgggFgggggg~~~~gWpppW~~~~ggFggggggtt",
+  "tggtggggggg~~~~ggpppt~~~~ggggggggggt",
+  "tgggggtgggg~~~~ggpppF~~~~ggggggggggt",
+  "tggggFgggtg~~~~gWpppW~~~~gtgFggggggt",
+  "tgggggggggg~~~~ggpppg~~~~ggggtgggggt",
+  "tgggggggggg~~~~tgpppg~~~~gggggggtggt",
+  "ttggggFgggg~~~~gWpppW~~~~ggggFgggggt",
+  "tgggtgggggg~~~~ggpppg~~~~ggggggggggt",
+  "tggggggtggg~~~~ggpppg~~~~ggggggggggt",
+  "tggggggFggt~~~~gWpppW~~~~ggtggFggggt",
+  "tgggggggggg~~~~Fgpppg~~~~gggggtggggt",
+  "tgggggggggg~~~~gtpppg~~~~ggggggggtgt",
+  "tgtgggggFgg~~~~gWpppW~~~~ggggggFgggt",
+  "tggggtggggg~~~~gFpppg~~~~gSggggggggt",
+  "tFggggggtgg~~~~ggpppg~~~~tgggggggggt",
+  "tggggggggFg~~~~gWpppW~~~~gggtgggFggt",
+  "tgggggggggg~~~~ggpppg~~~~ggggggtgggt",
+  "tgFgggggggg~~~~ggpppg~~~~Fggggggggtt",
+  "tgItggggggFggggggppptggggggggggggFgt",
+  "ppppppppppppppppppppgggtgggggggggggt",
+  "ppppppppppppppppppppggggggtggggggggt",
+  "ppppppppppppppppppppgggggggggtggggFt",
+  "tggggggggggggggtgggFggggggggggggtggt",
+  "ttggFgggggggggggggtggggggggFgggggggt",
+  "tgggtgggggggFggggggggtgggggggggggggt",
+  "tggggggtggggggggggggFgggtggggggggggt",
+  "tttttttttttttttttttttttttttttttttttt"
+ ],
+ "legend": {
+  "B": "bench_seat",
+  "F": "flowers",
+  "H": "gate",
+  "I": "signpost",
+  "J": "terminal",
+  "P": "plaza",
+  "S": "sign",
+  "W": "tower_wall",
+  "c": "cable",
+  "g": "grass_park",
+  "m": "street_lamp",
+  "p": "path",
+  "t": "tree",
+  "w": "tower_roof",
+  "~": "water"
+ },
+ "npcs": [
+  {
+   "id": "hintend_temple",
+   "sprite": "scientist",
+   "x": 20,
+   "y": 22,
+   "facing": "left",
+   "dialogue": "hintend_temple_talk",
+   "condition": {
+    "not": {
+     "flag": "game_complete"
+    }
+   }
+  },
+  {
+   "id": "agi_phone",
+   "sprite": "dev_phone",
+   "x": 21,
+   "y": 8,
+   "facing": "down",
+   "dialogue": "agi_final",
+   "condition": {
+    "flag": "transformer_met"
+   }
+  }
+ ],
+ "warps": [
+  {
+   "x": 0,
+   "y": 36,
+   "to": "conformite_capitale",
+   "toX": 62,
+   "toY": 25,
+   "facing": "left"
+  },
+  {
+   "x": 0,
+   "y": 37,
+   "to": "conformite_capitale",
+   "toX": 62,
+   "toY": 26,
+   "facing": "left"
+  },
+  {
+   "x": 0,
+   "y": 38,
+   "to": "conformite_capitale",
+   "toX": 62,
+   "toY": 27,
+   "facing": "left"
+  }
+ ],
+ "triggers": [
+  {
+   "x": 17,
+   "y": 24,
+   "script": "temple_hintend",
+   "w": 3,
+   "condition": {
+    "not": {
+     "flag": "temple_hintend_met"
+    }
+   },
+   "once": true
+  },
+  {
+   "x": 18,
+   "y": 3,
+   "script": "transformer_encounter",
+   "condition": {
+    "not": {
+     "flag": "transformer_met"
+    }
+   },
+   "once": true
+  },
+  {
+   "x": 4,
+   "y": 8,
+   "script": "secret_temple_cache",
+   "once": true
+  },
+  {
+   "x": 12,
+   "y": 36,
+   "script": "secret_temple_pool",
+   "once": true
+  }
+ ],
+ "kind": "route",
+ "music": "route_a",
+ "encounterRate": 1.0,
+ "gates": [
+  {
+   "x": 17,
+   "y": 13,
+   "flag": "temple_open"
+  },
+  {
+   "x": 18,
+   "y": 13,
+   "flag": "temple_open"
+  },
+  {
+   "x": 19,
+   "y": 13,
+   "flag": "temple_open"
+  }
+ ],
+ "encounters": [
+  {
+   "form": "transformer",
+   "minLevel": 50,
+   "maxLevel": 50,
+   "weight": 1
+  }
+ ],
+ "landmarks": [
+  {
+   "x": 18,
+   "y": 3,
+   "label": "Autel de Transformer"
+  },
+  {
+   "x": 16,
+   "y": 14,
+   "label": "Stèle de l'Attention"
+  },
+  {
+   "x": 18,
+   "y": 37,
+   "label": "Entrée du temple"
+  },
+  {
+   "x": 4,
+   "y": 8,
+   "label": "Sentier caché"
+  }
+ ],
+ "exits": [
+  {
+   "x": 0,
+   "y": 37,
+   "to": "conformite_capitale",
+   "label": "Conformité-Capitale"
+  }
+ ]
+}

@@ -1,0 +1,65 @@
+{
+ "id": "store_dunes",
+ "name": "Store des Dunes",
+ "width": 10,
+ "height": 7,
+ "rows": [
+  "##########",
+  "#ss#ss#ss#",
+  "#++++++++#",
+  "#s++++++s#",
+  "#++NNNNN+#",
+  "#l++++++l#",
+  "####XX####"
+ ],
+ "legend": {
+  "#": "wall",
+  "+": "floor_tile",
+  "N": "counter",
+  "X": "exit_mat",
+  "l": "plant",
+  "s": "shelf"
+ },
+ "npcs": [
+  {
+   "id": "clerk",
+   "sprite": "clerk",
+   "x": 5,
+   "y": 3,
+   "facing": "down",
+   "dialogue": "clerk_dunes"
+  },
+  {
+   "id": "store_dunes_camel",
+   "sprite": "citizen_d",
+   "x": 2,
+   "y": 5,
+   "facing": "right",
+   "dialogue": "store_dunes_camel",
+   "wander": 1
+  }
+ ],
+ "warps": [
+  {
+   "x": 4,
+   "y": 6,
+   "to": "dunes_datacenters",
+   "toX": 18,
+   "toY": 18,
+   "facing": "down"
+  },
+  {
+   "x": 5,
+   "y": 6,
+   "to": "dunes_datacenters",
+   "toX": 18,
+   "toY": 18,
+   "facing": "down"
+  }
+ ],
+ "triggers": [],
+ "kind": "interior",
+ "music": "shop",
+ "landmarks": [],
+ "exits": []
+}

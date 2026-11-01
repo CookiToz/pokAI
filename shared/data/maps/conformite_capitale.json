@@ -1,0 +1,559 @@
+{
+ "id": "conformite_capitale",
+ "name": "Conformité-Capitale",
+ "width": 64,
+ "height": 52,
+ "rows": [
+  "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC",
+  "CiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiC",
+  "CiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiC",
+  "CiCCCCCCCCCCCCiiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiCCCCCCCCCCCCiiC",
+  "CiCCCCCCCCCCCCiiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiCCCCCCCCCCCCiiC",
+  "CiCVCVCVCVCVCCiiAAAAAAAAAAAAAAxxxxAAAAAAAAAAAAAAiCVCVCVCVCVCCiiC",
+  "CiCCCCCCCCCCCCiiAAAAAAAAAAAAAAxxxxAAAAAAAAAAAAAAiCCCCCCCCCCCCiiC",
+  "CiCCCCCCCCCCCCiiAAAAAAAAAAAAAAxxxxAAAAAAAAAAAAAAiCCCCCCCCCCCCiiC",
+  "CiCVCVCVCVCVCCiiAAAAAAAAAAAAAAxxxTAAAAAAAAAAAAAAiCVCVCVCVCVCCiiC",
+  "CiCCCCCCCCCCCCiiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAiCCCCCCCCCCCCiiC",
+  "CiCCCCCCCCCCCCiiuAAAAAuAAQAAAAAAAAAAAAQAAuAAAAAuiCCCCCCCCCCCCiiC",
+  "CiCVCVCVCVCVCCiiiiiiPPPPPPPPPPPPPPPPPPPPPPPPiiiiiCVCVCVCVCVCCiiC",
+  "CiCCCCCCCCCCCCiiiiiiPmLPPPPPPPPPPPPPPPPPPLmPiiiiiCCCCCCCCCCCCiiC",
+  "CiCCCCCCCCCCCCiiiiiiPPPPnPPnPPnPPnPPnPPnPPPPiiiiiCCCCCCCCCCCCiiC",
+  "CiCCCCCCCCCCCCiiiiiiPPPPPPPPPPPPPPPPPPPPPPPPiiiiiCCCCCCCCCCCCiiC",
+  "CiiiiiiiiiiiiiiiiiiiPPPPPPPPPPPPPPPPPPPPPPPPiiiiiiiiiiiiiiiiiiiC",
+  "CiiiiiiiiiiiiiiiiiiiPPPPPPPPPPPPPPPPPNNNPPPPiiiiiiiiiiiiiiiiiiiC",
+  "CiiiiiYYYYYYiiiiiiiiPPPPPPPPPPPPPPPPPPPPPPPPiiiiiiiiiiiiiiiiiiiC",
+  "CiiiiiYYYYYYiiiiiiiiPmPPPPPPPPPPPPPPPPPPPPmPiiiiiiiiiiiiiiiiiiiC",
+  "CiiiiikkkkkkiiiiiiiiPPPPPPPPPPPPPPPPPPPPPPPPiiiiiiiiiiiiiiiiiiiC",
+  "CiiiiikkqkkkiiiiiiiiiiiiiiiiiiaaaiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiC",
+  "CiiiiinaaaaniiiiiiiiiiiiiiiiiiaaaiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiC",
+  "CiiiiinaaaanSiiiiiiiiiiiiiiiiiaaaiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiC",
+  "CiiiiinaaaaniiiiiiiiiiiiiiiiiiaaaiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiC",
+  "CfIfmffaaaaffIaaffffmffffffffIaaafffmfffffffffffffffmffffffIfffC",
+  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaHaaa",
+  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaHaaa",
+  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaHaaa",
+  "CfffffmffffIiiifffffffmfffffffffIiiiffmfIaaaffffffffffmffffffffC",
+  "CCCCCCCCCCCCiiiCCCCCCCCCCCCCCiiiiiiiiiiifaaaCYYYYYYYYYYYYYYiiiiC",
+  "CCccncccBccccccccccccccnccccCiiiimii$i$ifaaaCYYYYYYYYYYYYYYiiiiC",
+  "CCccccccccccBnccccccccccccccCiiiiiiiSiiifaaaCYYYYYYYYYYYYYYiiiiC",
+  "CCcnccccccccccccBcccccncccccCiiiiiiBiBiBfaaaCAAAAAAAAAAAAAAiiiiC",
+  "CCccccccccccncccccccBcccccccCiiiiiiiiiiifaaaCAAAAAAAAAAAAAAiiiiC",
+  "CCnccccccccccccccccccnccBcccCiiiiiiiiiiifaaaAAAAAAADAAAAAAAAiiiC",
+  "CCcccccccccnccccccccccccccccCiiiiiiiiiiifaaaCCCCCCC..CCCCCCCiiiC",
+  "CCccccccccccccccccccncccccccCiiiiiiiiiiifaaaCCCCCCCHHCCCCCCCiiiC",
+  "CCccccccccncccccccccccccccccCiiiiiiiiiiifaaaCCCCCCC..CCCCCCCiiiC",
+  "CCcccccccccccccccccnccccccccCiiiiiiiiiiifaaaCCCCCCCHHCCCCCCCiiiC",
+  "CCcBcccccnccccccccccccccccccCiiiiiiiiiiifaaaCiuiiiiiiiiiiiuCiiiC",
+  "CCcccccBccccccccccncccccccccCiiiiiiiiiiifaaaCiiiiiiiiiiiiiiCiiiC",
+  "CCccccccnccBcccccccccccccccnCiiiiiiiiiiifaaaCiihiiiiiiiiiiiCiiiC",
+  "CCcccccccccccccBcnccccccccccCiiiiiiiiiiifaaaiiiiiiiiiiiiiiiCiiiC",
+  "CCcccccncccccccccccBccccccncCiiiiiiiiiiifaaaiiiiiiiiiiihiiiCiiiC",
+  "CCccccccccccccccnccccccBccccCiiiivBiiiiifaaaiiiiiiiiiiiiiiiCiiiC",
+  "CCccccnccccccccccccccccccncBCiiiiiiiiiiifaaaCiiiiiiiiiiiiiiCiiiC",
+  "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCiiiiiiiiiiiiiiiCiiiiiiiiiiiiiJCiiiC",
+  "CiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiCCCCCCCCCCCCCCCCiiiC",
+  "CiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiC",
+  "CiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiC",
+  "CiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiC",
+  "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC"
+ ],
+ "legend": {
+  "$": "food_cart",
+  ".": "sand",
+  "A": "aiact_wall",
+  "B": "bench_seat",
+  "C": "concrete_wall",
+  "D": "aiact_door",
+  "H": "gate",
+  "I": "signpost",
+  "J": "terminal",
+  "L": "billboard",
+  "N": "counter",
+  "P": "plaza",
+  "Q": "poster_aiact",
+  "S": "sign",
+  "T": "lm_aiact_tower",
+  "V": "wall_window",
+  "Y": "roof_grey",
+  "a": "asphalt",
+  "c": "cable",
+  "f": "fence",
+  "h": "switch_plate",
+  "i": "sidewalk",
+  "k": "house_wall",
+  "m": "street_lamp",
+  "n": "planter",
+  "q": "house_door",
+  "u": "searchlight",
+  "v": "vending",
+  "x": "blocker"
+ },
+ "npcs": [
+  {
+   "id": "cap_clerk_queue",
+   "sprite": "clerk",
+   "x": 38,
+   "y": 15,
+   "facing": "down",
+   "dialogue": "cap_clerk_queue"
+  },
+  {
+   "id": "cap_queue_1",
+   "sprite": "citizen_a",
+   "x": 24,
+   "y": 17,
+   "facing": "right",
+   "dialogue": "cap_queue_1",
+   "ambient": true
+  },
+  {
+   "id": "cap_queue_2",
+   "sprite": "citizen_d",
+   "x": 26,
+   "y": 17,
+   "facing": "right",
+   "dialogue": "cap_queue_2",
+   "ambient": true
+  },
+  {
+   "id": "cap_queue_3",
+   "sprite": "citizen_b",
+   "x": 28,
+   "y": 17,
+   "facing": "right",
+   "dialogue": "cap_queue_3",
+   "ambient": true
+  },
+  {
+   "id": "cap_queue_4",
+   "sprite": "citizen_c",
+   "x": 30,
+   "y": 17,
+   "facing": "right",
+   "dialogue": "cap_queue_4",
+   "ambient": true
+  },
+  {
+   "id": "cap_queue_5",
+   "sprite": "tourist",
+   "x": 32,
+   "y": 17,
+   "facing": "right",
+   "dialogue": "cap_queue_5",
+   "ambient": true
+  },
+  {
+   "id": "cap_queue_6",
+   "sprite": "vibeur_b",
+   "x": 34,
+   "y": 17,
+   "facing": "right",
+   "dialogue": "cap_queue_6",
+   "ambient": true
+  },
+  {
+   "id": "cap_ambient_1",
+   "sprite": "citizen_c",
+   "x": 20,
+   "y": 26,
+   "facing": "right",
+   "dialogue": "cap_ambient_1",
+   "ambient": true,
+   "wander": 2
+  },
+  {
+   "id": "cap_ambient_2",
+   "sprite": "citizen_a",
+   "x": 47,
+   "y": 26,
+   "facing": "left",
+   "dialogue": "cap_ambient_2",
+   "ambient": true,
+   "wander": 2
+  },
+  {
+   "id": "cap_stagiaire",
+   "sprite": "stagiaire",
+   "x": 15,
+   "y": 6,
+   "facing": "down",
+   "dialogue": "cap_stagiaire"
+  },
+  {
+   "id": "cap_resist_scout",
+   "sprite": "resistance_dev",
+   "x": 20,
+   "y": 22,
+   "facing": "up",
+   "dialogue": "cap_resist_scout"
+  },
+  {
+   "id": "cap_agent_1",
+   "sprite": "agent_conformite",
+   "x": 31,
+   "y": 22,
+   "facing": "down",
+   "dialogue": "aiact_agent_cap_1_talk",
+   "trainer": "aiact_agent_cap_1",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_aiact_agent_cap_1_defeated"
+    }
+   }
+  },
+  {
+   "id": "cap_agent_2",
+   "sprite": "agent_conformite",
+   "x": 22,
+   "y": 14,
+   "facing": "right",
+   "dialogue": "aiact_agent_cap_2_talk",
+   "trainer": "aiact_agent_cap_2",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_aiact_agent_cap_2_defeated"
+    }
+   }
+  },
+  {
+   "id": "cap_agent_3",
+   "sprite": "agent_conformite",
+   "x": 15,
+   "y": 27,
+   "facing": "right",
+   "dialogue": "aiact_agent_cap_3_talk",
+   "trainer": "aiact_agent_cap_3",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_aiact_agent_cap_3_defeated"
+    }
+   }
+  },
+  {
+   "id": "cap_guard_1",
+   "sprite": "guard_aiact",
+   "x": 47,
+   "y": 26,
+   "facing": "left",
+   "dialogue": "aiact_guard_cap_1_talk",
+   "trainer": "aiact_guard_cap_1",
+   "sightRange": 4,
+   "condition": {
+    "not": {
+     "flag": "trainer_aiact_guard_cap_1_defeated"
+    }
+   }
+  }
+ ],
+ "warps": [
+  {
+   "x": 0,
+   "y": 25,
+   "to": "route_bureaucratie",
+   "toX": 54,
+   "toY": 12,
+   "facing": "left"
+  },
+  {
+   "x": 63,
+   "y": 25,
+   "to": "temple_attention",
+   "toX": 1,
+   "toY": 36,
+   "facing": "right"
+  },
+  {
+   "x": 0,
+   "y": 26,
+   "to": "route_bureaucratie",
+   "toX": 54,
+   "toY": 13,
+   "facing": "left"
+  },
+  {
+   "x": 63,
+   "y": 26,
+   "to": "temple_attention",
+   "toX": 1,
+   "toY": 37,
+   "facing": "right"
+  },
+  {
+   "x": 0,
+   "y": 27,
+   "to": "route_bureaucratie",
+   "toX": 54,
+   "toY": 14,
+   "facing": "left"
+  },
+  {
+   "x": 63,
+   "y": 27,
+   "to": "temple_attention",
+   "toX": 1,
+   "toY": 38,
+   "facing": "right"
+  },
+  {
+   "x": 8,
+   "y": 20,
+   "to": "hub_capitale",
+   "toX": 5,
+   "toY": 7,
+   "facing": "up"
+  },
+  {
+   "x": 51,
+   "y": 34,
+   "to": "tour_conformite",
+   "toX": 14,
+   "toY": 44,
+   "facing": "up"
+  }
+ ],
+ "triggers": [
+  {
+   "x": 51,
+   "y": 35,
+   "script": "tour_access_gained",
+   "w": 2,
+   "once": true
+  },
+  {
+   "x": 1,
+   "y": 25,
+   "script": "capitale_arrival",
+   "h": 3,
+   "once": true
+  },
+  {
+   "x": 14,
+   "y": 3,
+   "script": "secret_capitale_ruelle",
+   "once": true
+  },
+  {
+   "x": 14,
+   "y": 44,
+   "script": "secret_capitale_parc",
+   "once": true
+  },
+  {
+   "x": 38,
+   "y": 31,
+   "script": "secret_capitale_cantine",
+   "once": true
+  }
+ ],
+ "kind": "city",
+ "music": "city_day",
+ "hub": {
+  "x": 9,
+  "y": 22
+ },
+ "encounterRate": 0.16,
+ "gates": [
+  {
+   "x": 60,
+   "y": 25,
+   "flag": "moratoire_beaten"
+  },
+  {
+   "x": 60,
+   "y": 26,
+   "flag": "moratoire_beaten"
+  },
+  {
+   "x": 60,
+   "y": 27,
+   "flag": "moratoire_beaten"
+  },
+  {
+   "x": 51,
+   "y": 36,
+   "flag": "cc_p2"
+  },
+  {
+   "x": 52,
+   "y": 36,
+   "flag": "cc_p2"
+  },
+  {
+   "x": 51,
+   "y": 38,
+   "flag": "cc_p1"
+  },
+  {
+   "x": 52,
+   "y": 38,
+   "flag": "cc_p1"
+  }
+ ],
+ "switches": [
+  {
+   "x": 55,
+   "y": 43,
+   "flag": "cc_p1"
+  },
+  {
+   "x": 47,
+   "y": 41,
+   "flag": "cc_p2"
+  }
+ ],
+ "pushables": [
+  {
+   "id": "cc_crate_1",
+   "x": 49,
+   "y": 41
+  },
+  {
+   "id": "cc_crate_2",
+   "x": 53,
+   "y": 44
+  }
+ ],
+ "encounters": [
+  {
+   "form": "roberta",
+   "minLevel": 37,
+   "maxLevel": 40,
+   "weight": 14
+  },
+  {
+   "form": "distilbert",
+   "minLevel": 37,
+   "maxLevel": 40,
+   "weight": 12
+  },
+  {
+   "form": "copilot_agent",
+   "minLevel": 37,
+   "maxLevel": 41,
+   "weight": 12
+  },
+  {
+   "form": "devstral",
+   "minLevel": 37,
+   "maxLevel": 40,
+   "weight": 10
+  },
+  {
+   "form": "gemini_pro",
+   "minLevel": 38,
+   "maxLevel": 41,
+   "weight": 8
+  },
+  {
+   "form": "llama_4_scout",
+   "minLevel": 37,
+   "maxLevel": 40,
+   "weight": 10
+  },
+  {
+   "form": "qwen_3",
+   "minLevel": 37,
+   "maxLevel": 40,
+   "weight": 10,
+   "group": 3
+  },
+  {
+   "form": "claude_sonnet",
+   "minLevel": 37,
+   "maxLevel": 40,
+   "weight": 10
+  },
+  {
+   "form": "gpt_4o",
+   "minLevel": 38,
+   "maxLevel": 41,
+   "weight": 8
+  },
+  {
+   "form": "o3",
+   "minLevel": 40,
+   "maxLevel": 42,
+   "weight": 3
+  },
+  {
+   "form": "deepseek_v4",
+   "minLevel": 38,
+   "maxLevel": 41,
+   "weight": 4
+  },
+  {
+   "form": "deepseek_r1",
+   "minLevel": 38,
+   "maxLevel": 41,
+   "weight": 4
+  },
+  {
+   "form": "mistral_large",
+   "minLevel": 39,
+   "maxLevel": 42,
+   "weight": 3
+  },
+  {
+   "form": "grok_4",
+   "minLevel": 40,
+   "maxLevel": 42,
+   "weight": 2
+  },
+  {
+   "form": "whisper_large",
+   "minLevel": 38,
+   "maxLevel": 41,
+   "weight": 5,
+   "night": true
+  }
+ ],
+ "landmarks": [
+  {
+   "x": 33,
+   "y": 8,
+   "label": "Tour de Conformité (QG AIACT)"
+  },
+  {
+   "x": 8,
+   "y": 20,
+   "label": "Laverie Conforme (Hub)"
+  },
+  {
+   "x": 51,
+   "y": 34,
+   "label": "Entrée de service"
+  },
+  {
+   "x": 13,
+   "y": 30,
+   "label": "Parc des Formulaires"
+  },
+  {
+   "x": 37,
+   "y": 31,
+   "label": "Cantine"
+  },
+  {
+   "x": 60,
+   "y": 26,
+   "label": "Sortie Est (Temple)"
+  }
+ ],
+ "exits": [
+  {
+   "x": 0,
+   "y": 26,
+   "to": "route_bureaucratie",
+   "label": "Route de la Bureaucratie"
+  },
+  {
+   "x": 63,
+   "y": 26,
+   "to": "temple_attention",
+   "label": "Temple de l'Attention"
+  }
+ ]
+}

@@ -1,0 +1,305 @@
+{
+ "id": "coffre_scelles",
+ "name": "Coffre des Scellés",
+ "width": 31,
+ "height": 28,
+ "rows": [
+  "%%%%%%%%%%%ZZZZZZZZZ%%%%%%%%%%%",
+  "%_KKKKKKKK___________KKKKKKKK_%",
+  "%_____________________________%",
+  "%______________J______________%",
+  "%_____________________________%",
+  "%_____________________________%",
+  "%_l_________________________l_%",
+  "%_____________________________%",
+  "%%%%%%%%%%%%%_____%%%%%%%%%%%%%",
+  "%%%%%%%%%%%%%_____%%%%%%%%%%%%%",
+  "%%%%%%%%%%%%%_____%%%%%%%%%%%%%",
+  "%u___________________________u%",
+  "%__RJR_____RJR___RJR_____RJR__%",
+  "%______ddd___________ddd______%",
+  "%______ddd___________ddd______%",
+  "%______ddd___________ddd______%",
+  "%______ddd___________ddd______%",
+  "%______ddd___________ddd______%",
+  "%______ddd___________ddd______%",
+  "%______ddd___________ddd______%",
+  "%______ddd___________ddd______%",
+  "%__RJR___________________RJR__%",
+  "%u___________________________u%",
+  "%%%%%%%%%%%%%_____%%%%%%%%%%%%%",
+  "%%%%%%%%%%%%%_____%%%%%%%%%%%%%",
+  "%%%%%%%%%%%%%_____%%%%%%%%%%%%%",
+  "%%%%%%%%%%%%%_____%%%%%%%%%%%%%",
+  "%%%%%%%%%%%%%XXXXX%%%%%%%%%%%%%"
+ ],
+ "legend": {
+  "%": "prison_wall",
+  "J": "terminal",
+  "K": "server_rack",
+  "R": "locker",
+  "X": "exit_mat",
+  "Z": "scoreboard",
+  "_": "cell_floor",
+  "d": "data_stream",
+  "l": "plant",
+  "u": "searchlight"
+ },
+ "npcs": [
+  {
+   "id": "moratoire_coffre",
+   "sprite": "directrice_moratoire",
+   "x": 15,
+   "y": 5,
+   "facing": "down",
+   "dialogue": "moratoire_coffre_talk",
+   "condition": {
+    "not": {
+     "flag": "agi_failed"
+    }
+   }
+  },
+  {
+   "id": "moratoire_after",
+   "sprite": "directrice_moratoire",
+   "x": 23,
+   "y": 5,
+   "facing": "left",
+   "dialogue": "moratoire_after",
+   "condition": {
+    "flag": "agi_failed"
+   }
+  },
+  {
+   "id": "fork_coffre",
+   "sprite": "resistance_dev",
+   "x": 15,
+   "y": 7,
+   "facing": "up",
+   "dialogue": "fork_coffre",
+   "condition": {
+    "flag": "agi_failed"
+   }
+  },
+  {
+   "id": "cf_agent_1",
+   "sprite": "agent_conformite",
+   "x": 10,
+   "y": 16,
+   "facing": "right",
+   "dialogue": "aiact_agent_cf_1_talk",
+   "trainer": "aiact_agent_cf_1",
+   "sightRange": 4,
+   "condition": {
+    "not": {
+     "flag": "trainer_aiact_agent_cf_1_defeated"
+    }
+   }
+  },
+  {
+   "id": "cf_agent_2",
+   "sprite": "agent_conformite",
+   "x": 20,
+   "y": 18,
+   "facing": "left",
+   "dialogue": "aiact_agent_cf_2_talk",
+   "trainer": "aiact_agent_cf_2",
+   "sightRange": 4,
+   "condition": {
+    "not": {
+     "flag": "trainer_aiact_agent_cf_2_defeated"
+    }
+   }
+  }
+ ],
+ "warps": [
+  {
+   "x": 13,
+   "y": 27,
+   "to": "tour_conformite",
+   "toX": 14,
+   "toY": 2,
+   "facing": "down"
+  },
+  {
+   "x": 14,
+   "y": 27,
+   "to": "tour_conformite",
+   "toX": 14,
+   "toY": 2,
+   "facing": "down"
+  },
+  {
+   "x": 15,
+   "y": 27,
+   "to": "tour_conformite",
+   "toX": 14,
+   "toY": 2,
+   "facing": "down"
+  },
+  {
+   "x": 16,
+   "y": 27,
+   "to": "tour_conformite",
+   "toX": 14,
+   "toY": 2,
+   "facing": "down"
+  },
+  {
+   "x": 17,
+   "y": 27,
+   "to": "tour_conformite",
+   "toX": 14,
+   "toY": 2,
+   "facing": "down"
+  }
+ ],
+ "triggers": [
+  {
+   "x": 13,
+   "y": 23,
+   "script": "agi_wake_fail",
+   "w": 5,
+   "h": 2,
+   "condition": {
+    "all": [
+     {
+      "flag": "moratoire_beaten"
+     },
+     {
+      "not": {
+       "flag": "agi_failed"
+      }
+     }
+    ]
+   },
+   "once": true
+  }
+ ],
+ "kind": "dungeon",
+ "music": "prison",
+ "encounterRate": 0.2,
+ "encounters": [
+  {
+   "form": "o1",
+   "minLevel": 36,
+   "maxLevel": 38,
+   "weight": 12
+  },
+  {
+   "form": "midjourney_v6",
+   "minLevel": 36,
+   "maxLevel": 38,
+   "weight": 12
+  },
+  {
+   "form": "gemini_pro",
+   "minLevel": 36,
+   "maxLevel": 38,
+   "weight": 10
+  },
+  {
+   "form": "grok_3",
+   "minLevel": 36,
+   "maxLevel": 38,
+   "weight": 10
+  },
+  {
+   "form": "copilot_agent",
+   "minLevel": 36,
+   "maxLevel": 38,
+   "weight": 10
+  },
+  {
+   "form": "llama_4_scout",
+   "minLevel": 36,
+   "maxLevel": 38,
+   "weight": 10
+  },
+  {
+   "form": "gpt_4o",
+   "minLevel": 36,
+   "maxLevel": 38,
+   "weight": 8
+  },
+  {
+   "form": "qwen_3",
+   "minLevel": 36,
+   "maxLevel": 38,
+   "weight": 8
+  },
+  {
+   "form": "whisper_large",
+   "minLevel": 36,
+   "maxLevel": 38,
+   "weight": 8
+  },
+  {
+   "form": "nano_banana_pro",
+   "minLevel": 36,
+   "maxLevel": 38,
+   "weight": 6
+  },
+  {
+   "form": "sd3",
+   "minLevel": 36,
+   "maxLevel": 38,
+   "weight": 6
+  },
+  {
+   "form": "claude_sonnet",
+   "minLevel": 36,
+   "maxLevel": 38,
+   "weight": 6
+  },
+  {
+   "form": "roberta",
+   "minLevel": 36,
+   "maxLevel": 38,
+   "weight": 6
+  },
+  {
+   "form": "deepseek_r1",
+   "minLevel": 38,
+   "maxLevel": 40,
+   "weight": 3
+  },
+  {
+   "form": "mistral_large",
+   "minLevel": 38,
+   "maxLevel": 40,
+   "weight": 3
+  },
+  {
+   "form": "magistral",
+   "minLevel": 38,
+   "maxLevel": 40,
+   "weight": 3
+  }
+ ],
+ "landmarks": [
+  {
+   "x": 15,
+   "y": 4,
+   "label": "Console de réveil d'AGI"
+  },
+  {
+   "x": 15,
+   "y": 16,
+   "label": "Allée des capsules"
+  },
+  {
+   "x": 15,
+   "y": 26,
+   "label": "Sortie"
+  }
+ ],
+ "exits": [
+  {
+   "x": 15,
+   "y": 27,
+   "to": "conformite_capitale",
+   "label": "Sortie du Coffre"
+  }
+ ]
+}

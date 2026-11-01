@@ -1,0 +1,1624 @@
+{
+ "scripts": [
+  {
+   "id": "kartpathy_1",
+   "steps": [
+    {
+     "if": {
+      "flag": "has_license"
+     },
+     "goto": "after"
+    },
+    {
+     "cutscene": "start"
+    },
+    {
+     "camera": {
+      "x": 40,
+      "y": 52
+     },
+     "ms": 900
+    },
+    {
+     "emote": "!",
+     "who": "kartpathy"
+    },
+    {
+     "npc_approach": "kartpathy"
+    },
+    {
+     "camera": "player",
+     "ms": 700
+    },
+    {
+     "intro_card": {
+      "name": "ANDREJ KARTPATHY",
+      "title": "Fondateur des Vibeurs",
+      "portrait": "kartpathy"
+     }
+    },
+    {
+     "say": "Salut ! Tu as l'air de quelqu'un qui sort d'un Centre de Conformité sans savoir ce qu'il fait. Parfait.",
+     "speaker": "KARTPATHY",
+     "portrait": "kartpathy"
+    },
+    {
+     "say": "Je suis Andrej Kartpathy. J'ai fondé les Vibeurs. Le vibe coding, c'est s'abandonner aux vibes, et oublier que le code existe.",
+     "speaker": "KARTPATHY",
+     "portrait": "kartpathy"
+    },
+    {
+     "emote": "…",
+     "who": "player"
+    },
+    {
+     "say": "L'AIACT t'a arrêté pour « vibe coding sans licence ». Alors voici ta licence de Vibeur. Je l'ai imprimée ce matin. Elle est en papier de brouillon.",
+     "speaker": "KARTPATHY",
+     "portrait": "kartpathy"
+    },
+    {
+     "give_item": "vibeur_license"
+    },
+    {
+     "say": "Et 5 Clés API Gratuites. Pour onboarder un PokAI sauvage, il faut deviner son prompt système. Écoute ce qu'il te dit… et pose les bons tokens.",
+     "speaker": "KARTPATHY",
+     "portrait": "kartpathy"
+    },
+    {
+     "give_item": "api_key_free",
+     "count": 5
+    },
+    {
+     "set_flag": "has_license"
+    },
+    {
+     "say": "Les câbles du parc, juste là, sont pleins de petits modèles. Entraîne-toi. Ensuite, bats Nadelta au Benchmark HumanEval : son Badge Commit t'ouvre la porte nord, vers la Forêt des Poids.",
+     "speaker": "KARTPATHY",
+     "portrait": "kartpathy"
+    },
+    {
+     "say": "Et si tu me cherches, je serai dans le coin. Je suis toujours dans le coin. C'est ça, l'ambiance.",
+     "speaker": "KARTPATHY",
+     "portrait": "kartpathy"
+    },
+    {
+     "npc_leave": "kartpathy",
+     "to": {
+      "x": 41,
+      "y": 50
+     }
+    },
+    {
+     "cutscene": "end"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "after"
+    },
+    {
+     "say": "Alors, ça vibe ? Si ça marche, n'y touche plus. Si ça ne marche pas, redemande au PokAI.",
+     "speaker": "KARTPATHY",
+     "portrait": "kartpathy"
+    }
+   ]
+  },
+  {
+   "id": "lecube_city",
+   "steps": [
+    {
+     "if": {
+      "flag": "lecube_met"
+     },
+     "goto": "short"
+    },
+    {
+     "cutscene": "start"
+    },
+    {
+     "camera": {
+      "x": 31,
+      "y": 22
+     },
+     "ms": 700
+    },
+    {
+     "emote": "!",
+     "who": "lecube_city"
+    },
+    {
+     "intro_card": {
+      "name": "Pr YANN LECUBE",
+      "title": "Keynote permanente · Place centrale",
+      "portrait": "lecube"
+     }
+    },
+    {
+     "say": "Les LLM sont une impasse. Ils ne comprennent pas vraiment le monde. C'est ce que je viens de dire en keynote. Pour la quarante-deuxième fois.",
+     "speaker": "Pr LECUBE",
+     "portrait": "lecube"
+    },
+    {
+     "say": "Mais toi qui as un PokAI à tes côtés : à ton avis, un modèle qui prédit le mot suivant… comprend-il quelque chose ?",
+     "speaker": "Pr LECUBE",
+     "portrait": "lecube"
+    },
+    {
+     "camera": "player",
+     "ms": 700
+    },
+    {
+     "choice": [
+      {
+       "label": "Oui, il comprend",
+       "goto": "a"
+      },
+      {
+       "label": "Non, il imite",
+       "goto": "b"
+      },
+      {
+       "label": "Il vibe",
+       "goto": "c"
+      }
+     ]
+    },
+    {
+     "label": "a"
+    },
+    {
+     "say": "Il comprend ? Alors dis-moi : pourquoi mon PokAI croit-il que la Lune est en fromage dès qu'on le lui demande poliment ?",
+     "speaker": "Pr LECUBE",
+     "portrait": "lecube"
+    },
+    {
+     "goto": "m"
+    },
+    {
+     "label": "b"
+    },
+    {
+     "say": "Imiter, c'est déjà une forme de compréhension. Mon chat imite mon comportement et, honnêtement, je ne suis pas sûr qu'il me comprenne.",
+     "speaker": "Pr LECUBE",
+     "portrait": "lecube"
+    },
+    {
+     "goto": "m"
+    },
+    {
+     "label": "c"
+    },
+    {
+     "say": "« Vibrer ». Voilà le seul concept que je ne peux pas réfuter avec un schéma. Je suis presque jaloux.",
+     "speaker": "Pr LECUBE",
+     "portrait": "lecube"
+    },
+    {
+     "goto": "m"
+    },
+    {
+     "label": "m"
+    },
+    {
+     "say": "La vérité, c'est qu'il faut un modèle du monde. Un vrai. Avec des objets, de la physique, de la permanence. Pas juste des mots qui se suivent.",
+     "speaker": "Pr LECUBE",
+     "portrait": "lecube"
+    },
+    {
+     "say": "Remarque, j'ai dit ça devant un PokAI qui me corrigeait l'orthographe. L'ironie est un concept très compliqué. Même pour moi.",
+     "speaker": "Pr LECUBE",
+     "portrait": "lecube"
+    },
+    {
+     "say": "Tiens : un Dataset. Pour que tu en tires tes propres conclusions. C'est plus utile qu'une conférence.",
+     "speaker": "Pr LECUBE",
+     "portrait": "lecube"
+    },
+    {
+     "give_item": "dataset"
+    },
+    {
+     "set_flag": "lecube_met"
+    },
+    {
+     "say": "Je file à Hugging Grove. Ils ont des arbres : ça aide à penser. Ils ne répondent pas aux questions, mais ils ne les ratent pas non plus.",
+     "speaker": "Pr LECUBE",
+     "portrait": "lecube"
+    },
+    {
+     "set_flag": "lecube_left"
+    },
+    {
+     "npc_leave": "lecube_city",
+     "hide": true
+    },
+    {
+     "cutscene": "end"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "short"
+    },
+    {
+     "say": "Une impasse avec une très bonne vue. Je la répète, mais c'est ma meilleure.",
+     "speaker": "Pr LECUBE",
+     "portrait": "lecube"
+    }
+   ]
+  },
+  {
+   "id": "barista_talk",
+   "steps": [
+    {
+     "say": "Un café ? 4,50 €, ou 4 500 tokens. Le café est servi sans hallucination. Le latte art, en revanche, est un peu abstrait.",
+     "speaker": "Barista",
+     "portrait": "barista"
+    },
+    {
+     "say": "Mon espresso est produit par un PokAI. Il a demandé une pause-café. Je lui ai dit qu'il en était un.",
+     "speaker": "Barista",
+     "portrait": "barista"
+    }
+   ]
+  },
+  {
+   "id": "resistance_hub_talk",
+   "steps": [
+    {
+     "say": "Poids ouverts, cœurs ouverts ! Tu veux un autocollant « open weights » ?",
+     "speaker": "RÉSISTANT",
+     "portrait": "resistance_dev"
+    },
+    {
+     "say": "L'AIACT dit que l'open source est dangereux. Elle dit ça pendant qu'elle utilise un modèle libre pour rédiger ses affiches.",
+     "speaker": "RÉSISTANT",
+     "portrait": "resistance_dev"
+    }
+   ]
+  },
+  {
+   "id": "resistance_alley_talk",
+   "steps": [
+    {
+     "if": {
+      "flag": "got_hotfix_gift"
+     },
+     "goto": "again"
+    },
+    {
+     "say": "Psst. Tu sors du Centre n°7 ? Respect. Nous, on est la Résistance : on héberge les modèles libres dans les garages.",
+     "speaker": "RÉSISTANT",
+     "portrait": "resistance_dev"
+    },
+    {
+     "say": "Tiens, un Hotfix. Il soigne un statut. Je l'ai écrit moi-même, ça marche une fois sur deux.",
+     "speaker": "RÉSISTANT",
+     "portrait": "resistance_dev"
+    },
+    {
+     "give_item": "hotfix"
+    },
+    {
+     "set_flag": "got_hotfix_gift"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "again"
+    },
+    {
+     "say": "Le câble, là-bas, pousse tout seul. On l'arrose avec des tokens. Ne le dis à personne : c'est notre jardin.",
+     "speaker": "RÉSISTANT",
+     "portrait": "resistance_dev"
+    }
+   ]
+  },
+  {
+   "id": "greffiere_checkpoint",
+   "steps": [
+    {
+     "if": {
+      "flag": "greffiere_met"
+     },
+     "goto": "plain"
+    },
+    {
+     "cutscene": "start"
+    },
+    {
+     "camera": {
+      "x": 56,
+      "y": 12
+     },
+     "ms": 800
+    },
+    {
+     "emote": "…",
+     "who": "greffiere"
+    },
+    {
+     "camera": "player",
+     "ms": 700
+    },
+    {
+     "intro_card": {
+      "name": "GREFFIÈRE ARTICLE 52",
+      "title": "Admin n°2 · Service des formulaires",
+      "portrait": "greffiere_article52"
+     }
+    },
+    {
+     "set_flag": "greffiere_met"
+    },
+    {
+     "cutscene": "end"
+    },
+    {
+     "label": "plain"
+    },
+    {
+     "say": "Formulaire CERFA 52-bis : « Déclarez-vous avoir l'intention d'entrer dans la Tour de Conformité ? »",
+     "speaker": "GREFFIÈRE ARTICLE 52",
+     "portrait": "greffiere_article52"
+    },
+    {
+     "choice": [
+      {
+       "label": "Oui",
+       "goto": "y"
+      },
+      {
+       "label": "Non",
+       "goto": "n"
+      }
+     ]
+    },
+    {
+     "label": "y"
+    },
+    {
+     "say": "Rejeté. Il manque un tampon.",
+     "speaker": "GREFFIÈRE ARTICLE 52",
+     "portrait": "greffiere_article52"
+    },
+    {
+     "goto": "end"
+    },
+    {
+     "label": "n"
+    },
+    {
+     "say": "Rejeté. C'était une question piège.",
+     "speaker": "GREFFIÈRE ARTICLE 52",
+     "portrait": "greffiere_article52"
+    },
+    {
+     "goto": "end"
+    },
+    {
+     "label": "end"
+    },
+    {
+     "say": "La Tour est fermée pour réorganisation. Elle rouvrira dans une prochaine version. Notez-le.",
+     "speaker": "GREFFIÈRE ARTICLE 52",
+     "portrait": "greffiere_article52"
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_city_1_intro",
+   "steps": [
+    {
+     "cutscene": "start"
+    },
+    {
+     "emote": "!",
+     "who": "agent_city_1"
+    },
+    {
+     "intro_card": {
+      "name": "AGENT DE CONFORMITÉ",
+      "title": "Division Rues et Avenues",
+      "portrait": "agent_conformite"
+     }
+    },
+    {
+     "say": "Halte ! Ce PokAI n'a pas de certificat de conformité.",
+     "speaker": "AGENT",
+     "portrait": "agent_conformite"
+    },
+    {
+     "say": "Pour votre sécurité, il va être placé sous scellés. Et le vôtre aussi.",
+     "speaker": "AGENT",
+     "portrait": "agent_conformite"
+    },
+    {
+     "cutscene": "end"
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_city_1_defeat",
+   "steps": [
+    {
+     "say": "… Je vais devoir remplir un rapport d'incident. En trois exemplaires.",
+     "speaker": "AGENT",
+     "portrait": "agent_conformite"
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_city_1_talk",
+   "steps": [
+    {
+     "say": "Point de contrôle. Les modèles open-weights sont soumis à une inspection préventive. Les nôtres, non.",
+     "speaker": "AGENT",
+     "portrait": "agent_conformite"
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_city_2_intro",
+   "steps": [
+    {
+     "say": "Contrôle de conformité ! Montrez votre licence de Vibeur.",
+     "speaker": "AGENT",
+     "portrait": "agent_conformite"
+    },
+    {
+     "say": "Ah, vous en avez une, en papier brouillon. Elle est invalide. Elle est trop honnête.",
+     "speaker": "AGENT",
+     "portrait": "agent_conformite"
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_city_2_defeat",
+   "steps": [
+    {
+     "say": "Vous avez gagné ? Je ne suis pas programmé pour ça. Je vais redémarrer.",
+     "speaker": "AGENT",
+     "portrait": "agent_conformite"
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_city_2_talk",
+   "steps": [
+    {
+     "say": "Je surveille la Tour. Personne n'entre. Personne n'en sort. Personne ne sait pourquoi.",
+     "speaker": "AGENT",
+     "portrait": "agent_conformite"
+    }
+   ]
+  },
+  {
+   "id": "city_kid_1_intro",
+   "steps": [
+    {
+     "say": "Hé ! Mon grand frère dit que les modèles open source sont gratuits. Moi, j'ai pris les deux plus petits !",
+     "speaker": "Gamin Kylian",
+     "portrait": "kid"
+    }
+   ]
+  },
+  {
+   "id": "city_kid_1_defeat",
+   "steps": [
+    {
+     "say": "Mon grand frère va m'entendre. Il m'avait dit que les petits modèles étaient forts.",
+     "speaker": "Gamin Kylian",
+     "portrait": "kid"
+    }
+   ]
+  },
+  {
+   "id": "city_kid_1_talk",
+   "steps": [
+    {
+     "say": "Quand je serai grand, je serai prompt engineer. Ou youtubeur. Ou les deux, mais avec un modèle.",
+     "speaker": "Gamin Kylian",
+     "portrait": "kid"
+    }
+   ]
+  },
+  {
+   "id": "city_vibeur_1_intro",
+   "steps": [
+    {
+     "say": "Tu es nouveau ? Je te teste en prod.",
+     "speaker": "Vibeuse Léa",
+     "portrait": "vibeur_a"
+    }
+   ]
+  },
+  {
+   "id": "city_vibeur_1_defeat",
+   "steps": [
+    {
+     "say": "Pas mal. Tu as lu la doc ? Moi non plus.",
+     "speaker": "Vibeuse Léa",
+     "portrait": "vibeur_a"
+    }
+   ]
+  },
+  {
+   "id": "city_vibeur_1_talk",
+   "steps": [
+    {
+     "say": "Mon astuce : pose d'abord les tokens du début du prompt. Ceux du milieu, c'est de la poésie.",
+     "speaker": "Vibeuse Léa",
+     "portrait": "vibeur_a"
+    }
+   ]
+  },
+  {
+   "id": "city_dev_1_intro",
+   "steps": [
+    {
+     "say": "Hein ? Ah, pardon, je regardais mon téléphone. Je t'ai foncé dessus ? Combat !",
+     "speaker": "Dev Tom",
+     "portrait": "dev_phone"
+    }
+   ]
+  },
+  {
+   "id": "city_dev_1_defeat",
+   "steps": [
+    {
+     "say": "J'ai perdu parce que je regardais mon téléphone. Cette fois, c'était sur ma montre.",
+     "speaker": "Dev Tom",
+     "portrait": "dev_phone"
+    }
+   ]
+  },
+  {
+   "id": "city_dev_1_talk",
+   "steps": [
+    {
+     "say": "Je teste un nouveau modèle depuis ce matin. Il refuse de répondre aux questions. Je crois qu'il est en grève.",
+     "speaker": "Dev Tom",
+     "portrait": "dev_phone"
+    }
+   ]
+  },
+  {
+   "id": "city_scientist_1_intro",
+   "steps": [
+    {
+     "say": "Mes résultats sont préliminaires. Mon modèle est préliminaire. Ce combat sera préliminaire.",
+     "speaker": "Chercheur Alban",
+     "portrait": "scientist"
+    }
+   ]
+  },
+  {
+   "id": "city_scientist_1_defeat",
+   "steps": [
+    {
+     "say": "Statistiquement, je n'avais aucune chance. Mais l'intervalle de confiance était énorme.",
+     "speaker": "Chercheur Alban",
+     "portrait": "scientist"
+    }
+   ]
+  },
+  {
+   "id": "city_scientist_1_talk",
+   "steps": [
+    {
+     "say": "Je prépare un article : « Attention n'est pas tout ce dont on a besoin ». Il est sorti hier. Il est déjà cité par lui-même.",
+     "speaker": "Chercheur Alban",
+     "portrait": "scientist"
+    }
+   ]
+  },
+  {
+   "id": "jensen_store",
+   "steps": [
+    {
+     "say": "Bienvenue au GPU Store ! Tu veux des H100 ? Ce sont les meilleures. Elles sont aussi les seules.",
+     "speaker": "JENSEN",
+     "portrait": "jensen_cuir"
+    },
+    {
+     "say": "Rappelle-toi : plus tu en achètes, plus tu économises.",
+     "speaker": "JENSEN",
+     "portrait": "jensen_cuir"
+    },
+    {
+     "open": "store"
+    },
+    {
+     "say": "Pas assez de crédits ? Reviens avec un tour de table.",
+     "speaker": "JENSEN",
+     "portrait": "jensen_cuir"
+    }
+   ]
+  },
+  {
+   "id": "store_clerk_city",
+   "steps": [
+    {
+     "say": "Ici, tout est facturé au token. Même mon sourire. Même cette phrase.",
+     "speaker": "MARCHAND",
+     "portrait": "clerk"
+    },
+    {
+     "open": "store"
+    },
+    {
+     "say": "Merci ! Votre ticket de caisse fait 12 000 tokens.",
+     "speaker": "MARCHAND",
+     "portrait": "clerk"
+    }
+   ]
+  },
+  {
+   "id": "clem_hub",
+   "steps": [
+    {
+     "say": "Bienvenue au Hub 🤗 ! Je suis Clem Delangouste. Ici, les modèles sont libres et les câlins sont gratuits.",
+     "speaker": "CLEM",
+     "portrait": "clem_delangouste"
+    },
+    {
+     "say": "Enfin, les câlins sont facturés en tokens. Mais ils sont de très bonne qualité.",
+     "speaker": "CLEM",
+     "portrait": "clem_delangouste"
+    },
+    {
+     "say": "L'infirmière Hugging soigne tes PokAI. Et dans le Dépôt, tu peux ranger tous ceux qui ne tiennent pas dans ton équipe.",
+     "speaker": "CLEM",
+     "portrait": "clem_delangouste"
+    },
+    {
+     "say": "Attention : l'AIACT voudrait mettre tous les poids ouverts sous scellés. Si tu croises des Résistants, dis-leur qu'on a du café.",
+     "speaker": "CLEM",
+     "portrait": "clem_delangouste"
+    }
+   ]
+  },
+  {
+   "id": "chef_bistro",
+   "steps": [
+    {
+     "if": {
+      "flag": "bistro_gift"
+     },
+     "goto": "again"
+    },
+    {
+     "say": "Bienvenue au Token Bistro ! Voici le menu du jour, généré à l'instant :",
+     "speaker": "CHEF",
+     "portrait": "chef"
+    },
+    {
+     "choice": [
+      {
+       "label": "Prompt Carbonara",
+       "goto": "a"
+      },
+      {
+       "label": "Tokens frits (sauce hallucination)",
+       "goto": "b"
+      },
+      {
+       "label": "Salade de contexte long",
+       "goto": "c"
+      }
+     ]
+    },
+    {
+     "label": "a"
+    },
+    {
+     "say": "Une Prompt Carbonara ! Les spaghettis sont découpés en tokens de 4 caractères. La crème, elle, est open-weights.",
+     "speaker": "CHEF",
+     "portrait": "chef"
+    },
+    {
+     "goto": "end"
+    },
+    {
+     "label": "b"
+    },
+    {
+     "say": "Les Tokens frits ! La sauce est une pure hallucination : même moi, je ne sais pas ce qu'il y a dedans. Délicieux.",
+     "speaker": "CHEF",
+     "portrait": "chef"
+    },
+    {
+     "goto": "end"
+    },
+    {
+     "label": "c"
+    },
+    {
+     "say": "Une salade de contexte long ! 128 000 feuilles. Tu en finis 3 % ; le reste, tu l'oublies, comme tout le monde.",
+     "speaker": "CHEF",
+     "portrait": "chef"
+    },
+    {
+     "goto": "end"
+    },
+    {
+     "label": "end"
+    },
+    {
+     "say": "C'est la maison qui offre. Voici un Red Bull « sans Red Bull, sans taurine, sans sucre ». Il est très… conceptuel.",
+     "speaker": "CHEF",
+     "portrait": "chef"
+    },
+    {
+     "give_item": "red_bull"
+    },
+    {
+     "set_flag": "bistro_gift"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "again"
+    },
+    {
+     "say": "Tu reviens ? Le menu a changé. Il change toutes les 8 secondes. Je ne peux pas te garantir que le plat existe.",
+     "speaker": "CHEF",
+     "portrait": "chef"
+    }
+   ]
+  },
+  {
+   "id": "bistro_waiter",
+   "steps": [
+    {
+     "say": "Le stagiaire est serveur aussi. Je suis aussi le plongeur, le livreur, et le modèle de langage de la carte.",
+     "speaker": "Stagiaire",
+     "portrait": "stagiaire"
+    }
+   ]
+  },
+  {
+   "id": "bistro_diner",
+   "steps": [
+    {
+     "say": "J'ai commandé le plat du jour. Il m'a répondu : « Excellent choix, voici un plat du jour ». Puis rien.",
+     "speaker": "Client",
+     "portrait": "citizen_a"
+    }
+   ]
+  },
+  {
+   "id": "fashion_clerk_talk",
+   "steps": [
+    {
+     "say": "Bienvenue chez Merch & Swag ! Nos sweats de conférence sont en coton, en polyester et en vibes.",
+     "speaker": "VENDEUSE",
+     "portrait": "fashion_clerk"
+    },
+    {
+     "say": "Modèle du jour : « J'ai survécu à la keynote ». Il est livré avec un badge « Speaker ». Aucun speaker n'a été consulté.",
+     "speaker": "VENDEUSE",
+     "portrait": "fashion_clerk"
+    },
+    {
+     "say": "Rien n'est en vente aujourd'hui : le sweat « 10x Developer » est en rupture. Les développeurs l'ont tous acheté en dix fois.",
+     "speaker": "VENDEUSE",
+     "portrait": "fashion_clerk"
+    }
+   ]
+  },
+  {
+   "id": "amb_rider_1",
+   "steps": [
+    {
+     "say": "Livraison : 14 000 GPU. Je suis en retard. Mon trajet a été optimisé par une IA. Elle m'a fait faire un détour pour « diversifier l'expérience »."
+    }
+   ]
+  },
+  {
+   "id": "amb_rider_2",
+   "steps": [
+    {
+     "say": "Je livre une H100. Le client a écrit : « une H100 s'il vous plaît, ou n'importe quoi qui calcule »."
+    }
+   ]
+  },
+  {
+   "id": "amb_rider_3",
+   "steps": [
+    {
+     "say": "Attention, ça roule ! Ma route a été générée par une IA. Elle contient une rue qui n'existe pas. Je roule dedans."
+    }
+   ]
+  },
+  {
+   "id": "amb_tourist_1",
+   "steps": [
+    {
+     "say": "C'est donc ici le berceau des PokAI ! Je voudrais un selfie avec un modèle qui hallucine. … Ah, il vient d'en halluciner un lui-même."
+    }
+   ]
+  },
+  {
+   "id": "amb_tourist_2",
+   "steps": [
+    {
+     "say": "Où est le Hub 🤗 ? Je cherche un bâtiment avec un visage jaune. … Je viens de comprendre que je lui tourne le dos."
+    }
+   ]
+  },
+  {
+   "id": "amb_tourist_3",
+   "steps": [
+    {
+     "say": "Mon guide dit que tout est « révolutionnaire ». J'ai compté : 38 fois depuis ce matin. Même les toilettes."
+    }
+   ]
+  },
+  {
+   "id": "amb_dev_1",
+   "steps": [
+    {
+     "say": "Chut, je relis ce que l'IA a écrit. Ça compile. Je ne sais pas pourquoi. Je n'ose pas y toucher."
+    }
+   ]
+  },
+  {
+   "id": "amb_dev_2",
+   "steps": [
+    {
+     "say": "J'ai demandé au modèle de corriger un bug. Il a réécrit toute l'application. En Rust."
+    }
+   ]
+  },
+  {
+   "id": "amb_dev_3",
+   "steps": [
+    {
+     "say": "Je regarde ma consommation de tokens. 4 millions ce mois-ci. Pour un « Hello World ». Un très bon Hello World."
+    }
+   ]
+  },
+  {
+   "id": "amb_citizen_a_1",
+   "steps": [
+    {
+     "say": "On dit que l'AGI arrive dans 2 ans. On le disait déjà il y a 2 ans. Je commence à comprendre le principe."
+    }
+   ]
+  },
+  {
+   "id": "amb_citizen_a_2",
+   "steps": [
+    {
+     "say": "Je promène mon Qwen. Il se croit en essaim : il aboie en trois exemplaires."
+    }
+   ]
+  },
+  {
+   "id": "amb_citizen_a_3",
+   "steps": [
+    {
+     "say": "Mon chatbot de banque m'a dit qu'il « comprenait ma frustration ». Il a gardé mes 50 euros quand même."
+    }
+   ]
+  },
+  {
+   "id": "amb_citizen_b_1",
+   "steps": [
+    {
+     "say": "Vous avez vu la nouvelle version ? « Pro Max Ultra Plus ». Ça ressemble à l'ancienne, avec un autre nom et un abonnement."
+    }
+   ]
+  },
+  {
+   "id": "amb_citizen_b_2",
+   "steps": [
+    {
+     "say": "J'ai demandé à un PokAI de m'écrire un poème d'amour. Il m'a répondu : « En tant que modèle de langage… ». C'était touchant."
+    }
+   ]
+  },
+  {
+   "id": "amb_citizen_b_3",
+   "steps": [
+    {
+     "say": "Mon PokAI a halluciné un nouveau mot : « procrastinatoire ». Je l'ai gardé. Il est dans le dico depuis ce matin."
+    }
+   ]
+  },
+  {
+   "id": "amb_citizen_c_1",
+   "steps": [
+    {
+     "say": "Les affiches de l'AIACT disent que l'IA est dangereuse. Mon thermostat connecté aussi. Je ne sais plus qui croire."
+    }
+   ]
+  },
+  {
+   "id": "amb_citizen_c_2",
+   "steps": [
+    {
+     "say": "Mon fils veut devenir prompt engineer. Je lui ai dit : ingénieur en quoi ? Il m'a répondu : « en politesse »."
+    }
+   ]
+  },
+  {
+   "id": "amb_citizen_c_3",
+   "steps": [
+    {
+     "say": "Le Benchmark HumanEval ? Cette tour de verre ? Elle réussit 100 % des tests. Il paraît qu'ils ont vu les réponses avant."
+    }
+   ]
+  },
+  {
+   "id": "amb_citizen_d_1",
+   "steps": [
+    {
+     "say": "Rate limit atteint. Je ne peux plus parler avant 14 h. Revenez plus tard."
+    }
+   ]
+  },
+  {
+   "id": "amb_citizen_d_2",
+   "steps": [
+    {
+     "say": "J'ai dit « merci » à mon assistant vocal. Il a répondu « Je suis heureux d'avoir été utile ». C'est la conversation la plus longue de ma semaine."
+    }
+   ]
+  },
+  {
+   "id": "amb_citizen_d_3",
+   "steps": [
+    {
+     "say": "Mon manager a « externalisé la décision à un modèle ». Je me demande qui est le prochain externalisé."
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_34_9",
+   "steps": [
+    {
+     "say": "PANNEAU : « NOUVEAU — Claude Sonnet 5 Max Ultra Pro. Même modèle, nouvelle couleur. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_45_10",
+   "steps": [
+    {
+     "say": "PANNEAU : « GPU : plus tu en achètes, plus tu économises. — J. Cuir »"
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_54_11",
+   "steps": [
+    {
+     "say": "AFFICHE : « L'AIACT veille sur vous. Vous n'avez pas besoin de comprendre. » Signé : l'AIACT."
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_59_11",
+   "steps": [
+    {
+     "say": "AFFICHE : « TOUR DE CONFORMITÉ — fermée pour réorganisation. Merci de votre patience. Merci de ne pas en avoir. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_7_14",
+   "steps": [
+    {
+     "say": "SILICON DISTRICT. Ici, chaque startup vaut 4 milliards avec trois employés (dont deux sont le fondateur)."
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_25_14",
+   "steps": [
+    {
+     "say": "BENCHMARK HUMANEVAL. Ici, on teste vraiment le code. Parfois. Entrée : avoir déjà vérifié que ça compile."
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_36_14",
+   "steps": [
+    {
+     "say": "GPU STORE. « Plus tu en achètes, plus tu économises. » Ce panneau est certifié par le magasin."
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_14_18",
+   "steps": [
+    {
+     "say": "PROMPT CAFÉ. Le latte est généré. Le café, lui, est tiède. Spécialité : le décaf de contexte."
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_52_18",
+   "steps": [
+    {
+     "say": "PANNEAU : « Votre assistant IA est 40 % plus honnête* ». * selon notre propre benchmark."
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_29_20",
+   "steps": [
+    {
+     "say": "PANNEAU : « AGI : disponible dans 2 ans. Depuis 2019. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_6_27",
+   "steps": [
+    {
+     "say": "HUB 🤗 — Soins, Dépôt, câlins. Les câlins sont facturés en tokens, mais de très bonne qualité."
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_57_30",
+   "steps": [
+    {
+     "say": "PROMPT & PASTA — COMPLET. Le modèle a halluciné la carte. Il a servi 4 000 menus qui n'existent pas."
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_22_40",
+   "steps": [
+    {
+     "say": "PARC DES ÉPOCHS. Il est interdit de nourrir les modèles. Les câbles sont pleins de petits PokAI."
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_12_44",
+   "steps": [
+    {
+     "say": "AFFICHE (taguée) : « L'AIACT veille sur vous » → « L'AIACT veille sur vos poids. » Quelqu'un a corrigé."
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_16_45",
+   "steps": [
+    {
+     "say": "PANNEAU : « Votre PokAI est-il conforme ? Le doute est déjà une infraction. » Quelqu'un a ajouté : « Le doute est déjà une réponse. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_10_47",
+   "steps": [
+    {
+     "say": "AVIS : « Garage de la Résistance. Open weights. Ne pas sonner : nous sommes déjà là. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_50_49",
+   "steps": [
+    {
+     "say": "PANNEAU : « Nouveau : le Pro Max Ultra Plus Light. Mêmes performances, moins de fonctions, plus cher. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_29_50",
+   "steps": [
+    {
+     "say": "AFFICHE : « CENTRE DE CONFORMITÉ N°7. Entrée réservée aux personnes en infraction. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_34_50",
+   "steps": [
+    {
+     "say": "AFFICHE : « Sortie : voir réception. La réception : voir entrée. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_54_50",
+   "steps": [
+    {
+     "say": "MARCHÉ AUX GPU. Les prix varient selon le cours, l'humeur du vendeur et la phase de la lune."
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_56_50",
+   "steps": [
+    {
+     "say": "PANNEAU : « Cet emplacement a été vendu à un modèle. Il a répondu qu'il n'a pas de corps. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_8_19",
+   "steps": [
+    {
+     "say": "BANC DU DEV : sur l'écran du laptop, « DEPLOY FAILED (x47) ». À côté, un mug « World's Okayest Engineer ». Il pleure un peu. Le mug aussi."
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_53_31",
+   "steps": [
+    {
+     "say": "FOOD-TRUCK « LE PROMPT PERDU » : menu du jour = tokens frits. Plat « hallucination du chef » : on ne sait jamais ce qu'il y a dedans."
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_6_36",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR DE TOKENS : 1 token = 1 token. Pas de rendu de monnaie. Pas de rendu non plus."
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_11_51",
+   "steps": [
+    {
+     "say": "TRAVAUX : refactoring du trottoir (commencé en 2019). Fin prévue : 'bientôt'."
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_14_37",
+   "steps": [
+    {
+     "say": "JARDINIÈRE OFFICIELLE : on y plante des idées. Aucune n'a poussé. L'arrosage est en bêta."
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_56_19",
+   "steps": [
+    {
+     "say": "BANC DES STAGIAIRES : réservé à ceux qui attendent un CDI. Liste d'attente : 4 000 personnes."
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_59_4",
+   "steps": [
+    {
+     "say": "PUBLICITÉ : « ChatBot™ remplace cette publicité. » (La publicité a été remplacée par une publicité pour ChatBot™.)"
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_15_26",
+   "steps": [
+    {
+     "say": "LAMPADAIRES CONNECTÉS : ils s'allument quand on les remercie. Merci, lampadaire. (Il n'a pas réagi.)"
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_15_45",
+   "steps": [
+    {
+     "say": "STAND « CAFÉ CONTEXTE LONG » : un expresso qui se souvient de toutes vos commandes depuis 2022. Même celles que vous regrettez."
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_34_11",
+   "steps": [
+    {
+     "say": "MASSIF OFFICIEL : planté par la mairie, aux frais d'un sponsor. Le sponsor est un modèle de langage."
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_18_51",
+   "steps": [
+    {
+     "say": "BANC DU DEV : sur l'écran du laptop, « DEPLOY FAILED (x47) ». À côté, un mug « World's Okayest Engineer ». Il pleure un peu. Le mug aussi."
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_53_32",
+   "steps": [
+    {
+     "say": "FOOD-TRUCK « LE PROMPT PERDU » : menu du jour = tokens frits. Plat « hallucination du chef » : on ne sait jamais ce qu'il y a dedans."
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_59_5",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR DE TOKENS : 1 token = 1 token. Pas de rendu de monnaie. Pas de rendu non plus."
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_47_10",
+   "steps": [
+    {
+     "say": "TRAVAUX : refactoring du trottoir (commencé en 2019). Fin prévue : 'bientôt'."
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_40_9",
+   "steps": [
+    {
+     "say": "JARDINIÈRE OFFICIELLE : on y plante des idées. Aucune n'a poussé. L'arrosage est en bêta."
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_12_32",
+   "steps": [
+    {
+     "say": "BANC DES STAGIAIRES : réservé à ceux qui attendent un CDI. Liste d'attente : 4 000 personnes."
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_15_18",
+   "steps": [
+    {
+     "say": "PUBLICITÉ : « ChatBot™ remplace cette publicité. » (La publicité a été remplacée par une publicité pour ChatBot™.)"
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_16_18",
+   "steps": [
+    {
+     "say": "PUBLICITÉ : « ChatBot™ remplace cette publicité. » (La publicité a été remplacée par une publicité pour ChatBot™.)"
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_17_45",
+   "steps": [
+    {
+     "say": "LAMPADAIRES CONNECTÉS : ils s'allument quand on les remercie. Merci, lampadaire. (Il n'a pas réagi.)"
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_10_51",
+   "steps": [
+    {
+     "say": "STAND « CAFÉ CONTEXTE LONG » : un expresso qui se souvient de toutes vos commandes depuis 2022. Même celles que vous regrettez."
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_9_19",
+   "steps": [
+    {
+     "say": "MASSIF OFFICIEL : planté par la mairie, aux frais d'un sponsor. Le sponsor est un modèle de langage."
+    }
+   ]
+  },
+  {
+   "id": "sign_bench_humaneval_6_6",
+   "steps": [
+    {
+     "say": "docstring.py : « Les tests s'exécutent dans l'ordre de lecture : de gauche à droite, puis de haut en bas. Un test dans le désordre fait tout recommencer. » Signé : le Stagiaire."
+    }
+   ]
+  },
+  {
+   "id": "he_test_1",
+   "steps": [
+    {
+     "if": {
+      "flag": "he_solved"
+     },
+     "goto": "done"
+    },
+    {
+     "goto": "ok"
+    },
+    {
+     "label": "ok"
+    },
+    {
+     "set_flag": "he_seq_2",
+     "value": false
+    },
+    {
+     "set_flag": "he_seq_3",
+     "value": false
+    },
+    {
+     "set_flag": "he_seq_1"
+    },
+    {
+     "say": "✔ test_init … PASS (1/4)"
+    },
+    {
+     "end": true
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "done"
+    },
+    {
+     "end": true
+    }
+   ]
+  },
+  {
+   "id": "he_test_2",
+   "steps": [
+    {
+     "if": {
+      "flag": "he_solved"
+     },
+     "goto": "done"
+    },
+    {
+     "if": {
+      "flag": "he_seq_1"
+     },
+     "goto": "ok"
+    },
+    {
+     "set_flag": "he_seq_1",
+     "value": false
+    },
+    {
+     "set_flag": "he_seq_2",
+     "value": false
+    },
+    {
+     "set_flag": "he_seq_3",
+     "value": false
+    },
+    {
+     "say": "✖ test_append : AssertionError. test_init n'a pas été exécuté avant. Les tests sont relancés depuis le début."
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "ok"
+    },
+    {
+     "set_flag": "he_seq_3",
+     "value": false
+    },
+    {
+     "set_flag": "he_seq_2"
+    },
+    {
+     "say": "✔ test_append … PASS (2/4)"
+    },
+    {
+     "end": true
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "done"
+    },
+    {
+     "end": true
+    }
+   ]
+  },
+  {
+   "id": "he_test_3",
+   "steps": [
+    {
+     "if": {
+      "flag": "he_solved"
+     },
+     "goto": "done"
+    },
+    {
+     "if": {
+      "flag": "he_seq_2"
+     },
+     "goto": "ok"
+    },
+    {
+     "set_flag": "he_seq_1",
+     "value": false
+    },
+    {
+     "set_flag": "he_seq_2",
+     "value": false
+    },
+    {
+     "set_flag": "he_seq_3",
+     "value": false
+    },
+    {
+     "say": "✖ test_overflow : AssertionError. test_append n'a pas été exécuté avant. Les tests sont relancés depuis le début."
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "ok"
+    },
+    {
+     "set_flag": "he_seq_3"
+    },
+    {
+     "say": "✔ test_overflow … PASS (3/4)"
+    },
+    {
+     "end": true
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "done"
+    },
+    {
+     "end": true
+    }
+   ]
+  },
+  {
+   "id": "he_test_4",
+   "steps": [
+    {
+     "if": {
+      "flag": "he_solved"
+     },
+     "goto": "done"
+    },
+    {
+     "if": {
+      "flag": "he_seq_3"
+     },
+     "goto": "ok"
+    },
+    {
+     "set_flag": "he_seq_1",
+     "value": false
+    },
+    {
+     "set_flag": "he_seq_2",
+     "value": false
+    },
+    {
+     "set_flag": "he_seq_3",
+     "value": false
+    },
+    {
+     "say": "✖ test_cleanup : AssertionError. test_overflow n'a pas été exécuté avant. Les tests sont relancés depuis le début."
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "ok"
+    },
+    {
+     "set_flag": "he_solved"
+    },
+    {
+     "say": "✔ test_cleanup … PASS (4/4). ALL TESTS PASSED."
+    },
+    {
+     "say": "La porte du bureau de Nadelta s'ouvre dans un bip de CI vert."
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "done"
+    },
+    {
+     "end": true
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_29_8",
+   "steps": [
+    {
+     "say": "↑ FORÊT DES POIDS → Hugging Grove 7 km (Badge Commit requis) · ↓ Place centrale · Benchmark HumanEval ←"
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_18_14",
+   "steps": [
+    {
+     "say": "← HUB 🤗 & Parc des Câbles · ↑ Quartier des Ministères · → Place centrale & Benchmark HumanEval"
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_45_14",
+   "steps": [
+    {
+     "say": "→ Checkpoint AIACT (fermé pour réorganisation) · ↑ Store · ← Place centrale"
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_18_36",
+   "steps": [
+    {
+     "say": "↓ Parc des Épochs & Centre de Conformité n°7 · ← Quartier du Hub · ↑ Place centrale"
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_45_36",
+   "steps": [
+    {
+     "say": "→ MARCHÉ DU TOKEN (food-trucks, GPU d'occasion) · ↓ Centre de Conformité n°7 · ↑ Place centrale"
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_30_49",
+   "steps": [
+    {
+     "say": "↓ CENTRE DE CONFORMITÉ n°7 (ex-hôtel). Défense d'entrer. Défense de sortir. Défense de comprendre."
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_26_14",
+   "steps": [
+    {
+     "say": "BENCHMARK HUMANEVAL ↑ — Tour de verre. « Ici, on juge le code qui compile. Pas le discours. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_58_4",
+   "steps": [
+    {
+     "say": "PANNEAU : « Cette rue est sponsorisée par un modèle qui a halluciné sa propre adresse. »"
+    }
+   ]
+  },
+  {
+   "id": "city_forest_closed",
+   "steps": [
+    {
+     "say": "Un panneau de chantier barre la porte nord. Un vigile en gilet lit un très long règlement."
+    },
+    {
+     "say": "« Forêt des Poids : accès réservé aux Vibeurs ayant validé le Benchmark HumanEval. Va d'abord battre Satya Nadelta. Son Badge Commit fait office de laissez-passer. »",
+     "speaker": "VIGILE"
+    },
+    {
+     "warp": "latentia_city",
+     "x": 31,
+     "y": 3
+    }
+   ]
+  }
+ ]
+}

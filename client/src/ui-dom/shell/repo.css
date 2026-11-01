@@ -1,0 +1,47 @@
+/* Hugging Face Repo window. Tokens only; hard shadows. */
+.win-repo { left: 0; right: 0; margin: 0 auto; top: 56px; width: min(96vw, 1120px); height: min(calc(100vh - 56px - 84px), 680px); box-shadow: 6px 6px 0 var(--ink), 10px 10px 0 var(--yellow); }
+.win-repo .win-body { display: grid; grid-template-columns: minmax(220px, 280px) minmax(0, 1fr); grid-template-rows: minmax(0, 1fr) auto; }
+.repo-panel { display: flex; flex-direction: column; gap: 8px; min-height: 0; padding: 10px 12px; }
+.repo-panel.is-party { background: var(--paper-2); border-right: var(--bw) solid var(--ink); }
+.repo-panel h3 { font: 800 15px var(--font-display); display: flex; align-items: baseline; gap: 8px; }
+.repo-panel h3 small, .repo-count { font: 12px var(--font-mono); color: var(--ink-3); }
+.repo-list { display: grid; gap: 6px; overflow: auto; align-content: start; padding: 3px 4px 4px 3px; }
+.repo-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.repo-search { flex: 1; min-width: 150px; height: 30px; padding: 0 10px; font: 13px var(--font-mono); color: var(--ink); background: var(--paper); border: var(--bw) solid var(--ink); border-radius: var(--r); }
+.repo-sorts { display: flex; align-items: center; gap: 4px; }
+.rchip { display: inline-flex; align-items: center; gap: 5px; height: 26px; padding: 0 8px; font: 600 12px var(--font-ui); background: var(--paper); border: var(--bw) solid var(--ink); border-radius: var(--r); cursor: pointer; }
+.rchip.is-on { background: var(--ink); color: var(--paper); }
+.rchip:hover { background: var(--yellow); color: var(--ink); }
+.rchip.is-on .tag-sw { border-color: var(--paper); }
+.repo-grid { flex: 1; min-height: 0; overflow: auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 10px; align-content: start; padding: 4px 6px 6px 4px; }
+.rcell { position: relative; display: grid; justify-items: center; align-content: start; gap: 2px; padding: 6px 4px; text-align: center; background: var(--paper); border: var(--bw) solid var(--ink); border-radius: var(--r); box-shadow: 3px 3px 0 var(--ink); min-width: 0; }
+.rcell.is-row { grid-auto-flow: column; grid-template-columns: auto minmax(0, 1fr); justify-items: start; align-items: center; gap: 10px; text-align: left; padding: 5px 8px; }
+.rcell:hover, .rcell.is-focus { background: var(--yellow); }
+.rcell.is-ko { background: var(--paper-2); }
+.rcell.is-ko .art { filter: grayscale(1); opacity: 0.6; }
+.rcell.is-empty { grid-template-columns: 1fr; justify-items: center; min-height: 46px; align-items: center; background: transparent; border-style: dashed; box-shadow: none; color: var(--ink-3); }
+.rcell.is-deposit { border-style: dashed; align-content: center; min-height: 92px; background: transparent; box-shadow: none; color: var(--ink-2); }
+.rc-plus { font: 800 28px/1 var(--font-display); }
+.rc-meta { display: grid; gap: 2px; min-width: 0; width: 100%; }
+.rc-name { font: 700 13px/1.2 var(--font-ui); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 100%; }
+.rc-sub { display: inline-flex; align-items: center; justify-content: center; gap: 4px; font: 12px var(--font-mono); color: var(--ink-2); }
+.is-row .rc-sub { justify-content: flex-start; }
+.rcell.is-held { background: var(--pink); color: var(--ink); animation: repo-held 700ms steps(2) infinite; }
+@keyframes repo-held { 50% { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--ink); } }
+.rcell.is-dragging { opacity: 0.4; }
+.rcell.is-drop, .repo-panel.is-drop { outline: 3px dashed var(--blue); outline-offset: -3px; }
+.repo-empty { grid-column: 1 / -1; }
+.repo-sum { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 6px 16px; padding: 8px 14px; background: var(--ink); color: var(--paper); border-top: var(--bw) solid var(--ink); min-height: 76px; }
+.repo-sum .art { background: var(--paper); border-radius: var(--r); padding: 2px; }
+.repo-sum .tag { color: var(--ink); }
+.sum-id { display: grid; gap: 2px; min-width: 0; }
+.sum-id b { font: 800 16px var(--font-display); }
+.sum-id small { font: 12px var(--font-mono); color: var(--yellow); }
+.sum-stats { display: flex; flex-wrap: wrap; gap: 4px 12px; font: 12px var(--font-mono); }
+.sum-stat { display: inline-flex; gap: 5px; }
+.sum-stat .k { color: var(--ink-3); }
+.sum-moves { display: flex; flex-wrap: wrap; gap: 4px; flex: 1; justify-content: flex-end; }
+.sum-held, .sum-empty { font: 600 13px var(--font-mono); color: var(--yellow); }
+.sum-held { flex-basis: 100%; }
+@media (max-height: 640px) { .repo-sum { min-height: 0; padding: 4px 12px; } .repo-sum .art { width: 40px !important; height: 40px !important; } .sum-moves { display: none; } }
+@media (max-width: 760px) { .win-repo .win-body { grid-template-columns: 1fr; grid-template-rows: auto minmax(0, 1fr) auto; } .repo-panel.is-party { border-right: 0; border-bottom: var(--bw) solid var(--ink); } .repo-list { grid-template-columns: repeat(2, 1fr); } }

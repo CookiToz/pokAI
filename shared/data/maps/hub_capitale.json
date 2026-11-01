@@ -1,0 +1,101 @@
+{
+ "id": "hub_capitale",
+ "name": "Hub 🤗 (Laverie Conforme)",
+ "width": 13,
+ "height": 9,
+ "rows": [
+  "#############",
+  "#eeeejjjeeee#",
+  "#jjjjjjjjjjj#",
+  "#jj0000000jj#",
+  "#1jjjjjjjjjv#",
+  "#l;;;jjj;;;l#",
+  "#jjjjjjjjjjj#",
+  "#jjjjjjjjjjj#",
+  "#####XXX#####"
+ ],
+ "legend": {
+  "#": "wall",
+  "0": "hub_reception",
+  "1": "pc",
+  ";": "carpet",
+  "X": "exit_mat",
+  "e": "repo_shelf",
+  "j": "hub_floor",
+  "l": "plant",
+  "v": "vending"
+ },
+ "npcs": [
+  {
+   "id": "nurse",
+   "sprite": "nurse_hugging",
+   "x": 6,
+   "y": 2,
+   "facing": "down",
+   "dialogue": "hub_cap_nurse"
+  },
+  {
+   "id": "fork",
+   "sprite": "resistance_dev",
+   "x": 3,
+   "y": 6,
+   "facing": "right",
+   "dialogue": "fork_talk"
+  },
+  {
+   "id": "hub_cap_shop",
+   "sprite": "clerk",
+   "x": 10,
+   "y": 6,
+   "facing": "left",
+   "dialogue": "hub_cap_shop"
+  },
+  {
+   "id": "hub_cap_washer",
+   "sprite": "stagiaire",
+   "x": 10,
+   "y": 2,
+   "facing": "down",
+   "dialogue": "hub_cap_washer"
+  }
+ ],
+ "warps": [
+  {
+   "x": 5,
+   "y": 8,
+   "to": "conformite_capitale",
+   "toX": 8,
+   "toY": 21,
+   "facing": "down"
+  },
+  {
+   "x": 6,
+   "y": 8,
+   "to": "conformite_capitale",
+   "toX": 8,
+   "toY": 21,
+   "facing": "down"
+  },
+  {
+   "x": 7,
+   "y": 8,
+   "to": "conformite_capitale",
+   "toX": 8,
+   "toY": 21,
+   "facing": "down"
+  }
+ ],
+ "triggers": [
+  {
+   "x": 5,
+   "y": 7,
+   "script": "fork_intro",
+   "w": 3,
+   "once": true
+  }
+ ],
+ "kind": "interior",
+ "music": "hub",
+ "landmarks": [],
+ "exits": []
+}

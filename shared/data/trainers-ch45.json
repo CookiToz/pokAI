@@ -1,0 +1,771 @@
+{
+ "trainers": [
+  {
+   "id": "cs_sailor_1",
+   "name": "Matelot Câble",
+   "sprite": "sailor",
+   "team": [
+    {
+     "form": "gemini_flash",
+     "level": 28
+    },
+    {
+     "form": "whisper_base",
+     "level": 28
+    }
+   ],
+   "reward": 780,
+   "introDialogue": "cs_sailor_1_intro",
+   "defeatDialogue": "cs_sailor_1_defeat"
+  },
+  {
+   "id": "cs_scientist_1",
+   "name": "Chercheuse Fibre",
+   "sprite": "scientist",
+   "team": [
+    {
+     "form": "o1",
+     "level": 28
+    },
+    {
+     "form": "sdxl",
+     "level": 28
+    }
+   ],
+   "reward": 800,
+   "introDialogue": "cs_scientist_1_intro",
+   "defeatDialogue": "cs_scientist_1_defeat"
+  },
+  {
+   "id": "cs_tourist_1",
+   "name": "Touriste des Abysses",
+   "sprite": "tourist",
+   "team": [
+    {
+     "form": "midjourney_v6",
+     "level": 29
+    },
+    {
+     "form": "nano_banana",
+     "level": 28
+    }
+   ],
+   "reward": 800,
+   "introDialogue": "cs_tourist_1_intro",
+   "defeatDialogue": "cs_tourist_1_defeat"
+  },
+  {
+   "id": "cs_rider_1",
+   "name": "Livreur de Fibre",
+   "sprite": "delivery_rider",
+   "team": [
+    {
+     "form": "qwen_2_5",
+     "level": 29
+    },
+    {
+     "form": "copilot_chat",
+     "level": 30
+    }
+   ],
+   "reward": 830,
+   "introDialogue": "cs_rider_1_intro",
+   "defeatDialogue": "cs_rider_1_defeat"
+  },
+  {
+   "id": "dn_scientist_1",
+   "name": "Dr Dune",
+   "sprite": "scientist",
+   "team": [
+    {
+     "form": "llama_3",
+     "level": 30
+    },
+    {
+     "form": "falcon_40b",
+     "level": 30
+    }
+   ],
+   "reward": 920,
+   "introDialogue": "dn_scientist_1_intro",
+   "defeatDialogue": "dn_scientist_1_defeat"
+  },
+  {
+   "id": "dn_dev_1",
+   "name": "Dev de l'Allée",
+   "sprite": "dev_phone",
+   "team": [
+    {
+     "form": "copilot_chat",
+     "level": 31
+    },
+    {
+     "form": "devstral",
+     "level": 30
+    }
+   ],
+   "reward": 940,
+   "introDialogue": "dn_dev_1_intro",
+   "defeatDialogue": "dn_dev_1_defeat"
+  },
+  {
+   "id": "dn_tourist_1",
+   "name": "Touriste du Mirage",
+   "sprite": "tourist",
+   "team": [
+    {
+     "form": "midjourney_v6",
+     "level": 31
+    },
+    {
+     "form": "gemini_flash",
+     "level": 31
+    },
+    {
+     "form": "whisper_base",
+     "level": 31
+    }
+   ],
+   "reward": 960,
+   "introDialogue": "dn_tourist_1_intro",
+   "defeatDialogue": "dn_tourist_1_defeat"
+  },
+  {
+   "id": "dn_kid_1",
+   "name": "Enfant de l'Oasis",
+   "sprite": "kid",
+   "team": [
+    {
+     "form": "smollm_3",
+     "level": 28
+    },
+    {
+     "form": "distilbert",
+     "level": 29
+    }
+   ],
+   "reward": 700,
+   "introDialogue": "dn_kid_1_intro",
+   "defeatDialogue": "dn_kid_1_defeat"
+  },
+  {
+   "id": "aiact_agent_dn_1",
+   "name": "Agent de Conformité",
+   "sprite": "agent_conformite",
+   "team": [
+    {
+     "form": "gpt_3_5",
+     "level": 30,
+     "sealed": true
+    },
+    {
+     "form": "claude_sonnet",
+     "level": 31,
+     "sealed": true
+    }
+   ],
+   "reward": 1000,
+   "introDialogue": "aiact_agent_dn_1_intro",
+   "defeatDialogue": "aiact_agent_dn_1_defeat",
+   "aiact": true
+  },
+  {
+   "id": "aiact_agent_dn_2",
+   "name": "Agent de Conformité",
+   "sprite": "agent_conformite",
+   "team": [
+    {
+     "form": "llama_3",
+     "level": 31,
+     "sealed": true
+    },
+    {
+     "form": "mixtral_8x7b",
+     "level": 31,
+     "sealed": true
+    }
+   ],
+   "reward": 1010,
+   "introDialogue": "aiact_agent_dn_2_intro",
+   "defeatDialogue": "aiact_agent_dn_2_defeat",
+   "aiact": true
+  },
+  {
+   "id": "rival_dunes",
+   "name": "Kévin",
+   "sprite": "kevin",
+   "team": [
+    {
+     "form": "phi_4",
+     "level": 33
+    },
+    {
+     "form": "mixtral_8x7b",
+     "level": 32
+    },
+    {
+     "form": "gemini_flash",
+     "level": 32
+    }
+   ],
+   "reward": 1800,
+   "introDialogue": "rival_dunes_intro",
+   "defeatDialogue": "rival_dunes_defeat"
+  },
+  {
+   "id": "mg_hiker_1",
+   "name": "Randonneuse du Mont",
+   "sprite": "tourist",
+   "team": [
+    {
+     "form": "grok_3",
+     "level": 32
+    },
+    {
+     "form": "o1",
+     "level": 32
+    }
+   ],
+   "reward": 1050,
+   "introDialogue": "mg_hiker_1_intro",
+   "defeatDialogue": "mg_hiker_1_defeat"
+  },
+  {
+   "id": "mg_dev_1",
+   "name": "Dev du Sommet",
+   "sprite": "dev_phone",
+   "team": [
+    {
+     "form": "devstral",
+     "level": 33
+    },
+    {
+     "form": "qwen_3",
+     "level": 32
+    }
+   ],
+   "reward": 1100,
+   "introDialogue": "mg_dev_1_intro",
+   "defeatDialogue": "mg_dev_1_defeat"
+  },
+  {
+   "id": "mg_scientist_1",
+   "name": "Chercheuse du Virage",
+   "sprite": "scientist",
+   "team": [
+    {
+     "form": "nano_banana_pro",
+     "level": 33
+    },
+    {
+     "form": "sdxl",
+     "level": 32
+    }
+   ],
+   "reward": 1100,
+   "introDialogue": "mg_scientist_1_intro",
+   "defeatDialogue": "mg_scientist_1_defeat"
+  },
+  {
+   "id": "swe_junior_1",
+   "name": "Junior Rebase",
+   "sprite": "dev_phone",
+   "team": [
+    {
+     "form": "copilot_chat",
+     "level": 31
+    },
+    {
+     "form": "codestral",
+     "level": 30
+    }
+   ],
+   "reward": 1000,
+   "introDialogue": "swe_junior_1_intro",
+   "defeatDialogue": "swe_junior_1_defeat"
+  },
+  {
+   "id": "swe_junior_2",
+   "name": "Mainteneur Fatigué",
+   "sprite": "scientist",
+   "team": [
+    {
+     "form": "devstral",
+     "level": 32
+    },
+    {
+     "form": "qwen_3",
+     "level": 31
+    }
+   ],
+   "reward": 1050,
+   "introDialogue": "swe_junior_2_intro",
+   "defeatDialogue": "swe_junior_2_defeat"
+  },
+  {
+   "id": "swe_junior_3",
+   "name": "Stagiaire Mergeur",
+   "sprite": "stagiaire",
+   "team": [
+    {
+     "form": "phi_3",
+     "level": 29
+    },
+    {
+     "form": "deepseek_v3",
+     "level": 32
+    }
+   ],
+   "reward": 1050,
+   "introDialogue": "swe_junior_3_intro",
+   "defeatDialogue": "swe_junior_3_defeat"
+  },
+  {
+   "id": "leader_patchwell",
+   "name": "Ada Patchwell",
+   "sprite": "resistance_dev",
+   "team": [
+    {
+     "form": "devstral",
+     "level": 33
+    },
+    {
+     "form": "qwen_3",
+     "level": 34
+    },
+    {
+     "form": "copilot_agent",
+     "level": 35
+    },
+    {
+     "form": "phi_4",
+     "level": 35
+    },
+    {
+     "form": "deepseek_r1",
+     "level": 36
+    }
+   ],
+   "reward": 4300,
+   "introDialogue": "leader_patchwell_intro",
+   "defeatDialogue": "leader_patchwell_defeat",
+   "badge": "badge_patch"
+  },
+  {
+   "id": "bu_official_1",
+   "name": "Fonctionnaire Zélé",
+   "sprite": "clerk",
+   "team": [
+    {
+     "form": "roberta",
+     "level": 36
+    },
+    {
+     "form": "distilbert",
+     "level": 36
+    }
+   ],
+   "reward": 1300,
+   "introDialogue": "bu_official_1_intro",
+   "defeatDialogue": "bu_official_1_defeat"
+  },
+  {
+   "id": "bu_usager_1",
+   "name": "Usager Excédé",
+   "sprite": "citizen_a",
+   "team": [
+    {
+     "form": "grok_3",
+     "level": 36
+    },
+    {
+     "form": "o1",
+     "level": 36
+    }
+   ],
+   "reward": 1300,
+   "introDialogue": "bu_usager_1_intro",
+   "defeatDialogue": "bu_usager_1_defeat"
+  },
+  {
+   "id": "aiact_agent_bu_1",
+   "name": "Agent de Conformité",
+   "sprite": "agent_conformite",
+   "team": [
+    {
+     "form": "gpt_4o",
+     "level": 36,
+     "sealed": true
+    },
+    {
+     "form": "llama_3",
+     "level": 36,
+     "sealed": true
+    }
+   ],
+   "reward": 1400,
+   "introDialogue": "aiact_agent_bu_1_intro",
+   "defeatDialogue": "aiact_agent_bu_1_defeat",
+   "aiact": true
+  },
+  {
+   "id": "aiact_agent_bu_2",
+   "name": "Agent de Conformité",
+   "sprite": "agent_conformite",
+   "team": [
+    {
+     "form": "gemini_pro",
+     "level": 37,
+     "sealed": true
+    },
+    {
+     "form": "claude_sonnet",
+     "level": 36,
+     "sealed": true
+    }
+   ],
+   "reward": 1450,
+   "introDialogue": "aiact_agent_bu_2_intro",
+   "defeatDialogue": "aiact_agent_bu_2_defeat",
+   "aiact": true
+  },
+  {
+   "id": "aiact_agent_cap_1",
+   "name": "Agent du Checkpoint",
+   "sprite": "agent_conformite",
+   "team": [
+    {
+     "form": "claude_sonnet",
+     "level": 37,
+     "sealed": true
+    },
+    {
+     "form": "gemini_pro",
+     "level": 38,
+     "sealed": true
+    }
+   ],
+   "reward": 1500,
+   "introDialogue": "aiact_agent_cap_1_intro",
+   "defeatDialogue": "aiact_agent_cap_1_defeat",
+   "aiact": true
+  },
+  {
+   "id": "aiact_agent_cap_2",
+   "name": "Agent de la Place",
+   "sprite": "agent_conformite",
+   "team": [
+    {
+     "form": "o1",
+     "level": 38,
+     "sealed": true
+    },
+    {
+     "form": "mixtral_8x7b",
+     "level": 38,
+     "sealed": true
+    }
+   ],
+   "reward": 1500,
+   "introDialogue": "aiact_agent_cap_2_intro",
+   "defeatDialogue": "aiact_agent_cap_2_defeat",
+   "aiact": true
+  },
+  {
+   "id": "aiact_agent_cap_3",
+   "name": "Agent du Boulevard",
+   "sprite": "agent_conformite",
+   "team": [
+    {
+     "form": "llama_4_scout",
+     "level": 38,
+     "sealed": true
+    },
+    {
+     "form": "qwen_3",
+     "level": 38,
+     "sealed": true
+    },
+    {
+     "form": "roberta",
+     "level": 37,
+     "sealed": true
+    }
+   ],
+   "reward": 1600,
+   "introDialogue": "aiact_agent_cap_3_intro",
+   "defeatDialogue": "aiact_agent_cap_3_defeat",
+   "aiact": true
+  },
+  {
+   "id": "aiact_guard_cap_1",
+   "name": "Garde de la Sortie Est",
+   "sprite": "guard_aiact",
+   "team": [
+    {
+     "form": "gpt_4o",
+     "level": 39,
+     "sealed": true
+    },
+    {
+     "form": "deepseek_v3",
+     "level": 39,
+     "sealed": true
+    }
+   ],
+   "reward": 1700,
+   "introDialogue": "aiact_guard_cap_1_intro",
+   "defeatDialogue": "aiact_guard_cap_1_defeat",
+   "aiact": true
+  },
+  {
+   "id": "aiact_agent_tour_1",
+   "name": "Garde du Hall",
+   "sprite": "guard_aiact",
+   "team": [
+    {
+     "form": "gpt_4o",
+     "level": 40,
+     "sealed": true
+    },
+    {
+     "form": "claude_sonnet",
+     "level": 40,
+     "sealed": true
+    }
+   ],
+   "reward": 1800,
+   "introDialogue": "aiact_agent_tour_1_intro",
+   "defeatDialogue": "aiact_agent_tour_1_defeat",
+   "aiact": true
+  },
+  {
+   "id": "aiact_agent_tour_2",
+   "name": "Garde du Hall",
+   "sprite": "guard_aiact_2",
+   "team": [
+    {
+     "form": "llama_4_scout",
+     "level": 40,
+     "sealed": true
+    },
+    {
+     "form": "gemini_pro",
+     "level": 40,
+     "sealed": true
+    }
+   ],
+   "reward": 1800,
+   "introDialogue": "aiact_agent_tour_2_intro",
+   "defeatDialogue": "aiact_agent_tour_2_defeat",
+   "aiact": true
+  },
+  {
+   "id": "aiact_agent_tour_3",
+   "name": "Agent des Tampons",
+   "sprite": "agent_conformite",
+   "team": [
+    {
+     "form": "o1",
+     "level": 40,
+     "sealed": true
+    },
+    {
+     "form": "grok_3",
+     "level": 40,
+     "sealed": true
+    },
+    {
+     "form": "roberta",
+     "level": 39,
+     "sealed": true
+    }
+   ],
+   "reward": 1900,
+   "introDialogue": "aiact_agent_tour_3_intro",
+   "defeatDialogue": "aiact_agent_tour_3_defeat",
+   "aiact": true
+  },
+  {
+   "id": "aiact_agent_tour_4",
+   "name": "Archiviste Scellé",
+   "sprite": "agent_conformite",
+   "team": [
+    {
+     "form": "claude_sonnet",
+     "level": 41,
+     "sealed": true
+    },
+    {
+     "form": "deepseek_v3",
+     "level": 40,
+     "sealed": true
+    },
+    {
+     "form": "mixtral_8x7b",
+     "level": 40,
+     "sealed": true
+    }
+   ],
+   "reward": 1950,
+   "introDialogue": "aiact_agent_tour_4_intro",
+   "defeatDialogue": "aiact_agent_tour_4_defeat",
+   "aiact": true
+  },
+  {
+   "id": "greffiere_52",
+   "name": "Greffière Article 52",
+   "sprite": "greffiere_article52",
+   "team": [
+    {
+     "form": "roberta",
+     "level": 41,
+     "sealed": true
+    },
+    {
+     "form": "gemini_pro",
+     "level": 41,
+     "sealed": true
+    },
+    {
+     "form": "o1",
+     "level": 41,
+     "sealed": true
+    },
+    {
+     "form": "claude_sonnet",
+     "level": 41,
+     "sealed": true
+    }
+   ],
+   "reward": 5200,
+   "introDialogue": "greffiere_52_intro",
+   "defeatDialogue": "greffiere_52_defeat",
+   "aiact": true
+  },
+  {
+   "id": "cookie_ch5",
+   "name": "Inspecteur Cookie",
+   "sprite": "inspector_cookie",
+   "team": [
+    {
+     "form": "gpt_4o",
+     "level": 41,
+     "sealed": true
+    },
+    {
+     "form": "midjourney_v6",
+     "level": 42,
+     "sealed": true
+    },
+    {
+     "form": "llama_4_scout",
+     "level": 42,
+     "sealed": true
+    },
+    {
+     "form": "grok_3",
+     "level": 42,
+     "sealed": true
+    },
+    {
+     "form": "copilot_agent",
+     "level": 42,
+     "sealed": true
+    }
+   ],
+   "reward": 5600,
+   "introDialogue": "cookie_ch5_intro",
+   "defeatDialogue": "cookie_ch5_defeat",
+   "aiact": true
+  },
+  {
+   "id": "moratoire",
+   "name": "Directrice Ombeline Moratoire",
+   "sprite": "directrice_moratoire",
+   "team": [
+    {
+     "form": "gpt_4o",
+     "level": 42,
+     "sealed": true
+    },
+    {
+     "form": "gemini_pro",
+     "level": 43,
+     "sealed": true
+    },
+    {
+     "form": "llama_4_scout",
+     "level": 43,
+     "sealed": true
+    },
+    {
+     "form": "o3",
+     "level": 44,
+     "sealed": true
+    },
+    {
+     "form": "claude_opus",
+     "level": 45,
+     "sealed": true
+    }
+   ],
+   "reward": 9000,
+   "introDialogue": "moratoire_intro",
+   "defeatDialogue": "moratoire_defeat",
+   "aiact": true
+  },
+  {
+   "id": "aiact_agent_cf_1",
+   "name": "Gardien du Coffre",
+   "sprite": "agent_conformite",
+   "team": [
+    {
+     "form": "o1",
+     "level": 40,
+     "sealed": true
+    },
+    {
+     "form": "gemini_pro",
+     "level": 40,
+     "sealed": true
+    },
+    {
+     "form": "qwen_3",
+     "level": 39,
+     "sealed": true
+    }
+   ],
+   "reward": 2000,
+   "introDialogue": "aiact_agent_cf_1_intro",
+   "defeatDialogue": "aiact_agent_cf_1_defeat",
+   "aiact": true
+  },
+  {
+   "id": "aiact_agent_cf_2",
+   "name": "Gardienne du Coffre",
+   "sprite": "agent_conformite",
+   "team": [
+    {
+     "form": "claude_sonnet",
+     "level": 40,
+     "sealed": true
+    },
+    {
+     "form": "grok_3",
+     "level": 40,
+     "sealed": true
+    },
+    {
+     "form": "copilot_agent",
+     "level": 40,
+     "sealed": true
+    }
+   ],
+   "reward": 2000,
+   "introDialogue": "aiact_agent_cf_2_intro",
+   "defeatDialogue": "aiact_agent_cf_2_defeat",
+   "aiact": true
+  }
+ ]
+}

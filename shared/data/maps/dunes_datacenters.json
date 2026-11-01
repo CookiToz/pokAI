@@ -1,0 +1,577 @@
+{
+ "id": "dunes_datacenters",
+ "name": "Dunes des Datacenters",
+ "width": 64,
+ "height": 48,
+ "rows": [
+  "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrppprrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "r............................bpppbrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "r............................bpppbrccccccccccrccccccccccrccccccr",
+  "r..wwwwwwwccwwwwwwwccwwwwwww.bpppbccccccrccccccccccrccccccccccrr",
+  "r..wwwwwwwccwwwwwwwccwwwwwww.bpppbcrccccccccccrccccccccccrcccccr",
+  "r..WWWWWWWccWWWWWWWccWWWWWWW.bpppbcccccccrccccccccccrccccccccccr",
+  "r..WWWWWWWccWWWWWWWccWWWWWWW.bpppbccrccccccccccrccccccccccrccccr",
+  "r..WWWWWWWccWWWWWWWccWWWWWWW.bpppbccccccccrccccccccccrcccccccccr",
+  "r..WWWWWWWccWWWWWWWccWWWWWWW.bpppbcccrccccccccccrccccccccccrcccr",
+  "r..WWWWWWWccWWWWWWWccWWWWWWW.bpppbcccccccccrccccccccccrccccccccr",
+  "r..WWWWWWWccWWWWWWWccWWWWWWW.bpppbccccrccccccccccrccccccccccrccr",
+  "r..WWWWWWWccWWWWWWWccWWWWWWW.bpppb......KKKKKKKxxxxKKKKKKK.....r",
+  "r............................bpppb......KKKKKKKxxxxKKKKKKK.....r",
+  "r............................bpppb......KKKKKKKxxxxKKKKKKK.....r",
+  "rbpppb777777....444444.......bpppb......KKKKKKKxxx^KKKKKKK.....r",
+  "rbpppb777777....444444.......bpppb.........mPPPPPXPPPPm........r",
+  "rbpppb666666.BB.333333.......bpppb..........PPPPPPPPPP.........r",
+  "rbpppb668666....335333.......bpppb.........nPPPPPPPPPPn........r",
+  "rbpppbbppppbm..mbppppb.......Ipppb.........nPPPPPPPPPPn........r",
+  "rbpppbbppppb.nn.bppppb.......bpppb..........PPPPPPPPPP.........r",
+  "rbpppbbppppb....bppppb.......bpppb.........mPPPPPPPPPPm........r",
+  "rIpppIrpppprrIrrrpppprrrrrrrIPPPPPrrrrrrrrrrrIPPPPPPrrrrrrrIrrrr",
+  "pppppppppppppppppppppppppppppPPPPPpppppppppppppppppppppppppppppp",
+  "pppppppppppppppppppppppppppppPPPPPpppppppppppppppppppppppppppppp",
+  "pppppppppppppppppppppppppppppPPPPPpppppppppppppppppppppppppppppp",
+  "rrrrrrrrrrrIppprrrrrrrrrrrrrrPPPPPIrrrrrrrrrIppprrrrrrrrrrrrrrrr",
+  "rrrrrrrrrrrrppprrrrrrrrrrrrrrbpppbrrrrrrrrrrKpppK..............r",
+  "rrrrrrrrrrrrppprrrrrrrrrrrrrrbpppbrrccccccccKpppK..............r",
+  "rrrrrrrrrrrrppprrrrrrrrrrrrrrbpppIrrccccccccKpppK.wwwwwwwwwwww.r",
+  "rrrtttttttttppptttttttttttrrrbpppbrrccccccccKpppK.wwwwwwwwwwww.r",
+  "rrrtgggFggtgggggggggFggggtrrrbpppbrrccccccccKpppK.WWWWWWWWWWWW.r",
+  "rrrtgggFggggggggSgtgFggggtrrrbpppbrrcccccccc.pppK.WWWWWWWWWWWW.r",
+  "rrrtgggFggggggggggggFggggtrrrbpppbrrcccccccc.pppK.WWWWWWWWWWWW.r",
+  "rrrtgggFg~~~~~~~~~~gFggggtrrrbpppbrrcccccccc.pppK.WWWWWWWWWWWW.r",
+  "rrrtgggFg~~~~~~~~~~tFggggtrrrbpppbrrccccccccKpppK.WWWWWWWWWWWW.r",
+  "rrrttggFg~~~~~~~~~~gFggggtrrrbpppbrrccccccccKpppK.WWWWWWWWWWWW.r",
+  "rrrtgggFg~~~~~~~~~~gFggggtrrrbpppbrrrrrrrrrrrppp..WWWWWWWWWWWW.r",
+  "rrrtgggFg~~~~~~~~~~gtggggtrrrbpppbrr.........ppp...............r",
+  "rrrtgtgFg~~~~~~~~~~gFggggtrrrbpppbrr.........ppp...............r",
+  "rrrtgggFg~~~~~~~~~~gFggggtrrrbpppbrr.GGGGGG..ppp...GGGGGG......r",
+  "rrrtgggFggggggggggggFtgggtrrrbpppbrr.G....G..ppp...G....G......r",
+  "rrrtggtFggggggggggggFggggtrrrbpppBrr.G.......ppp........G......r",
+  "rrrttttttgggggtgggggFggggtrrrbpppbrr.G....G..ppp...G....G......r",
+  "rrrttgggtgggggggggggFgtggtrrrbpppvrr.GGGGGG..ppp...GGGGGG......r",
+  "rrrttgggggggggggggggFggggtrrrbpppbrr.........ppp...............r",
+  "rrrttttttggggggtggggFggggtrrrbpIpbrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "rrrtttttttttttttttttttttttrrrrppprrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr"
+ ],
+ "legend": {
+  ".": "sand",
+  "3": "store_wall",
+  "4": "store_roof",
+  "5": "store_door",
+  "6": "hub_wall",
+  "7": "hub_roof",
+  "8": "hub_door",
+  "B": "bench_seat",
+  "F": "flowers",
+  "G": "gpu_crate",
+  "I": "signpost",
+  "K": "server_rack",
+  "P": "plaza",
+  "S": "sign",
+  "W": "tower_wall",
+  "X": "exit_mat",
+  "^": "lm_bench_tower",
+  "b": "bush",
+  "c": "cable",
+  "g": "grass_park",
+  "m": "street_lamp",
+  "n": "planter",
+  "p": "path",
+  "r": "rock",
+  "t": "tree",
+  "v": "vending",
+  "w": "tower_roof",
+  "x": "blocker",
+  "~": "water"
+ },
+ "npcs": [
+  {
+   "id": "hintend",
+   "sprite": "scientist",
+   "x": 13,
+   "y": 32,
+   "facing": "down",
+   "dialogue": "hintend_talk"
+  },
+  {
+   "id": "lecube_dunes",
+   "sprite": "lecube",
+   "x": 15,
+   "y": 16,
+   "facing": "down",
+   "dialogue": "lecube_dunes"
+  },
+  {
+   "id": "kid_mirage",
+   "sprite": "kid",
+   "x": 31,
+   "y": 43,
+   "facing": "up",
+   "dialogue": "kid_mirage"
+  },
+  {
+   "id": "dunes_citizen_1",
+   "sprite": "citizen_a",
+   "x": 38,
+   "y": 23,
+   "facing": "right",
+   "dialogue": "dunes_citizen_1",
+   "ambient": true,
+   "wander": 2
+  },
+  {
+   "id": "dunes_citizen_2",
+   "sprite": "citizen_c",
+   "x": 20,
+   "y": 23,
+   "facing": "left",
+   "dialogue": "dunes_citizen_2",
+   "ambient": true,
+   "wander": 2
+  },
+  {
+   "id": "dunes_dev_nap",
+   "sprite": "dev_phone",
+   "x": 36,
+   "y": 15,
+   "facing": "down",
+   "dialogue": "dunes_dev_nap"
+  },
+  {
+   "id": "dunes_engineer",
+   "sprite": "scientist",
+   "x": 22,
+   "y": 13,
+   "facing": "down",
+   "dialogue": "dunes_engineer",
+   "wander": 1
+  },
+  {
+   "id": "dn_scientist_1",
+   "sprite": "scientist",
+   "x": 22,
+   "y": 23,
+   "facing": "right",
+   "dialogue": "dn_scientist_1_talk",
+   "trainer": "dn_scientist_1",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_dn_scientist_1_defeated"
+    }
+   }
+  },
+  {
+   "id": "dn_dev_1",
+   "sprite": "dev_phone",
+   "x": 45,
+   "y": 33,
+   "facing": "up",
+   "dialogue": "dn_dev_1_talk",
+   "trainer": "dn_dev_1",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_dn_dev_1_defeated"
+    }
+   }
+  },
+  {
+   "id": "dn_tourist_1",
+   "sprite": "tourist",
+   "x": 48,
+   "y": 41,
+   "facing": "left",
+   "dialogue": "dn_tourist_1_talk",
+   "trainer": "dn_tourist_1",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_dn_tourist_1_defeated"
+    }
+   }
+  },
+  {
+   "id": "dn_kid_1",
+   "sprite": "kid",
+   "x": 8,
+   "y": 32,
+   "facing": "right",
+   "dialogue": "dn_kid_1_talk",
+   "trainer": "dn_kid_1",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_dn_kid_1_defeated"
+    }
+   }
+  },
+  {
+   "id": "dn_agent_1",
+   "sprite": "agent_conformite",
+   "x": 37,
+   "y": 22,
+   "facing": "left",
+   "dialogue": "aiact_agent_dn_1_talk",
+   "trainer": "aiact_agent_dn_1",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_aiact_agent_dn_1_defeated"
+    }
+   }
+  },
+  {
+   "id": "dn_agent_2",
+   "sprite": "agent_conformite",
+   "x": 31,
+   "y": 12,
+   "facing": "down",
+   "dialogue": "aiact_agent_dn_2_talk",
+   "trainer": "aiact_agent_dn_2",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_aiact_agent_dn_2_defeated"
+    }
+   }
+  },
+  {
+   "id": "dn_rival",
+   "sprite": "kevin",
+   "x": 54,
+   "y": 23,
+   "facing": "left",
+   "dialogue": "rival_dunes_talk",
+   "trainer": "rival_dunes",
+   "sightRange": 5,
+   "condition": {
+    "not": {
+     "flag": "trainer_rival_dunes_defeated"
+    }
+   }
+  }
+ ],
+ "warps": [
+  {
+   "x": 0,
+   "y": 22,
+   "to": "route_cables_sous_marins",
+   "toX": 58,
+   "toY": 11,
+   "facing": "left"
+  },
+  {
+   "x": 63,
+   "y": 22,
+   "to": "route_bureaucratie",
+   "toX": 1,
+   "toY": 12,
+   "facing": "right"
+  },
+  {
+   "x": 0,
+   "y": 23,
+   "to": "route_cables_sous_marins",
+   "toX": 58,
+   "toY": 12,
+   "facing": "left"
+  },
+  {
+   "x": 63,
+   "y": 23,
+   "to": "route_bureaucratie",
+   "toX": 1,
+   "toY": 13,
+   "facing": "right"
+  },
+  {
+   "x": 0,
+   "y": 24,
+   "to": "route_cables_sous_marins",
+   "toX": 58,
+   "toY": 13,
+   "facing": "left"
+  },
+  {
+   "x": 63,
+   "y": 24,
+   "to": "route_bureaucratie",
+   "toX": 1,
+   "toY": 14,
+   "facing": "right"
+  },
+  {
+   "x": 30,
+   "y": 0,
+   "to": "mont_gpu",
+   "toX": 18,
+   "toY": 44,
+   "facing": "up"
+  },
+  {
+   "x": 31,
+   "y": 0,
+   "to": "mont_gpu",
+   "toX": 19,
+   "toY": 44,
+   "facing": "up"
+  },
+  {
+   "x": 32,
+   "y": 0,
+   "to": "mont_gpu",
+   "toX": 20,
+   "toY": 44,
+   "facing": "up"
+  },
+  {
+   "x": 8,
+   "y": 17,
+   "to": "hub_dunes",
+   "toX": 4,
+   "toY": 6,
+   "facing": "up"
+  },
+  {
+   "x": 18,
+   "y": 17,
+   "to": "store_dunes",
+   "toX": 4,
+   "toY": 5,
+   "facing": "up"
+  },
+  {
+   "x": 49,
+   "y": 15,
+   "to": "bench_swebench",
+   "toX": 10,
+   "toY": 21,
+   "facing": "up"
+  }
+ ],
+ "triggers": [
+  {
+   "x": 62,
+   "y": 22,
+   "script": "dunes_east_locked",
+   "h": 3,
+   "condition": {
+    "not": {
+     "flag": "badge_patch"
+    }
+   }
+  },
+  {
+   "x": 12,
+   "y": 30,
+   "script": "hintend_oasis",
+   "w": 3,
+   "condition": {
+    "not": {
+     "flag": "hintend_met"
+    }
+   },
+   "once": true
+  },
+  {
+   "x": 2,
+   "y": 1,
+   "script": "secret_dunes_pro",
+   "once": true
+  },
+  {
+   "x": 10,
+   "y": 3,
+   "script": "secret_dunes_alley",
+   "once": true
+  },
+  {
+   "x": 5,
+   "y": 44,
+   "script": "secret_dunes_cache",
+   "once": true
+  },
+  {
+   "x": 54,
+   "y": 41,
+   "script": "secret_dunes_mirage",
+   "once": true
+  },
+  {
+   "x": 40,
+   "y": 41,
+   "script": "secret_dunes_real",
+   "once": true
+  },
+  {
+   "x": 60,
+   "y": 40,
+   "script": "secret_dunes_dune",
+   "once": true
+  }
+ ],
+ "kind": "city",
+ "music": "city_day",
+ "hub": {
+  "x": 9,
+  "y": 19
+ },
+ "encounterRate": 0.17,
+ "encounters": [
+  {
+   "form": "copilot_chat",
+   "minLevel": 28,
+   "maxLevel": 31,
+   "weight": 16
+  },
+  {
+   "form": "qwen_2_5",
+   "minLevel": 28,
+   "maxLevel": 30,
+   "weight": 14,
+   "group": 3
+  },
+  {
+   "form": "midjourney_v6",
+   "minLevel": 28,
+   "maxLevel": 31,
+   "weight": 12
+  },
+  {
+   "form": "claude_sonnet",
+   "minLevel": 28,
+   "maxLevel": 31,
+   "weight": 10
+  },
+  {
+   "form": "llama_3",
+   "minLevel": 28,
+   "maxLevel": 31,
+   "weight": 12
+  },
+  {
+   "form": "falcon_40b",
+   "minLevel": 29,
+   "maxLevel": 32,
+   "weight": 10
+  },
+  {
+   "form": "mixtral_8x7b",
+   "minLevel": 28,
+   "maxLevel": 31,
+   "weight": 10
+  },
+  {
+   "form": "devstral",
+   "minLevel": 28,
+   "maxLevel": 31,
+   "weight": 8
+  },
+  {
+   "form": "gemini_flash",
+   "minLevel": 28,
+   "maxLevel": 31,
+   "weight": 8
+  },
+  {
+   "form": "deepseek_v3",
+   "minLevel": 30,
+   "maxLevel": 33,
+   "weight": 5
+  },
+  {
+   "form": "grok_3",
+   "minLevel": 30,
+   "maxLevel": 33,
+   "weight": 4
+  },
+  {
+   "form": "smollm_3",
+   "minLevel": 28,
+   "maxLevel": 30,
+   "weight": 8
+  },
+  {
+   "form": "roberta",
+   "minLevel": 29,
+   "maxLevel": 32,
+   "weight": 6
+  },
+  {
+   "form": "gpt_4o",
+   "minLevel": 31,
+   "maxLevel": 34,
+   "weight": 3
+  },
+  {
+   "form": "whisper_large",
+   "minLevel": 31,
+   "maxLevel": 34,
+   "weight": 5,
+   "night": true
+  }
+ ],
+ "landmarks": [
+  {
+   "x": 50,
+   "y": 14,
+   "label": "Benchmark SWE-bench"
+  },
+  {
+   "x": 8,
+   "y": 17,
+   "label": "Hub 🤗"
+  },
+  {
+   "x": 18,
+   "y": 17,
+   "label": "Store"
+  },
+  {
+   "x": 13,
+   "y": 32,
+   "label": "Oasis de Hintend"
+  },
+  {
+   "x": 31,
+   "y": 2,
+   "label": "Mont GPU ↑"
+  },
+  {
+   "x": 15,
+   "y": 7,
+   "label": "Tours de refroidissement"
+  },
+  {
+   "x": 53,
+   "y": 41,
+   "label": "Champ de mirages"
+  },
+  {
+   "x": 56,
+   "y": 33,
+   "label": "Ruines du datacenter n°3"
+  }
+ ],
+ "exits": [
+  {
+   "x": 0,
+   "y": 23,
+   "to": "route_cables_sous_marins",
+   "label": "Route des Câbles → Port 8080"
+  },
+  {
+   "x": 31,
+   "y": 0,
+   "to": "mont_gpu",
+   "label": "Mont GPU"
+  },
+  {
+   "x": 63,
+   "y": 23,
+   "to": "route_bureaucratie",
+   "label": "Route de la Bureaucratie → Conformité-Capitale"
+  }
+ ]
+}

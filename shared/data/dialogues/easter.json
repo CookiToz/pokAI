@@ -1,0 +1,1919 @@
+{
+ "scripts": [
+  {
+   "id": "secret_latentia_city_1_54",
+   "steps": [
+    {
+     "say": "Sous un banc cassé, un disque dur étiqueté « final_v2_VRAIMENT_final ». Il contient un Dataset. Et trois cents photos de chats."
+    },
+    {
+     "give_item": "dataset",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "secret_latentia_city_61_54",
+   "steps": [
+    {
+     "say": "Un portefeuille oublié dans une planter : à l'intérieur, une Clé API Pro. L'étiquette dit « ne pas committer ». Trop tard."
+    },
+    {
+     "give_item": "api_key_pro",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "secret_latentia_city_62_2",
+   "steps": [
+    {
+     "say": "Une thermos abandonnée par un dev : 2 cafés encore tièdes. Il y a un post-it : « Si tu lis ça, j'ai déployé en prod. »"
+    },
+    {
+     "give_item": "cafe",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "secret_latentia_city_6_13",
+   "steps": [
+    {
+     "say": "Dans un caniveau, un Hotfix. Quelqu'un l'a perdu en courant après un bus. Le bus était déjà en retard de trois versions."
+    },
+    {
+     "give_item": "hotfix",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "secret_latentia_city_18_52",
+   "steps": [
+    {
+     "say": "Une canette de Red Bull dans un buisson. Elle te donne des ailes. Pas du tout le droit de les utiliser en ville."
+    },
+    {
+     "give_item": "red_bull",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "secret_route_foret_poids_24_3",
+   "steps": [
+    {
+     "say": "Une clairière secrète, cachée derrière les pins. Au centre, un coffre en bois : une Clé API Pro et un mot, « GG, tu as lu le code source »."
+    },
+    {
+     "give_item": "api_key_pro",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "secret_route_foret_poids_23_5",
+   "steps": [
+    {
+     "say": "Un bouton dans l'herbe : « Ne pas appuyer ». Tu appuies. Un Dataset tombe d'un arbre. C'était un piège… à ton avantage."
+    },
+    {
+     "give_item": "dataset",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "secret_route_foret_poids_2_13",
+   "steps": [
+    {
+     "say": "Au fond d'une impasse boisée, un GPU H100 sous une bâche. Un panneau : « Ce n'est pas du minage, c'est de la recherche. »"
+    },
+    {
+     "give_item": "h100",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "secret_route_foret_poids_2_36",
+   "steps": [
+    {
+     "say": "Un recoin discret. Quelqu'un a gravé « TODO: fix » dans l'écorce. Il y a un objet au pied de l'arbre."
+    },
+    {
+     "give_item": "dataset",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "secret_route_foret_poids_3_22",
+   "steps": [
+    {
+     "say": "Derrière le tronc : une trousse de secours oubliée par un randonneur du dimanche."
+    },
+    {
+     "give_item": "cafe",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "secret_route_foret_poids_5_2",
+   "steps": [
+    {
+     "say": "Un écureuil te fixe, hostile. Il garde un objet qu'il a lui-même volé à un Vibeur."
+    },
+    {
+     "give_item": "hotfix",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "secret_route_foret_poids_10_14",
+   "steps": [
+    {
+     "say": "Une cachette parfaite. Quelqu'un a laissé un objet et une note : « mdp : 1234 »."
+    },
+    {
+     "give_item": "red_bull",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "secret_sentier_cotier_3_30",
+   "steps": [
+    {
+     "say": "Une crique cachée, loin du sentier. Sous le sable, un GPU H100 oublié par une expédition de minage de 2021. Il est encore chaud."
+    },
+    {
+     "give_item": "h100",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "secret_sentier_cotier_2_29",
+   "steps": [
+    {
+     "say": "Une bouteille échouée contient un parchemin : « Dataset à gauche, trésor à droite ». Tu prends le Dataset (2). Pas de trésor à droite."
+    },
+    {
+     "give_item": "dataset",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "sign_sentier_cotier_16_12",
+   "steps": [
+    {
+     "say": "PANNEAU : « sudo rm -rf / --no-preserve-root »"
+    },
+    {
+     "choice": [
+      {
+       "label": "Exécuter la commande",
+       "goto": "y"
+      },
+      {
+       "label": "Reculer doucement",
+       "goto": "n"
+      }
+     ]
+    },
+    {
+     "label": "y"
+    },
+    {
+     "say": "Permission denied. Heureusement, tu n'es pas root. Ta mère non plus."
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "n"
+    },
+    {
+     "say": "Sage décision. Un panneau en dessous : « backup ? quel backup ? »"
+    }
+   ]
+  },
+  {
+   "id": "secret_sentier_cotier_2_21",
+   "steps": [
+    {
+     "say": "Dans un creux de rocher : un objet emballé dans un sac plastique « PROD_BACKUP »."
+    },
+    {
+     "give_item": "api_key_free",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "secret_sentier_cotier_4_1",
+   "steps": [
+    {
+     "say": "Un crabe monte la garde sur un objet. Il ne parle pas, mais son regard dit « rate limit »."
+    },
+    {
+     "give_item": "cafe",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "secret_sentier_cotier_4_54",
+   "steps": [
+    {
+     "say": "Un coquillage qui chuchote : « …j'ai entendu dire que la version 5 sera meilleure… ». Dessous : un objet."
+    },
+    {
+     "give_item": "red_bull",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "secret_hugging_grove_3_15",
+   "steps": [
+    {
+     "say": "Un nid de branches avec un objet dedans. L'oiseau est parti, il a dit « rate-limité »."
+    },
+    {
+     "give_item": "dataset",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "secret_hugging_grove_4_28",
+   "steps": [
+    {
+     "say": "Une souche creuse. Quelqu'un y planque un objet et un autocollant « I ♥ open source »."
+    },
+    {
+     "give_item": "cafe",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "secret_hugging_grove_10_50",
+   "steps": [
+    {
+     "say": "Derrière un buisson épais : une petite boîte « ne pas ouvrir avant la v2 ». Tu ouvres."
+    },
+    {
+     "give_item": "hotfix",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "secret_hugging_grove_32_23",
+   "steps": [
+    {
+     "say": "Une cachette de la Résistance. Il reste un objet. Les rebelles ont des priorités."
+    },
+    {
+     "give_item": "api_key_free",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "secret_hugging_grove_35_52",
+   "steps": [
+    {
+     "say": "Un champignon lumineux éclaire un objet. C'est probablement légal."
+    },
+    {
+     "give_item": "red_bull",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "secret_port_8080_54_46",
+   "steps": [
+    {
+     "say": "Au pied du phare, un conteneur marqué « H100 x1 – Ne pas ouvrir avant Noël ». Tu l'ouvres quand même. Noël, c'est dans ton coeur."
+    },
+    {
+     "give_item": "h100",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "secret_port_8080_20_48",
+   "steps": [
+    {
+     "say": "Au bout de la jetée, une canne à pêche a attrapé un Dataset. Deux, même. Le poisson a pris la fuite avec le modèle de base."
+    },
+    {
+     "give_item": "dataset",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "secret_port_8080_34_49",
+   "steps": [
+    {
+     "say": "Une bouteille à la mer : à l'intérieur, une Clé API Pro et un mot, « Si tu lis ça, le rate limit est levé. »"
+    },
+    {
+     "give_item": "api_key_pro",
+     "count": 1
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_9_39",
+   "steps": [
+    {
+     "say": "PANCARTE : « Cette jetée est dépréciée depuis la v1.2. Utilisez la jetée n°2 (en cours de développement). »"
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_22_24",
+   "steps": [
+    {
+     "say": "RUBBER DUCK DEBUGGING : un canard en plastique est posé sur un bollard. Tu lui expliques ton code. Il fait « coin ». Le bug est résolu."
+    }
+   ]
+  },
+  {
+   "id": "sign_bistro_3_2",
+   "steps": [
+    {
+     "say": "THÉIÈRE : « Erreur 418 – Je suis une théière. »"
+    },
+    {
+     "say": "Tu demandes un café à la théière. Elle refuse poliment, comme un vrai serveur HTTP."
+    }
+   ]
+  },
+  {
+   "id": "sign_merch_swag_3_0",
+   "steps": [
+    {
+     "say": "AFFICHE : un trombone à gros yeux te fixe. « Il semble que vous essayiez de porter un t-shirt. Voulez-vous de l'aide ? »"
+    },
+    {
+     "choice": [
+      {
+       "label": "Oui, aide-moi",
+       "goto": "y"
+      },
+      {
+       "label": "Non merci",
+       "goto": "n"
+      },
+      {
+       "label": "Fermer",
+       "goto": "c"
+      }
+     ]
+    },
+    {
+     "label": "y"
+    },
+    {
+     "say": "« Super ! Je vois que vous voulez aussi un trombone. Voulez-vous de l'aide pour en commander un ? » Il est conscient. Il est très seul."
+    },
+    {
+     "give_item": "certificat_inutile"
+    },
+    {
+     "say": "Il te tend un « Certificat inutile ». Il l'a imprimé en 1997."
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "n"
+    },
+    {
+     "say": "« Je reviendrai. Je reviens toujours. »"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "c"
+    },
+    {
+     "say": "L'affiche cligne des yeux. Elle ne se ferme pas."
+    }
+   ]
+  },
+  {
+   "id": "gate_guard_talk",
+   "steps": [
+    {
+     "say": "Entrée du Centre de Conformité n°7. On entre par la porte. On sort par la porte. Si on pouvait ne pas entrer du tout, ce serait mieux.",
+     "speaker": "GARDE",
+     "portrait": "guard_aiact"
+    },
+    {
+     "say": "Un détenu est sorti ce matin. Il y a des témoins. Ils ont tous dit « conforme ». Je ne sais pas ce que ça veut dire.",
+     "speaker": "GARDE",
+     "portrait": "guard_aiact"
+    }
+   ]
+  },
+  {
+   "id": "gate_guard_talk_2",
+   "steps": [
+    {
+     "say": "Les projecteurs, c'est pour « votre sécurité ». Ils éclairent surtout nos propres fenêtres, mais c'est un détail de conception.",
+     "speaker": "GARDIENNE",
+     "portrait": "guard_aiact_2"
+    }
+   ]
+  },
+  {
+   "id": "egg_works_on_my_machine",
+   "steps": [
+    {
+     "say": "Un dev serre son laptop contre lui. « Ça marche sur ma machine. »",
+     "speaker": "DEV",
+     "portrait": "dev_phone"
+    },
+    {
+     "choice": [
+      {
+       "label": "Alors livre ta machine",
+       "goto": "a"
+      },
+      {
+       "label": "Tu as testé en prod ?",
+       "goto": "b"
+      }
+     ]
+    },
+    {
+     "label": "a"
+    },
+    {
+     "say": "« Impossible. Elle contient ma vie. Et mes 1 400 onglets. » Il pleure doucement.",
+     "speaker": "DEV",
+     "portrait": "dev_phone"
+    },
+    {
+     "goto": "end"
+    },
+    {
+     "label": "b"
+    },
+    {
+     "say": "« En prod ? Jamais. Je fais confiance à mon IDE. Et à la chance. »",
+     "speaker": "DEV",
+     "portrait": "dev_phone"
+    },
+    {
+     "goto": "end"
+    },
+    {
+     "label": "end"
+    },
+    {
+     "if": {
+      "flag": "works_cert"
+     },
+     "goto": "done"
+    },
+    {
+     "say": "Il te tend un certificat. « Ça marche sur ma machine – certifié. » Il est valable nulle part."
+    },
+    {
+     "give_item": "certificat_inutile"
+    },
+    {
+     "set_flag": "works_cert"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "done"
+    },
+    {
+     "say": "« Ça marche sur ma machine. » Tu hoches la tête. Il le sait, que tu le sais.",
+     "speaker": "DEV",
+     "portrait": "dev_phone"
+    }
+   ]
+  },
+  {
+   "id": "egg_konami",
+   "steps": [
+    {
+     "if": {
+      "flag": "konami_done"
+     },
+     "goto": "done"
+    },
+    {
+     "say": "Un gamer fixe son écran. « Psst. Entre le code. Tu sais lequel. »",
+     "speaker": "GAMER",
+     "portrait": "kid"
+    },
+    {
+     "say": "Étape 1 : ↑ ↑ ↓ ↓",
+     "speaker": "GAMER",
+     "portrait": "kid"
+    },
+    {
+     "choice": [
+      {
+       "label": "↑ ↑ ↓ ↓",
+       "goto": "s2"
+      },
+      {
+       "label": "↑ ↓ ↑ ↓",
+       "goto": "bad"
+      },
+      {
+       "label": "↓ ↓ ↑ ↑",
+       "goto": "bad"
+      }
+     ]
+    },
+    {
+     "label": "s2"
+    },
+    {
+     "say": "Étape 2 : ← → ← →",
+     "speaker": "GAMER",
+     "portrait": "kid"
+    },
+    {
+     "choice": [
+      {
+       "label": "→ ← → ←",
+       "goto": "bad"
+      },
+      {
+       "label": "← → ← →",
+       "goto": "s3"
+      },
+      {
+       "label": "← ← → →",
+       "goto": "bad"
+      }
+     ]
+    },
+    {
+     "label": "s3"
+    },
+    {
+     "say": "Étape 3, la finale :",
+     "speaker": "GAMER",
+     "portrait": "kid"
+    },
+    {
+     "choice": [
+      {
+       "label": "A B",
+       "goto": "bad"
+      },
+      {
+       "label": "Start",
+       "goto": "bad"
+      },
+      {
+       "label": "B A",
+       "goto": "win"
+      }
+     ]
+    },
+    {
+     "label": "win"
+    },
+    {
+     "say": "+30 vies ! Dans la vraie vie, ça donne 30 crédits GPU. L'inflation a mangé le reste.",
+     "speaker": "GAMER",
+     "portrait": "kid"
+    },
+    {
+     "give_credits": 30
+    },
+    {
+     "set_flag": "konami_done"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "bad"
+    },
+    {
+     "say": "Mauvais input. Ton pad déconne. Recommence quand tu auras joué à Contra dans ta jeunesse.",
+     "speaker": "GAMER",
+     "portrait": "kid"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "done"
+    },
+    {
+     "say": "Tu as déjà 30 vies. Inutile d'être gourmand. Même les cheat codes ont des limites.",
+     "speaker": "GAMER",
+     "portrait": "kid"
+    }
+   ]
+  },
+  {
+   "id": "bocal_student_talk",
+   "steps": [
+    {
+     "if": {
+      "flag": "bocal_gift"
+     },
+     "goto": "again"
+    },
+    {
+     "say": "Un étudiant, cernes jusqu'aux genoux, tape dans le bocal. « Chut. La moulinette note. »",
+     "speaker": "ÉTUDIANT",
+     "portrait": "dev_phone"
+    },
+    {
+     "say": "« J'ai écrit 4 000 lignes en 72 heures. La moulinette dit 0/42. Segfault. Le sommeil est déprécié. »",
+     "speaker": "ÉTUDIANT",
+     "portrait": "dev_phone"
+    },
+    {
+     "say": "« Ici c'est le bocal : on y entre à 8 h, on en sort à la fin de la Piscine. Si on sort. J'ai quelqu'un qui m'apporte des Red Bull par la fente. »",
+     "speaker": "ÉTUDIANT",
+     "portrait": "dev_phone"
+    },
+    {
+     "say": "« Tiens, j'en ai en trop. Dis-moi que tu ne codes pas avec une IA. … Tu codes avec une IA ? Ah. Moi aussi, en secret. »",
+     "speaker": "ÉTUDIANT",
+     "portrait": "dev_phone"
+    },
+    {
+     "give_item": "red_bull",
+     "count": 2
+    },
+    {
+     "set_flag": "bocal_gift"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "again"
+    },
+    {
+     "say": "« 0/42. Mais le norme est respecté. Pas une ligne de plus de 25 lignes par fonction. »",
+     "speaker": "ÉTUDIANT",
+     "portrait": "dev_phone"
+    }
+   ]
+  },
+  {
+   "id": "grove_door_0",
+   "steps": [
+    {
+     "say": "Porte fermée. Un post-it : « Sprint review. Revenez au prochain sprint. »"
+    }
+   ]
+  },
+  {
+   "id": "grove_door_1",
+   "steps": [
+    {
+     "say": "Porte fermée. On entend un modèle chanter. Faux."
+    }
+   ]
+  },
+  {
+   "id": "grove_door_2",
+   "steps": [
+    {
+     "say": "Porte fermée. Un panneau : « Ne pas déranger : le dev dort enfin. »"
+    }
+   ]
+  },
+  {
+   "id": "grove_door_3",
+   "steps": [
+    {
+     "say": "Porte fermée. Une pancarte : « Pas de démarchage. Pas de prompts. Pas de LinkedIn. »"
+    }
+   ]
+  },
+  {
+   "id": "grove_door_4",
+   "steps": [
+    {
+     "say": "Porte fermée. Dessus, un autocollant « I ♥ open source ». Dedans, c'est fermé."
+    }
+   ]
+  },
+  {
+   "id": "grove_door_5",
+   "steps": [
+    {
+     "say": "Porte fermée à clé. La clé est dans un repo public, quelque part."
+    }
+   ]
+  },
+  {
+   "id": "sign_aiact_center_7_11",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR « RED BULL OFFICIEL » « Donne-toi des ailes. Les ailes sont en option. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 120
+      },
+      {
+       "item": "red_bull",
+       "price": 350
+      },
+      {
+       "item": "hotfix",
+       "price": 250
+      },
+      {
+       "item": "clear_cache",
+       "price": 700
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_aiact_center_32_21",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR « TOKEN & CIE » « Ici, un café = 4 096 tokens de plus. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 120
+      },
+      {
+       "item": "red_bull",
+       "price": 350
+      },
+      {
+       "item": "hotfix",
+       "price": 250
+      },
+      {
+       "item": "api_key_free",
+       "price": 250
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_city_1_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_city_2_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_city_3_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_city_4_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_city_5_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_city_6_1",
+   "steps": [
+    {
+     "say": "PC Hugging Face — Repo de modèles. Tous tes PokAI attrapés sont stockés ici. Tu peux échanger avec ton équipe."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_city_8_1",
+   "steps": [
+    {
+     "say": "PC Hugging Face — Repo de modèles. Tous tes PokAI attrapés sont stockés ici. Tu peux échanger avec ton équipe."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_city_9_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_city_10_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_city_11_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_city_12_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_city_13_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_grove_1_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_grove_2_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_grove_3_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_grove_4_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_grove_5_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_grove_6_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_grove_7_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_grove_8_1",
+   "steps": [
+    {
+     "say": "PC Hugging Face — Repo de modèles. Tous tes PokAI attrapés sont stockés ici. Tu peux échanger avec ton équipe."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_grove_10_1",
+   "steps": [
+    {
+     "say": "PC Hugging Face — Repo de modèles. Tous tes PokAI attrapés sont stockés ici. Tu peux échanger avec ton équipe."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_grove_11_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_grove_12_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_grove_13_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_grove_14_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_grove_15_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_grove_16_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_grove_17_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_port_1_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_port_2_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_port_3_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_port_4_1",
+   "steps": [
+    {
+     "say": "PC Hugging Face — Repo de modèles. Tous tes PokAI attrapés sont stockés ici. Tu peux échanger avec ton équipe."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_port_6_1",
+   "steps": [
+    {
+     "say": "PC Hugging Face — Repo de modèles. Tous tes PokAI attrapés sont stockés ici. Tu peux échanger avec ton équipe."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_port_7_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_port_8_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_port_9_1",
+   "steps": [
+    {
+     "say": "Étagère du Repo : des rangées de poids bien rangés, par date de dernière hallucination."
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_57_5",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR « PAUSE-CAFÉ v3 » « Le café est conforme. L'attente aussi. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 120
+      },
+      {
+       "item": "red_bull",
+       "price": 350
+      },
+      {
+       "item": "hotfix",
+       "price": 250
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_58_5",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR « DISTRIB'ALPHA » « Vendu avec 40 % de hallucination en plus. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 120
+      },
+      {
+       "item": "red_bull",
+       "price": 350
+      },
+      {
+       "item": "hotfix",
+       "price": 250
+      },
+      {
+       "item": "clear_cache",
+       "price": 700
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_9_12",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR « LE PETIT CACHE » « Vidons le cache ensemble ! »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 120
+      },
+      {
+       "item": "red_bull",
+       "price": 350
+      },
+      {
+       "item": "hotfix",
+       "price": 250
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_35_12",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR « SNACK OVERFLOW » « Stack plein ? Remplis ton estomac. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 120
+      },
+      {
+       "item": "red_bull",
+       "price": 350
+      },
+      {
+       "item": "hotfix",
+       "price": 250
+      },
+      {
+       "item": "api_key_free",
+       "price": 250
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_48_31",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR « COFFEE.EXE » « Ne répond plus. Mais distribue quand même. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 120
+      },
+      {
+       "item": "red_bull",
+       "price": 350
+      },
+      {
+       "item": "hotfix",
+       "price": 250
+      },
+      {
+       "item": "clear_cache",
+       "price": 700
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_4_36",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR « HOTFIX EXPRESS » « Soigne tout, sauf la dette technique. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 120
+      },
+      {
+       "item": "red_bull",
+       "price": 350
+      },
+      {
+       "item": "hotfix",
+       "price": 250
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_5_36",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR « GPU-CAFÉ » « 5 000 € le gobelet. Non, je rigole. 120. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 120
+      },
+      {
+       "item": "red_bull",
+       "price": 350
+      },
+      {
+       "item": "hotfix",
+       "price": 250
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_46_36",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR « MACHINE À PROMPTS » « Insérez une pièce, obtenez une hallucination. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 120
+      },
+      {
+       "item": "red_bull",
+       "price": 350
+      },
+      {
+       "item": "hotfix",
+       "price": 250
+      },
+      {
+       "item": "clear_cache",
+       "price": 700
+      },
+      {
+       "item": "api_key_free",
+       "price": 250
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_62_36",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR « CANETTE 404 » « Boisson introuvable. Mais celle-ci existe. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 120
+      },
+      {
+       "item": "red_bull",
+       "price": 350
+      },
+      {
+       "item": "hotfix",
+       "price": 250
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_28_47",
+   "steps": [
+    {
+     "say": "Un panneau gribouillé : « Ceci n'est pas un panneau. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_35_47",
+   "steps": [
+    {
+     "say": "Une affiche : « TODO : écrire cette affiche. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_latentia_city_24_48",
+   "steps": [
+    {
+     "say": "Un graffiti : « sudo make me a sandwich ». En dessous, quelqu'un a répondu : « Permission denied. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_43_7",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR « STRING THEORY » « Offre spéciale : boissons à concaténer. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 120
+      },
+      {
+       "item": "red_bull",
+       "price": 350
+      },
+      {
+       "item": "hotfix",
+       "price": 250
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_24_13",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR « RED BULL OFFICIEL » « Donne-toi des ailes. Les ailes sont en option. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 120
+      },
+      {
+       "item": "red_bull",
+       "price": 350
+      },
+      {
+       "item": "hotfix",
+       "price": 250
+      },
+      {
+       "item": "clear_cache",
+       "price": 700
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_9_19",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR « TOKEN & CIE » « Ici, un café = 4 096 tokens de plus. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 120
+      },
+      {
+       "item": "red_bull",
+       "price": 350
+      },
+      {
+       "item": "hotfix",
+       "price": 250
+      },
+      {
+       "item": "api_key_free",
+       "price": 250
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_37_20",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR « PAUSE-CAFÉ v3 » « Le café est conforme. L'attente aussi. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 120
+      },
+      {
+       "item": "red_bull",
+       "price": 350
+      },
+      {
+       "item": "hotfix",
+       "price": 250
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_15_21",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR « DISTRIB'ALPHA » « Vendu avec 40 % de hallucination en plus. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 120
+      },
+      {
+       "item": "red_bull",
+       "price": 350
+      },
+      {
+       "item": "hotfix",
+       "price": 250
+      },
+      {
+       "item": "clear_cache",
+       "price": 700
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_20_21",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR « LE PETIT CACHE » « Vidons le cache ensemble ! »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 120
+      },
+      {
+       "item": "red_bull",
+       "price": 350
+      },
+      {
+       "item": "hotfix",
+       "price": 250
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_31_21",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR « SNACK OVERFLOW » « Stack plein ? Remplis ton estomac. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 120
+      },
+      {
+       "item": "red_bull",
+       "price": 350
+      },
+      {
+       "item": "hotfix",
+       "price": 250
+      },
+      {
+       "item": "api_key_free",
+       "price": 250
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_33_21",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR « COFFEE.EXE » « Ne répond plus. Mais distribue quand même. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 120
+      },
+      {
+       "item": "red_bull",
+       "price": 350
+      },
+      {
+       "item": "hotfix",
+       "price": 250
+      },
+      {
+       "item": "clear_cache",
+       "price": 700
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_51_21",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR « HOTFIX EXPRESS » « Soigne tout, sauf la dette technique. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 120
+      },
+      {
+       "item": "red_bull",
+       "price": 350
+      },
+      {
+       "item": "hotfix",
+       "price": 250
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_52_21",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR « GPU-CAFÉ » « 5 000 € le gobelet. Non, je rigole. 120. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 120
+      },
+      {
+       "item": "red_bull",
+       "price": 350
+      },
+      {
+       "item": "hotfix",
+       "price": 250
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_54_21",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR « MACHINE À PROMPTS » « Insérez une pièce, obtenez une hallucination. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 120
+      },
+      {
+       "item": "red_bull",
+       "price": 350
+      },
+      {
+       "item": "hotfix",
+       "price": 250
+      },
+      {
+       "item": "clear_cache",
+       "price": 700
+      },
+      {
+       "item": "api_key_free",
+       "price": 250
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_4_26",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR « CANETTE 404 » « Boisson introuvable. Mais celle-ci existe. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 120
+      },
+      {
+       "item": "red_bull",
+       "price": 350
+      },
+      {
+       "item": "hotfix",
+       "price": 250
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_10_27",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR « STRING THEORY » « Offre spéciale : boissons à concaténer. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 120
+      },
+      {
+       "item": "red_bull",
+       "price": 350
+      },
+      {
+       "item": "hotfix",
+       "price": 250
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_10_30",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR « RED BULL OFFICIEL » « Donne-toi des ailes. Les ailes sont en option. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 120
+      },
+      {
+       "item": "red_bull",
+       "price": 350
+      },
+      {
+       "item": "hotfix",
+       "price": 250
+      },
+      {
+       "item": "clear_cache",
+       "price": 700
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_46_34",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR « TOKEN & CIE » « Ici, un café = 4 096 tokens de plus. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 120
+      },
+      {
+       "item": "red_bull",
+       "price": 350
+      },
+      {
+       "item": "hotfix",
+       "price": 250
+      },
+      {
+       "item": "api_key_free",
+       "price": 250
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_port_8080_15_35",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR « PAUSE-CAFÉ v3 » « Le café est conforme. L'attente aussi. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 120
+      },
+      {
+       "item": "red_bull",
+       "price": 350
+      },
+      {
+       "item": "hotfix",
+       "price": 250
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_route_foret_poids_18_4",
+   "steps": [
+    {
+     "say": "Une pancarte : « Attention aux hallucinations. Elles mordent. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_route_foret_poids_10_12",
+   "steps": [
+    {
+     "say": "Un autocollant : « J'ai eu la vibe, pas la doc. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_sentier_cotier_9_30",
+   "steps": [
+    {
+     "say": "Un panneau : « Votre quota de calcul est dépassé. Merci de patienter 2 ans. »"
+    }
+   ]
+  }
+ ]
+}

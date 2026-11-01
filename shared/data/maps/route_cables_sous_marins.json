@@ -1,0 +1,321 @@
+{
+ "id": "route_cables_sous_marins",
+ "name": "Route des Câbles Sous-Marins",
+ "width": 60,
+ "height": 26,
+ "rows": [
+  "~~~~~~~~~~~~~~~~~~~~~~~~rrrrrrrrrrrrr~~~~~~~~~~~~~~~~~~~~~~~",
+  "~~~~~~~~~~~~~~~~~~~~~~~rr..t.....t..r~~~~~~~~~~~~~~~r~~~~~~~",
+  "~~~~~~~~~~~~~~~~~r~~~~~~r.t...S...t.r~~~~~~~~~r~~~~~~~~~~~~~",
+  "~~~~~~~~~~~r~~~~~~~~~~~~r...........r~~~r~~~~~~~~~~~~~~~~~~~",
+  "~~~~~r~rrrrrrrrrrrrrrrr~rrrrr===rrrrr~~rrrrrrrrrrrrrrr~~~~~~",
+  "~~~~~~~rccccccccccccccr~~~~~r===~~~~~~~rcccccccccccccr~~~r~~",
+  "~~~~~~~rccccccccccccccr~~~~~~===~~~~~~~rcccccccccccccr~~~~~~",
+  "~~~~~~~rccccccccccccccr~~~~~~===~~~~~~~rcccccccccccccr~~~~~~",
+  "~~~~~~~rccccccccccccccr~~~~~~===~~~~~~~rcccccccccccccr~~~~~~",
+  "~~~~r~~rrr==========rrr~~~~~~===~r~~~~~rrr=========rrr~~~~~~",
+  "~fffIfffff==========fffIffffI===ffffffffff=========ffffffff~",
+  "========================================================....",
+  "========================================================....",
+  "========================================================....",
+  "~fffffffffffffffffffffffffffffffffIfff==========fffffI===ff~",
+  "~~~~~~~~~~~~~~~~~~~~~~~~~~r~~~~~~~~rrr==========rrr~~~===~~~",
+  "~~~~~~~~~~~~~~~~~~~~r~~~~~~~~~~~~~~rccccccccccccccr~~~===~~~",
+  "~~~~~~~~~~~~~~r~~~~~~~~~~~~~~~~~~~~rccccccccccccccr~~~===~~~",
+  "~~~~~~~~r~~~~~~~~~~~~~~~~~~~~~~~~~~rccccccccccccccr~~~===~~~",
+  "~~r~~~~~~~~~~~~~~~~~~~~~~~~~~~~r~~~rccccccccccccccr~~~===~~~",
+  "~~~~~~~~~~~~~~~~~~~~~~~~~r~~~~~~~~~rrrrrrrrrrrrrrrr~~~===~~~",
+  "~~~~~~~~~~~~~~~~~~~r~~~~~~~~~~~~~~~~~~~~~~~~~~~~r~rrrr===rrr",
+  "~~~~~~~~~~~~~r~~~~~~~~~~~~~~~~~~~~~~~~~~~~r~~~~~~~r.zz.S...r",
+  "~~~~~~~r~~~~~~~~~~~~~~~~~~~~~~~~~~~~r~~~~~~~~~~~~~r.......Gr",
+  "~r~~~~~~~~~~~~~~~~~~~~~~~~~~~~r~~~~~~~~~~~~~~~~~~~r........r",
+  "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~rrrrrrrrrr"
+ ],
+ "legend": {
+  ".": "sand",
+  "=": "dock",
+  "G": "gpu_crate",
+  "I": "signpost",
+  "S": "sign",
+  "c": "cable",
+  "f": "fence",
+  "r": "rock",
+  "t": "tree",
+  "z": "container_wall",
+  "~": "water"
+ },
+ "npcs": [
+  {
+   "id": "cs_sailor_1",
+   "sprite": "sailor",
+   "x": 14,
+   "y": 13,
+   "facing": "up",
+   "dialogue": "cs_sailor_1_talk",
+   "trainer": "cs_sailor_1",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_cs_sailor_1_defeated"
+    }
+   }
+  },
+  {
+   "id": "cs_scientist_1",
+   "sprite": "scientist",
+   "x": 27,
+   "y": 11,
+   "facing": "down",
+   "dialogue": "cs_scientist_1_talk",
+   "trainer": "cs_scientist_1",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_cs_scientist_1_defeated"
+    }
+   }
+  },
+  {
+   "id": "cs_tourist_1",
+   "sprite": "tourist",
+   "x": 44,
+   "y": 13,
+   "facing": "up",
+   "dialogue": "cs_tourist_1_talk",
+   "trainer": "cs_tourist_1",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_cs_tourist_1_defeated"
+    }
+   }
+  },
+  {
+   "id": "cs_rider_1",
+   "sprite": "delivery_rider",
+   "x": 49,
+   "y": 11,
+   "facing": "down",
+   "dialogue": "cs_rider_1_talk",
+   "trainer": "cs_rider_1",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_cs_rider_1_defeated"
+    }
+   }
+  },
+  {
+   "id": "cs_ambient_1",
+   "sprite": "sailor",
+   "x": 20,
+   "y": 12,
+   "facing": "down",
+   "dialogue": "cs_ambient_1",
+   "ambient": true,
+   "wander": 1
+  },
+  {
+   "id": "cs_ambient_2",
+   "sprite": "citizen_b",
+   "x": 33,
+   "y": 13,
+   "facing": "up",
+   "dialogue": "cs_ambient_2",
+   "ambient": true,
+   "wander": 1
+  },
+  {
+   "id": "cs_fisher",
+   "sprite": "kid",
+   "x": 31,
+   "y": 8,
+   "facing": "down",
+   "dialogue": "cs_fisher"
+  }
+ ],
+ "warps": [
+  {
+   "x": 0,
+   "y": 11,
+   "to": "port_8080",
+   "toX": 1,
+   "toY": 41,
+   "facing": "right"
+  },
+  {
+   "x": 59,
+   "y": 11,
+   "to": "dunes_datacenters",
+   "toX": 1,
+   "toY": 22,
+   "facing": "right"
+  },
+  {
+   "x": 0,
+   "y": 12,
+   "to": "port_8080",
+   "toX": 1,
+   "toY": 42,
+   "facing": "right"
+  },
+  {
+   "x": 59,
+   "y": 12,
+   "to": "dunes_datacenters",
+   "toX": 1,
+   "toY": 23,
+   "facing": "right"
+  },
+  {
+   "x": 0,
+   "y": 13,
+   "to": "port_8080",
+   "toX": 1,
+   "toY": 43,
+   "facing": "right"
+  },
+  {
+   "x": 59,
+   "y": 13,
+   "to": "dunes_datacenters",
+   "toX": 1,
+   "toY": 24,
+   "facing": "right"
+  }
+ ],
+ "triggers": [
+  {
+   "x": 1,
+   "y": 11,
+   "script": "route_cables_locked",
+   "h": 3,
+   "condition": {
+    "not": {
+     "flag": "badge_raisonnement"
+    }
+   }
+  },
+  {
+   "x": 30,
+   "y": 1,
+   "script": "secret_cables_h100",
+   "once": true
+  },
+  {
+   "x": 53,
+   "y": 24,
+   "script": "secret_cables_dataset",
+   "once": true
+  },
+  {
+   "x": 21,
+   "y": 5,
+   "script": "secret_cables_cable",
+   "once": true
+  }
+ ],
+ "kind": "route",
+ "music": "route_b",
+ "encounterRate": 0.16,
+ "encounters": [
+  {
+   "form": "whisper_base",
+   "minLevel": 28,
+   "maxLevel": 31,
+   "weight": 16
+  },
+  {
+   "form": "midjourney_v6",
+   "minLevel": 28,
+   "maxLevel": 31,
+   "weight": 16
+  },
+  {
+   "form": "sdxl",
+   "minLevel": 28,
+   "maxLevel": 30,
+   "weight": 14
+  },
+  {
+   "form": "gemini_flash",
+   "minLevel": 28,
+   "maxLevel": 31,
+   "weight": 14
+  },
+  {
+   "form": "qwen_2_5",
+   "minLevel": 28,
+   "maxLevel": 30,
+   "weight": 12,
+   "group": 3
+  },
+  {
+   "form": "copilot_chat",
+   "minLevel": 29,
+   "maxLevel": 31,
+   "weight": 10
+  },
+  {
+   "form": "o1",
+   "minLevel": 28,
+   "maxLevel": 31,
+   "weight": 8
+  },
+  {
+   "form": "nano_banana",
+   "minLevel": 28,
+   "maxLevel": 30,
+   "weight": 6
+  },
+  {
+   "form": "sd3",
+   "minLevel": 30,
+   "maxLevel": 32,
+   "weight": 4
+  },
+  {
+   "form": "whisper_large",
+   "minLevel": 30,
+   "maxLevel": 32,
+   "weight": 6,
+   "night": true
+  }
+ ],
+ "landmarks": [
+  {
+   "x": 30,
+   "y": 2,
+   "label": "Îlot du Sauveteur"
+  },
+  {
+   "x": 54,
+   "y": 23,
+   "label": "Épave de datacenter"
+  },
+  {
+   "x": 15,
+   "y": 7,
+   "label": "Baie des câbles"
+  },
+  {
+   "x": 43,
+   "y": 17,
+   "label": "Baie sud"
+  }
+ ],
+ "exits": [
+  {
+   "x": 0,
+   "y": 12,
+   "to": "port_8080",
+   "label": "Port 8080"
+  },
+  {
+   "x": 59,
+   "y": 12,
+   "to": "dunes_datacenters",
+   "label": "Dunes des Datacenters"
+  }
+ ]
+}

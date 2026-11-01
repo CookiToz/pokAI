@@ -1,0 +1,16 @@
+{ "scripts": [
+  { "id": "prof_intro", "steps": [
+    { "say": "Bienvenue à Latentia !", "speaker": "Professeur" },
+    { "if": { "flag": "got_starter" }, "goto": "done" },
+    { "open": "starter_choice" },
+    { "set_flag": "got_starter" },
+    { "give_item": "free_key", "count": 3 },
+    { "give_pokai": "claude_haiku", "level": 5 },
+    { "choice": [ { "label": "Oui", "goto": "done" }, { "label": "Non", "goto": "done" } ] },
+    { "label": "done" },
+    { "move_npc": "prof", "path": ["up", "left"] },
+    { "end": true }
+  ] },
+  { "id": "rival_intro", "steps": [ { "say": "On se bat !" }, { "start_battle": "rival_1" }, { "set_flag": "beat_rival" } ] },
+  { "id": "rival_defeat", "steps": [ { "say": "Pas mal." }, { "warp": "route_1", "x": 1, "y": 0 } ] }
+] }

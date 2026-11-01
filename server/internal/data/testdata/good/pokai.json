@@ -1,0 +1,27 @@
+{
+  "lines": [
+    {
+      "id": "claude", "dexNo": 1, "publisher": "Anthropic", "rarity": "common", "mvp": true, "catchDifficulty": 2,
+      "traits": [
+        { "id": "polite", "hint": "Il s'excuse beaucoup.", "tokens": ["be_polite"] },
+        { "id": "concise", "hint": "Il aime les réponses courtes.", "tokens": ["be_concise"] },
+        { "id": "safe", "hint": "Il refuse poliment.", "tokens": ["refuse"] }
+      ],
+      "forms": [
+        {
+          "id": "claude_haiku", "name": "Claude Haiku", "stage": 1, "types": ["chat"], "licence": "proprietary",
+          "baseStats": { "context": 40, "power": 40, "robustness": 40, "throughput": 60, "precision": 50 },
+          "learnset": [{ "level": 1, "move": "prompt" }],
+          "evolutions": [{ "to": "claude_sonnet", "level": 16 }],
+          "xpYield": 50, "description": "Petit et rapide."
+        },
+        {
+          "id": "claude_sonnet", "name": "Claude Sonnet", "stage": 2, "types": ["chat", "code"], "licence": "proprietary",
+          "baseStats": { "context": 60, "power": 60, "robustness": 60, "throughput": 60, "precision": 60 },
+          "learnset": [{ "level": 16, "move": "refactor" }],
+          "evolutions": [], "xpYield": 120, "description": "Équilibré."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "types": [
+    {
+      "id": "chat",
+      "name": "Chat",
+      "color": "#e8643c"
+    },
+    {
+      "id": "code",
+      "name": "Code",
+      "color": "#5fa84f"
+    },
+    {
+      "id": "reasoning",
+      "name": "Raisonnement",
+      "color": "#3c78b4"
+    },
+    {
+      "id": "media",
+      "name": "Média",
+      "color": "#d9577a"
+    },
+    {
+      "id": "agent",
+      "name": "Agent",
+      "color": "#f2b632"
+    },
+    {
+      "id": "chaos",
+      "name": "Chaos",
+      "color": "#5a4a78"
+    },
+    {
+      "id": "legacy",
+      "name": "Legacy",
+      "color": "#7a8a99"
+    }
+  ],
+  "chart": {
+    "chat": {
+      "chat": 0.5,
+      "reasoning": 2,
+      "legacy": 2
+    },
+    "code": {
+      "code": 0.5,
+      "chat": 2,
+      "agent": 2
+    },
+    "reasoning": {
+      "reasoning": 0.5,
+      "code": 2,
+      "chaos": 2
+    },
+    "media": {
+      "media": 0.5,
+      "chat": 2
+    },
+    "agent": {
+      "agent": 0.5,
+      "media": 2,
+      "legacy": 2
+    },
+    "chaos": {
+      "chaos": 0.5,
+      "agent": 2,
+      "media": 2
+    },
+    "legacy": {
+      "legacy": 0.5,
+      "chaos": 2
+    }
+  }
+}

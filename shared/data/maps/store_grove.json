@@ -1,0 +1,72 @@
+{
+ "id": "store_grove",
+ "name": "Le Store du Grove",
+ "width": 12,
+ "height": 8,
+ "rows": [
+  "############",
+  "#RRR++++RRR#",
+  "#++++++++++#",
+  "#G+NNNNNN+G#",
+  "#++++++++++#",
+  "#l++++++++l#",
+  "#++++++++++#",
+  "#####XX#####"
+ ],
+ "legend": {
+  "#": "wall",
+  "+": "floor_tile",
+  "G": "gpu_crate",
+  "N": "guard_desk",
+  "R": "server_rack",
+  "X": "exit_mat",
+  "l": "plant"
+ },
+ "kind": "interior",
+ "music": "shop",
+ "npcs": [
+  {
+   "id": "clerk",
+   "sprite": "clerk",
+   "x": 5,
+   "y": 2,
+   "facing": "down",
+   "dialogue": "clerk_grove"
+  },
+  {
+   "id": "dev_grove_store",
+   "sprite": "resistance_dev",
+   "x": 8,
+   "y": 5,
+   "facing": "left",
+   "dialogue": "grove_store_dev"
+  }
+ ],
+ "warps": [
+  {
+   "x": 5,
+   "y": 7,
+   "to": "hugging_grove",
+   "toX": 17,
+   "toY": 32,
+   "facing": "down"
+  },
+  {
+   "x": 6,
+   "y": 7,
+   "to": "hugging_grove",
+   "toX": 17,
+   "toY": 32,
+   "facing": "down"
+  }
+ ],
+ "triggers": [],
+ "exits": [
+  {
+   "x": 5,
+   "y": 7,
+   "to": "hugging_grove",
+   "label": "Hugging Grove"
+  }
+ ]
+}

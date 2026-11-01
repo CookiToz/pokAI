@@ -1,0 +1,188 @@
+{
+ "id": "bench_humaneval",
+ "name": "Benchmark HumanEval",
+ "width": 17,
+ "height": 19,
+ "rows": [
+  "#V##ZZZZZZZZZ##V#",
+  "#OOOOOOEEEOOOOOO#",
+  "#OOOOEOOOOOEOOOO#",
+  "#OOOOOOOOOOOOOOO#",
+  "#######www#######",
+  "#OOOOOOOOOOOOOOO#",
+  "#ROOOOSOEOOOOOOR#",
+  "#OOyOOOOEOOOOyOO#",
+  "#OOOOlOOEOOlOOOO#",
+  "#OOOOOOOEOOOOOOO#",
+  "#OOOEEEEEEEEEOOO#",
+  "#OOOOOOOEOOOOOOO#",
+  "#OOOOOOOEOOOOOOO#",
+  "#OOyOOOOEOOOOyOO#",
+  "#OOOOOOOEOOOOOOO#",
+  "#OOOOlOOEOOlOOOO#",
+  "#ROOOOOOEOOOOOOR#",
+  "#OZOOOOOOOOOOOZO#",
+  "#######XXX#######"
+ ],
+ "legend": {
+  "#": "wall",
+  "E": "arena_line",
+  "O": "arena_floor",
+  "R": "server_rack",
+  "S": "sign",
+  "V": "wall_window",
+  "X": "exit_mat",
+  "Z": "scoreboard",
+  "l": "plant",
+  "w": "gate",
+  "y": "switch_plate"
+ },
+ "kind": "interior",
+ "music": "interior",
+ "npcs": [
+  {
+   "id": "bench_junior",
+   "sprite": "stagiaire",
+   "x": 8,
+   "y": 14,
+   "facing": "down",
+   "dialogue": "bench_junior_talk",
+   "trainer": "bench_junior_1",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_bench_junior_1_defeated"
+    }
+   }
+  },
+  {
+   "id": "nadelta",
+   "sprite": "nadelta",
+   "x": 8,
+   "y": 2,
+   "facing": "down",
+   "dialogue": "nadelta_talk",
+   "trainer": "leader_nadelta",
+   "sightRange": 2
+  }
+ ],
+ "warps": [
+  {
+   "x": 7,
+   "y": 18,
+   "to": "latentia_city",
+   "toX": 27,
+   "toY": 14,
+   "facing": "down"
+  },
+  {
+   "x": 8,
+   "y": 18,
+   "to": "latentia_city",
+   "toX": 27,
+   "toY": 14,
+   "facing": "down"
+  },
+  {
+   "x": 9,
+   "y": 18,
+   "to": "latentia_city",
+   "toX": 27,
+   "toY": 14,
+   "facing": "down"
+  }
+ ],
+ "triggers": [
+  {
+   "x": 3,
+   "y": 7,
+   "script": "he_test_1",
+   "condition": {
+    "not": {
+     "flag": "he_solved"
+    }
+   }
+  },
+  {
+   "x": 13,
+   "y": 7,
+   "script": "he_test_2",
+   "condition": {
+    "not": {
+     "flag": "he_solved"
+    }
+   }
+  },
+  {
+   "x": 3,
+   "y": 13,
+   "script": "he_test_3",
+   "condition": {
+    "not": {
+     "flag": "he_solved"
+    }
+   }
+  },
+  {
+   "x": 13,
+   "y": 13,
+   "script": "he_test_4",
+   "condition": {
+    "not": {
+     "flag": "he_solved"
+    }
+   }
+  }
+ ],
+ "gates": [
+  {
+   "x": 7,
+   "y": 4,
+   "flag": "he_solved"
+  },
+  {
+   "x": 8,
+   "y": 4,
+   "flag": "he_solved"
+  },
+  {
+   "x": 9,
+   "y": 4,
+   "flag": "he_solved"
+  }
+ ],
+ "switches": [
+  {
+   "x": 3,
+   "y": 7,
+   "flag": "he_plate_1"
+  },
+  {
+   "x": 13,
+   "y": 7,
+   "flag": "he_plate_2"
+  },
+  {
+   "x": 3,
+   "y": 13,
+   "flag": "he_plate_3"
+  },
+  {
+   "x": 13,
+   "y": 13,
+   "flag": "he_plate_4"
+  }
+ ],
+ "landmarks": [
+  {
+   "x": 8,
+   "y": 2,
+   "label": "Satya Nadelta"
+  },
+  {
+   "x": 3,
+   "y": 7,
+   "label": "Tests unitaires"
+  }
+ ]
+}

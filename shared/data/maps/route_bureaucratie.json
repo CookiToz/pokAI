@@ -1,0 +1,430 @@
+{
+ "id": "route_bureaucratie",
+ "name": "Route de la Bureaucratie",
+ "width": 56,
+ "height": 28,
+ "rows": [
+  "rrrrrrrrrrrrrrrrrrrrCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC",
+  "r...................iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiC",
+  "r...................iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiC",
+  "r...................iiiiiiiiiiiiiiiiCCCCCiiiiiiiiiiiiiiC",
+  "r...................iiiiiiiiiiiiiiiiC+++CiiiiiiiiiiiiiiC",
+  "r...................iiiiiiiiiiiiiiiiC+++CiiiiiiiiiiiiiiC",
+  "r...................iiiiiiiiiiiiiiiiCNN+CiiiiiiiiiiiiiiC",
+  "r...YYYYY....YYYYY..iiYYYYYiiiiYYYYYC...CiiiiiiiiiiiiiiC",
+  "r...YYYYY....YYYYY..iiYYYYYiiiiYYYYYC...CiiiiiiiiiiiiiiC",
+  "r...kkkkk....kkkkk..iikkkkkiiiikkkkkC...CiiiiiiiiiiiiiiC",
+  "r...++++k....++++k..ii++++kiiii++++kC...CiiiniimiiiiniiC",
+  "rfIf+NNNfffff+NNNfffff+NNNfffff+NNNff...fIffQfQfLffffffC",
+  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaHaaaaaaaaaaaaaaa",
+  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaHaaaaaaaaaaaaaaa",
+  "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaHaaaaaaaaaaaaaaa",
+  "rfffffffffIaaaffffffffffffffffIffiiiffffffffffffffffifIC",
+  "r.......CCCaaaCCCCCCCCCCCCCCCCiCCiiiCCCCCCCCCmiiiiCCiCCC",
+  "r.......CimiiiiiiiiiiiiiiiiivCiCccnccccccccccCiiiiCiiiCC",
+  "r.......CiiiiiiiiiiiiiiiiiiiiCiCcccccncccccccCiiiiCiiiCC",
+  "r.......CiiiiiiiiiiiiiiiiiiiiCiCccccccccnccccCiiiiCiiiCC",
+  "r.......CiiiiiiiiiiiiiiiiiiimCiCcccccccccccncCiiiiCiiiCC",
+  "r.......CiBiiiBiiiBiiiBiiiBiiCiCcccccccccccccCiiiiCCCCCC",
+  "r.......CCCCCCCCCCCCCCCCCCCCCCiCnccccccccccccCiiiiiiiiiC",
+  "r...................iiiiiiiiiiiCcccncccccccccCiiiiiiiiiC",
+  "r...................iiiiiiiiiiiCccccccnccccccCiiiiiiiiiC",
+  "r...................iiiiiiiiiiiCCCCCCCCCCCCCCCiiiiiiiiiC",
+  "r...................iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiC",
+  "rrrrrrrrrrrrrrrrrrrrCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC"
+ ],
+ "legend": {
+  "+": "floor_tile",
+  ".": "sand",
+  "B": "bench_seat",
+  "C": "concrete_wall",
+  "H": "gate",
+  "I": "signpost",
+  "L": "billboard",
+  "N": "counter",
+  "Q": "poster_aiact",
+  "Y": "roof_grey",
+  "a": "asphalt",
+  "c": "cable",
+  "f": "fence",
+  "i": "sidewalk",
+  "k": "house_wall",
+  "m": "street_lamp",
+  "n": "planter",
+  "r": "rock",
+  "v": "vending"
+ },
+ "npcs": [
+  {
+   "id": "guichet_0",
+   "sprite": "dev_phone",
+   "x": 6,
+   "y": 10,
+   "facing": "down",
+   "dialogue": "guichet_0"
+  },
+  {
+   "id": "guichet_1",
+   "sprite": "clerk",
+   "x": 15,
+   "y": 10,
+   "facing": "down",
+   "dialogue": "guichet_1"
+  },
+  {
+   "id": "guichet_2",
+   "sprite": "fashion_clerk",
+   "x": 24,
+   "y": 10,
+   "facing": "down",
+   "dialogue": "guichet_2"
+  },
+  {
+   "id": "guichet_3",
+   "sprite": "barista",
+   "x": 33,
+   "y": 10,
+   "facing": "down",
+   "dialogue": "guichet_3"
+  },
+  {
+   "id": "guichet_404",
+   "sprite": "stagiaire",
+   "x": 38,
+   "y": 5,
+   "facing": "down",
+   "dialogue": "guichet_404"
+  },
+  {
+   "id": "queue_1",
+   "sprite": "citizen_a",
+   "x": 12,
+   "y": 18,
+   "facing": "right",
+   "dialogue": "queue_1",
+   "ambient": true
+  },
+  {
+   "id": "queue_2",
+   "sprite": "citizen_b",
+   "x": 14,
+   "y": 18,
+   "facing": "right",
+   "dialogue": "queue_2",
+   "ambient": true
+  },
+  {
+   "id": "queue_3",
+   "sprite": "citizen_c",
+   "x": 16,
+   "y": 18,
+   "facing": "right",
+   "dialogue": "queue_3",
+   "ambient": true
+  },
+  {
+   "id": "queue_4",
+   "sprite": "citizen_d",
+   "x": 18,
+   "y": 18,
+   "facing": "right",
+   "dialogue": "queue_4",
+   "ambient": true
+  },
+  {
+   "id": "queue_5",
+   "sprite": "vibeur_a",
+   "x": 20,
+   "y": 18,
+   "facing": "right",
+   "dialogue": "queue_5",
+   "ambient": true
+  },
+  {
+   "id": "kartpathy_queue",
+   "sprite": "kartpathy",
+   "x": 22,
+   "y": 18,
+   "facing": "right",
+   "dialogue": "kartpathy_queue"
+  },
+  {
+   "id": "bu_official_1",
+   "sprite": "clerk",
+   "x": 8,
+   "y": 13,
+   "facing": "right",
+   "dialogue": "bu_official_1_talk",
+   "trainer": "bu_official_1",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_bu_official_1_defeated"
+    }
+   }
+  },
+  {
+   "id": "bu_usager_1",
+   "sprite": "citizen_a",
+   "x": 36,
+   "y": 19,
+   "facing": "up",
+   "dialogue": "bu_usager_1_talk",
+   "trainer": "bu_usager_1",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_bu_usager_1_defeated"
+    }
+   }
+  },
+  {
+   "id": "bu_agent_1",
+   "sprite": "agent_conformite",
+   "x": 47,
+   "y": 12,
+   "facing": "left",
+   "dialogue": "aiact_agent_bu_1_talk",
+   "trainer": "aiact_agent_bu_1",
+   "sightRange": 4,
+   "condition": {
+    "not": {
+     "flag": "trainer_aiact_agent_bu_1_defeated"
+    }
+   }
+  },
+  {
+   "id": "bu_agent_2",
+   "sprite": "agent_conformite",
+   "x": 47,
+   "y": 14,
+   "facing": "left",
+   "dialogue": "aiact_agent_bu_2_talk",
+   "trainer": "aiact_agent_bu_2",
+   "sightRange": 4,
+   "condition": {
+    "not": {
+     "flag": "trainer_aiact_agent_bu_2_defeated"
+    }
+   }
+  }
+ ],
+ "warps": [
+  {
+   "x": 0,
+   "y": 12,
+   "to": "dunes_datacenters",
+   "toX": 62,
+   "toY": 22,
+   "facing": "left"
+  },
+  {
+   "x": 55,
+   "y": 12,
+   "to": "conformite_capitale",
+   "toX": 1,
+   "toY": 25,
+   "facing": "right"
+  },
+  {
+   "x": 0,
+   "y": 13,
+   "to": "dunes_datacenters",
+   "toX": 62,
+   "toY": 23,
+   "facing": "left"
+  },
+  {
+   "x": 55,
+   "y": 13,
+   "to": "conformite_capitale",
+   "toX": 1,
+   "toY": 26,
+   "facing": "right"
+  },
+  {
+   "x": 0,
+   "y": 14,
+   "to": "dunes_datacenters",
+   "toX": 62,
+   "toY": 24,
+   "facing": "left"
+  },
+  {
+   "x": 55,
+   "y": 14,
+   "to": "conformite_capitale",
+   "toX": 1,
+   "toY": 27,
+   "facing": "right"
+  }
+ ],
+ "triggers": [
+  {
+   "x": 1,
+   "y": 12,
+   "script": "bureau_intro",
+   "h": 3,
+   "once": true
+  },
+  {
+   "x": 52,
+   "y": 20,
+   "script": "secret_bureau_corbeille",
+   "once": true
+  },
+  {
+   "x": 44,
+   "y": 24,
+   "script": "secret_bureau_ticket",
+   "once": true
+  }
+ ],
+ "kind": "route",
+ "music": "route_b",
+ "gates": [
+  {
+   "x": 40,
+   "y": 12,
+   "flag": "bureau_pass"
+  },
+  {
+   "x": 40,
+   "y": 13,
+   "flag": "bureau_pass"
+  },
+  {
+   "x": 40,
+   "y": 14,
+   "flag": "bureau_pass"
+  }
+ ],
+ "encounterRate": 0.15,
+ "encounters": [
+  {
+   "form": "roberta",
+   "minLevel": 36,
+   "maxLevel": 38,
+   "weight": 16
+  },
+  {
+   "form": "distilbert",
+   "minLevel": 36,
+   "maxLevel": 38,
+   "weight": 14
+  },
+  {
+   "form": "gpt_4o",
+   "minLevel": 36,
+   "maxLevel": 38,
+   "weight": 10
+  },
+  {
+   "form": "claude_sonnet",
+   "minLevel": 36,
+   "maxLevel": 38,
+   "weight": 12
+  },
+  {
+   "form": "copilot_agent",
+   "minLevel": 36,
+   "maxLevel": 39,
+   "weight": 10
+  },
+  {
+   "form": "llama_4_scout",
+   "minLevel": 36,
+   "maxLevel": 38,
+   "weight": 10
+  },
+  {
+   "form": "falcon_40b",
+   "minLevel": 36,
+   "maxLevel": 38,
+   "weight": 10
+  },
+  {
+   "form": "mixtral_8x7b",
+   "minLevel": 36,
+   "maxLevel": 38,
+   "weight": 8
+  },
+  {
+   "form": "o1",
+   "minLevel": 36,
+   "maxLevel": 38,
+   "weight": 8
+  },
+  {
+   "form": "smollm_3",
+   "minLevel": 36,
+   "maxLevel": 38,
+   "weight": 6
+  },
+  {
+   "form": "grok_3",
+   "minLevel": 37,
+   "maxLevel": 39,
+   "weight": 4
+  },
+  {
+   "form": "deepseek_v3",
+   "minLevel": 37,
+   "maxLevel": 39,
+   "weight": 4
+  },
+  {
+   "form": "whisper_large",
+   "minLevel": 37,
+   "maxLevel": 39,
+   "weight": 5,
+   "night": true
+  }
+ ],
+ "landmarks": [
+  {
+   "x": 6,
+   "y": 10,
+   "label": "Guichet 0 (tickets)"
+  },
+  {
+   "x": 15,
+   "y": 10,
+   "label": "Guichet 1"
+  },
+  {
+   "x": 24,
+   "y": 10,
+   "label": "Guichet 2"
+  },
+  {
+   "x": 33,
+   "y": 10,
+   "label": "Guichet 3"
+  },
+  {
+   "x": 40,
+   "y": 13,
+   "label": "Barrière de péage"
+  },
+  {
+   "x": 38,
+   "y": 17,
+   "label": "Parc à câbles"
+  }
+ ],
+ "exits": [
+  {
+   "x": 0,
+   "y": 13,
+   "to": "dunes_datacenters",
+   "label": "Dunes des Datacenters"
+  },
+  {
+   "x": 55,
+   "y": 13,
+   "to": "conformite_capitale",
+   "label": "Conformité-Capitale"
+  }
+ ]
+}

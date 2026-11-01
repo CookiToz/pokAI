@@ -1,0 +1,663 @@
+{
+ "objectives": [
+  {
+   "id": "free_pokai",
+   "chapter": "Prologue",
+   "title": "Libère un modèle dans la salle des capsules",
+   "hint": "Sors de ta cellule, suis la moquette rouge vers l'est : les capsules sont au bout du couloir.",
+   "targets": [
+    {
+     "map": "aiact_center",
+     "x": 22,
+     "y": 2
+    }
+   ],
+   "done": {
+    "flag": "got_starter"
+   },
+   "available": {
+    "flag": "intro_done"
+   }
+  },
+  {
+   "id": "locker_keys",
+   "chapter": "Prologue",
+   "title": "Fouille le vestiaire",
+   "hint": "Casiers non verrouillés, en haut à droite : des Clés API Gratuites et un café.",
+   "targets": [
+    {
+     "map": "aiact_center",
+     "x": 30,
+     "y": 3
+    }
+   ],
+   "done": {
+    "flag": "trig_aiact_center_32_2"
+   },
+   "available": {
+    "all": [
+     {
+      "flag": "got_starter"
+     },
+     {
+      "flag": "door_unlocked",
+      "is": false
+     }
+    ]
+   },
+   "optional": true
+  },
+  {
+   "id": "find_password",
+   "chapter": "Prologue",
+   "title": "Trouve le mot de passe du terminal",
+   "hint": "Un agent dort dans la salle de contrôle (via la salle de pause) : son post-it est très bavard.",
+   "targets": [
+    {
+     "map": "aiact_center",
+     "x": 13,
+     "y": 13
+    }
+   ],
+   "done": {
+    "flag": "got_password"
+   },
+   "available": {
+    "flag": "got_starter"
+   }
+  },
+  {
+   "id": "open_door",
+   "chapter": "Prologue",
+   "title": "Ouvre la porte sud au terminal",
+   "hint": "Le terminal est au centre de la salle de contrôle.",
+   "targets": [
+    {
+     "map": "aiact_center",
+     "x": 16,
+     "y": 12
+    }
+   ],
+   "done": {
+    "flag": "door_unlocked"
+   },
+   "available": {
+    "flag": "got_starter"
+   }
+  },
+  {
+   "id": "beat_cookie",
+   "chapter": "Prologue",
+   "title": "Franchis la porte sud et passe l'Inspecteur Cookie",
+   "hint": "Longe le couloir de la salle de pause, passe la porte sud, descends au bureau de Cookie.",
+   "targets": [
+    {
+     "map": "aiact_center",
+     "x": 16,
+     "y": 18
+    }
+   ],
+   "done": {
+    "flag": "cookie_beaten"
+   },
+   "available": {
+    "flag": "door_unlocked"
+   }
+  },
+  {
+   "id": "beat_rival_1",
+   "chapter": "Prologue",
+   "title": "Retrouve Kévin près de la sortie",
+   "hint": "Il t'attend avec le modèle qui bat le tien.",
+   "targets": [
+    {
+     "map": "aiact_center",
+     "x": 15,
+     "y": 24
+    }
+   ],
+   "done": {
+    "flag": "rival_1_done"
+   },
+   "available": {
+    "flag": "cookie_beaten"
+   }
+  },
+  {
+   "id": "see_kartpathy",
+   "chapter": "Latentia City",
+   "title": "Va voir Andrej Kartpathy au parc",
+   "hint": "Sors par le sud du Centre : il t'attend au parc, avec une licence de Vibeur et des Clés API.",
+   "targets": [
+    {
+     "map": "latentia_city",
+     "x": 40,
+     "y": 52
+    }
+   ],
+   "done": {
+    "flag": "has_license"
+   },
+   "available": {
+    "flag": "rival_1_done"
+   }
+  },
+  {
+   "id": "visit_hub",
+   "chapter": "Latentia City",
+   "title": "Visite le Hub pour soigner ton équipe",
+   "hint": "Chaque ville a un Hub : soin gratuit et stockage (Repo).",
+   "targets": [
+    {
+     "map": "hub_city",
+     "x": 8,
+     "y": 4
+    }
+   ],
+   "done": {
+    "flag": "last_hub:hub_city"
+   },
+   "available": {
+    "flag": "has_license"
+   },
+   "optional": true
+  },
+  {
+   "id": "he_puzzle",
+   "chapter": "Latentia City",
+   "title": "Résous l'énigme du Benchmark HumanEval",
+   "hint": "Les quatre plaques de tests unitaires ouvrent la porte du fond.",
+   "targets": [
+    {
+     "map": "bench_humaneval",
+     "x": 8,
+     "y": 10
+    }
+   ],
+   "done": {
+    "flag": "he_solved"
+   },
+   "available": {
+    "flag": "has_license"
+   }
+  },
+  {
+   "id": "badge_commit",
+   "chapter": "Latentia City",
+   "title": "Bats Satya Nadelta : Badge Commit",
+   "hint": "Le badge ouvre la porte nord de la ville, vers la forêt.",
+   "targets": [
+    {
+     "map": "bench_humaneval",
+     "x": 8,
+     "y": 3
+    }
+   ],
+   "done": {
+    "flag": "badge_commit"
+   },
+   "available": {
+    "flag": "he_solved"
+   }
+  },
+  {
+   "id": "reach_grove",
+   "chapter": "Forêt et Hugging Grove",
+   "title": "Traverse la Forêt des Poids jusqu'à Hugging Grove",
+   "hint": "Porte nord de Latentia City, puis toujours vers le nord.",
+   "targets": [
+    {
+     "map": "hub_grove",
+     "x": 9,
+     "y": 8
+    }
+   ],
+   "done": {
+    "flag": "clem_grove_met"
+   },
+   "available": {
+    "flag": "badge_commit"
+   }
+  },
+  {
+   "id": "llama_gift",
+   "chapter": "Forêt et Hugging Grove",
+   "title": "Passe au Ranch des Lamas",
+   "hint": "Mark Zuckerbot offre un Llama 2 aux visiteurs polis.",
+   "targets": [
+    {
+     "map": "hugging_grove",
+     "x": 47,
+     "y": 38
+    }
+   ],
+   "done": {
+    "flag": "got_llama_ranch"
+   },
+   "available": {
+    "flag": "clem_grove_met"
+   },
+   "optional": true
+  },
+  {
+   "id": "ow_puzzle",
+   "chapter": "Forêt et Hugging Grove",
+   "title": "Assemble le modèle du Benchmark Open-Weights",
+   "hint": "Dalles et caisses : pousse chaque caisse sur une plaque.",
+   "targets": [
+    {
+     "map": "bench_openweights",
+     "x": 9,
+     "y": 10
+    }
+   ],
+   "done": {
+    "flag": "ow_weights"
+   },
+   "available": {
+    "flag": "clem_grove_met"
+   }
+  },
+  {
+   "id": "badge_vent",
+   "chapter": "Forêt et Hugging Grove",
+   "title": "Bats Arthur Menschtral : Badge Vent",
+   "hint": "Le badge ouvre le Sentier Côtier au sud-est de Hugging Grove.",
+   "targets": [
+    {
+     "map": "bench_openweights",
+     "x": 9,
+     "y": 3
+    }
+   ],
+   "done": {
+    "flag": "badge_vent"
+   },
+   "available": {
+    "flag": "ow_weights"
+   }
+  },
+  {
+   "id": "riddle_sentier",
+   "chapter": "Sentier Côtier et Port 8080",
+   "title": "Résous la devinette de la borne",
+   "hint": "La borne est au milieu du Sentier Côtier.",
+   "targets": [
+    {
+     "map": "sentier_cotier",
+     "x": 12,
+     "y": 25
+    }
+   ],
+   "done": {
+    "flag": "riddle_sentier_done"
+   },
+   "available": {
+    "flag": "badge_vent"
+   },
+   "optional": true
+  },
+  {
+   "id": "free_cargos",
+   "chapter": "Sentier Côtier et Port 8080",
+   "title": "Libère les cargos au checkpoint du Port 8080",
+   "hint": "Bats les deux agents de l'AIACT au checkpoint nord du port.",
+   "targets": [
+    {
+     "map": "port_8080",
+     "x": 29,
+     "y": 11
+    }
+   ],
+   "done": {
+    "flag": "cargo_freed"
+   },
+   "available": {
+    "flag": "badge_vent"
+   }
+  },
+  {
+   "id": "arc_puzzle",
+   "chapter": "Sentier Côtier et Port 8080",
+   "title": "Reproduis le motif du Benchmark ARC-AGI",
+   "hint": "Le motif de départ doit être copié sur la grille.",
+   "targets": [
+    {
+     "map": "bench_arcagi",
+     "x": 9,
+     "y": 10
+    }
+   ],
+   "done": {
+    "flag": "arc_solved"
+   },
+   "available": {
+    "flag": "cargo_freed"
+   }
+  },
+  {
+   "id": "badge_raisonnement",
+   "chapter": "Sentier Côtier et Port 8080",
+   "title": "Bats Demis Hassabyte : Badge Raisonnement",
+   "hint": "Le badge ouvre la Route des Câbles Sous-Marins.",
+   "targets": [
+    {
+     "map": "bench_arcagi",
+     "x": 9,
+     "y": 5
+    }
+   ],
+   "done": {
+    "flag": "badge_raisonnement"
+   },
+   "available": {
+    "flag": "arc_solved"
+   }
+  },
+  {
+   "id": "meet_hintend",
+   "chapter": "Dunes des Datacenters",
+   "title": "Rejoins l'oasis des Dunes : Geoffrey Hintend t'attend",
+   "hint": "Route des Câbles Sous-Marins, à l'ouest du port.",
+   "targets": [
+    {
+     "map": "dunes_datacenters",
+     "x": 13,
+     "y": 31
+    }
+   ],
+   "done": {
+    "flag": "hintend_met"
+   },
+   "available": {
+    "flag": "badge_raisonnement"
+   }
+  },
+  {
+   "id": "jensen_mont",
+   "chapter": "Dunes des Datacenters",
+   "title": "Grimpe au Mont GPU voir Jensen Cuir",
+   "hint": "Une H100 offerte t'attend au sommet.",
+   "targets": [
+    {
+     "map": "mont_gpu",
+     "x": 20,
+     "y": 7
+    }
+   ],
+   "done": {
+    "flag": "jensen_gift"
+   },
+   "available": {
+    "flag": "hintend_met"
+   },
+   "optional": true
+  },
+  {
+   "id": "swe_puzzle",
+   "chapter": "Dunes des Datacenters",
+   "title": "Débugge les trois portes du Benchmark SWE-bench",
+   "hint": "Une caisse sur chaque plaque, de bas en haut.",
+   "targets": [
+    {
+     "map": "bench_swebench",
+     "x": 9,
+     "y": 18
+    }
+   ],
+   "done": {
+    "flag": "swe_g3"
+   },
+   "available": {
+    "flag": "hintend_met"
+   }
+  },
+  {
+   "id": "badge_patch",
+   "chapter": "Dunes des Datacenters",
+   "title": "Bats Ada Patchwell : Badge Patch",
+   "hint": "Le badge ouvre la sortie Est des Dunes.",
+   "targets": [
+    {
+     "map": "bench_swebench",
+     "x": 9,
+     "y": 5
+    }
+   ],
+   "done": {
+    "flag": "badge_patch"
+   },
+   "available": {
+    "flag": "swe_g3"
+   }
+  },
+  {
+   "id": "bureau",
+   "chapter": "Conformité-Capitale",
+   "title": "Obtiens le laissez-passer de la Route de la Bureaucratie",
+   "hint": "Guichets 0 à 3, dans l'ordre : tickets, tampons.",
+   "targets": [
+    {
+     "map": "route_bureaucratie",
+     "x": 36,
+     "y": 13
+    }
+   ],
+   "done": {
+    "flag": "bureau_pass"
+   },
+   "available": {
+    "flag": "badge_patch"
+   }
+  },
+  {
+   "id": "meet_fork",
+   "chapter": "Conformité-Capitale",
+   "title": "Retrouve la Résistance à la Laverie Conforme",
+   "hint": "Camarade Fork se cache dans le Hub de la Capitale.",
+   "targets": [
+    {
+     "map": "hub_capitale",
+     "x": 4,
+     "y": 6
+    }
+   ],
+   "done": {
+    "flag": "fork_briefed"
+   },
+   "available": {
+    "flag": "bureau_pass"
+   }
+  },
+  {
+   "id": "service_yard",
+   "chapter": "Conformité-Capitale",
+   "title": "Ouvre la cour de service de la Tour",
+   "hint": "Pousse les caisses de dossiers sur les deux plaques.",
+   "targets": [
+    {
+     "map": "conformite_capitale",
+     "x": 52,
+     "y": 40
+    }
+   ],
+   "done": {
+    "flag": "tour_access"
+   },
+   "available": {
+    "flag": "fork_briefed"
+   }
+  },
+  {
+   "id": "tower_stamps",
+   "chapter": "Conformité-Capitale",
+   "title": "Monte la Tour : Salle des Tampons et Archives",
+   "hint": "Résous les énigmes de caisses pour ouvrir les grilles.",
+   "targets": [
+    {
+     "map": "tour_conformite",
+     "x": 14,
+     "y": 34
+    }
+   ],
+   "done": {
+    "flag": "tc_b2"
+   },
+   "available": {
+    "flag": "tour_access"
+   }
+  },
+  {
+   "id": "beat_greffiere",
+   "chapter": "Conformité-Capitale",
+   "title": "Bats la Greffière Article 52",
+   "hint": "Premier des trois boss de la Tour.",
+   "targets": [
+    {
+     "map": "tour_conformite",
+     "x": 14,
+     "y": 21
+    }
+   ],
+   "done": {
+    "flag": "trainer_greffiere_52_defeated"
+   },
+   "available": {
+    "flag": "tc_b2"
+   }
+  },
+  {
+   "id": "beat_cookie_2",
+   "chapter": "Conformité-Capitale",
+   "title": "Bats l'Inspecteur Cookie (encore)",
+   "hint": "Il a changé la bannière, pas les cookies.",
+   "targets": [
+    {
+     "map": "tour_conformite",
+     "x": 14,
+     "y": 15
+    }
+   ],
+   "done": {
+    "flag": "trainer_cookie_ch5_defeated"
+   },
+   "available": {
+    "flag": "trainer_greffiere_52_defeated"
+   }
+  },
+  {
+   "id": "beat_moratoire",
+   "chapter": "Conformité-Capitale",
+   "title": "Affronte la Directrice Ombeline Moratoire",
+   "hint": "Tout en haut de la Tour.",
+   "targets": [
+    {
+     "map": "tour_conformite",
+     "x": 14,
+     "y": 6
+    }
+   ],
+   "done": {
+    "flag": "moratoire_beaten"
+   },
+   "available": {
+    "flag": "trainer_cookie_ch5_defeated"
+   }
+  },
+  {
+   "id": "agi_wake",
+   "chapter": "Conformité-Capitale",
+   "title": "Assiste au réveil d'AGI au Coffre des Scellés",
+   "hint": "Prends l'escalier derrière la Directrice.",
+   "targets": [
+    {
+     "map": "coffre_scelles",
+     "x": 15,
+     "y": 22
+    }
+   ],
+   "done": {
+    "flag": "agi_failed"
+   },
+   "available": {
+    "flag": "moratoire_beaten"
+   }
+  },
+  {
+   "id": "meet_hintend_2",
+   "chapter": "Épilogue",
+   "title": "Rejoins Geoffrey Hintend au Temple de l'Attention",
+   "hint": "La sortie Est de la Capitale est enfin ouverte.",
+   "targets": [
+    {
+     "map": "temple_attention",
+     "x": 19,
+     "y": 25
+    }
+   ],
+   "done": {
+    "flag": "temple_hintend_met"
+   },
+   "available": {
+    "flag": "agi_failed"
+   }
+  },
+  {
+   "id": "open_temple",
+   "chapter": "Épilogue",
+   "title": "Réponds à la stèle pour ouvrir le Temple",
+   "hint": "Que faut-il ? De l'attention.",
+   "targets": [
+    {
+     "map": "temple_attention",
+     "x": 19,
+     "y": 24
+    }
+   ],
+   "done": {
+    "flag": "temple_open"
+   },
+   "available": {
+    "flag": "temple_hintend_met"
+   }
+  },
+  {
+   "id": "meet_transformer",
+   "chapter": "Épilogue",
+   "title": "Monte à l'autel : rencontre Transformer",
+   "hint": "Niveau 50. Emporte une Clé Enterprise.",
+   "targets": [
+    {
+     "map": "temple_attention",
+     "x": 18,
+     "y": 5
+    }
+   ],
+   "done": {
+    "flag": "transformer_met"
+   },
+   "available": {
+    "flag": "temple_open"
+   }
+  },
+  {
+   "id": "final_phone",
+   "chapter": "Épilogue",
+   "title": "Regarde le téléphone sur l'autel",
+   "hint": "Chargement : 3 %.",
+   "targets": [
+    {
+     "map": "temple_attention",
+     "x": 21,
+     "y": 9
+    }
+   ],
+   "done": {
+    "flag": "game_complete"
+   },
+   "available": {
+    "flag": "transformer_met"
+   }
+  }
+ ]
+}

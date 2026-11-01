@@ -1,0 +1,30 @@
+/* Persistent status looks on the model art. Transforms and opacity only. */
+.bt-stfx { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.bt-stfx > * { position: absolute; display: block; font-family: var(--font-mono); }
+.st-puff { left: 38%; bottom: 40%; width: 18%; aspect-ratio: 1; background: var(--paper); border: 3px solid var(--ink); border-radius: 50%; opacity: 0; animation: st-steam 1400ms linear infinite; }
+.st-puff:nth-child(2) { left: 52%; animation-delay: 450ms; }
+.st-puff:nth-child(3) { left: 28%; animation-delay: 900ms; }
+@keyframes st-steam { 0% { transform: translateY(0) scale(0.5); opacity: 0; } 20% { opacity: 1; } 100% { transform: translateY(-130%) scale(1.4); opacity: 0; } }
+.bt-mcard[data-status='overheat'] .bt-mart svg { animation: st-heat 600ms steps(2) infinite; }
+@keyframes st-heat { 50% { transform: translate(2px, -1px); filter: drop-shadow(3px 0 0 var(--red)); } }
+.bt-mcard[data-status='hallucinating'] .bt-mart svg { animation: st-wobble 900ms ease-in-out infinite; }
+@keyframes st-wobble { 0%, 100% { transform: rotate(-4deg) skewX(3deg); } 50% { transform: rotate(4deg) skewX(-3deg) scale(1.03); } }
+.st-q { color: var(--pink); font-size: 1.6em; text-shadow: 2px 2px 0 var(--ink); animation: st-float 1500ms linear infinite; opacity: 0; top: 18%; left: 12%; }
+.st-q:nth-child(2) { left: 70%; animation-delay: 500ms; }
+.st-q:nth-child(3) { left: 42%; top: 8%; animation-delay: 1000ms; color: var(--blue); }
+@keyframes st-float { 0% { transform: translateY(20%) rotate(-10deg); opacity: 0; } 25% { opacity: 1; } 100% { transform: translateY(-80%) rotate(14deg); opacity: 0; } }
+.st-glass { right: 4%; top: 4%; width: 22%; height: 30%; animation: st-flip 2400ms steps(1) infinite; transform-origin: center; }
+@keyframes st-flip { 0% { transform: rotate(0); } 50% { transform: rotate(180deg); } }
+.bt-mcard[data-status='rate_limited'] .bt-mart svg { filter: saturate(0.6); }
+.st-zzz { left: 8%; top: 8%; font-size: 1.5em; color: var(--blue); text-shadow: 2px 2px 0 var(--ink); animation: st-float 1800ms linear infinite; }
+.st-wrench { right: 6%; bottom: 6%; width: 26%; height: 26%; animation: st-swing 800ms ease-in-out infinite alternate; }
+@keyframes st-swing { from { transform: rotate(-20deg); } to { transform: rotate(25deg); } }
+.bt-mcard[data-status='maintenance'] .bt-mart svg { filter: grayscale(0.5); }
+.st-censor { left: -2%; right: -2%; top: 30%; height: 16%; background: var(--ink); color: var(--paper); display: grid; place-items: center; font-size: 0.8em; letter-spacing: 0.2em; animation: st-twitch 1600ms steps(1) infinite; }
+@keyframes st-twitch { 0% { transform: translateX(0); } 70% { transform: translateX(3px); } 80% { transform: translateX(-3px); } }
+.st-strike { left: -10%; right: -10%; top: 48%; height: 6px; background: var(--ink-3); border-block: 2px solid var(--paper); transform: rotate(-22deg); }
+.st-obsolete { left: 6%; bottom: 8%; padding: 0.1em 0.4em; font-size: 0.75em; color: var(--ink-3); border: 2px solid var(--ink-3); background: var(--paper); transform: rotate(-5deg); }
+.bt-mcard[data-status='deprecated'] .bt-mart svg { filter: grayscale(0.9) contrast(0.85); }
+.st-503 { left: 50%; top: 42%; padding: 0.05em 0.35em; font-size: 2em; font-weight: 800; color: var(--red); background: var(--paper); border: 4px solid var(--red); transform: translate(-50%, -50%) rotate(-10deg); box-shadow: 3px 3px 0 var(--ink); animation: st-blink 1100ms steps(1) infinite; }
+@keyframes st-blink { 0% { opacity: 1; } 60% { opacity: 0.35; } 70% { opacity: 1; } }
+.bt-mcard[data-status='api_outage'] .bt-mart svg { filter: saturate(0.4) contrast(1.1); }

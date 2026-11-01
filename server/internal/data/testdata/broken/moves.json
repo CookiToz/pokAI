@@ -1,0 +1,1 @@
+{ "moves": [ { "id": "prompt", "type": "chat", "category": "damage", "accuracy": 100 } ] }

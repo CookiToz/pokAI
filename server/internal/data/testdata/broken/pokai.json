@@ -1,0 +1,10 @@
+{ "lines": [
+  { "id": "claude", "dexNo": 1, "rarity": "common", "catchDifficulty": 2,
+    "traits": [ { "id": "polite", "tokens": ["be_polite", "nope_token"] } ],
+    "forms": [
+      { "id": "claude_haiku", "stage": 1, "types": ["chat"], "licence": "proprietary",
+        "learnset": [ { "level": 1, "move": "prompt" }, { "level": 5, "move": "ghost_move" } ],
+        "evolutions": [ { "to": "claude_opus", "level": 36 } ] },
+      { "id": "claude_haiku", "stage": 1, "types": ["chat"], "licence": "proprietary", "learnset": [ { "level": 1, "move": "prompt" } ], "evolutions": [] }
+    ] }
+] }

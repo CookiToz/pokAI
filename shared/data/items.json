@@ -1,0 +1,99 @@
+{
+  "items": [
+    {
+      "id": "api_key_free",
+      "name": "Clé API Gratuite",
+      "kind": "api_key",
+      "price": 200,
+      "keyTier": "free",
+      "description": "Pour onboarder un PokAI. 4 cartes en main, 1 indice. Limitée à 3 requêtes par minute."
+    },
+    {
+      "id": "api_key_pro",
+      "name": "Clé API Pro",
+      "kind": "api_key",
+      "price": 800,
+      "keyTier": "pro",
+      "description": "Onboarding : 5 cartes en main, 2 indices. 20 € par mois, sans engagement (en théorie)."
+    },
+    {
+      "id": "api_key_enterprise",
+      "name": "Clé API Enterprise",
+      "kind": "api_key",
+      "price": 3500,
+      "keyTier": "enterprise",
+      "description": "Onboarding : 6 cartes, 3 indices, une nouvelle pioche. « Contactez notre équipe commerciale. »"
+    },
+    {
+      "id": "cafe",
+      "name": "Café",
+      "kind": "heal",
+      "price": 100,
+      "heal": 0.2,
+      "description": "Rend 20 % du Contexte. Le carburant de tout projet IA."
+    },
+    {
+      "id": "red_bull",
+      "name": "Red Bull",
+      "kind": "heal",
+      "price": 350,
+      "heal": 0.6,
+      "description": "Rend 60 % du Contexte. Pour les nuits de hackathon."
+    },
+    {
+      "id": "full_restart",
+      "name": "Redémarrage complet",
+      "kind": "heal",
+      "price": 800,
+      "heal": 1,
+      "description": "Rend tout le Contexte. « Vous avez essayé de l'éteindre et de le rallumer ? »"
+    },
+    {
+      "id": "hotfix",
+      "name": "Hotfix",
+      "kind": "status_heal",
+      "price": 150,
+      "cures": "all",
+      "description": "Soigne un statut. Déployé en prod sans relecture."
+    },
+    {
+      "id": "clear_cache",
+      "name": "Vider le cache",
+      "kind": "status_heal",
+      "price": 600,
+      "cures": "all",
+      "heal": 1,
+      "description": "Soigne tout : statut et Contexte. En combat, +1 Débit."
+    },
+    {
+      "id": "h100",
+      "name": "H100",
+      "kind": "boost",
+      "price": 5000,
+      "levels": 1,
+      "description": "Un GPU flambant neuf. +1 niveau. Plus tu en achètes, plus tu économises."
+    },
+    {
+      "id": "dataset",
+      "name": "Dataset",
+      "kind": "boost",
+      "price": 1500,
+      "xp": 1500,
+      "description": "+1 500 XP. Données « librement accessibles sur Internet »."
+    },
+    {
+      "id": "certificat_inutile",
+      "name": "Certificat inutile",
+      "kind": "key_item",
+      "price": 0,
+      "description": "Formation « Prompt Millionnaire ». Leçon n° 1 : « Sois précis. » Ne sert à rien."
+    },
+    {
+      "id": "vibeur_license",
+      "name": "Licence de Vibeur",
+      "kind": "key_item",
+      "price": 0,
+      "description": "Signée par Andrej Kartpathy. Autorise à ne pas lire le code."
+    }
+  ]
+}

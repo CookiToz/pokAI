@@ -1,0 +1,62 @@
+{
+ "id": "merch_swag",
+ "name": "Merch & Swag",
+ "width": 11,
+ "height": 8,
+ "rows": [
+  "###a#######",
+  "#hh+hhh+hh#",
+  "#+++++++++#",
+  "#+++NNN+++#",
+  "#+++++++++#",
+  "#t+++++++t#",
+  "#l+++++++l#",
+  "#####xx####"
+ ],
+ "legend": {
+  "#": "wall",
+  "+": "floor_tile",
+  "N": "counter",
+  "P": "pc",
+  "h": "shelf",
+  "l": "plant",
+  "x": "exit_mat",
+  "G": "gpu_crate",
+  "R": "server_rack",
+  "t": "table",
+  "K": "carpet",
+  "k": "counter",
+  "a": "poster_aiact"
+ },
+ "npcs": [
+  {
+   "id": "fashion_clerk",
+   "sprite": "fashion_clerk",
+   "x": 5,
+   "y": 2,
+   "facing": "down",
+   "dialogue": "fashion_clerk_talk"
+  }
+ ],
+ "warps": [
+  {
+   "x": 5,
+   "y": 7,
+   "to": "latentia_city",
+   "toX": 50,
+   "toY": 29,
+   "facing": "down"
+  },
+  {
+   "x": 6,
+   "y": 7,
+   "to": "latentia_city",
+   "toX": 50,
+   "toY": 29,
+   "facing": "down"
+  }
+ ],
+ "triggers": [],
+ "kind": "interior",
+ "music": "interior"
+}

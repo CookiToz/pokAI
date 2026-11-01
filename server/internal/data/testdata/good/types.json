@@ -1,0 +1,6 @@
+{ "types": [
+  { "id": "chat", "name": "Chat", "color": "#fff" }, { "id": "code", "name": "Code", "color": "#0f0" },
+  { "id": "reasoning", "name": "Raisonnement", "color": "#00f" }, { "id": "media", "name": "Média", "color": "#f0f" },
+  { "id": "agent", "name": "Agent", "color": "#ff0" }, { "id": "chaos", "name": "Chaos", "color": "#f00" },
+  { "id": "legacy", "name": "Legacy", "color": "#888" }
+], "chart": { "code": { "chat": 2, "agent": 2, "code": 0.5 } } }

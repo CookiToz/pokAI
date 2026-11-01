@@ -1,0 +1,54 @@
+{
+ "id": "store_port",
+ "name": "Magasin du Port",
+ "width": 10,
+ "height": 7,
+ "rows": [
+  "#hh#hh#hh#",
+  "#++++++++#",
+  "#h++++++h#",
+  "#++NNNNN+#",
+  "#++++++++#",
+  "#l++++++l#",
+  "####xx####"
+ ],
+ "legend": {
+  "#": "wall",
+  "+": "floor_tile",
+  "N": "counter",
+  "h": "shelf",
+  "l": "plant",
+  "x": "exit_mat"
+ },
+ "npcs": [
+  {
+   "id": "clerk",
+   "sprite": "clerk",
+   "x": 5,
+   "y": 2,
+   "facing": "down",
+   "dialogue": "clerk_1"
+  }
+ ],
+ "warps": [
+  {
+   "x": 4,
+   "y": 6,
+   "to": "port_8080",
+   "toX": 41,
+   "toY": 32,
+   "facing": "down"
+  },
+  {
+   "x": 5,
+   "y": 6,
+   "to": "port_8080",
+   "toX": 41,
+   "toY": 32,
+   "facing": "down"
+  }
+ ],
+ "triggers": [],
+ "kind": "interior",
+ "music": "interior"
+}

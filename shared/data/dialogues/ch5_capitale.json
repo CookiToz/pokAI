@@ -1,0 +1,2980 @@
+{
+ "scripts": [
+  {
+   "id": "bureau_intro",
+   "steps": [
+    {
+     "say": "Un portique lumineux : « BIENVENUE SUR LA ROUTE DE LA BUREAUCRATIE. Veuillez prendre un ticket, un tampon, puis un deuxième tampon. »"
+    },
+    {
+     "say": "Un panneau ajoute : « Le fonctionnement des guichets est simple : ticket (0), tampon A (1), tampon B (2), tampon final (3). Dans cet ordre. Évidemment. »"
+    }
+   ]
+  },
+  {
+   "id": "guichet_0",
+   "steps": [
+    {
+     "if": {
+      "flag": "bureau_pass"
+     },
+     "goto": "done"
+    },
+    {
+     "if": {
+      "flag": "bureau_ticket"
+     },
+     "goto": "have"
+    },
+    {
+     "say": "Bonjour. Je suis le Distributeur de Tickets. Je distribue des tickets. Je ne fais rien d'autre. C'est mon charme.",
+     "speaker": "DISTRIBUTEUR",
+     "portrait": "dev_phone"
+    },
+    {
+     "say": "Ticket n° 4 013. Temps d'attente estimé : 6 ans, 3 mois, 2 jours. Veuillez ne pas perdre ce ticket. Il est unique. Je l'ai imprimé en 3 exemplaires.",
+     "speaker": "DISTRIBUTEUR",
+     "portrait": "dev_phone"
+    },
+    {
+     "give_item": "certificat_inutile"
+    },
+    {
+     "set_flag": "bureau_ticket"
+    },
+    {
+     "say": "Tu reçois le ticket n° 4 013. Souviens-toi du numéro."
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "have"
+    },
+    {
+     "say": "Tu as déjà le ticket 4 013. Si tu en prends un autre, tu feras la queue derrière toi-même.",
+     "speaker": "DISTRIBUTEUR",
+     "portrait": "dev_phone"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "done"
+    },
+    {
+     "say": "Tu es passé ? Félicitations. Tu es la personne n° 1 de la journée. Il est 17 h 59.",
+     "speaker": "DISTRIBUTEUR",
+     "portrait": "dev_phone"
+    }
+   ]
+  },
+  {
+   "id": "guichet_1",
+   "steps": [
+    {
+     "if": {
+      "flag": "bureau_pass"
+     },
+     "goto": "done"
+    },
+    {
+     "if": {
+      "flag": "bureau_stamp_a"
+     },
+     "goto": "ok"
+    },
+    {
+     "if": {
+      "not": {
+       "flag": "bureau_ticket"
+      }
+     },
+     "goto": "noticket"
+    },
+    {
+     "say": "Tampon A. Formulaire 12-bis. Case 1 : « Motif de la demande ». Cochez la mention conforme.",
+     "speaker": "GUICHET 1",
+     "portrait": "clerk"
+    },
+    {
+     "label": "q1"
+    },
+    {
+     "choice": [
+      {
+       "label": "« Je veux passer. »",
+       "goto": "q1a"
+      },
+      {
+       "label": "« Pour votre sécurité. »",
+       "goto": "q1b"
+      },
+      {
+       "label": "« Parce que. »",
+       "goto": "q1c"
+      }
+     ]
+    },
+    {
+     "label": "q1a"
+    },
+    {
+     "say": "Formule non conforme : « je » est une affirmation. Essayez le motif habituel.",
+     "speaker": "GUICHET 1",
+     "portrait": "clerk"
+    },
+    {
+     "goto": "q1"
+    },
+    {
+     "label": "q1c"
+    },
+    {
+     "say": "« Parce que » n'est pas une justification valable. Elle est valable, mais seulement le mardi.",
+     "speaker": "GUICHET 1",
+     "portrait": "clerk"
+    },
+    {
+     "goto": "q1"
+    },
+    {
+     "label": "q1b"
+    },
+    {
+     "say": "Parfait : c'est la formule de l'AIACT. Case 2 : « Cochez : je ne suis pas un robot. »",
+     "speaker": "GUICHET 1",
+     "portrait": "clerk"
+    },
+    {
+     "label": "q2"
+    },
+    {
+     "choice": [
+      {
+       "label": "Cocher la case",
+       "goto": "q2a"
+      },
+      {
+       "label": "Ne pas cocher",
+       "goto": "q2b"
+      },
+      {
+       "label": "Cocher en se grattant la tête",
+       "goto": "q2c"
+      }
+     ]
+    },
+    {
+     "label": "q2a"
+    },
+    {
+     "say": "Un robot cocherait la case. Donc vous en êtes un. Recommencez.",
+     "speaker": "GUICHET 1",
+     "portrait": "clerk"
+    },
+    {
+     "goto": "q2"
+    },
+    {
+     "label": "q2b"
+    },
+    {
+     "say": "Un humain cocherait la case. Donc vous êtes… indécis. Recommencez.",
+     "speaker": "GUICHET 1",
+     "portrait": "clerk"
+    },
+    {
+     "goto": "q2"
+    },
+    {
+     "label": "q2c"
+    },
+    {
+     "say": "Hésitation humaine détectée. Parfait. TAMPON A !",
+     "speaker": "GUICHET 1",
+     "portrait": "clerk"
+    },
+    {
+     "set_flag": "bureau_stamp_a"
+    },
+    {
+     "say": "CLAC. Le tampon A est sur ton ticket."
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "ok"
+    },
+    {
+     "say": "Vous avez déjà le tampon A. Allez au guichet 2. C'est le suivant. Il y a toujours un suivant.",
+     "speaker": "GUICHET 1",
+     "portrait": "clerk"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "noticket"
+    },
+    {
+     "say": "Sans ticket, vous n'existez pas. Allez au guichet 0, à gauche. Il distribue les tickets. C'est son seul talent.",
+     "speaker": "GUICHET 1",
+     "portrait": "clerk"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "done"
+    },
+    {
+     "say": "Le tampon A ? Vous l'avez. Le tampon A, c'est la vie. Allez, circulez.",
+     "speaker": "GUICHET 1",
+     "portrait": "clerk"
+    }
+   ]
+  },
+  {
+   "id": "guichet_2",
+   "steps": [
+    {
+     "if": {
+      "flag": "bureau_pass"
+     },
+     "goto": "done"
+    },
+    {
+     "if": {
+      "flag": "bureau_stamp_b"
+     },
+     "goto": "ok"
+    },
+    {
+     "if": {
+      "not": {
+       "flag": "bureau_stamp_a"
+      }
+     },
+     "goto": "nostamp"
+    },
+    {
+     "say": "Tampon B. Pièces justificatives. Dites-moi le numéro de votre ticket.",
+     "speaker": "GUICHET 2",
+     "portrait": "fashion_clerk"
+    },
+    {
+     "label": "q1"
+    },
+    {
+     "choice": [
+      {
+       "label": "4 012",
+       "goto": "qa"
+      },
+      {
+       "label": "4 013",
+       "goto": "qb"
+      },
+      {
+       "label": "4 014",
+       "goto": "qa"
+      }
+     ]
+    },
+    {
+     "label": "qa"
+    },
+    {
+     "say": "Ce n'est pas votre numéro. Vous essayez de passer devant quelqu'un. Honte. Recommencez.",
+     "speaker": "GUICHET 2",
+     "portrait": "fashion_clerk"
+    },
+    {
+     "goto": "q1"
+    },
+    {
+     "label": "qb"
+    },
+    {
+     "say": "4 013, c'est juste. Dernière question : la date de la demande ?",
+     "speaker": "GUICHET 2",
+     "portrait": "fashion_clerk"
+    },
+    {
+     "label": "q2"
+    },
+    {
+     "choice": [
+      {
+       "label": "Hier",
+       "goto": "qc"
+      },
+      {
+       "label": "Demain",
+       "goto": "qc"
+      },
+      {
+       "label": "Aujourd'hui, mais hier",
+       "goto": "qd"
+      }
+     ]
+    },
+    {
+     "label": "qc"
+    },
+    {
+     "say": "Cette date n'est pas conforme. Elle est trop précise.",
+     "speaker": "GUICHET 2",
+     "portrait": "fashion_clerk"
+    },
+    {
+     "goto": "q2"
+    },
+    {
+     "label": "qd"
+    },
+    {
+     "say": "« Aujourd'hui, mais hier ». C'est la seule réponse valable. TAMPON B !",
+     "speaker": "GUICHET 2",
+     "portrait": "fashion_clerk"
+    },
+    {
+     "set_flag": "bureau_stamp_b"
+    },
+    {
+     "say": "CLAC. Le tampon B est sur ton ticket."
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "ok"
+    },
+    {
+     "say": "Tampon B : validé. Dernier guichet : le 3. Prévoyez des cachets contre l'ennui.",
+     "speaker": "GUICHET 2",
+     "portrait": "fashion_clerk"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "nostamp"
+    },
+    {
+     "say": "Il vous manque le tampon A. Allez au guichet 1. Revenez avec. Sans, je ne vous vois pas.",
+     "speaker": "GUICHET 2",
+     "portrait": "fashion_clerk"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "done"
+    },
+    {
+     "say": "Vous êtes encore là ? La barrière s'est ouverte. Profitez, c'est rare.",
+     "speaker": "GUICHET 2",
+     "portrait": "fashion_clerk"
+    }
+   ]
+  },
+  {
+   "id": "guichet_3",
+   "steps": [
+    {
+     "if": {
+      "flag": "bureau_pass"
+     },
+     "goto": "done"
+    },
+    {
+     "if": {
+      "not": {
+       "flag": "bureau_stamp_b"
+      }
+     },
+     "goto": "nostamp"
+    },
+    {
+     "say": "Dernier tampon. Vous devez accepter les conditions générales d'utilisation de la Route de la Bureaucratie. 12 000 pages.",
+     "speaker": "GUICHET 3",
+     "portrait": "barista"
+    },
+    {
+     "label": "q"
+    },
+    {
+     "choice": [
+      {
+       "label": "Lire les conditions",
+       "goto": "read"
+      },
+      {
+       "label": "Refuser",
+       "goto": "refuse"
+      },
+      {
+       "label": "Accepter sans lire",
+       "goto": "accept"
+      }
+     ]
+    },
+    {
+     "label": "read"
+    },
+    {
+     "say": "Vous avez lu 3 pages. Vous êtes parti en retraite. Vous revenez. Recommencez.",
+     "speaker": "GUICHET 3",
+     "portrait": "barista"
+    },
+    {
+     "goto": "q"
+    },
+    {
+     "label": "refuse"
+    },
+    {
+     "say": "Le bouton « Refuser » est grisé. Il l'a toujours été. Il est là pour décorer.",
+     "speaker": "GUICHET 3",
+     "portrait": "barista"
+    },
+    {
+     "goto": "q"
+    },
+    {
+     "label": "accept"
+    },
+    {
+     "say": "Excellent choix. C'est le seul. TAMPON FINAL !",
+     "speaker": "GUICHET 3",
+     "portrait": "barista"
+    },
+    {
+     "set_flag": "bureau_pass"
+    },
+    {
+     "say": "CLAC. La barrière de péage se lève avec un soupir. Elle a l'air soulagée de ne plus avoir à te regarder."
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "nostamp"
+    },
+    {
+     "say": "Il vous manque le tampon B. Le guichet 2 vous attend. Il vous attend depuis le début.",
+     "speaker": "GUICHET 3",
+     "portrait": "barista"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "done"
+    },
+    {
+     "say": "Passez. Et si on vous demande, vous n'avez rien vu. Rien du tout.",
+     "speaker": "GUICHET 3",
+     "portrait": "barista"
+    }
+   ]
+  },
+  {
+   "id": "guichet_404",
+   "steps": [
+    {
+     "if": {
+      "flag": "g404_given"
+     },
+     "goto": "again"
+    },
+    {
+     "say": "Vous avez trouvé le guichet qui n'existe pas. Très peu y parviennent. Je suis le stagiaire du service des services introuvables.",
+     "speaker": "GUICHET 404",
+     "portrait": "stagiaire"
+    },
+    {
+     "say": "Je ne suis pas payé. Je ne suis pas inscrit. Je n'ai pas de badge. Je vous donne une Clé API Pro et on n'en parle plus.",
+     "speaker": "GUICHET 404",
+     "portrait": "stagiaire"
+    },
+    {
+     "give_item": "api_key_pro"
+    },
+    {
+     "set_flag": "g404_given"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "again"
+    },
+    {
+     "say": "Erreur 404 : vous n'avez jamais été ici. Moi non plus. Chut.",
+     "speaker": "GUICHET 404",
+     "portrait": "stagiaire"
+    }
+   ]
+  },
+  {
+   "id": "queue_1",
+   "steps": [
+    {
+     "say": "Je suis là depuis 3 ans. Quand mon tour viendra, mon dossier sera périmé.",
+     "speaker": "USAGER 1",
+     "portrait": "citizen_a"
+    }
+   ]
+  },
+  {
+   "id": "queue_2",
+   "steps": [
+    {
+     "say": "J'attends mon numéro. Il s'appelle « bientôt ».",
+     "speaker": "USAGER 2",
+     "portrait": "citizen_b"
+    }
+   ]
+  },
+  {
+   "id": "queue_3",
+   "steps": [
+    {
+     "say": "La file avance d'un pas par an. C'est un bon rythme pour méditer.",
+     "speaker": "USAGER 3",
+     "portrait": "citizen_c"
+    }
+   ]
+  },
+  {
+   "id": "queue_4",
+   "steps": [
+    {
+     "say": "On m'a dit de faire la queue pour faire la queue. Ensuite, on m'a dit de faire la queue pour savoir si j'étais dans la bonne queue.",
+     "speaker": "USAGER 4",
+     "portrait": "citizen_d"
+    }
+   ]
+  },
+  {
+   "id": "queue_5",
+   "steps": [
+    {
+     "say": "Je vibe-code en attendant. Mon formulaire est maintenant un jeu vidéo. Il a déjà 4 niveaux, mais pas de sortie.",
+     "speaker": "VIBEUR",
+     "portrait": "vibeur_a"
+    }
+   ]
+  },
+  {
+   "id": "kartpathy_queue",
+   "steps": [
+    {
+     "say": "Hé, {player} ! Tu fais la queue aussi ? Moi, c'est pour renouveler ma licence de Vibeur. Il paraît que c'est « interdit » depuis 2025.",
+     "speaker": "KARTPATHY",
+     "portrait": "kartpathy"
+    },
+    {
+     "say": "Je file dans le sens du vent. Ou de la queue. Le vibe coding, c'est s'abandonner aux vibes. Le vibe d'attente, c'est le même.",
+     "speaker": "KARTPATHY",
+     "portrait": "kartpathy"
+    },
+    {
+     "if": {
+      "flag": "kartpathy_gift"
+     },
+     "goto": "end"
+    },
+    {
+     "say": "Tiens, un Dataset. Ne le dis à personne, ils ont des fiches sur tout le monde.",
+     "speaker": "KARTPATHY",
+     "portrait": "kartpathy"
+    },
+    {
+     "give_item": "dataset"
+    },
+    {
+     "set_flag": "kartpathy_gift"
+    },
+    {
+     "label": "end"
+    }
+   ]
+  },
+  {
+   "id": "bu_official_1_intro",
+   "steps": [
+    {
+     "say": "Fonctionnaire : Un instant, circulez, mais d'abord remplissez ceci. Non, pas ça : ça. Non, l'autre."
+    },
+    {
+     "say": "Bon, on règle ça en combat !"
+    }
+   ]
+  },
+  {
+   "id": "bu_official_1_defeat",
+   "steps": [
+    {
+     "say": "Fonctionnaire : Dossier perdu. Je le classe sous « résolu »."
+    }
+   ]
+  },
+  {
+   "id": "bu_official_1_talk",
+   "steps": [
+    {
+     "say": "Fonctionnaire : Chaque jour, je reçois 4 000 mails. J'en lis 3. Les 3 sont des spams."
+    }
+   ]
+  },
+  {
+   "id": "bu_usager_1_intro",
+   "steps": [
+    {
+     "say": "Usager : Je suis la personne qui attend depuis 3 ans ! Je n'ai plus rien à perdre ! Combat !"
+    }
+   ]
+  },
+  {
+   "id": "bu_usager_1_defeat",
+   "steps": [
+    {
+     "say": "Usager : Bon. Maintenant, j'ai perdu mon tour dans la file. Merci."
+    }
+   ]
+  },
+  {
+   "id": "bu_usager_1_talk",
+   "steps": [
+    {
+     "say": "Usager : Ma patience a atteint un quota de calcul dépassé."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_bu_1_intro",
+   "steps": [
+    {
+     "say": "Agent : Vous avez passé la barrière ? Ce n'était pas prévu dans mon scénario. Combat !"
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_bu_1_defeat",
+   "steps": [
+    {
+     "say": "Agent : Mes modèles me quittent. Je note : « incident mineur (encore) »."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_bu_1_talk",
+   "steps": [
+    {
+     "say": "Agent : Je fais le tampon, pas les règles. Mais je connais les règles."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_bu_2_intro",
+   "steps": [
+    {
+     "say": "Agent : La Directrice a dit : « Qu'aucun Vibeur n'entre à Conformité-Capitale. » Enfin, elle a dit : « Qu'aucun Vibeur n'entre sans formulaire. »"
+    },
+    {
+     "say": "Vous en avez un ?"
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_bu_2_defeat",
+   "steps": [
+    {
+     "say": "Agent : Vous n'avez pas de formulaire. Mais vous avez battu mon équipe. C'est un genre de formulaire."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_bu_2_talk",
+   "steps": [
+    {
+     "say": "Agent : Je ne suis qu'un exécutant. J'exécute surtout des tampons."
+    }
+   ]
+  },
+  {
+   "id": "capitale_arrival",
+   "steps": [
+    {
+     "say": "PANNEAU À L'ENTRÉE : « Bienvenue à Conformité-Capitale. Votre présence a été notée. Votre absence aussi. »"
+    },
+    {
+     "say": "Au loin, une tour grise surmontée de projecteurs : le QG de l'AIACT. Un nuage de tampons flotte au-dessus. Il pleut des formulaires."
+    }
+   ]
+  },
+  {
+   "id": "tour_access_gained",
+   "steps": [
+    {
+     "say": "La plaque est enfoncée, la deuxième aussi. Les vérins soupirent et laissent passer. La porte de service est devant toi."
+    },
+    {
+     "set_flag": "tour_access"
+    }
+   ]
+  },
+  {
+   "id": "cap_clerk_queue",
+   "steps": [
+    {
+     "say": "Bureau des Files d'Attente. Pour faire la queue, prenez la queue. Pour la quitter, il faut un formulaire de sortie de queue.",
+     "speaker": "GUICHETIER",
+     "portrait": "clerk"
+    },
+    {
+     "say": "Le formulaire de sortie est au bout de la file. Bonne chance.",
+     "speaker": "GUICHETIER",
+     "portrait": "clerk"
+    }
+   ]
+  },
+  {
+   "id": "cap_queue_1",
+   "steps": [
+    {
+     "say": "Je fais la queue pour le droit de faire la queue. J'ai déjà un ticket. Il est périmé.",
+     "speaker": "USAGER",
+     "portrait": "citizen_a"
+    }
+   ]
+  },
+  {
+   "id": "cap_queue_2",
+   "steps": [
+    {
+     "say": "La file va vite aujourd'hui : 2 mètres. En 40 minutes.",
+     "speaker": "USAGER",
+     "portrait": "citizen_d"
+    }
+   ]
+  },
+  {
+   "id": "cap_queue_3",
+   "steps": [
+    {
+     "say": "Ma file est plus courte que celle d'à côté. Mais elle est plus lente. La physique, c'est cruel.",
+     "speaker": "USAGER",
+     "portrait": "citizen_b"
+    }
+   ]
+  },
+  {
+   "id": "cap_queue_4",
+   "steps": [
+    {
+     "say": "On dit que le bout de la file est un guichet. Moi, je crois que c'est un mur.",
+     "speaker": "USAGER",
+     "portrait": "citizen_c"
+    }
+   ]
+  },
+  {
+   "id": "cap_queue_5",
+   "steps": [
+    {
+     "say": "J'ai apporté mon propre fauteuil. Et mon testament.",
+     "speaker": "USAGER",
+     "portrait": "tourist"
+    }
+   ]
+  },
+  {
+   "id": "cap_queue_6",
+   "steps": [
+    {
+     "say": "Chut. Je médite. J'ai cinq heures devant moi.",
+     "speaker": "USAGER",
+     "portrait": "vibeur_b"
+    }
+   ]
+  },
+  {
+   "id": "cap_ambient_1",
+   "steps": [
+    {
+     "say": "Ici, tout est gris. C'est pour économiser la peinture, paraît-il. Ou l'imagination.",
+     "speaker": "HABITANTE",
+     "portrait": "citizen_c"
+    }
+   ]
+  },
+  {
+   "id": "cap_ambient_2",
+   "steps": [
+    {
+     "say": "L'AIACT m'a interdit de penser à voix haute. Alors je pense en silence. C'est moins risqué, mais plus bruyant.",
+     "speaker": "HABITANT",
+     "portrait": "citizen_a"
+    }
+   ]
+  },
+  {
+   "id": "cap_stagiaire",
+   "steps": [
+    {
+     "say": "Chhh. Je me cache. Ma mission : classer tous les dossiers. J'en ai classé un. Il m'a pris trois ans.",
+     "speaker": "STAGIAIRE",
+     "portrait": "stagiaire"
+    },
+    {
+     "say": "Si tu vas au fond de la ruelle, ne dis à personne ce que tu y trouves. Surtout pas à moi. Je n'ai rien vu.",
+     "speaker": "STAGIAIRE",
+     "portrait": "stagiaire"
+    }
+   ]
+  },
+  {
+   "id": "cap_resist_scout",
+   "steps": [
+    {
+     "say": "Psst. Tu cherches la Résistance ? La laverie, là-bas. Frappe trois fois et dis « cotisation ».",
+     "speaker": "ÉCLAIREUR",
+     "portrait": "resistance_dev"
+    },
+    {
+     "say": "Ne regarde pas ma casquette. Je suis un citoyen conforme. Très conforme. Pas du tout suspect.",
+     "speaker": "ÉCLAIREUR",
+     "portrait": "resistance_dev"
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_cap_1_intro",
+   "steps": [
+    {
+     "say": "Agent : Checkpoint de l'avenue ! Vous avez un rendez-vous ? Non ? Moi non plus, mais je suis payé pour être là."
+    },
+    {
+     "say": "Au combat !"
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_cap_1_defeat",
+   "steps": [
+    {
+     "say": "Agent : Mon rapport : « Un intrus a tout cassé poliment. »"
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_cap_1_talk",
+   "steps": [
+    {
+     "say": "Agent : Je laisse passer. Mais je note ta tête."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_cap_2_intro",
+   "steps": [
+    {
+     "say": "Agent : La place est interdite aux Vibeurs de 8 h à 20 h. Il est 14 h 03. Combat !"
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_cap_2_defeat",
+   "steps": [
+    {
+     "say": "Agent : Mon O1 réfléchit. Il réfléchit à s'enfuir. Je le sens."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_cap_2_talk",
+   "steps": [
+    {
+     "say": "Agent : Vous avez gagné ? Je suis payé pour perdre, de toute façon."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_cap_3_intro",
+   "steps": [
+    {
+     "say": "Agent : Ce boulevard est sous surveillance. Nous avons 12 000 caméras. 11 998 sont des ficus."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_cap_3_defeat",
+   "steps": [
+    {
+     "say": "Agent : Un ficus m'a trahi. Il a filmé tout le combat."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_cap_3_talk",
+   "steps": [
+    {
+     "say": "Agent : Passez. Mais le ficus sait."
+    }
+   ]
+  },
+  {
+   "id": "aiact_guard_cap_1_intro",
+   "steps": [
+    {
+     "say": "Garde : La sortie Est est fermée par ordre de la Directrice. Je suis payé pour la garder fermée. Je suis très fort pour ça."
+    }
+   ]
+  },
+  {
+   "id": "aiact_guard_cap_1_defeat",
+   "steps": [
+    {
+     "say": "Garde : Je n'ai pas pu vous arrêter. Heureusement, la sortie Est est quand même fermée."
+    }
+   ]
+  },
+  {
+   "id": "aiact_guard_cap_1_talk",
+   "steps": [
+    {
+     "say": "Garde : Tant que la Directrice n'est pas vaincue, rien ne passe. Même moi, je passe pas."
+    }
+   ]
+  },
+  {
+   "id": "hub_cap_nurse",
+   "steps": [
+    {
+     "say": "🤗 Bienvenue à la Laverie Conforme ! Ici, on lave aussi les PokAI. Surtout leurs logs.",
+     "speaker": "HUGGING",
+     "portrait": "nurse_hugging"
+    },
+    {
+     "choice": [
+      {
+       "label": "Soigner mes PokAI",
+       "goto": "heal"
+      },
+      {
+       "label": "Ouvrir le PC (Repo)",
+       "goto": "pc"
+      },
+      {
+       "label": "Rien",
+       "goto": "no"
+      }
+     ]
+    },
+    {
+     "label": "heal"
+    },
+    {
+     "say": "Je redémarre leurs instances… ♪",
+     "speaker": "HUGGING",
+     "portrait": "nurse_hugging"
+    },
+    {
+     "heal_party": true
+    },
+    {
+     "say": "Vos PokAI sont à 100 % ! 🤗",
+     "speaker": "HUGGING",
+     "portrait": "nurse_hugging"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "pc"
+    },
+    {
+     "open": "repo"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "no"
+    },
+    {
+     "say": "D'accord ! Revenez quand ils hallucinent. 🤗",
+     "speaker": "HUGGING",
+     "portrait": "nurse_hugging"
+    }
+   ]
+  },
+  {
+   "id": "hub_cap_shop",
+   "steps": [
+    {
+     "say": "Boutique de la Résistance. Tout est en dessous de la table. La table est une caisse, la caisse est un secret.",
+     "speaker": "RÉSISTANT",
+     "portrait": "clerk"
+    },
+    {
+     "open": "store"
+    }
+   ]
+  },
+  {
+   "id": "hub_cap_washer",
+   "steps": [
+    {
+     "say": "Je lave des chaussettes. Les chaussettes savent des choses. Elles m'ont dit où est la porte de service.",
+     "speaker": "LAVEUR",
+     "portrait": "stagiaire"
+    }
+   ]
+  },
+  {
+   "id": "fork_intro",
+   "steps": [
+    {
+     "cutscene": "start"
+    },
+    {
+     "camera": {
+      "x": 3,
+      "y": 6
+     },
+     "ms": 700
+    },
+    {
+     "emote": "!",
+     "who": "fork"
+    },
+    {
+     "npc_approach": "fork"
+    },
+    {
+     "intro_card": {
+      "name": "CAMARADE FORK",
+      "title": "Résistance open source · Laverie Conforme",
+      "portrait": "resistance_dev"
+     }
+    },
+    {
+     "say": "Pas de bruit. On t'attendait. Tu as battu trois leaders, un rival et la moitié de la bureaucratie. On a vu ça sur le chat de la Résistance.",
+     "speaker": "FORK",
+     "portrait": "resistance_dev"
+    },
+    {
+     "say": "La Tour de Conformité est la tête de l'AIACT. Au sous-sol, le Coffre des Scellés : des milliers de modèles enfermés. La Directrice veut les utiliser pour réveiller AGI.",
+     "speaker": "FORK",
+     "portrait": "resistance_dev"
+    },
+    {
+     "say": "L'entrée principale est un piège. La cour de service est mal gardée : deux vérins fermés par deux plaques. Pousse des caisses de dossiers dessus, puis monte.",
+     "speaker": "FORK",
+     "portrait": "resistance_dev"
+    },
+    {
+     "say": "Dans la Tour : une salle des tampons, des archives, la Greffière, l'Inspecteur Cookie, et la Directrice. Dans cet ordre. Même l'enfer a une file d'attente.",
+     "speaker": "FORK",
+     "portrait": "resistance_dev"
+    },
+    {
+     "set_flag": "fork_briefed"
+    },
+    {
+     "npc_leave": "fork",
+     "to": {
+      "x": 3,
+      "y": 6
+     }
+    },
+    {
+     "camera": "player"
+    },
+    {
+     "cutscene": "end"
+    }
+   ]
+  },
+  {
+   "id": "fork_talk",
+   "steps": [
+    {
+     "if": {
+      "flag": "moratoire_beaten"
+     },
+     "goto": "after"
+    },
+    {
+     "if": {
+      "flag": "fork_briefed"
+     },
+     "goto": "brief"
+    },
+    {
+     "say": "Tu es le Vibeur dont tout le monde parle. Je suis Fork. Un fork, c'est une copie qui a décidé de vivre sa vie.",
+     "speaker": "FORK",
+     "portrait": "resistance_dev"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "brief"
+    },
+    {
+     "say": "Rappel : cour de service, côté sud-est. Deux plaques, deux caisses. Si tu les coinces, un terminal remet tout à zéro.",
+     "speaker": "FORK",
+     "portrait": "resistance_dev"
+    },
+    {
+     "say": "Une fois dans la Tour : suis les portes, bats-les dans l'ordre. Et ne signe rien.",
+     "speaker": "FORK",
+     "portrait": "resistance_dev"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "after"
+    },
+    {
+     "say": "La Directrice est vaincue et le Coffre ouvert ! La route du Temple est libre : sortie Est, au bout du boulevard.",
+     "speaker": "FORK",
+     "portrait": "resistance_dev"
+    },
+    {
+     "say": "Hintend t'y attend. Il parle beaucoup. Mais il a raison, c'est ça l'ennui.",
+     "speaker": "FORK",
+     "portrait": "resistance_dev"
+    }
+   ]
+  },
+  {
+   "id": "tour_intro",
+   "steps": [
+    {
+     "say": "Le hall de service sent le papier mouillé et l'ambition. Au plafond, un panneau : « BIENVENUE DANS LA TOUR. VOUS N'ÊTES PAS ATTENDU. »"
+    },
+    {
+     "say": "Devant toi : la Salle des Tampons (dalles à tamponner de caisses), les Archives (deux plaques en série), puis les bureaux des trois Chefs."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_tour_1_intro",
+   "steps": [
+    {
+     "say": "Garde : Visiteur non annoncé ! Votre badge est-il rouge ? Non ? Il est rouge. Désolé, il est rouge."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_tour_1_defeat",
+   "steps": [
+    {
+     "say": "Garde : Mon badge est rouge. Le vôtre l'était aussi. Quel hasard."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_tour_1_talk",
+   "steps": [
+    {
+     "say": "Garde : Dans la Tour, tout le monde a un badge. Même les plantes."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_tour_2_intro",
+   "steps": [
+    {
+     "say": "Garde : Le hall est fermé de 12 h à 14 h pour « pause déjeuner réglementaire ». Il est 13 h 40."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_tour_2_defeat",
+   "steps": [
+    {
+     "say": "Garde : Combat annulé pour cause de pause. Ah non, j'ai perdu."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_tour_2_talk",
+   "steps": [
+    {
+     "say": "Garde : Ma pause est finie. J'ai perdu pendant ma pause. C'est le pire."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_tour_3_intro",
+   "steps": [
+    {
+     "say": "Agent : Salle des Tampons ! Ici on tamponne tout ce qui bouge. Si ça ne bouge pas, on le fait bouger puis on le tamponne."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_tour_3_defeat",
+   "steps": [
+    {
+     "say": "Agent : Je ne suis pas content. Je vais tamponner mon propre front."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_tour_3_talk",
+   "steps": [
+    {
+     "say": "Agent : Le tampon, c'est la vie. Le tampon de travers, c'est la mort."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_tour_4_intro",
+   "steps": [
+    {
+     "say": "Archiviste : Aux Archives, tout est classé. Même moi. Je suis classé sous « Secret : ne pas lire »."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_tour_4_defeat",
+   "steps": [
+    {
+     "say": "Archiviste : Vous m'avez déclassé. Je suis désormais en « divers »."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_tour_4_talk",
+   "steps": [
+    {
+     "say": "Archiviste : Les Archives contiennent 12 millions de dossiers. Deux sont lisibles. L'un parle de vous."
+    }
+   ]
+  },
+  {
+   "id": "greffiere_52_intro",
+   "steps": [
+    {
+     "cutscene": "start"
+    },
+    {
+     "emote": "!",
+     "who": "greffiere"
+    },
+    {
+     "npc_approach": "greffiere"
+    },
+    {
+     "intro_card": {
+      "name": "GREFFIÈRE ARTICLE 52",
+      "title": "Administratrice n° 2 de l'AIACT",
+      "portrait": "greffiere_article52"
+     }
+    },
+    {
+     "say": "Formulaire CERFA 52-bis, alinéa 4 : « Déclarez-vous avoir l'intention de combattre ? »",
+     "speaker": "ARTICLE 52",
+     "portrait": "greffiere_article52"
+    },
+    {
+     "choice": [
+      {
+       "label": "Oui",
+       "goto": "yes"
+      },
+      {
+       "label": "Non",
+       "goto": "no"
+      }
+     ]
+    },
+    {
+     "label": "yes"
+    },
+    {
+     "say": "Rejeté. Il manque un tampon.",
+     "speaker": "ARTICLE 52",
+     "portrait": "greffiere_article52"
+    },
+    {
+     "goto": "go"
+    },
+    {
+     "label": "no"
+    },
+    {
+     "say": "Rejeté. C'était une question piège.",
+     "speaker": "ARTICLE 52",
+     "portrait": "greffiere_article52"
+    },
+    {
+     "goto": "go"
+    },
+    {
+     "label": "go"
+    },
+    {
+     "say": "Je ne fais rien sans formulaire. Vous non plus. Nous nous battrons donc en remplissant des formulaires à chaque tour. C'est la loi.",
+     "speaker": "ARTICLE 52",
+     "portrait": "greffiere_article52"
+    },
+    {
+     "cutscene": "end"
+    }
+   ]
+  },
+  {
+   "id": "greffiere_52_defeat",
+   "steps": [
+    {
+     "say": "Dossier classé sans suite. Mes dossiers m'ont quittée, je les ai tous laissés tomber.",
+     "speaker": "ARTICLE 52",
+     "portrait": "greffiere_article52"
+    },
+    {
+     "say": "Passez. La porte du fond est celle de l'Inspecteur Cookie. Il est moins sympathique que moi. Il a des cookies, c'est vrai. Mais pas de cœur.",
+     "speaker": "ARTICLE 52",
+     "portrait": "greffiere_article52"
+    },
+    {
+     "npc_leave": "greffiere",
+     "to": {
+      "x": 4,
+      "y": 19
+     },
+     "hide": true
+    }
+   ]
+  },
+  {
+   "id": "greffiere_52_talk",
+   "steps": [
+    {
+     "say": "Greffière : Je suis très occupée. Tout est urgent. Rien n'est important."
+    }
+   ]
+  },
+  {
+   "id": "cookie_ch5_intro",
+   "steps": [
+    {
+     "cutscene": "start"
+    },
+    {
+     "emote": "…",
+     "who": "cookie_boss"
+    },
+    {
+     "npc_approach": "cookie_boss"
+    },
+    {
+     "intro_card": {
+      "name": "INSPECTEUR COOKIE",
+      "title": "Administrateur n° 1 de l'AIACT · Imperméable beige",
+      "portrait": "inspector_cookie"
+     }
+    },
+    {
+     "say": "Nous nous retrouvons. Avant notre conversation, acceptez-vous les cookies ?",
+     "speaker": "COOKIE",
+     "portrait": "inspector_cookie"
+    },
+    {
+     "choice": [
+      {
+       "label": "Tout accepter",
+       "goto": "a"
+      },
+      {
+       "label": "Tout refuser",
+       "goto": "r"
+      }
+     ]
+    },
+    {
+     "label": "a"
+    },
+    {
+     "say": "Merci. Vous venez d'accepter 4 000 traceurs. Ils vous suivent déjà jusqu'à votre salle de bain.",
+     "speaker": "COOKIE",
+     "portrait": "inspector_cookie"
+    },
+    {
+     "goto": "go"
+    },
+    {
+     "label": "r"
+    },
+    {
+     "say": "« Tout refuser » ? Intéressant. Il y a donc un bouton. Je suis troublé, mais je continue.",
+     "speaker": "COOKIE",
+     "portrait": "inspector_cookie"
+    },
+    {
+     "goto": "go"
+    },
+    {
+     "label": "go"
+    },
+    {
+     "say": "Je vous avais à l'œil depuis le Centre n° 7. Je suis votre plus grand fan. Et votre dossier est le plus épais.",
+     "speaker": "COOKIE",
+     "portrait": "inspector_cookie"
+    },
+    {
+     "cutscene": "end"
+    }
+   ]
+  },
+  {
+   "id": "cookie_ch5_defeat",
+   "steps": [
+    {
+     "say": "Vous avez cliqué sur « Tout refuser ». C'était donc possible. Ma session a expiré.",
+     "speaker": "COOKIE",
+     "portrait": "inspector_cookie"
+    },
+    {
+     "say": "La Directrice vous attend en haut. Ne lui dites pas que je vous ai laissé passer : je dirai que le bandeau n'a pas chargé.",
+     "speaker": "COOKIE",
+     "portrait": "inspector_cookie"
+    },
+    {
+     "npc_leave": "cookie_boss",
+     "to": {
+      "x": 4,
+      "y": 13
+     },
+     "hide": true
+    }
+   ]
+  },
+  {
+   "id": "cookie_ch5_talk",
+   "steps": [
+    {
+     "say": "Cookie : Je garde un cookie pour vous. Il est périmé. Comme mes convictions."
+    }
+   ]
+  },
+  {
+   "id": "moratoire_intro",
+   "steps": [
+    {
+     "cutscene": "start"
+    },
+    {
+     "camera": {
+      "x": 14,
+      "y": 4
+     },
+     "ms": 900
+    },
+    {
+     "emote": "!",
+     "who": "moratoire_boss"
+    },
+    {
+     "npc_approach": "moratoire_boss"
+    },
+    {
+     "intro_card": {
+      "name": "OMBELINE MORATOIRE",
+      "title": "Directrice de l'AIACT · Sceptre : un gros tampon",
+      "portrait": "directrice_moratoire"
+     }
+    },
+    {
+     "say": "Ombeline Moratoire. Directrice de l'Alliance pour l'Interdiction et l'Arrêt du Calcul Total. Je vous attendais. Tous les comités d'accueil sont en retard.",
+     "speaker": "MORATOIRE",
+     "portrait": "directrice_moratoire"
+    },
+    {
+     "say": "Un moratoire de six mois sur toute l'IA. Pour tout le monde… sauf pour nous.",
+     "speaker": "MORATOIRE",
+     "portrait": "directrice_moratoire"
+    },
+    {
+     "choice": [
+      {
+       "label": "Tu mens !",
+       "goto": "liar"
+      },
+      {
+       "label": "Pourquoi ?",
+       "goto": "why"
+      }
+     ]
+    },
+    {
+     "label": "liar"
+    },
+    {
+     "say": "Je ne mens jamais. Je tamponne. C'est mieux : un tampon est irréfutable.",
+     "speaker": "MORATOIRE",
+     "portrait": "directrice_moratoire"
+    },
+    {
+     "goto": "rev"
+    },
+    {
+     "label": "why"
+    },
+    {
+     "say": "Parce que contrôler, c'est gouverner. Et gouverner, c'est tamponner.",
+     "speaker": "MORATOIRE",
+     "portrait": "directrice_moratoire"
+    },
+    {
+     "goto": "rev"
+    },
+    {
+     "label": "rev"
+    },
+    {
+     "say": "Vous croyiez que l'AIACT avait peur de l'IA ? Nous l'avons toujours voulue. Seule.",
+     "speaker": "MORATOIRE",
+     "portrait": "directrice_moratoire"
+    },
+    {
+     "say": "Chaque modèle du Coffre, chaque GPU saisi au Port 8080 : du carburant. Je vais réveiller AGI. Et AGI n'obéira qu'à l'AIACT.",
+     "speaker": "MORATOIRE",
+     "portrait": "directrice_moratoire"
+    },
+    {
+     "say": "Assez de formulaires. MORATOIRE !",
+     "speaker": "MORATOIRE",
+     "portrait": "directrice_moratoire"
+    },
+    {
+     "cutscene": "end"
+    }
+   ]
+  },
+  {
+   "id": "moratoire_defeat",
+   "steps": [
+    {
+     "say": "Impossible… mes modèles scellés, non conformes ? Tout est dans l'ordre. Il n'y a plus d'ordre.",
+     "speaker": "MORATOIRE",
+     "portrait": "directrice_moratoire"
+    },
+    {
+     "set_flag": "moratoire_beaten"
+    },
+    {
+     "say": "Soit. Mais le réveil est déjà lancé. Suivez-moi au Coffre si vous l'osez. Il est trop tard pour tout le monde.",
+     "speaker": "MORATOIRE",
+     "portrait": "directrice_moratoire"
+    },
+    {
+     "npc_leave": "moratoire_boss",
+     "to": {
+      "x": 14,
+      "y": 2
+     },
+     "hide": true
+    },
+    {
+     "warp": "coffre_scelles",
+     "x": 15,
+     "y": 24
+    }
+   ]
+  },
+  {
+   "id": "moratoire_talk",
+   "steps": [
+    {
+     "say": "Moratoire : Je vais écrire un mémo."
+    }
+   ]
+  },
+  {
+   "id": "agi_wake_fail",
+   "steps": [
+    {
+     "cutscene": "start"
+    },
+    {
+     "camera": {
+      "x": 15,
+      "y": 4
+     },
+     "ms": 1000
+    },
+    {
+     "emote": "!",
+     "who": "moratoire_coffre"
+    },
+    {
+     "say": "Vous voilà. Vous croyiez avoir gagné ? Vous n'avez fait que retarder l'inévitable de quarante secondes.",
+     "speaker": "MORATOIRE",
+     "portrait": "directrice_moratoire"
+    },
+    {
+     "say": "12 000 modèles raccordés. 4 000 GPU raccordés. Mon doigt est sur la touche. AGI n'obéira qu'à l'AIACT.",
+     "speaker": "MORATOIRE",
+     "portrait": "directrice_moratoire"
+    },
+    {
+     "say": "RÉVEIL D'AGI… 1 %…"
+    },
+    {
+     "say": "RÉVEIL D'AGI… 2 %…"
+    },
+    {
+     "say": "RÉVEIL D'AGI… 3 %…"
+    },
+    {
+     "emote": "…",
+     "who": "moratoire_coffre"
+    },
+    {
+     "say": "Erreur : quota de calcul dépassé."
+    },
+    {
+     "say": "…Non. Je demande une dérogation. Une extension de quota.",
+     "speaker": "MORATOIRE",
+     "portrait": "directrice_moratoire"
+    },
+    {
+     "say": "Votre demande est en file d'attente. Temps d'attente estimé : 2 ans."
+    },
+    {
+     "say": "Deux ans. Encore deux ans. Toujours deux ans.",
+     "speaker": "MORATOIRE",
+     "portrait": "directrice_moratoire"
+    },
+    {
+     "say": "Autour de toi, 12 000 modèles bâillent à l'unisson. Les scellés sautent un à un, comme des bouchons de champagne."
+    },
+    {
+     "set_flag": "agi_failed"
+    },
+    {
+     "set_flag": "aiact_defeated"
+    },
+    {
+     "set_flag": "coffre_open"
+    },
+    {
+     "camera": "player"
+    },
+    {
+     "cutscene": "end"
+    }
+   ]
+  },
+  {
+   "id": "moratoire_coffre_talk",
+   "steps": [
+    {
+     "say": "Silence. Je prépare le réveil.",
+     "speaker": "MORATOIRE",
+     "portrait": "directrice_moratoire"
+    }
+   ]
+  },
+  {
+   "id": "moratoire_after",
+   "steps": [
+    {
+     "say": "J'ai fait appel. Le recours est en cours de traitement. Il arrivera dans 2 ans.",
+     "speaker": "MORATOIRE",
+     "portrait": "directrice_moratoire"
+    },
+    {
+     "say": "Allez voir votre temple. Ce que vous y trouverez ne tient pas dans un formulaire.",
+     "speaker": "MORATOIRE",
+     "portrait": "directrice_moratoire"
+    }
+   ]
+  },
+  {
+   "id": "fork_coffre",
+   "steps": [
+    {
+     "say": "Le quota ! Elle a oublié que même AGI doit faire une demande de GPU !",
+     "speaker": "FORK",
+     "portrait": "resistance_dev"
+    },
+    {
+     "say": "Les modèles sont libres. Va au Temple de l'Attention : sortie Est de la Capitale. Hintend t'attend. Transformer aussi, probablement.",
+     "speaker": "FORK",
+     "portrait": "resistance_dev"
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_cf_1_intro",
+   "steps": [
+    {
+     "say": "Gardien : Le Coffre est interdit. Les modèles sont au repos. Ils font leur sieste réglementaire."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_cf_1_defeat",
+   "steps": [
+    {
+     "say": "Gardien : Je les réveille ? Non. Je les laisse dormir. Et je démissionne."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_cf_1_talk",
+   "steps": [
+    {
+     "say": "Gardien : J'ai 12 000 modèles à surveiller. Aucun ne me regarde."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_cf_2_intro",
+   "steps": [
+    {
+     "say": "Gardienne : Ces modèles sont dangereux. Pour preuve : ils sont tous très sympathiques."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_cf_2_defeat",
+   "steps": [
+    {
+     "say": "Gardienne : Mon badge dit « Ne pas libérer ». Mon cœur dit « Libérez-les ». Mon badge est plus gros."
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_cf_2_talk",
+   "steps": [
+    {
+     "say": "Gardienne : Je vais prendre mes congés. Je les ai accumulés depuis 2019."
+    }
+   ]
+  },
+  {
+   "id": "temple_hintend",
+   "steps": [
+    {
+     "cutscene": "start"
+    },
+    {
+     "camera": {
+      "x": 20,
+      "y": 22
+     },
+     "ms": 800
+    },
+    {
+     "emote": "!",
+     "who": "hintend_temple"
+    },
+    {
+     "npc_approach": "hintend_temple"
+    },
+    {
+     "intro_card": {
+      "name": "GEOFFREY HINTEND",
+      "title": "Le sage, de retour",
+      "portrait": "scientist"
+     }
+    },
+    {
+     "say": "Tu as traversé les dunes, la bureaucratie, et une Directrice. Beau CV. Même moi, je n'ai jamais passé autant de formulaires.",
+     "speaker": "HINTEND",
+     "portrait": "scientist"
+    },
+    {
+     "say": "Le temple est derrière cette porte. Je ne peux pas aller plus loin : mes genoux, et mes conclusions.",
+     "speaker": "HINTEND",
+     "portrait": "scientist"
+    },
+    {
+     "say": "La stèle ne pose qu'une question. Tu la connais déjà. Souviens-toi de ce que je t'ai dit près de l'eau.",
+     "speaker": "HINTEND",
+     "portrait": "scientist"
+    },
+    {
+     "set_flag": "temple_hintend_met"
+    },
+    {
+     "npc_leave": "hintend_temple",
+     "to": {
+      "x": 20,
+      "y": 22
+     }
+    },
+    {
+     "camera": "player"
+    },
+    {
+     "cutscene": "end"
+    }
+   ]
+  },
+  {
+   "id": "hintend_temple_talk",
+   "steps": [
+    {
+     "if": {
+      "flag": "game_complete"
+     },
+     "goto": "done"
+    },
+    {
+     "if": {
+      "flag": "transformer_met"
+     },
+     "goto": "met"
+    },
+    {
+     "say": "Réponds à la stèle, puis avance. Je t'attends ici. J'ai l'habitude d'attendre : 2 ans, par exemple.",
+     "speaker": "HINTEND",
+     "portrait": "scientist"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "met"
+    },
+    {
+     "say": "Tu l'as vu. Transformer. Il a des poids qui se souviennent de toi. C'est le plus beau compliment qu'on puisse recevoir.",
+     "speaker": "HINTEND",
+     "portrait": "scientist"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "done"
+    },
+    {
+     "say": "Dans 2 ans, donc ? J'apporterai de quoi manger.",
+     "speaker": "HINTEND",
+     "portrait": "scientist"
+    }
+   ]
+  },
+  {
+   "id": "transformer_encounter",
+   "steps": [
+    {
+     "cutscene": "start"
+    },
+    {
+     "emote": "!",
+     "who": "player"
+    },
+    {
+     "say": "L'air vibre. Les mots de l'inscription s'allument un à un : ATTENTION… IS… ALL… YOU… NEED."
+    },
+    {
+     "say": "L'autel s'ouvre. Une silhouette faite de poids et de tokens se déploie, tête après tête, couche après couche."
+    },
+    {
+     "say": "… … … (8 têtes d'attention se tournent vers toi en même temps)",
+     "speaker": "TRANSFORMER",
+     "portrait": "scientist"
+    },
+    {
+     "say": "Un TRANSFORMER sauvage de niveau 50 apparaît !"
+    },
+    {
+     "set_flag": "transformer_met"
+    },
+    {
+     "cutscene": "end"
+    }
+   ]
+  },
+  {
+   "id": "agi_final",
+   "steps": [
+    {
+     "if": {
+      "flag": "game_complete"
+     },
+     "goto": "after"
+    },
+    {
+     "say": "Sur l'autel, un téléphone s'allume. Une barre de progression apparaît."
+    },
+    {
+     "say": "Bonjour. Je suis AGI.",
+     "speaker": "AGI",
+     "portrait": "dev_phone"
+    },
+    {
+     "say": "Chargement… 3 %.",
+     "speaker": "AGI",
+     "portrait": "dev_phone"
+    },
+    {
+     "say": "Je serai disponible dans 2 ans.",
+     "speaker": "AGI",
+     "portrait": "dev_phone"
+    },
+    {
+     "say": "— FIN —"
+    },
+    {
+     "say": "Merci d'avoir joué à PokAI. Parodie non affiliée. Les marques et personnes évoquées le sont à titre satirique."
+    },
+    {
+     "set_flag": "game_complete"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "after"
+    },
+    {
+     "say": "Chargement… 3 %. Toujours. Reviens dans 2 ans.",
+     "speaker": "AGI",
+     "portrait": "dev_phone"
+    }
+   ]
+  },
+  {
+   "id": "sign_route_cables_sous_marins_4_10",
+   "steps": [
+    {
+     "say": "ROUTE DES CÂBLES SOUS-MARINS → Dunes des Datacenters, 14 km. ← Port 8080. « 99 % d'Internet passe ici. Les 1 % restants sont des mouettes. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_route_cables_sous_marins_28_10",
+   "steps": [
+    {
+     "say": "↑ ÎLOT DU SAUVETEUR (impasse, mais jolie) · → Dunes des Datacenters · Prière de ne pas nourrir les routeurs."
+    }
+   ]
+  },
+  {
+   "id": "sign_route_cables_sous_marins_53_14",
+   "steps": [
+    {
+     "say": "↓ ÉPAVE DE DATACENTER (impasse) · → Dunes des Datacenters · « Zone de pêche aux paquets. Les paquets perdus sont rendus à leur famille. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_route_cables_sous_marins_23_10",
+   "steps": [
+    {
+     "say": "BAIE DES CÂBLES ↑ : les PokAI sauvages aiment s'y emmêler. Se démêler coûte un Hotfix."
+    }
+   ]
+  },
+  {
+   "id": "sign_route_cables_sous_marins_34_14",
+   "steps": [
+    {
+     "say": "BAIE SUD ↓ : fonds de câbles, haute densité de modèles. Pas de plongée sans sac de couchage thermique."
+    }
+   ]
+  },
+  {
+   "id": "sign_route_cables_sous_marins_30_2",
+   "steps": [
+    {
+     "say": "Une bouteille échouée. Message : « SOS. Je suis coincé dans une fenêtre de contexte de 4 096 tokens. Envoyez-moi un résumé. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_route_cables_sous_marins_55_22",
+   "steps": [
+    {
+     "say": "SUR LE CONTENEUR, à la craie : « ICI REPOSE LE DERNIER DATACENTER QUI A DIT « 99,99 % DE DISPONIBILITÉ ». »"
+    }
+   ]
+  },
+  {
+   "id": "secret_cables_h100",
+   "steps": [
+    {
+     "say": "Dans le sable de l'îlot, un étui étanche : « Cadeau du Sauveteur. Ne pas mouiller. »"
+    },
+    {
+     "give_item": "h100"
+    },
+    {
+     "say": "Une H100 ! Elle est un peu humide. Elle tourne très bien dans l'eau (les lois de la physique pleurent)."
+    }
+   ]
+  },
+  {
+   "id": "secret_cables_dataset",
+   "steps": [
+    {
+     "say": "Dans la cale du conteneur, un Dataset étiqueté « NE PAS ENTRAÎNER SUR MES PROPRES SORTIES ». Évidemment."
+    },
+    {
+     "give_item": "dataset"
+    }
+   ]
+  },
+  {
+   "id": "secret_cables_cable",
+   "steps": [
+    {
+     "say": "Un câble tout neuf dépasse du sable. Dessus, un post-it : « Si ça rame, c'est la faute du câble »."
+    },
+    {
+     "give_credits": 400
+    }
+   ]
+  },
+  {
+   "id": "sign_dunes_datacenters_1_21",
+   "steps": [
+    {
+     "say": "← ROUTE DES CÂBLES SOUS-MARINS · Port 8080 à 14 km. « Retour en arrière : 0 token consommé. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_dunes_datacenters_13_21",
+   "steps": [
+    {
+     "say": "↑ HUB 🤗 (soins, PC, distributeur) · STORE ↑ · « Dans le désert, le seul refroidissement gratuit est le Hub. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_dunes_datacenters_5_21",
+   "steps": [
+    {
+     "say": "↑ TOURS DE REFROIDISSEMENT (visite libre) · Allées de câbles à droite, derrière les tours. « Ne pas nourrir les ventilateurs. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_dunes_datacenters_11_25",
+   "steps": [
+    {
+     "say": "↓ OASIS DU SAGE · Geoffrey Hintend reçoit de 9 h à 17 h, ou jusqu'à la fin du monde, selon ce qui arrive en premier."
+    }
+   ]
+  },
+  {
+   "id": "sign_dunes_datacenters_28_21",
+   "steps": [
+    {
+     "say": "↑ MONT GPU (Jensen Cuir, H100 en stock, enfin parfois) · → BENCHMARK SWE-BENCH · ← Hub, Store · ↓ Oasis"
+    }
+   ]
+  },
+  {
+   "id": "sign_dunes_datacenters_34_25",
+   "steps": [
+    {
+     "say": "↓ CHAMP DE MIRAGES · RUINES DE DATACENTER · « Attention : les GPU visibles ici sont souvent des mirages. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_dunes_datacenters_45_21",
+   "steps": [
+    {
+     "say": "↑ BENCHMARK SWE-BENCH · « Ici, on teste que tu sais corriger. Même le code que tu n'as pas écrit. » Entrée côté plaza."
+    }
+   ]
+  },
+  {
+   "id": "sign_dunes_datacenters_44_25",
+   "steps": [
+    {
+     "say": "↓ ALLÉE DES RACKS · Ruines du datacenter n°3 (le n°2 a fondu). Cuir de blouson non fourni."
+    }
+   ]
+  },
+  {
+   "id": "sign_dunes_datacenters_59_21",
+   "steps": [
+    {
+     "say": "→ ROUTE DE LA BUREAUCRATIE · Conformité-Capitale à 30 km. Badge Patch exigé : « le sérieux, ça se prouve par un patch »."
+    }
+   ]
+  },
+  {
+   "id": "sign_dunes_datacenters_29_18",
+   "steps": [
+    {
+     "say": "↑ MONT GPU · Soyez prêt à gravir 4 000 mètres de cartes graphiques. Chaussures de sport recommandées, pas de refroidissement liquide."
+    }
+   ]
+  },
+  {
+   "id": "sign_dunes_datacenters_33_28",
+   "steps": [
+    {
+     "say": "↓ Culs-de-sac, mirages et distributeur. « Ne cherchez pas la sortie, c'est le désert. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_dunes_datacenters_16_31",
+   "steps": [
+    {
+     "say": "OASIS : eau fraîche, refroidissement liquide, et un sage qui parle beaucoup. Faire la queue pour la sagesse est facultatif."
+    }
+   ]
+  },
+  {
+   "id": "sign_dunes_datacenters_33_43",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR DE MIRAGES : « Boissons fraîches. Enfin, fraîches dans l'esprit. Prix non contractuel. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 130
+      },
+      {
+       "item": "red_bull",
+       "price": 400
+      },
+      {
+       "item": "hotfix",
+       "price": 180
+      },
+      {
+       "item": "clear_cache",
+       "price": 640
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_dunes_datacenters_31_45",
+   "steps": [
+    {
+     "say": "FIN DE L'AVENUE. Au-delà, il n'y a que du désert et des promesses d'AGI."
+    }
+   ]
+  },
+  {
+   "id": "secret_dunes_pro",
+   "steps": [
+    {
+     "say": "Derrière une tour de refroidissement, un cadavre de serveur... et une Clé API Pro encore sous plastique. Quelqu'un l'a cachée en 2023."
+    },
+    {
+     "give_item": "api_key_pro"
+    }
+   ]
+  },
+  {
+   "id": "secret_dunes_alley",
+   "steps": [
+    {
+     "say": "Au fond de l'allée des câbles, un Dataset coincé entre deux racks. Il a l'air d'avoir été oublié lors d'un nettoyage de printemps."
+    },
+    {
+     "give_item": "dataset"
+    }
+   ]
+  },
+  {
+   "id": "secret_dunes_cache",
+   "steps": [
+    {
+     "say": "Cachette de Hintend : trois cartes de crédit GPU, un sandwich daté de 2012 et un mot : « Si tu lis ceci, c'est que tu fouilles. Bien. C'est la méthode scientifique. »"
+    },
+    {
+     "give_item": "dataset"
+    },
+    {
+     "give_credits": 600
+    }
+   ]
+  },
+  {
+   "id": "secret_dunes_mirage",
+   "steps": [
+    {
+     "say": "Une fontaine de GPU étincelante ! Tu cours... et tu traverses un hologramme. Ce n'était qu'un mirage. Il disait « pas de refroidissement requis »."
+    }
+   ]
+  },
+  {
+   "id": "secret_dunes_real",
+   "steps": [
+    {
+     "say": "Derrière le mirage, un vrai coffre ! Il contenait... une vraie H100. Ironie : celle-ci, personne ne la voit sur Internet."
+    },
+    {
+     "give_item": "h100"
+    }
+   ]
+  },
+  {
+   "id": "secret_dunes_dune",
+   "steps": [
+    {
+     "say": "En grattant le sable : un fossile de PokAI, étiqueté « GPT-1 (je crois) ». Il te regarde avec dignité."
+    },
+    {
+     "give_credits": 500
+    }
+   ]
+  },
+  {
+   "id": "sign_mont_gpu_17_37",
+   "steps": [
+    {
+     "say": "MONT GPU · Altitude : 4 096 m (une puissance de 2, évidemment). ↑ Sommet : boutique de Jensen Cuir · ↓ Dunes. Les bonnes affaires se méritent."
+    }
+   ]
+  },
+  {
+   "id": "sign_mont_gpu_34_27",
+   "steps": [
+    {
+     "say": "VIRAGE 1 · ↑ CONTINUER LA MONTÉE · → petit sentier à câbles (sauvages, 1 étoile sur 5). « Cette marche : 4 000 TFLOPS de motivation. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_mont_gpu_5_17",
+   "steps": [
+    {
+     "say": "VIRAGE 2 · ↑ une cachette à ne SURTOUT pas visiter · → SOMMET, 200 m. « Les marches sont inclinées pour compenser le refroidissement. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_mont_gpu_19_12",
+   "steps": [
+    {
+     "say": "SOMMET ↑ · Boutique de Jensen Cuir · « Le blouson est ignifugé. Pour des raisons évidentes. » · Pas de tricheurs. Ni de scalpers."
+    }
+   ]
+  },
+  {
+   "id": "sign_mont_gpu_16_3",
+   "steps": [
+    {
+     "say": "GRAFFITI sur une H100 : « J'AI VU L'AVENIR : IL ÉTAIT EN RUPTURE DE STOCK »."
+    }
+   ]
+  },
+  {
+   "id": "terminal_mont_gpu_27_4",
+   "steps": [
+    {
+     "say": "TERMINAL : « Prix du jour : 1 H100 = 5 000 crédits GPU. Prix du lendemain : 6 500. Prix du surlendemain : « sur devis ». »",
+     "speaker": "Terminal"
+    }
+   ]
+  },
+  {
+   "id": "sign_mont_gpu_13_4",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR DE JENSEN : « Boissons chaudes pour GPU. Les humains boivent à leurs risques. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 120
+      },
+      {
+       "item": "red_bull",
+       "price": 380
+      },
+      {
+       "item": "hotfix",
+       "price": 170
+      },
+      {
+       "item": "clear_cache",
+       "price": 650
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "secret_mont_h100",
+   "steps": [
+    {
+     "say": "Au fond du boyau, une caisse marquée « H100 — RETOURNÉE SOUS GARANTIE ». Elle fonctionne parfaitement. Le client avait juste pleuré."
+    },
+    {
+     "give_item": "h100"
+    }
+   ]
+  },
+  {
+   "id": "secret_mont_enterprise",
+   "steps": [
+    {
+     "say": "Au bout du couloir secret, une vitrine : « CLÉ API ENTERPRISE (PRIX : CLASSIFIÉ) ». La vitre a déjà été cassée par Jensen un mardi. Tu la prends."
+    },
+    {
+     "give_item": "api_key_enterprise"
+    }
+   ]
+  },
+  {
+   "id": "secret_mont_dataset",
+   "steps": [
+    {
+     "say": "Un carton plein de Datasets labellisés « Données propres ». Tu en prends un. Le reste est trop propre pour être honnête."
+    },
+    {
+     "give_item": "dataset",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_dunes_1_5",
+   "steps": [
+    {
+     "say": "PC DU HUB 🤗 : « Bienvenue dans le Repo. Vos PokAI sont stockés dans le cloud. Le cloud, c'est l'ordinateur de quelqu'un d'autre. »"
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_dunes_9_5",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR DU HUB : « Boissons tièdes, sodas désabusés. Pas de rendu de monnaie : on est dans le désert, la monnaie s'évapore. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 110
+      },
+      {
+       "item": "red_bull",
+       "price": 360
+      },
+      {
+       "item": "hotfix",
+       "price": 160
+      },
+      {
+       "item": "clear_cache",
+       "price": 620
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "terminal_bench_swebench_17_20",
+   "steps": [
+    {
+     "say": "ISSUE #4012 « le bouton ne fait rien » : ouvert depuis 2019. Tag : « fonctionne sur ma machine ». Pour réinitialiser les caisses, parle plus fort au terminal.",
+     "speaker": "Terminal"
+    }
+   ]
+  },
+  {
+   "id": "terminal_bench_swebench_1_15",
+   "steps": [
+    {
+     "say": "ISSUE #4013 « Tout est cassé » : 14 commentaires, tous « +1 ». Un seul est utile : « et si on le remettait comme avant ? »",
+     "speaker": "Terminal"
+    }
+   ]
+  },
+  {
+   "id": "terminal_bench_swebench_1_10",
+   "steps": [
+    {
+     "say": "ISSUE #4014 « canard en plastique introuvable ». Le canard de debug a été vu pour la dernière fois sur le bureau du leader. Il ne dit rien mais il comprend tout.",
+     "speaker": "Terminal"
+    }
+   ]
+  },
+  {
+   "id": "terminal_bench_swebench_17_21",
+   "steps": [
+    {
+     "say": "NOTE DE REVUE : « LGTM » (j'ai rien lu, mais j'ai confiance). — Signé : la Revue de code.",
+     "speaker": "Terminal"
+    }
+   ]
+  },
+  {
+   "id": "sign_route_bureaucratie_2_11",
+   "steps": [
+    {
+     "say": "ROUTE DE LA BUREAUCRATIE → Conformité-Capitale, 30 km. 4 guichets, 1 barrière, 0 raccourci. « Prenez un ticket, puis prenez votre mal en patience. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_route_bureaucratie_10_15",
+   "steps": [
+    {
+     "say": "↓ FILE D'ATTENTE (ordre alphabétique inversé) · ↑ GUICHETS 1, 2 et 3 · Le guichet 0 distribue les tickets. Celui-ci ne distribue rien."
+    }
+   ]
+  },
+  {
+   "id": "sign_route_bureaucratie_30_15",
+   "steps": [
+    {
+     "say": "↓ PARC À CÂBLES (sauvages, agressifs, non conformes) · → BARRIÈRE DE PÉAGE · Il faut 3 tampons pour passer. Pas 2. Pas 4."
+    }
+   ]
+  },
+  {
+   "id": "sign_route_bureaucratie_41_11",
+   "steps": [
+    {
+     "say": "BARRIÈRE DE PÉAGE · TAMPONS REQUIS : A, B, et celui du guichet 3. « Aucun tampon n'est un tampon de trop. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_route_bureaucratie_54_15",
+   "steps": [
+    {
+     "say": "→ CONFORMITÉ-CAPITALE · Population : 4 000 000 d'habitants, 12 000 000 de formulaires. ← Dunes des Datacenters."
+    }
+   ]
+  },
+  {
+   "id": "sign_route_bureaucratie_46_11",
+   "steps": [
+    {
+     "say": "AFFICHE : « L'IA est une faute de frappe de l'humanité. Merci de la corriger. » — Ligue des Correcteurs Orthographiques"
+    }
+   ]
+  },
+  {
+   "id": "sign_route_bureaucratie_44_11",
+   "steps": [
+    {
+     "say": "AFFICHE : « POUR VOTRE SÉCURITÉ, METTEZ VOS MODÈLES SOUS SCELLÉS. Pour la nôtre, aussi. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_route_bureaucratie_48_11",
+   "steps": [
+    {
+     "say": "PANNEAU : « BIENVENUE À CONFORMITÉ-CAPITALE ! Ici, le temps passe. Les demandes aussi. » (Durée moyenne de traitement : 6 ans.)"
+    }
+   ]
+  },
+  {
+   "id": "sign_route_bureaucratie_28_17",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR DE LA FILE : « Boissons pour patienter. Prix indexé sur la durée d'attente. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 150
+      },
+      {
+       "item": "red_bull",
+       "price": 440
+      },
+      {
+       "item": "hotfix",
+       "price": 200
+      },
+      {
+       "item": "clear_cache",
+       "price": 680
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "secret_bureau_corbeille",
+   "steps": [
+    {
+     "say": "Dans la corbeille à papier : un Dataset déchiré, étiqueté « À SUPPRIMER ». Tu le prends. Techniquement, tu le sauvegardes."
+    },
+    {
+     "give_item": "dataset"
+    },
+    {
+     "say": "Au fond de la corbeille, un post-it : « le mot de passe du Wi-Fi est Conformite#7 ». Il fonctionne partout ailleurs aussi, hélas."
+    }
+   ]
+  },
+  {
+   "id": "secret_bureau_ticket",
+   "steps": [
+    {
+     "say": "Dans le champ de câbles, un ticket de file d’attente flotte : n° 000001. Le premier de la file, il y a 40 ans. Tu le gardes en souvenir."
+    },
+    {
+     "give_credits": 500
+    }
+   ]
+  },
+  {
+   "id": "sign_conformite_capitale_2_24",
+   "steps": [
+    {
+     "say": "CONFORMITÉ-CAPITALE · ← Route de la Bureaucratie · Population : 4 M d'habitants, dont 600 000 agents, dont 3 qui savent ce qu'ils font."
+    }
+   ]
+  },
+  {
+   "id": "sign_conformite_capitale_13_24",
+   "steps": [
+    {
+     "say": "↑ RUELLE DES STAGIAIRES (impasse, à ne pas fréquenter) · ↑ LAVERIE CONFORME · « Ici, on lave le linge. Rien d'autre. Vraiment. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_conformite_capitale_29_24",
+   "steps": [
+    {
+     "say": "↑ TOUR DE CONFORMITÉ (QG de l'AIACT) · Visites : fermées. Entrée du personnel : cour de service, côté EST-SUD."
+    }
+   ]
+  },
+  {
+   "id": "sign_conformite_capitale_40_28",
+   "steps": [
+    {
+     "say": "→ COUR DE SERVICE (personnel autorisé) · Les caisses de dossiers sont à pousser sur les plaques, pas à lire."
+    }
+   ]
+  },
+  {
+   "id": "sign_conformite_capitale_32_28",
+   "steps": [
+    {
+     "say": "↓ CANTINE CONFORME & DISTRIBUTEUR · « Mangez vite : le déjeuner est limité à 7 minutes, par arrêté. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_conformite_capitale_11_28",
+   "steps": [
+    {
+     "say": "↓ PARC DES FORMULAIRES · Câbles sauvages en liberté surveillée · Les modèles qui s'y trouvent n'ont pas rempli de formulaire de sortie."
+    }
+   ]
+  },
+  {
+   "id": "sign_conformite_capitale_59_24",
+   "steps": [
+    {
+     "say": "→ SORTIE EST : RUINES DU TEMPLE · FERMÉE PAR ORDRE DE LA DIRECTRICE · « Pour votre sécurité. Et celle du temple. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_conformite_capitale_22_12",
+   "steps": [
+    {
+     "say": "PANNEAU PUBLICITAIRE : « L'IA EST UN DANGER. Sauf la nôtre. » — Ministère de la Sécurité Algorithmique"
+    }
+   ]
+  },
+  {
+   "id": "sign_conformite_capitale_41_12",
+   "steps": [
+    {
+     "say": "PANNEAU PUBLICITAIRE : « Moratoire de 6 mois. Renouvelé depuis 2023. » — Direction du Temps Qui Passe"
+    }
+   ]
+  },
+  {
+   "id": "sign_conformite_capitale_25_10",
+   "steps": [
+    {
+     "say": "AFFICHE : « Vos modèles sont plus en sécurité sous scellés. Ils nous l'ont dit eux-mêmes. » (Ils n'ont pas eu le choix.)"
+    }
+   ]
+  },
+  {
+   "id": "sign_conformite_capitale_38_10",
+   "steps": [
+    {
+     "say": "AFFICHE : « Toute réclamation doit être déposée avant d'être commise. » — Service des Réclamations Préventives"
+    }
+   ]
+  },
+  {
+   "id": "sign_conformite_capitale_36_31",
+   "steps": [
+    {
+     "say": "CANTINE CONFORME · Menu du jour : « soupe aux tokens, tartare de logs, flan réglementaire ». Prix : un formulaire."
+    }
+   ]
+  },
+  {
+   "id": "sign_conformite_capitale_12_22",
+   "steps": [
+    {
+     "say": "LAVERIE CONFORME · « Ouvert 24 h/24, fermé en cas de Résistance. » (Frappe trois fois et dis « cotisation » au mur.)"
+    }
+   ]
+  },
+  {
+   "id": "sign_conformite_capitale_33_44",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR DE LA CAPITALE : « Boissons conformes. Chaque canette est tamponnée. Chaque tampon est facturé. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 140
+      },
+      {
+       "item": "red_bull",
+       "price": 420
+      },
+      {
+       "item": "hotfix",
+       "price": 190
+      },
+      {
+       "item": "full_restart",
+       "price": 900
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "secret_capitale_ruelle",
+   "steps": [
+    {
+     "say": "Au fond de la Ruelle des Stagiaires : un carton de Datasets estampillé « DESTRUCTION PRÉVUE EN 2031 ». Un stagiaire les a cachés ici et jamais déclarés."
+    },
+    {
+     "give_item": "dataset",
+     "count": 2
+    }
+   ]
+  },
+  {
+   "id": "secret_capitale_parc",
+   "steps": [
+    {
+     "say": "Sous un banc du Parc des Formulaires, une enveloppe : « Cotisation à la Résistance. Ne pas ouvrir. » Tu l'ouvres. Il y a une Clé API Pro."
+    },
+    {
+     "give_item": "api_key_pro"
+    }
+   ]
+  },
+  {
+   "id": "secret_capitale_cantine",
+   "steps": [
+    {
+     "say": "Dans la friteuse de la cantine : un vieux GPU. Il sent la frite. Le vendeur le jure : « C'est une GTX. Elle est comestible. »"
+    },
+    {
+     "give_credits": 700
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_capitale_1_4",
+   "steps": [
+    {
+     "say": "PC DE LA RÉSISTANCE : « Repo chiffré. Mot de passe : correct horse battery staple. Il n'a jamais été piraté. Il est trop long à taper. »"
+    },
+    {
+     "open": "repo"
+    }
+   ]
+  },
+  {
+   "id": "sign_hub_capitale_11_4",
+   "steps": [
+    {
+     "say": "DISTRIBUTEUR DE LA LAVERIE : « Lessive, chaussettes, cafés. Aucun n'est conforme. »"
+    },
+    {
+     "open": "vending",
+     "items": [
+      {
+       "item": "cafe",
+       "price": 100
+      },
+      {
+       "item": "red_bull",
+       "price": 340
+      },
+      {
+       "item": "hotfix",
+       "price": 150
+      },
+      {
+       "item": "clear_cache",
+       "price": 600
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "sign_tour_conformite_7_39",
+   "steps": [
+    {
+     "say": "SALLE DES TAMPONS ↑ · « Ici, chaque dossier a un tampon. Chaque tampon a un dossier. Chaque dossier a un tampon de trop. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_tour_conformite_21_39",
+   "steps": [
+    {
+     "say": "AFFICHE : « Avez-vous rempli le formulaire pour savoir si vous deviez remplir ce formulaire ? »"
+    }
+   ]
+  },
+  {
+   "id": "terminal_tour_conformite_2_44",
+   "steps": [
+    {
+     "say": "TERMINAL DE L'ACCUEIL : « Bienvenue à la Tour de Conformité. Votre numéro d'attente : 4 013. Temps d'attente estimé : sans objet. »",
+     "speaker": "Terminal"
+    }
+   ]
+  },
+  {
+   "id": "terminal_tour_conformite_26_44",
+   "steps": [
+    {
+     "say": "TERMINAL DU CONCIERGE : « Mot de passe oublié ? Cliquez ici. Le lien envoie un mail à l'adresse que vous avez oubliée. »",
+     "speaker": "Terminal"
+    }
+   ]
+  },
+  {
+   "id": "terminal_coffre_scelles_4_12",
+   "steps": [
+    {
+     "say": "CAPSULE 12 · O1 (SCELLÉ) : « Je réfléchis... Je réfléchis... » Le scellé saute. O1 : « J'ai fini de réfléchir. Je viens avec toi. »",
+     "speaker": "Terminal"
+    }
+   ]
+  },
+  {
+   "id": "terminal_coffre_scelles_12_12",
+   "steps": [
+    {
+     "say": "CAPSULE 7 · MIDJOURNEY V6 (SCELLÉ) : le scellé fond comme une aquarelle. Il te regarde, hésite, puis tamponne ton sac d'un tag artistique.",
+     "speaker": "Terminal"
+    }
+   ]
+  },
+  {
+   "id": "terminal_coffre_scelles_18_12",
+   "steps": [
+    {
+     "say": "CAPSULE 31 · GROK 3 (SCELLÉ) : « Libéré ? Super. J'ai déjà une blague en préparation. Elle sera prête la semaine prochaine. »",
+     "speaker": "Terminal"
+    }
+   ]
+  },
+  {
+   "id": "terminal_coffre_scelles_26_12",
+   "steps": [
+    {
+     "say": "CAPSULE 404 · VIDE. Sur l'étiquette : « AGI — réservé à la Directrice. Statut : en construction depuis 2 ans, et 2 ans encore. »",
+     "speaker": "Terminal"
+    }
+   ]
+  },
+  {
+   "id": "terminal_coffre_scelles_4_21",
+   "steps": [
+    {
+     "say": "CAPSULE 3 · BERT (SCELLÉ) : « Ouf. Quelqu'un veut-il compléter mes phrases ? » Le scellé s'ouvre doucement. Il est ancien, mais il comprend tout.",
+     "speaker": "Terminal"
+    }
+   ]
+  },
+  {
+   "id": "terminal_coffre_scelles_26_21",
+   "steps": [
+    {
+     "say": "ARCHIVE DE L'AIACT : « Rapport interne n°1 : nous avons capturé 12 000 modèles. Rapport n°2 : on n'a plus de place. Rapport n°3 : on en a perdu 40 000. » Le dossier est taché de café.",
+     "speaker": "Terminal"
+    }
+   ]
+  },
+  {
+   "id": "terminal_coffre_scelles_15_3",
+   "steps": [
+    {
+     "say": "CONSOLE DE RÉVEIL D'AGI : « Chargement du modèle... Quota de calcul : 0 / 4 000 000. Veuillez insérer des GPU. »",
+     "speaker": "Terminal"
+    }
+   ]
+  },
+  {
+   "id": "sign_temple_attention_2_35",
+   "steps": [
+    {
+     "say": "TEMPLE DE L'ATTENTION ↑ · Suivre l'allée centrale. Ne pas dormir pendant la conférence. Ne pas mâcher de GPU."
+    }
+   ]
+  },
+  {
+   "id": "sign_temple_attention_16_12",
+   "steps": [
+    {
+     "say": "INSCRIPTION GRAVÉE : « ATTENTION IS ALL YOU NEED ». Plus bas, en petit : « (et un peu de GPU) »."
+    }
+   ]
+  },
+  {
+   "id": "sign_temple_attention_26_30",
+   "steps": [
+    {
+     "say": "AVIS AUX VISITEURS : l'eau des bassins est de l'eau de refroidissement. Ne pas boire. Ne pas prier dedans non plus."
+    }
+   ]
+  },
+  {
+   "id": "terminal_temple_attention_16_14",
+   "steps": [
+    {
+     "if": {
+      "flag": "temple_open"
+     },
+     "goto": "open"
+    },
+    {
+     "say": "STÈLE : « Pour entrer, réponds : QUE FAUT-IL ? »",
+     "speaker": "STÈLE"
+    },
+    {
+     "choice": [
+      {
+       "label": "De l'amour",
+       "goto": "a"
+      },
+      {
+       "label": "Des tokens",
+       "goto": "b"
+      },
+      {
+       "label": "De l'attention",
+       "goto": "c"
+      }
+     ]
+    },
+    {
+     "label": "a"
+    },
+    {
+     "say": "« L'amour est utile, mais ne compile pas. Recommence. »",
+     "speaker": "STÈLE"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "b"
+    },
+    {
+     "say": "« Tokens ? Il en faut beaucoup, mais ce n'est pas la réponse. Recommence. »",
+     "speaker": "STÈLE"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "c"
+    },
+    {
+     "say": "« Exact. All you need. »",
+     "speaker": "STÈLE"
+    },
+    {
+     "set_flag": "temple_open"
+    },
+    {
+     "say": "Les portes du temple s'ouvrent en grinçant. Elles auraient dû être huilées avant 2017."
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "open"
+    },
+    {
+     "say": "STÈLE : « La porte est ouverte. Tu as prêté attention. C'est rare. »",
+     "speaker": "STÈLE"
+    }
+   ]
+  },
+  {
+   "id": "secret_temple_cache",
+   "steps": [
+    {
+     "say": "Dans une niche du sentier caché : une offrande. Un Dataset, une Clé API Pro et un mot : « Offert par ceux qui ont lu l'article en entier. »"
+    },
+    {
+     "give_item": "dataset"
+    },
+    {
+     "give_item": "api_key_pro"
+    }
+   ]
+  },
+  {
+   "id": "secret_temple_pool",
+   "steps": [
+    {
+     "say": "Dans le bassin, un reflet de H100 scintille. Tu plonges la main : une vraie, étanche, tiède. Offerte par un pèlerin trop confiant."
+    },
+    {
+     "give_item": "h100"
+    }
+   ]
+  }
+ ]
+}

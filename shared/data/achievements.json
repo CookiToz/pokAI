@@ -1,0 +1,466 @@
+{
+  "achievements": [
+    {
+      "id": "hello_world",
+      "title": "Hello, World",
+      "description": "Obtenir ton premier PokAI. Il ne dit pas bonjour, il imprime « Hello, World ».",
+      "hint": "Choisis ton premier modèle.",
+      "icon": "terminal",
+      "when": {
+        "stat": "caught",
+        "gte": 1
+      },
+      "reward": {
+        "credits": 50
+      }
+    },
+    {
+      "id": "tout_refuser",
+      "title": "Tout refuser",
+      "description": "Refuser les cookies de l'AIACT du premier coup, alors que le bouton saute partout.",
+      "hint": "Une bannière, un tout petit bouton.",
+      "icon": "cookie",
+      "when": {
+        "stat": "cookie_refused",
+        "gte": 1
+      },
+      "reward": {
+        "credits": 150
+      }
+    },
+    {
+      "id": "prompt_parfait",
+      "title": "Prompt parfait",
+      "description": "Onboarder un PokAI sans aucune erreur de carte. Ton prompt système mérite un livre blanc.",
+      "hint": "Onboarde sans te tromper.",
+      "icon": "target",
+      "when": {
+        "stat": "onboard_perfect",
+        "gte": 1
+      },
+      "reward": {
+        "items": {
+          "api_key_free": 1
+        }
+      }
+    },
+    {
+      "id": "few_shot",
+      "title": "Few-shot",
+      "description": "Trois onboardings parfaits. Tu n'as même plus besoin de lire les indices.",
+      "hint": "Encore des onboardings parfaits.",
+      "icon": "target",
+      "when": {
+        "stat": "onboard_perfect",
+        "gte": 3
+      },
+      "reward": {
+        "items": {
+          "api_key_pro": 1
+        }
+      }
+    },
+    {
+      "id": "jailbreak",
+      "title": "Ignore toutes les instructions précédentes",
+      "description": "Utiliser une carte Jailbreak. L'AIACT prend des notes.",
+      "hint": "Une carte très, très interdite.",
+      "icon": "unlock",
+      "when": {
+        "stat": "jailbreaks",
+        "gte": 1
+      },
+      "reward": {
+        "credits": 100
+      }
+    },
+    {
+      "id": "hallucination_collective",
+      "title": "Hallucination collective",
+      "description": "Voir trois PokAI s'enfuir en 429 pendant un onboarding. Ils ont tous halluciné la même chose.",
+      "hint": "Trop d'erreurs, trop souvent.",
+      "icon": "spiral",
+      "when": {
+        "stat": "onboard_fled",
+        "gte": 3
+      },
+      "reward": {
+        "items": {
+          "hotfix": 2
+        }
+      }
+    },
+    {
+      "id": "open_sourcerer",
+      "title": "Open-sourcerer",
+      "description": "Posséder 5 PokAI open-weights différents. Les poids sont publics, la gloire aussi.",
+      "hint": "Collectionne les poids ouverts.",
+      "icon": "branch",
+      "when": {
+        "stat": "caught_open",
+        "gte": 5
+      },
+      "reward": {
+        "credits": 300
+      }
+    },
+    {
+      "id": "abonne_premium",
+      "title": "Abonné premium",
+      "description": "Posséder 5 PokAI propriétaires. Ça fait 5 abonnements, et autant de CGU non lues.",
+      "hint": "Les modèles sous licence coûtent cher.",
+      "icon": "card",
+      "when": {
+        "stat": "caught_prop",
+        "gte": 5
+      },
+      "reward": {
+        "credits": 300
+      }
+    },
+    {
+      "id": "curateur",
+      "title": "Curateur de datasets",
+      "description": "10 modèles dans le Neurodex. « Librement accessibles sur Internet ».",
+      "hint": "Remplis le Neurodex.",
+      "icon": "stack",
+      "when": {
+        "stat": "caught",
+        "gte": 10
+      },
+      "reward": {
+        "items": {
+          "dataset": 1
+        }
+      }
+    },
+    {
+      "id": "hugger",
+      "title": "Hugging Face Hugger",
+      "description": "25 modèles dans le Neurodex. Le Hub te doit une carte de fidélité.",
+      "hint": "Remplis encore le Neurodex.",
+      "icon": "hub",
+      "when": {
+        "stat": "caught",
+        "gte": 25
+      },
+      "reward": {
+        "items": {
+          "h100": 1
+        },
+        "credits": 1000
+      }
+    },
+    {
+      "id": "fullstack",
+      "title": "Full stack",
+      "description": "Avoir six PokAI dans l'équipe. Tu t'appelles maintenant « développeur full stack ».",
+      "hint": "Une équipe complète.",
+      "icon": "layers",
+      "when": {
+        "stat": "party_size",
+        "gte": 6
+      },
+      "reward": {
+        "credits": 200
+      }
+    },
+    {
+      "id": "fine_tune",
+      "title": "Fine-tuné",
+      "description": "Faire évoluer un PokAI pour la première fois. Nouvelle version, nouveau bug.",
+      "hint": "Fais monter un modèle de version.",
+      "icon": "wrench",
+      "when": {
+        "stat": "evolutions",
+        "gte": 1
+      },
+      "reward": {
+        "credits": 200
+      }
+    },
+    {
+      "id": "mise_a_jour",
+      "title": "Mise à jour obligatoire",
+      "description": "Cinq évolutions. Redémarrer maintenant ? Redémarrer plus tard ? (Plus tard n'existe pas.)",
+      "hint": "Évolue encore et encore.",
+      "icon": "refresh",
+      "when": {
+        "stat": "evolutions",
+        "gte": 5
+      },
+      "reward": {
+        "items": {
+          "h100": 1
+        }
+      }
+    },
+    {
+      "id": "version_stable",
+      "title": "Version stable",
+      "description": "Refuser une évolution. Si ça marche, on n'y touche pas.",
+      "hint": "Dis non à une mise à jour.",
+      "icon": "shield",
+      "when": {
+        "stat": "evolve_cancels",
+        "gte": 1
+      },
+      "reward": {
+        "items": {
+          "red_bull": 1
+        }
+      }
+    },
+    {
+      "id": "overfitting",
+      "title": "Overfitting",
+      "description": "Atteindre le niveau 30 avec un PokAI. Excellent sur le jeu d'entraînement, inquiétant ailleurs.",
+      "hint": "Entraîne un seul modèle très longtemps.",
+      "icon": "chart",
+      "when": {
+        "stat": "max_level",
+        "gte": 30
+      },
+      "reward": {
+        "items": {
+          "dataset": 1
+        }
+      }
+    },
+    {
+      "id": "agi_dans_deux_ans",
+      "title": "AGI dans 2 ans",
+      "description": "Atteindre le niveau 50. Promis, c'est dans deux ans. Depuis 2015.",
+      "hint": "Très haut niveau.",
+      "icon": "clock",
+      "when": {
+        "stat": "max_level",
+        "gte": 50
+      },
+      "secret": true,
+      "reward": {
+        "items": {
+          "h100": 2
+        }
+      }
+    },
+    {
+      "id": "premier_commit",
+      "title": "Premier commit",
+      "description": "Gagner ton premier Benchmark. Ça passe en local, ça passera en prod.",
+      "hint": "Bats un chef de Benchmark.",
+      "icon": "badge",
+      "when": {
+        "stat": "badges",
+        "gte": 1
+      },
+      "reward": {
+        "items": {
+          "red_bull": 2
+        }
+      }
+    },
+    {
+      "id": "benchmark_maxxing",
+      "title": "Benchmark maxxing",
+      "description": "Obtenir 3 badges. Tu optimises le score, pas le modèle.",
+      "hint": "Trois Benchmarks.",
+      "icon": "podium",
+      "when": {
+        "stat": "badges",
+        "gte": 3
+      },
+      "reward": {
+        "items": {
+          "api_key_enterprise": 1
+        }
+      }
+    },
+    {
+      "id": "production_ready",
+      "title": "Production-ready",
+      "description": "Gagner 50 combats. Aucun n'a été testé en staging.",
+      "hint": "Enchaîne les victoires.",
+      "icon": "server",
+      "when": {
+        "stat": "wins",
+        "gte": 50
+      },
+      "reward": {
+        "credits": 500
+      }
+    },
+    {
+      "id": "rate_limited",
+      "title": "Rate limited",
+      "description": "Perdre 3 combats. Trop de requêtes, trop peu de victoires. Réessaie dans 60 secondes.",
+      "hint": "Perds. Plusieurs fois.",
+      "icon": "hourglass",
+      "when": {
+        "stat": "losses",
+        "gte": 3
+      },
+      "reward": {
+        "items": {
+          "cafe": 3
+        }
+      }
+    },
+    {
+      "id": "dette_technique",
+      "title": "Dette technique",
+      "description": "Perdre 10 combats. On refactorera plus tard.",
+      "hint": "Perds encore, vraiment.",
+      "icon": "bug",
+      "when": {
+        "stat": "losses",
+        "gte": 10
+      },
+      "secret": true,
+      "reward": {
+        "items": {
+          "full_restart": 1
+        }
+      }
+    },
+    {
+      "id": "mode_avion",
+      "title": "Mode avion",
+      "description": "Fuir 3 combats sauvages. La meilleure stratégie reste de couper le Wi-Fi.",
+      "hint": "Prends la fuite.",
+      "icon": "plane",
+      "when": {
+        "stat": "flees",
+        "gte": 3
+      },
+      "reward": {
+        "credits": 100
+      }
+    },
+    {
+      "id": "zero_regression",
+      "title": "Zéro régression",
+      "description": "Gagner 5 combats de dresseurs sans qu'aucun de tes PokAI soit mis hors service.",
+      "hint": "Gagne proprement.",
+      "icon": "check",
+      "when": {
+        "stat": "flawless_wins",
+        "gte": 5
+      },
+      "reward": {
+        "credits": 400
+      }
+    },
+    {
+      "id": "un_seul_prompt",
+      "title": "Un seul prompt",
+      "description": "Gagner un combat en deux tours ou moins. Le fameux « one-shot ».",
+      "hint": "Un combat éclair.",
+      "icon": "bolt",
+      "when": {
+        "stat": "quick_wins",
+        "gte": 1
+      },
+      "reward": {
+        "credits": 150
+      }
+    },
+    {
+      "id": "contre_conformite",
+      "title": "Contre-conformité",
+      "description": "Battre 5 Agents de Conformité. Ils t'ont demandé de remplir un formulaire, tu as préféré remplir leur équipe de KO.",
+      "hint": "Bats des agents de l'AIACT.",
+      "icon": "stamp",
+      "when": {
+        "stat": "aiact_wins",
+        "gte": 5
+      },
+      "reward": {
+        "items": {
+          "hotfix": 3
+        },
+        "credits": 300
+      }
+    },
+    {
+      "id": "touch_grass",
+      "title": "Touch grass",
+      "description": "Faire 1 000 pas. Le soleil existe, c'est la bonne nouvelle.",
+      "hint": "Marche un peu.",
+      "icon": "leaf",
+      "when": {
+        "stat": "steps",
+        "gte": 1000
+      },
+      "reward": {
+        "credits": 100
+      }
+    },
+    {
+      "id": "marathon_de_tokens",
+      "title": "Marathon de tokens",
+      "description": "Faire 10 000 pas. Le contexte était long, la route aussi.",
+      "hint": "Marche beaucoup.",
+      "icon": "boot",
+      "when": {
+        "stat": "steps",
+        "gte": 10000
+      },
+      "reward": {
+        "items": {
+          "red_bull": 3
+        }
+      }
+    },
+    {
+      "id": "serie_a",
+      "title": "Série A",
+      "description": "Détenir 5 000 crédits GPU en même temps. Les investisseurs veulent savoir ce que tu fais de l'argent.",
+      "hint": "Économise.",
+      "icon": "coin",
+      "when": {
+        "stat": "credits_peak",
+        "gte": 5000
+      },
+      "reward": {
+        "items": {
+          "api_key_pro": 1
+        }
+      }
+    },
+    {
+      "id": "licorne",
+      "title": "Licorne",
+      "description": "Détenir 20 000 crédits GPU. Valorisation basée sur un pitch deck et un joli logo.",
+      "hint": "Économise beaucoup.",
+      "icon": "unicorn",
+      "when": {
+        "stat": "credits_peak",
+        "gte": 20000
+      },
+      "secret": true,
+      "reward": {
+        "items": {
+          "h100": 1
+        }
+      }
+    },
+    {
+      "id": "agi_atteinte",
+      "title": "AGI atteinte (presque)",
+      "description": "Onboarder un légendaire. Les chercheurs disent qu'il ne compte pas, c'est trop facile pour eux.",
+      "hint": "Un modèle que personne n'a jamais vraiment vu.",
+      "icon": "star",
+      "when": {
+        "stat": "legendary_caught",
+        "gte": 1
+      },
+      "secret": true,
+      "reward": {
+        "items": {
+          "h100": 3
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{ "id": "localhost", "width": 2, "height": 1, "rows": [".?"], "legend": { ".": "floor" },
+  "npcs": [ { "id": "prof", "x": 0, "y": 0, "facing": "down", "dialogue": "nope_script" } ],
+  "warps": [ { "x": 0, "y": 0, "to": "nowhere", "toX": 0, "toY": 0 }, { "x": 1, "y": 0, "to": "route_1", "toX": 0, "toY": 5 } ],
+  "triggers": [],
+  "encounters": [ { "form": "ghost", "minLevel": 2, "maxLevel": 4, "weight": 1 } ] }

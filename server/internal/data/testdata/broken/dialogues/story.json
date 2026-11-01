@@ -1,0 +1,6 @@
+{ "scripts": [ { "id": "intro", "steps": [
+  { "start_battle": "ghost_trainer" },
+  { "give_pokai": "ghost", "level": 3 },
+  { "give_item": "anything" },
+  { "goto": "nolabel" }
+] } ] }

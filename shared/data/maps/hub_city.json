@@ -1,0 +1,92 @@
+{
+ "id": "hub_city",
+ "name": "Hub 🤗 de Latentia City",
+ "width": 15,
+ "height": 11,
+ "rows": [
+  "###############",
+  "#tttttajattttt#",
+  "#jjjjjjjjjjjjj#",
+  "#jjj0000000jjj#",
+  "#jjjjjjjjjjjjj#",
+  "#ljjjjjjjjjjjl#",
+  "#jjjjjjjjjjjjj#",
+  "#j;;;jjjjj;;;j#",
+  "#l;;;jjjjj;;;l#",
+  "#jjjjjjjjjjjjj#",
+  "######XXX######"
+ ],
+ "legend": {
+  "#": "wall",
+  "0": "hub_reception",
+  ";": "carpet",
+  "X": "exit_mat",
+  "j": "hub_floor",
+  "l": "plant",
+  "t": "repo_shelf",
+  "a": "pc"
+ },
+ "kind": "interior",
+ "music": "hub",
+ "hub": {
+  "x": 7,
+  "y": 7
+ },
+ "npcs": [
+  {
+   "id": "nurse",
+   "sprite": "nurse_hugging",
+   "x": 7,
+   "y": 2,
+   "facing": "down",
+   "dialogue": "nurse_hugging"
+  },
+  {
+   "id": "clem",
+   "sprite": "clem_delangouste",
+   "x": 11,
+   "y": 4,
+   "facing": "left",
+   "dialogue": "clem_hub"
+  }
+ ],
+ "warps": [
+  {
+   "x": 6,
+   "y": 10,
+   "to": "latentia_city",
+   "toX": 10,
+   "toY": 28,
+   "facing": "down"
+  },
+  {
+   "x": 7,
+   "y": 10,
+   "to": "latentia_city",
+   "toX": 10,
+   "toY": 28,
+   "facing": "down"
+  },
+  {
+   "x": 8,
+   "y": 10,
+   "to": "latentia_city",
+   "toX": 10,
+   "toY": 28,
+   "facing": "down"
+  }
+ ],
+ "triggers": [],
+ "landmarks": [
+  {
+   "x": 7,
+   "y": 3,
+   "label": "Accueil 🤗"
+  },
+  {
+   "x": 7,
+   "y": 1,
+   "label": "Repo (stockage)"
+  }
+ ]
+}

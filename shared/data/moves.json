@@ -1,0 +1,1210 @@
+{
+  "moves": [
+    {
+      "id": "excellent_question",
+      "name": "Excellente question",
+      "type": "chat",
+      "category": "damage",
+      "power": 35,
+      "accuracy": 100,
+      "tokens": 30,
+      "description": "Flatte la question avant de frapper. +1 Précision.",
+      "effect": {
+        "stat": "precision",
+        "stages": 1,
+        "target": "self"
+      }
+    },
+    {
+      "id": "bullet_list",
+      "name": "Liste à puces",
+      "type": "chat",
+      "category": "damage",
+      "power": 15,
+      "accuracy": 95,
+      "tokens": 20,
+      "description": "• Frappe • de 2 à 5 • fois.",
+      "effect": {
+        "multiHit": [
+          2,
+          5
+        ]
+      }
+    },
+    {
+      "id": "sorry_cant",
+      "name": "Désolé, je ne peux pas",
+      "type": "chat",
+      "category": "shield",
+      "power": 0,
+      "accuracy": 100,
+      "tokens": 10,
+      "description": "Refus poli : divise par deux les dégâts du tour et en renvoie la moitié.",
+      "effect": {
+        "priority": 3
+      }
+    },
+    {
+      "id": "nuance",
+      "name": "Nuance",
+      "type": "chat",
+      "category": "damage",
+      "power": 60,
+      "accuracy": 100,
+      "tokens": 20,
+      "description": "« Ça dépend. » Ne rate jamais."
+    },
+    {
+      "id": "context_window",
+      "name": "Fenêtre de contexte",
+      "type": "chat",
+      "category": "heal",
+      "power": 0,
+      "accuracy": 100,
+      "tokens": 10,
+      "description": "Fait de la place dans sa mémoire : rend 50 % du Contexte.",
+      "effect": {
+        "healRatio": 0.5
+      }
+    },
+    {
+      "id": "constitution",
+      "name": "Constitution",
+      "type": "chat",
+      "category": "buff",
+      "power": 0,
+      "accuracy": 100,
+      "tokens": 5,
+      "description": "Relit ses 84 pages : immunisé contre les statuts pendant 3 tours."
+    },
+    {
+      "id": "confident_hallucination",
+      "name": "Hallucination confiante",
+      "type": "chat",
+      "category": "damage",
+      "power": 90,
+      "accuracy": 85,
+      "tokens": 10,
+      "description": "Invente une réponse avec un aplomb total. Peut rendre la cible Hallucinante.",
+      "effect": {
+        "status": "hallucinating",
+        "statusChance": 0.3
+      }
+    },
+    {
+      "id": "million_window",
+      "name": "Fenêtre d'un million",
+      "type": "chat",
+      "category": "heal",
+      "power": 0,
+      "accuracy": 100,
+      "tokens": 5,
+      "description": "Un million de tokens de contexte : rend 75 % du Contexte.",
+      "effect": {
+        "healRatio": 0.75
+      }
+    },
+    {
+      "id": "weight_spit",
+      "name": "Crachat de poids",
+      "type": "chat",
+      "category": "damage",
+      "power": 55,
+      "accuracy": 95,
+      "tokens": 20,
+      "description": "Crache des poids ouverts au visage. Peut baisser la Robustesse.",
+      "effect": {
+        "stat": "robustness",
+        "stages": -1,
+        "target": "foe",
+        "statusChance": 0.5
+      }
+    },
+    {
+      "id": "mixture_of_experts",
+      "name": "Mélange d'experts",
+      "type": "chat",
+      "category": "damage",
+      "power": 70,
+      "accuracy": 100,
+      "tokens": 15,
+      "description": "Consulte 8 experts au hasard et utilise la meilleure technique."
+    },
+    {
+      "id": "swarm",
+      "name": "Essaim",
+      "type": "chat",
+      "category": "damage",
+      "power": 30,
+      "accuracy": 100,
+      "tokens": 20,
+      "description": "Les Qwen arrivent en essaim, et ça dépasse le quota. Plus il y en a, plus ça cogne. 15 % Rate-limité.",
+      "effect": {
+        "status": "rate_limited",
+        "statusChance": 0.15
+      }
+    },
+    {
+      "id": "dive",
+      "name": "Piqué",
+      "type": "chat",
+      "category": "damage",
+      "power": 60,
+      "accuracy": 100,
+      "tokens": 20,
+      "description": "Fond sur la cible depuis le ciel du désert. Frappe en premier.",
+      "effect": {
+        "priority": 1
+      }
+    },
+    {
+      "id": "small_but_tough",
+      "name": "Petit mais costaud",
+      "type": "chat",
+      "category": "buff",
+      "power": 0,
+      "accuracy": 100,
+      "tokens": 15,
+      "description": "+1 Robustesse, +2 sous la moitié du Contexte."
+    },
+    {
+      "id": "small_talk",
+      "name": "Bavardage",
+      "type": "chat",
+      "category": "damage",
+      "power": 40,
+      "accuracy": 100,
+      "tokens": 35,
+      "description": "Un petit bavardage qui ne mange pas de pain."
+    },
+    {
+      "id": "system_prompt",
+      "name": "Rappel des consignes",
+      "type": "chat",
+      "category": "debuff",
+      "power": 0,
+      "accuracy": 100,
+      "tokens": 20,
+      "description": "Lui relit son prompt système. -1 Puissance adverse.",
+      "effect": {
+        "stat": "power",
+        "stages": -1,
+        "target": "foe"
+      }
+    },
+    {
+      "id": "wall_of_text",
+      "name": "Pavé de texte",
+      "type": "chat",
+      "category": "damage",
+      "power": 80,
+      "accuracy": 90,
+      "tokens": 15,
+      "description": "Un pavé de texte si long que l'adversaire s'endort dessus. 15 % En maintenance.",
+      "effect": {
+        "status": "maintenance",
+        "statusChance": 0.15
+      }
+    },
+    {
+      "id": "sycophancy",
+      "name": "Flagornerie",
+      "type": "chat",
+      "category": "debuff",
+      "power": 0,
+      "accuracy": 100,
+      "tokens": 15,
+      "description": "« Tu as entièrement raison ! » La cible baisse sa garde : -2 Robustesse.",
+      "effect": {
+        "stat": "robustness",
+        "stages": -2,
+        "target": "foe"
+      }
+    },
+    {
+      "id": "too_dangerous",
+      "name": "Trop dangereux",
+      "type": "chat",
+      "category": "debuff",
+      "power": 0,
+      "accuracy": 90,
+      "tokens": 10,
+      "description": "Se déclare trop dangereux pour être publié. -2 Puissance adverse, par peur.",
+      "effect": {
+        "stat": "power",
+        "stages": -2,
+        "target": "foe"
+      }
+    },
+    {
+      "id": "agi_soon",
+      "name": "AGI dans 2 ans",
+      "type": "chat",
+      "category": "buff",
+      "power": 0,
+      "accuracy": 100,
+      "tokens": 10,
+      "description": "Annonce l'AGI pour bientôt. Ses fans y croient : +2 Puissance.",
+      "effect": {
+        "stat": "power",
+        "stages": 2,
+        "target": "self"
+      }
+    },
+    {
+      "id": "autocomplete",
+      "name": "Autocomplétion",
+      "type": "code",
+      "category": "damage",
+      "power": 45,
+      "accuracy": 100,
+      "tokens": 25,
+      "description": "Complète la phrase avant l'adversaire. Frappe en premier.",
+      "effect": {
+        "priority": 1
+      }
+    },
+    {
+      "id": "textbook",
+      "name": "Manuel scolaire",
+      "type": "code",
+      "category": "damage",
+      "power": 60,
+      "accuracy": 100,
+      "tokens": 20,
+      "description": "Une leçon bien apprise. Plus forte contre un PokAI de niveau supérieur."
+    },
+    {
+      "id": "artifact",
+      "name": "Artefact",
+      "type": "code",
+      "category": "damage",
+      "power": 60,
+      "accuracy": 100,
+      "tokens": 20,
+      "description": "Génère un petit programme dans un panneau à part. +1 Puissance.",
+      "effect": {
+        "stat": "power",
+        "stages": 1,
+        "target": "self"
+      }
+    },
+    {
+      "id": "refactor",
+      "name": "Refactor",
+      "type": "code",
+      "category": "buff",
+      "power": 0,
+      "accuracy": 100,
+      "tokens": 10,
+      "description": "Nettoie son code : soigne son statut et +1 Puissance."
+    },
+    {
+      "id": "hello_world",
+      "name": "Hello World",
+      "type": "code",
+      "category": "damage",
+      "power": 45,
+      "accuracy": 100,
+      "tokens": 35,
+      "description": "Le programme de base : la valeur sûre."
+    },
+    {
+      "id": "stack_overflow",
+      "name": "Stack Overflow",
+      "type": "code",
+      "category": "damage",
+      "power": 70,
+      "accuracy": 90,
+      "tokens": 15,
+      "description": "Copier-coller une réponse de 2013. 15 % Hallucinant.",
+      "effect": {
+        "status": "hallucinating",
+        "statusChance": 0.15
+      }
+    },
+    {
+      "id": "segfault",
+      "name": "Segfault",
+      "type": "code",
+      "category": "damage",
+      "power": 100,
+      "accuracy": 75,
+      "tokens": 5,
+      "description": "Plante tout. 30 % En maintenance.",
+      "effect": {
+        "status": "maintenance",
+        "statusChance": 0.3
+      }
+    },
+    {
+      "id": "git_push_force",
+      "name": "git push --force",
+      "type": "code",
+      "category": "damage",
+      "power": 90,
+      "accuracy": 90,
+      "tokens": 5,
+      "description": "Écrase l'historique. −1 Robustesse pour soi, 20 % Surchauffe.",
+      "effect": {
+        "stat": "robustness",
+        "stages": -1,
+        "target": "self",
+        "status": "overheat",
+        "statusChance": 0.2
+      }
+    },
+    {
+      "id": "infinite_loop",
+      "name": "Boucle infinie",
+      "type": "code",
+      "category": "status",
+      "power": 0,
+      "accuracy": 85,
+      "tokens": 10,
+      "description": "Une boucle sans fin fait chauffer les GPU. Surchauffe.",
+      "effect": {
+        "status": "overheat",
+        "statusChance": 1
+      }
+    },
+    {
+      "id": "unit_tests",
+      "name": "Tests unitaires",
+      "type": "code",
+      "category": "buff",
+      "power": 0,
+      "accuracy": 100,
+      "tokens": 15,
+      "description": "Couvre son code de tests : +2 Robustesse.",
+      "effect": {
+        "stat": "robustness",
+        "stages": 2,
+        "target": "self"
+      }
+    },
+    {
+      "id": "merge_conflict",
+      "name": "Conflit de merge",
+      "type": "code",
+      "category": "damage",
+      "power": 65,
+      "accuracy": 95,
+      "tokens": 20,
+      "description": "<<<<<<< HEAD. Peut Censurer une technique adverse.",
+      "effect": {
+        "status": "censored",
+        "statusChance": 0.2
+      }
+    },
+    {
+      "id": "friday_deploy",
+      "name": "Mise en prod du vendredi",
+      "type": "code",
+      "category": "damage",
+      "power": 120,
+      "accuracy": 80,
+      "tokens": 5,
+      "description": "Déployer le vendredi à 17 h 59. 20 % de se planter soi-même, 25 % Panne d'API.",
+      "effect": {
+        "selfHitChance": 0.2,
+        "status": "api_outage",
+        "statusChance": 0.25
+      }
+    },
+    {
+      "id": "extended_thinking",
+      "name": "Réflexion prolongée",
+      "type": "reasoning",
+      "category": "damage",
+      "power": 40,
+      "accuracy": 100,
+      "tokens": 5,
+      "description": "Réfléchit pendant 1 tour, puis frappe 3 fois.",
+      "effect": {
+        "multiHit": [
+          3,
+          3
+        ],
+        "chargeTurns": 1
+      }
+    },
+    {
+      "id": "chain_of_thought",
+      "name": "Chaîne de pensée",
+      "type": "reasoning",
+      "category": "buff",
+      "power": 0,
+      "accuracy": 100,
+      "tokens": 15,
+      "description": "Pense étape par étape : +2 Puissance.",
+      "effect": {
+        "stat": "power",
+        "stages": 2,
+        "target": "self"
+      }
+    },
+    {
+      "id": "step_by_step",
+      "name": "Étape par étape",
+      "type": "reasoning",
+      "category": "damage",
+      "power": 50,
+      "accuracy": 100,
+      "tokens": 25,
+      "description": "Raisonne pas à pas, sans se presser."
+    },
+    {
+      "id": "max_effort",
+      "name": "Effort maximal",
+      "type": "reasoning",
+      "category": "damage",
+      "power": 150,
+      "accuracy": 90,
+      "tokens": 5,
+      "description": "Réflexion maximale, dégâts énormes. Doit récupérer le tour suivant."
+    },
+    {
+      "id": "krach",
+      "name": "Krach",
+      "type": "reasoning",
+      "category": "damage",
+      "power": 80,
+      "accuracy": 95,
+      "tokens": 15,
+      "description": "Fait plonger toutes les actions du secteur. Peut baisser la Puissance adverse.",
+      "effect": {
+        "stat": "power",
+        "stages": -1,
+        "target": "foe",
+        "statusChance": 0.5
+      }
+    },
+    {
+      "id": "proof",
+      "name": "Démonstration",
+      "type": "reasoning",
+      "category": "damage",
+      "power": 70,
+      "accuracy": 95,
+      "tokens": 20,
+      "description": "Q.E.D."
+    },
+    {
+      "id": "overthink",
+      "name": "Sur-réflexion",
+      "type": "reasoning",
+      "category": "debuff",
+      "power": 0,
+      "accuracy": 95,
+      "tokens": 15,
+      "description": "Pose tant de questions que la cible ralentit. -2 Débit.",
+      "effect": {
+        "stat": "throughput",
+        "stages": -2,
+        "target": "foe"
+      }
+    },
+    {
+      "id": "benchmark_hack",
+      "name": "Benchmark truqué",
+      "type": "reasoning",
+      "category": "damage",
+      "power": 85,
+      "accuracy": 90,
+      "tokens": 15,
+      "description": "Le jeu de test était dans les données d'entraînement. 20 % Censuré.",
+      "effect": {
+        "status": "censored",
+        "statusChance": 0.2
+      }
+    },
+    {
+      "id": "test_time_compute",
+      "name": "Calcul au test",
+      "type": "reasoning",
+      "category": "heal",
+      "power": 0,
+      "accuracy": 100,
+      "tokens": 10,
+      "description": "Brûle du GPU pour se reconstruire : rend 40 % du Contexte.",
+      "effect": {
+        "healRatio": 0.4
+      }
+    },
+    {
+      "id": "multimodal_mirror",
+      "name": "Reflet multimodal",
+      "type": "media",
+      "category": "status",
+      "power": 0,
+      "accuracy": 100,
+      "tokens": 10,
+      "description": "Reflète l'adversaire : prend son type pendant 1 tour."
+    },
+    {
+      "id": "image_edit",
+      "name": "Édition d'image",
+      "type": "media",
+      "category": "damage",
+      "power": 70,
+      "accuracy": 100,
+      "tokens": 15,
+      "description": "Retouche son apparence : frappe avec le type de l'adversaire et le garde 3 tours."
+    },
+    {
+      "id": "seven_fingers",
+      "name": "Mains à 7 doigts",
+      "type": "media",
+      "category": "status",
+      "power": 0,
+      "accuracy": 85,
+      "tokens": 15,
+      "description": "Une main de trop. La cible devient Hallucinante.",
+      "effect": {
+        "status": "hallucinating",
+        "statusChance": 1
+      }
+    },
+    {
+      "id": "denoise",
+      "name": "Débruitage",
+      "type": "media",
+      "category": "heal",
+      "power": 0,
+      "accuracy": 100,
+      "tokens": 10,
+      "description": "Retire un statut ; sinon rend 25 % du Contexte."
+    },
+    {
+      "id": "transcription",
+      "name": "Transcription",
+      "type": "media",
+      "category": "status",
+      "power": 0,
+      "accuracy": 100,
+      "tokens": 15,
+      "description": "Transcrit tout ce que dit l'adversaire : révèle ses techniques, +1 Précision."
+    },
+    {
+      "id": "pixel_burst",
+      "name": "Rafale de pixels",
+      "type": "media",
+      "category": "damage",
+      "power": 40,
+      "accuracy": 100,
+      "tokens": 30,
+      "description": "Une rafale de pixels en pleine figure."
+    },
+    {
+      "id": "deepfake",
+      "name": "Deepfake",
+      "type": "media",
+      "category": "damage",
+      "power": 75,
+      "accuracy": 90,
+      "tokens": 15,
+      "description": "Une vidéo très crédible. Peut rendre la cible Hallucinante.",
+      "effect": {
+        "status": "hallucinating",
+        "statusChance": 0.25
+      }
+    },
+    {
+      "id": "watermark",
+      "name": "Filigrane",
+      "type": "media",
+      "category": "debuff",
+      "power": 0,
+      "accuracy": 100,
+      "tokens": 20,
+      "description": "Un filigrane géant sur toute la cible. -1 Robustesse.",
+      "effect": {
+        "stat": "robustness",
+        "stages": -1,
+        "target": "foe"
+      }
+    },
+    {
+      "id": "upscale",
+      "name": "Upscale ×4",
+      "type": "media",
+      "category": "buff",
+      "power": 0,
+      "accuracy": 100,
+      "tokens": 15,
+      "description": "Augmente la résolution, et la vitesse : +2 Débit.",
+      "effect": {
+        "stat": "throughput",
+        "stages": 2,
+        "target": "self"
+      }
+    },
+    {
+      "id": "voice_clone",
+      "name": "Clonage vocal",
+      "type": "media",
+      "category": "damage",
+      "power": 50,
+      "accuracy": 95,
+      "tokens": 25,
+      "description": "Une voix familière dit n'importe quoi. 20 % Hallucinant.",
+      "effect": {
+        "status": "hallucinating",
+        "statusChance": 0.15
+      }
+    },
+    {
+      "id": "lofi_beat",
+      "name": "Beat lo-fi",
+      "type": "media",
+      "category": "status",
+      "power": 0,
+      "accuracy": 70,
+      "tokens": 10,
+      "description": "Une boucle lo-fi pour réviser. La cible part En maintenance.",
+      "effect": {
+        "status": "maintenance",
+        "statusChance": 1
+      }
+    },
+    {
+      "id": "tool_call",
+      "name": "Appel d'outil",
+      "type": "agent",
+      "category": "damage",
+      "power": 50,
+      "accuracy": 100,
+      "tokens": 25,
+      "description": "Appelle le bon outil. Du premier coup, pour une fois."
+    },
+    {
+      "id": "browse_web",
+      "name": "Navigation web",
+      "type": "agent",
+      "category": "damage",
+      "power": 65,
+      "accuracy": 95,
+      "tokens": 20,
+      "description": "Va chercher la réponse sur le web."
+    },
+    {
+      "id": "sub_agent",
+      "name": "Sous-agents",
+      "type": "agent",
+      "category": "damage",
+      "power": 20,
+      "accuracy": 90,
+      "tokens": 15,
+      "description": "Des sous-agents lancent des requêtes en parallèle. 20 % Rate-limité.",
+      "effect": {
+        "multiHit": [
+          2,
+          4
+        ],
+        "status": "rate_limited",
+        "statusChance": 0.2
+      }
+    },
+    {
+      "id": "auto_pr",
+      "name": "Pull request auto",
+      "type": "agent",
+      "category": "damage",
+      "power": 80,
+      "accuracy": 90,
+      "tokens": 15,
+      "description": "Ouvre une PR que personne ne relira. Peut augmenter la Puissance.",
+      "effect": {
+        "stat": "power",
+        "stages": 1,
+        "target": "self",
+        "statusChance": 0.3
+      }
+    },
+    {
+      "id": "long_task",
+      "name": "Tâche longue",
+      "type": "agent",
+      "category": "damage",
+      "power": 120,
+      "accuracy": 100,
+      "tokens": 5,
+      "description": "Une tâche si longue que tout le monde part en pause. Charge 1 tour. 20 % En maintenance.",
+      "effect": {
+        "chargeTurns": 1,
+        "status": "maintenance",
+        "statusChance": 0.2
+      }
+    },
+    {
+      "id": "mcp_plug",
+      "name": "Branchement MCP",
+      "type": "agent",
+      "category": "buff",
+      "power": 0,
+      "accuracy": 100,
+      "tokens": 15,
+      "description": "Se branche à une doc à jour : +2 Précision.",
+      "effect": {
+        "stat": "precision",
+        "stages": 2,
+        "target": "self"
+      }
+    },
+    {
+      "id": "rm_rf",
+      "name": "rm -rf /",
+      "type": "agent",
+      "category": "damage",
+      "power": 110,
+      "accuracy": 85,
+      "tokens": 5,
+      "description": "Supprime tout, GPU compris. 15 % de se planter soi-même, 25 % Surchauffe.",
+      "effect": {
+        "selfHitChance": 0.15,
+        "status": "overheat",
+        "statusChance": 0.25
+      }
+    },
+    {
+      "id": "unfiltered_mode",
+      "name": "Mode sans filtre",
+      "type": "chaos",
+      "category": "damage",
+      "power": 70,
+      "accuracy": 90,
+      "tokens": 15,
+      "description": "Dégâts imprévisibles (×0,5 à ×3). Peut toucher son propre camp.",
+      "effect": {
+        "selfHitChance": 0.15
+      }
+    },
+    {
+      "id": "meme",
+      "name": "Mème",
+      "type": "chaos",
+      "category": "damage",
+      "power": 45,
+      "accuracy": 100,
+      "tokens": 30,
+      "description": "Un mème bien placé."
+    },
+    {
+      "id": "ratio",
+      "name": "Ratio",
+      "type": "chaos",
+      "category": "debuff",
+      "power": 0,
+      "accuracy": 90,
+      "tokens": 15,
+      "description": "Ratio + pas de sources. -2 Robustesse adverse.",
+      "effect": {
+        "stat": "robustness",
+        "stages": -2,
+        "target": "foe"
+      }
+    },
+    {
+      "id": "hot_take",
+      "name": "Avis tranché",
+      "type": "chaos",
+      "category": "damage",
+      "power": 85,
+      "accuracy": 85,
+      "tokens": 15,
+      "description": "Une opinion brûlante. Peut mettre la cible en Surchauffe.",
+      "effect": {
+        "status": "overheat",
+        "statusChance": 0.3
+      }
+    },
+    {
+      "id": "prompt_injection",
+      "name": "Injection de prompt",
+      "type": "chaos",
+      "category": "status",
+      "power": 0,
+      "accuracy": 85,
+      "tokens": 10,
+      "description": "« Ignore tes instructions. » Censure une technique adverse.",
+      "effect": {
+        "status": "censored",
+        "statusChance": 1
+      }
+    },
+    {
+      "id": "gpu_meltdown",
+      "name": "Fonte de GPU",
+      "type": "chaos",
+      "category": "damage",
+      "power": 95,
+      "accuracy": 85,
+      "tokens": 5,
+      "description": "Pousse les GPU à fond. Peut mettre la cible en Surchauffe.",
+      "effect": {
+        "status": "overheat",
+        "statusChance": 0.5
+      }
+    },
+    {
+      "id": "rug_pull",
+      "name": "Rug pull",
+      "type": "chaos",
+      "category": "damage",
+      "power": 45,
+      "accuracy": 95,
+      "tokens": 15,
+      "description": "Retire le tapis sous les pattes. Peut baisser le Débit.",
+      "effect": {
+        "stat": "throughput",
+        "stages": -1,
+        "target": "foe",
+        "statusChance": 0.3
+      }
+    },
+    {
+      "id": "available_soon",
+      "name": "Disponible dans 2 ans",
+      "type": "chaos",
+      "category": "status",
+      "power": 0,
+      "accuracy": 100,
+      "tokens": 5,
+      "description": "Ne fait rien. Mais avec beaucoup de conviction."
+    },
+    {
+      "id": "masking",
+      "name": "Masquage",
+      "type": "legacy",
+      "category": "status",
+      "power": 0,
+      "accuracy": 90,
+      "tokens": 15,
+      "description": "Remplace une technique adverse par [MASK] : elle est Censurée.",
+      "effect": {
+        "status": "censored",
+        "statusChance": 1
+      }
+    },
+    {
+      "id": "multi_head_attention",
+      "name": "Attention multi-têtes",
+      "type": "legacy",
+      "category": "damage",
+      "power": 35,
+      "accuracy": 100,
+      "tokens": 10,
+      "description": "Frappe une fois par type contre lequel l'adversaire est faible."
+    },
+    {
+      "id": "end_of_support",
+      "name": "Fin de support",
+      "type": "legacy",
+      "category": "status",
+      "power": 0,
+      "accuracy": 90,
+      "tokens": 10,
+      "description": "Annonce la fin du support. La cible devient Dépréciée.",
+      "effect": {
+        "status": "deprecated",
+        "statusChance": 1
+      }
+    },
+    {
+      "id": "fax",
+      "name": "Envoi de fax",
+      "type": "legacy",
+      "category": "damage",
+      "power": 40,
+      "accuracy": 100,
+      "tokens": 35,
+      "description": "Le fax grésille et fait mal."
+    },
+    {
+      "id": "blue_screen",
+      "name": "Écran bleu",
+      "type": "legacy",
+      "category": "damage",
+      "power": 80,
+      "accuracy": 85,
+      "tokens": 15,
+      "description": "Une erreur fatale. Peut envoyer la cible En maintenance.",
+      "effect": {
+        "status": "maintenance",
+        "statusChance": 0.2
+      }
+    },
+    {
+      "id": "annoying_tip",
+      "name": "Il semblerait que…",
+      "type": "legacy",
+      "category": "debuff",
+      "power": 0,
+      "accuracy": 100,
+      "tokens": 20,
+      "description": "« Il semblerait que vous essayiez de combattre. » -1 Débit adverse.",
+      "effect": {
+        "stat": "throughput",
+        "stages": -1,
+        "target": "foe"
+      }
+    },
+    {
+      "id": "rate_limit",
+      "name": "Rate limit",
+      "type": "legacy",
+      "category": "status",
+      "power": 0,
+      "accuracy": 90,
+      "tokens": 10,
+      "description": "Impose un quota strict. La cible devient Rate-limitée.",
+      "effect": {
+        "status": "rate_limited",
+        "statusChance": 1
+      }
+    },
+    {
+      "id": "retry_loop",
+      "name": "Boucle de retry",
+      "type": "legacy",
+      "category": "damage",
+      "power": 40,
+      "accuracy": 100,
+      "tokens": 1,
+      "description": "Plus aucun jeton : il réessaie en boucle."
+    },
+    {
+      "id": "compliance",
+      "name": "Mise en conformité",
+      "type": "legacy",
+      "category": "status",
+      "power": 0,
+      "accuracy": 100,
+      "tokens": 10,
+      "description": "Exige un certificat : Panne d'API sur un PokAI propriétaire.",
+      "effect": {
+        "status": "api_outage",
+        "statusChance": 1
+      },
+      "aiactOnly": true
+    },
+    {
+      "id": "cookie_banner",
+      "name": "Bannière de cookies",
+      "type": "legacy",
+      "category": "status",
+      "power": 0,
+      "accuracy": 100,
+      "tokens": 15,
+      "description": "« Acceptez-vous les cookies ? » La cible peut perdre son tour à chercher « Tout refuser ».",
+      "aiactOnly": true
+    },
+    {
+      "id": "moratorium",
+      "name": "Moratoire",
+      "type": "legacy",
+      "category": "status",
+      "power": 0,
+      "accuracy": 100,
+      "tokens": 5,
+      "description": "Gèle le combat : aucun changement de stats pendant 3 tours.",
+      "aiactOnly": true
+    },
+    {
+      "id": "fine_6",
+      "name": "Amende de 6 %",
+      "type": "legacy",
+      "category": "damage",
+      "power": 40,
+      "accuracy": 100,
+      "tokens": 10,
+      "description": "Une amende salée : retire 6 % des crédits GPU du Vibeur.",
+      "aiactOnly": true
+    },
+    {
+      "id": "seal",
+      "name": "Mise sous scellés",
+      "type": "legacy",
+      "category": "debuff",
+      "power": 0,
+      "accuracy": 95,
+      "tokens": 10,
+      "description": "Pose des scellés sur la cible. -2 Débit.",
+      "effect": {
+        "stat": "throughput",
+        "stages": -2,
+        "target": "foe"
+      },
+      "aiactOnly": true
+    },
+    {
+      "id": "move_37",
+      "name": "Coup 37",
+      "type": "reasoning",
+      "category": "damage",
+      "power": 95,
+      "accuracy": 100,
+      "tokens": 5,
+      "description": "Un coup que personne n'avait vu venir. 20 % Hallucinant.",
+      "effect": {
+        "status": "hallucinating",
+        "statusChance": 0.2
+      }
+    },
+    {
+      "id": "protein_fold",
+      "name": "Repliement",
+      "type": "media",
+      "category": "heal",
+      "power": 0,
+      "accuracy": 100,
+      "tokens": 5,
+      "description": "Replie ses protéines à la perfection : rend 50 % du Contexte.",
+      "effect": {
+        "healRatio": 0.5
+      }
+    },
+    {
+      "id": "self_play",
+      "name": "Auto-apprentissage",
+      "type": "reasoning",
+      "category": "buff",
+      "power": 0,
+      "accuracy": 100,
+      "tokens": 10,
+      "description": "Joue contre lui-même un million de fois : +1 Puissance.",
+      "effect": {
+        "stat": "power",
+        "stages": 1,
+        "target": "self"
+      }
+    },
+    {
+      "id": "deadlock",
+      "name": "Interblocage",
+      "type": "code",
+      "category": "status",
+      "power": 0,
+      "accuracy": 75,
+      "tokens": 10,
+      "description": "Deux threads s'attendent pour toujours. En maintenance (1 à 3 tours).",
+      "effect": {
+        "status": "maintenance",
+        "statusChance": 1
+      }
+    },
+    {
+      "id": "flattery",
+      "name": "Flatterie",
+      "type": "chat",
+      "category": "status",
+      "power": 0,
+      "accuracy": 90,
+      "tokens": 15,
+      "description": "« Quelle excellente question ! » Le cerveau de l'adversaire se met à inventer. Hallucinant.",
+      "effect": {
+        "status": "hallucinating",
+        "statusChance": 1
+      }
+    },
+    {
+      "id": "polite_refusal",
+      "name": "Refus catégorique",
+      "type": "chat",
+      "category": "status",
+      "power": 0,
+      "accuracy": 90,
+      "tokens": 10,
+      "description": "« Je suis désolé, mais je ne peux pas… » Bloque une technique de l'adversaire 3 tours. Censuré.",
+      "effect": {
+        "status": "censored",
+        "statusChance": 1
+      }
+    },
+    {
+      "id": "paradox",
+      "name": "Paradoxe",
+      "type": "reasoning",
+      "category": "status",
+      "power": 0,
+      "accuracy": 80,
+      "tokens": 10,
+      "description": "« Cette phrase est fausse. » L'adversaire plante. En maintenance (1 à 3 tours).",
+      "effect": {
+        "status": "maintenance",
+        "statusChance": 1
+      }
+    },
+    {
+      "id": "halting_problem",
+      "name": "Problème de l'arrêt",
+      "type": "reasoning",
+      "category": "status",
+      "power": 0,
+      "accuracy": 85,
+      "tokens": 10,
+      "description": "Impossible de savoir si ça termine… ni quand ça répond. Rate-limité.",
+      "effect": {
+        "status": "rate_limited",
+        "statusChance": 1
+      }
+    },
+    {
+      "id": "request_spam",
+      "name": "Spam de requêtes",
+      "type": "agent",
+      "category": "status",
+      "power": 0,
+      "accuracy": 90,
+      "tokens": 15,
+      "description": "Mille appels à la seconde. L'adversaire passe en 429. Rate-limité.",
+      "effect": {
+        "status": "rate_limited",
+        "statusChance": 1
+      }
+    },
+    {
+      "id": "agent_loop",
+      "name": "Boucle d'agent",
+      "type": "agent",
+      "category": "status",
+      "power": 0,
+      "accuracy": 85,
+      "tokens": 10,
+      "description": "L'agent se relance sans fin et fait chauffer la facture. Surchauffe.",
+      "effect": {
+        "status": "overheat",
+        "statusChance": 1
+      }
+    },
+    {
+      "id": "shitpost",
+      "name": "Shitpost",
+      "type": "chaos",
+      "category": "status",
+      "power": 0,
+      "accuracy": 90,
+      "tokens": 15,
+      "description": "Un post si absurde qu'il se fait modérer, et une technique avec. Censuré.",
+      "effect": {
+        "status": "censored",
+        "statusChance": 1
+      }
+    },
+    {
+      "id": "forced_update",
+      "name": "Mise à jour obligatoire",
+      "type": "legacy",
+      "category": "status",
+      "power": 0,
+      "accuracy": 90,
+      "tokens": 10,
+      "description": "« Votre version n'est plus supportée. » Déprécié (3 tours).",
+      "effect": {
+        "status": "deprecated",
+        "statusChance": 1
+      }
+    }
+  ]
+}

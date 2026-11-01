@@ -1,0 +1,4 @@
+{ "trainers": [
+  { "id": "rival_1", "name": "Rival", "sprite": "rival", "team": [{ "form": "claude_haiku", "level": 5 }], "reward": 100,
+    "introDialogue": "rival_intro", "defeatDialogue": "rival_defeat" }
+] }

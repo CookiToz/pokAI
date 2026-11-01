@@ -1,0 +1,449 @@
+{
+ "scripts": [
+  {
+   "id": "sign_route_foret_poids_12_61",
+   "steps": [
+    {
+     "say": "← LATENTIA CITY ↓ 2 km · HUGGING GROVE ↑ 5 km →\n(Les deux distances sont garanties par un modèle de langage.)"
+    }
+   ]
+  },
+  {
+   "id": "sign_route_foret_poids_12_53",
+   "steps": [
+    {
+     "say": "RACCOURCI ↑ — « Pousser avec précaution. La caisse contient des poids. » La caisse ne contient rien du tout."
+    }
+   ]
+  },
+  {
+   "id": "sign_route_foret_poids_16_37",
+   "steps": [
+    {
+     "say": "PONT DE LA LATENCE ↑ · Charge maximale : 128 000 planches. Hugging Grove ↑ 3 km · Latentia City ↓ 4 km."
+    }
+   ]
+  },
+  {
+   "id": "sign_route_foret_poids_16_31",
+   "steps": [
+    {
+     "say": "← Aire de repos (banc, lampadaire, 0 ads) · HUGGING GROVE ↑ 2 km · Latentia City ↓ 5 km"
+    }
+   ]
+  },
+  {
+   "id": "sign_route_foret_poids_12_14",
+   "steps": [
+    {
+     "say": "← Clairière aux câbles · Hugging Grove ↑ 1 km →  Attention : les câbles ne sont pas des lianes. Ils mordent."
+    }
+   ]
+  },
+  {
+   "id": "sign_route_foret_poids_12_3",
+   "steps": [
+    {
+     "say": "HUGGING GROVE ↑ — Éco-cité open source. Les arbres sont des maisons. Les maisons sont des arbres. Le loyer, lui, est libre."
+    }
+   ]
+  },
+  {
+   "id": "sign_route_foret_poids_8_44",
+   "steps": [
+    {
+     "say": "Écran de la borne publique : « DEPLOY FAILED (x47) ». Quelqu'un a laissé un mouchoir et un mug « World's Okayest Dev »."
+    }
+   ]
+  },
+  {
+   "id": "sign_route_foret_poids_16_25",
+   "steps": [
+    {
+     "say": "FEU DE CAMP communal : on y brûle les anciens modèles dépréciés. Guimauves non incluses (elles sont en bêta)."
+    }
+   ]
+  },
+  {
+   "id": "sign_route_foret_poids_12_17",
+   "steps": [
+    {
+     "say": "PIQUE-NIQUE : Pour chaque sandwich, un token. Pour chaque fourmi, une exception non gérée."
+    }
+   ]
+  },
+  {
+   "id": "sign_route_foret_poids_15_39",
+   "steps": [
+    {
+     "say": "ARBRE DE DÉCISION (chêne, 300 ans) : il a toujours dit « ça dépend »."
+    }
+   ]
+  },
+  {
+   "id": "sign_route_foret_poids_7_46",
+   "steps": [
+    {
+     "say": "NICHOIR OPEN SOURCE : les oiseaux publient leurs nids sous licence MIT."
+    }
+   ]
+  },
+  {
+   "id": "foret_hidden_stash",
+   "steps": [
+    {
+     "say": "Derrière les buissons, une vieille clé USB, un Dataset et un post-it : « mot de passe : password ». Comme c'est sécurisé."
+    },
+    {
+     "give_item": "dataset",
+     "count": 2
+    },
+    {
+     "say": "Tu récupères 2 Datasets. Le post-it, lui, reste là. Il a assez servi."
+    }
+   ]
+  },
+  {
+   "id": "amb_fp_rest",
+   "steps": [
+    {
+     "say": "Je suis en pause. Mon modèle aussi. Il dit qu'il « réfléchit ». Il dort depuis dix minutes.",
+     "speaker": "Randonneur"
+    }
+   ]
+  },
+  {
+   "id": "amb_fp_rest_2",
+   "steps": [
+    {
+     "say": "On m'avait promis une vue sur les montagnes. C'est un data center. Mais il est joli, avec les arbres.",
+     "speaker": "Touriste"
+    }
+   ]
+  },
+  {
+   "id": "fp_scout_1_intro",
+   "steps": [
+    {
+     "say": "Tu entres dans la Forêt des Poids ! Règle n° 1 : ici, on partage tout. Même les combats.",
+     "speaker": "Scout Théo",
+     "portrait": "kid"
+    },
+    {
+     "say": "Mon PokAI a lu toute la notice de camping. Il est prêt.",
+     "speaker": "Scout Théo",
+     "portrait": "kid"
+    }
+   ]
+  },
+  {
+   "id": "fp_scout_1_defeat",
+   "steps": [
+    {
+     "say": "Aïe. Je vais le noter dans mon carnet. Sous « leçons ». À côté de « ne pas goûter les baies ».",
+     "speaker": "Scout Théo",
+     "portrait": "kid"
+    }
+   ]
+  },
+  {
+   "id": "fp_scout_1_talk",
+   "steps": [
+    {
+     "say": "La caisse, plus loin dans le virage ? Pousse-la. C'est un raccourci. Moi, j'ai peur de ce qu'il y a dedans : des poids.",
+     "speaker": "Scout Théo",
+     "portrait": "kid"
+    }
+   ]
+  },
+  {
+   "id": "fp_hiker_1_intro",
+   "steps": [
+    {
+     "say": "Un selfie avec un PokAI sauvage ? Non ? Un combat, alors. Je poste le résultat.",
+     "speaker": "Randonneuse Camille",
+     "portrait": "tourist"
+    },
+    {
+     "say": "Mes bâtons de marche sont sponsorisés. Mes PokAI aussi.",
+     "speaker": "Randonneuse Camille",
+     "portrait": "tourist"
+    }
+   ]
+  },
+  {
+   "id": "fp_hiker_1_defeat",
+   "steps": [
+    {
+     "say": "Je note l'avis : « combat 4 étoiles, ambiance forêt, manque de wifi ».",
+     "speaker": "Randonneuse Camille",
+     "portrait": "tourist"
+    }
+   ]
+  },
+  {
+   "id": "fp_hiker_1_talk",
+   "steps": [
+    {
+     "say": "Le pont de la Latence tient bon. J'ai compté les planches. Il en manque une. Je n'ai pas dit laquelle.",
+     "speaker": "Randonneuse Camille",
+     "portrait": "tourist"
+    }
+   ]
+  },
+  {
+   "id": "fp_dev_1_intro",
+   "steps": [
+    {
+     "say": "Chut, j'ai un build en cours. Il dure depuis le Moyen Âge. Un combat pour patienter ?",
+     "speaker": "Dev Noé",
+     "portrait": "dev_phone"
+    }
+   ]
+  },
+  {
+   "id": "fp_dev_1_defeat",
+   "steps": [
+    {
+     "say": "Mon build vient de passer. Mon combat, non. L'équilibre de l'univers est respecté.",
+     "speaker": "Dev Noé",
+     "portrait": "dev_phone"
+    }
+   ]
+  },
+  {
+   "id": "fp_dev_1_talk",
+   "steps": [
+    {
+     "say": "Mon assistant de code a supprimé mes tests « pour gagner de la place ». On gagne beaucoup de place, comme ça.",
+     "speaker": "Dev Noé",
+     "portrait": "dev_phone"
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_fp_1_intro",
+   "steps": [
+    {
+     "cutscene": "start"
+    },
+    {
+     "emote": "!",
+     "who": "aiact_agent_fp_1"
+    },
+    {
+     "intro_card": {
+      "name": "AGENT DE CONFORMITÉ",
+      "title": "Division Sentiers et Forêts",
+      "portrait": "agent_conformite"
+     }
+    },
+    {
+     "say": "Halte ! Cette forêt n'a pas de permis d'exploitation d'arbres open source.",
+     "speaker": "Agent de Conformité",
+     "portrait": "agent_conformite"
+    },
+    {
+     "say": "Pour votre sécurité, vos PokAI seront scellés. Les arbres, eux, seront taxés.",
+     "speaker": "Agent de Conformité",
+     "portrait": "agent_conformite"
+    },
+    {
+     "cutscene": "end"
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_fp_1_defeat",
+   "steps": [
+    {
+     "say": "Mon rapport dira « incident : un arbre m'a regardé de travers ». Ça passera.",
+     "speaker": "Agent de Conformité",
+     "portrait": "agent_conformite"
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_fp_1_talk",
+   "steps": [
+    {
+     "say": "Je surveille la forêt. Pour l'instant, elle ne fait rien. C'est très suspect.",
+     "speaker": "Agent de Conformité",
+     "portrait": "agent_conformite"
+    }
+   ]
+  },
+  {
+   "id": "rival_2_haiku_intro",
+   "steps": [
+    {
+     "cutscene": "start"
+    },
+    {
+     "emote": "!",
+     "who": "kevin_fp_haiku"
+    },
+    {
+     "intro_card": {
+      "name": "KÉVIN",
+      "title": "Rival · en pleine forêt",
+      "portrait": "kevin"
+     }
+    },
+    {
+     "say": "Eh, {player} ! Tu as mis Claude Haiku en équipe ? J'ai fait du progrès. J'ai Phi-1, plus un deuxième modèle. Un seul PokAI, c'est un point de défaillance unique.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "J'ai lu la doc. Un peu. Le titre. On teste en prod, encore une fois.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "cutscene": "end"
+    }
+   ]
+  },
+  {
+   "id": "rival_2_haiku_defeat",
+   "steps": [
+    {
+     "say": "Quoi ?! J'avais pourtant ajouté un test. Qui échoue, mais un test.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Je file au Port 8080. Ils y ont un marché noir de H100. Pas que je veuille en acheter. Si, un peu.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "set_flag": "rival_2_done"
+    },
+    {
+     "npc_leave": "kevin_fp_haiku",
+     "hide": true
+    }
+   ]
+  },
+  {
+   "id": "rival_2_phi_intro",
+   "steps": [
+    {
+     "cutscene": "start"
+    },
+    {
+     "emote": "!",
+     "who": "kevin_fp_phi"
+    },
+    {
+     "intro_card": {
+      "name": "KÉVIN",
+      "title": "Rival · en pleine forêt",
+      "portrait": "kevin"
+     }
+    },
+    {
+     "say": "Eh, {player} ! Tu as mis Phi-1 en équipe ? J'ai fait du progrès. J'ai Gemma, plus un deuxième modèle. Un seul PokAI, c'est un point de défaillance unique.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "J'ai lu la doc. Un peu. Le titre. On teste en prod, encore une fois.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "cutscene": "end"
+    }
+   ]
+  },
+  {
+   "id": "rival_2_phi_defeat",
+   "steps": [
+    {
+     "say": "Quoi ?! J'avais pourtant ajouté un test. Qui échoue, mais un test.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Je file au Port 8080. Ils y ont un marché noir de H100. Pas que je veuille en acheter. Si, un peu.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "set_flag": "rival_2_done"
+    },
+    {
+     "npc_leave": "kevin_fp_phi",
+     "hide": true
+    }
+   ]
+  },
+  {
+   "id": "rival_2_gemma_intro",
+   "steps": [
+    {
+     "cutscene": "start"
+    },
+    {
+     "emote": "!",
+     "who": "kevin_fp_gemma"
+    },
+    {
+     "intro_card": {
+      "name": "KÉVIN",
+      "title": "Rival · en pleine forêt",
+      "portrait": "kevin"
+     }
+    },
+    {
+     "say": "Eh, {player} ! Tu as mis Gemma en équipe ? J'ai fait du progrès. J'ai Phi-1, plus un deuxième modèle. Un seul PokAI, c'est un point de défaillance unique.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "J'ai lu la doc. Un peu. Le titre. On teste en prod, encore une fois.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "cutscene": "end"
+    }
+   ]
+  },
+  {
+   "id": "rival_2_gemma_defeat",
+   "steps": [
+    {
+     "say": "Quoi ?! J'avais pourtant ajouté un test. Qui échoue, mais un test.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "say": "Je file au Port 8080. Ils y ont un marché noir de H100. Pas que je veuille en acheter. Si, un peu.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    },
+    {
+     "set_flag": "rival_2_done"
+    },
+    {
+     "npc_leave": "kevin_fp_gemma",
+     "hide": true
+    }
+   ]
+  },
+  {
+   "id": "kevin_after_2",
+   "steps": [
+    {
+     "say": "On se reparle quand mon prochain déploiement sera stable. Donc jamais.",
+     "speaker": "KÉVIN",
+     "portrait": "kevin"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,372 @@
+{
+ "id": "tour_conformite",
+ "name": "Tour de Conformité",
+ "width": 29,
+ "height": 46,
+ "rows": [
+  "###########ZZZZZZZ###########",
+  "#;KKKKKKKK;;;;X;;;;KKKKKKKK;#",
+  "#;;;;;;;;;;;;;;;;;;;;;;;;;;;#",
+  "#;;;;;;;;l;;;;;;;;;l;;;;;;;;#",
+  "#;;;;;;;;;;;;;;;;;;;;;;;;;;;#",
+  "#;;;;;;;;;;;;;;;;;;;;;;;;;;;#",
+  "#;;;;;;;;;;;;;;;;;;;;;;;;;;;#",
+  "#;;;;;;;;;;;;;;;;;;;;;;;;;;;#",
+  "#;;;;l;;;;;;;;;;;;;;;;;l;;;;#",
+  "#;;;;;;;;;;;;;;;;;;;;;;;;;;;#",
+  "#############HHH#############",
+  "#K+u+++++++++++++++++++++u++#",
+  "#+++++++++++++++++++++++++++#",
+  "#+++++++s+++++++++++s+++++++#",
+  "#+++++++++++++++++++++++++++#",
+  "#+++++++++++++++++++++++++++#",
+  "#############HHH#############",
+  "#K+u+++++++++++++++++++++u++#",
+  "#+++++++++++++++++++++++++++#",
+  "#+++++++++++++++++++++++++++#",
+  "#+++++++ss+++++++++ss+++++++#",
+  "#++++++++++++++++++++++++++l#",
+  "#############HHH#############",
+  "#KJ+++++++++++++++++++++++++#",
+  "#+++++++++++++++++++++++++++#",
+  "#+++++h+++++++++++++++++++++#",
+  "#############HHH#############",
+  "#+++++++++++++++++++++++++++#",
+  "#+++++++++++++++++++++++++++#",
+  "#+++++++++++++++++++++h+++++#",
+  "#+++++++++++++++++++++++++Jl#",
+  "#############HHH#############",
+  "#K++++++++++++++++++++++++++#",
+  "#+++++++++++++++++++++++++++#",
+  "#++++++++++++++++++++++h++++#",
+  "#+++++++++++++++++++++++++++#",
+  "#+++++++++++++++++++++++++++#",
+  "#+++++++++++++++++++++++++++#",
+  "#+++++++++++++++++++++++++Jl#",
+  "#######Q####+++++####Q#######",
+  "#++u+++++++++++++++++++++u++#",
+  "#+++++++++++++++++++++++++++#",
+  "#+++++++++++++++++++++++++++#",
+  "#+++++++++++++++++++++++++++#",
+  "#KJ+++++++++++++++++++++++Jl#",
+  "#############XXX#############"
+ ],
+ "legend": {
+  "#": "wall",
+  "+": "floor_tile",
+  ";": "carpet",
+  "H": "gate",
+  "J": "terminal",
+  "K": "server_rack",
+  "Q": "poster_aiact",
+  "X": "exit_mat",
+  "Z": "scoreboard",
+  "h": "switch_plate",
+  "l": "plant",
+  "s": "shelf",
+  "u": "searchlight"
+ },
+ "npcs": [
+  {
+   "id": "tour_guard_1",
+   "sprite": "guard_aiact",
+   "x": 6,
+   "y": 42,
+   "facing": "right",
+   "dialogue": "aiact_agent_tour_1_talk",
+   "trainer": "aiact_agent_tour_1",
+   "sightRange": 4,
+   "condition": {
+    "not": {
+     "flag": "trainer_aiact_agent_tour_1_defeated"
+    }
+   }
+  },
+  {
+   "id": "tour_guard_2",
+   "sprite": "guard_aiact_2",
+   "x": 22,
+   "y": 42,
+   "facing": "left",
+   "dialogue": "aiact_agent_tour_2_talk",
+   "trainer": "aiact_agent_tour_2",
+   "sightRange": 4,
+   "condition": {
+    "not": {
+     "flag": "trainer_aiact_agent_tour_2_defeated"
+    }
+   }
+  },
+  {
+   "id": "tour_agent_1",
+   "sprite": "agent_conformite",
+   "x": 9,
+   "y": 34,
+   "facing": "right",
+   "dialogue": "aiact_agent_tour_3_talk",
+   "trainer": "aiact_agent_tour_3",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_aiact_agent_tour_3_defeated"
+    }
+   }
+  },
+  {
+   "id": "tour_agent_2",
+   "sprite": "agent_conformite",
+   "x": 10,
+   "y": 29,
+   "facing": "right",
+   "dialogue": "aiact_agent_tour_4_talk",
+   "trainer": "aiact_agent_tour_4",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_aiact_agent_tour_4_defeated"
+    }
+   }
+  },
+  {
+   "id": "greffiere",
+   "sprite": "greffiere_article52",
+   "x": 14,
+   "y": 19,
+   "facing": "down",
+   "dialogue": "greffiere_52_talk",
+   "trainer": "greffiere_52",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_greffiere_52_defeated"
+    }
+   }
+  },
+  {
+   "id": "cookie_boss",
+   "sprite": "inspector_cookie",
+   "x": 14,
+   "y": 13,
+   "facing": "down",
+   "dialogue": "cookie_ch5_talk",
+   "trainer": "cookie_ch5",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_cookie_ch5_defeated"
+    }
+   }
+  },
+  {
+   "id": "moratoire_boss",
+   "sprite": "directrice_moratoire",
+   "x": 14,
+   "y": 4,
+   "facing": "down",
+   "dialogue": "moratoire_talk",
+   "trainer": "moratoire",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_moratoire_defeated"
+    }
+   }
+  }
+ ],
+ "warps": [
+  {
+   "x": 13,
+   "y": 45,
+   "to": "conformite_capitale",
+   "toX": 51,
+   "toY": 35,
+   "facing": "down"
+  },
+  {
+   "x": 14,
+   "y": 45,
+   "to": "conformite_capitale",
+   "toX": 51,
+   "toY": 35,
+   "facing": "down"
+  },
+  {
+   "x": 15,
+   "y": 45,
+   "to": "conformite_capitale",
+   "toX": 51,
+   "toY": 35,
+   "facing": "down"
+  },
+  {
+   "x": 14,
+   "y": 1,
+   "to": "coffre_scelles",
+   "toX": 15,
+   "toY": 26,
+   "facing": "up"
+  }
+ ],
+ "triggers": [
+  {
+   "x": 13,
+   "y": 43,
+   "script": "tour_intro",
+   "w": 3,
+   "once": true
+  }
+ ],
+ "kind": "dungeon",
+ "music": "prison",
+ "gates": [
+  {
+   "x": 13,
+   "y": 31,
+   "flag": "tc_a"
+  },
+  {
+   "x": 14,
+   "y": 31,
+   "flag": "tc_a"
+  },
+  {
+   "x": 15,
+   "y": 31,
+   "flag": "tc_a"
+  },
+  {
+   "x": 13,
+   "y": 26,
+   "flag": "tc_b1"
+  },
+  {
+   "x": 14,
+   "y": 26,
+   "flag": "tc_b1"
+  },
+  {
+   "x": 15,
+   "y": 26,
+   "flag": "tc_b1"
+  },
+  {
+   "x": 13,
+   "y": 22,
+   "flag": "tc_b2"
+  },
+  {
+   "x": 14,
+   "y": 22,
+   "flag": "tc_b2"
+  },
+  {
+   "x": 15,
+   "y": 22,
+   "flag": "tc_b2"
+  },
+  {
+   "x": 13,
+   "y": 16,
+   "flag": "trainer_greffiere_52_defeated"
+  },
+  {
+   "x": 14,
+   "y": 16,
+   "flag": "trainer_greffiere_52_defeated"
+  },
+  {
+   "x": 15,
+   "y": 16,
+   "flag": "trainer_greffiere_52_defeated"
+  },
+  {
+   "x": 13,
+   "y": 10,
+   "flag": "trainer_cookie_ch5_defeated"
+  },
+  {
+   "x": 14,
+   "y": 10,
+   "flag": "trainer_cookie_ch5_defeated"
+  },
+  {
+   "x": 15,
+   "y": 10,
+   "flag": "trainer_cookie_ch5_defeated"
+  }
+ ],
+ "switches": [
+  {
+   "x": 23,
+   "y": 34,
+   "flag": "tc_a"
+  },
+  {
+   "x": 22,
+   "y": 29,
+   "flag": "tc_b1"
+  },
+  {
+   "x": 6,
+   "y": 25,
+   "flag": "tc_b2"
+  }
+ ],
+ "pushables": [
+  {
+   "id": "tc_crate_1",
+   "x": 5,
+   "y": 35
+  },
+  {
+   "id": "tc_crate_2",
+   "x": 6,
+   "y": 28
+  },
+  {
+   "id": "tc_crate_3",
+   "x": 22,
+   "y": 24
+  }
+ ],
+ "landmarks": [
+  {
+   "x": 14,
+   "y": 42,
+   "label": "Hall de la Tour"
+  },
+  {
+   "x": 14,
+   "y": 35,
+   "label": "Salle des Tampons"
+  },
+  {
+   "x": 14,
+   "y": 27,
+   "label": "Archives"
+  },
+  {
+   "x": 14,
+   "y": 19,
+   "label": "Greffière"
+  },
+  {
+   "x": 14,
+   "y": 13,
+   "label": "Inspecteur Cookie"
+  },
+  {
+   "x": 14,
+   "y": 4,
+   "label": "Bureau de la Directrice"
+  }
+ ],
+ "exits": [
+  {
+   "x": 14,
+   "y": 45,
+   "to": "conformite_capitale",
+   "label": "Sortie (cour de service)"
+  }
+ ]
+}

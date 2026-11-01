@@ -1,0 +1,5 @@
+{ "items": [
+  { "id": "free_key", "name": "Clé API Gratuite", "kind": "api_key", "price": 100, "description": "Une clé.", "keyTier": "free" },
+  { "id": "coffee", "name": "Café", "kind": "heal", "price": 50, "description": "Rend 20 %.", "heal": 0.2 },
+  { "id": "clear_cache", "name": "Vider le cache", "kind": "status_heal", "price": 200, "description": "Soigne tout.", "cures": "all" }
+] }

@@ -1,0 +1,69 @@
+{
+ "id": "store_city",
+ "name": "GPU Store de Jensen Cuir",
+ "width": 12,
+ "height": 8,
+ "rows": [
+  "############",
+  "#GG+RRRR+GG#",
+  "#++++++++++#",
+  "#++NNNNNN++#",
+  "#++++++++++#",
+  "#l++++++++l#",
+  "#++++++++++#",
+  "#####xx#####"
+ ],
+ "legend": {
+  "#": "wall",
+  "+": "floor_tile",
+  "N": "counter",
+  "P": "pc",
+  "h": "shelf",
+  "l": "plant",
+  "x": "exit_mat",
+  "G": "gpu_crate",
+  "R": "server_rack",
+  "t": "table",
+  "K": "carpet",
+  "k": "counter"
+ },
+ "npcs": [
+  {
+   "id": "jensen",
+   "sprite": "jensen_cuir",
+   "x": 5,
+   "y": 2,
+   "facing": "down",
+   "dialogue": "jensen_store"
+  },
+  {
+   "id": "store_clerk",
+   "sprite": "clerk",
+   "x": 7,
+   "y": 2,
+   "facing": "down",
+   "dialogue": "store_clerk_city"
+  }
+ ],
+ "warps": [
+  {
+   "x": 5,
+   "y": 7,
+   "to": "latentia_city",
+   "toX": 38,
+   "toY": 14,
+   "facing": "down"
+  },
+  {
+   "x": 6,
+   "y": 7,
+   "to": "latentia_city",
+   "toX": 38,
+   "toY": 14,
+   "facing": "down"
+  }
+ ],
+ "triggers": [],
+ "kind": "interior",
+ "music": "interior"
+}

@@ -1,0 +1,4 @@
+{ "moves": [
+  { "id": "prompt", "name": "Prompt", "type": "chat", "category": "damage", "power": 40, "accuracy": 100, "tokens": 30, "description": "Une requête." },
+  { "id": "refactor", "name": "Refactor", "type": "code", "category": "damage", "power": 60, "accuracy": 95, "tokens": 20, "description": "Réécrit tout.", "effect": { "status": "overheat", "statusChance": 0.1 } }
+] }

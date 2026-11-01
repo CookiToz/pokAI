@@ -1,0 +1,333 @@
+{
+ "scripts": [
+  {
+   "id": "sign_sentier_cotier_14_12",
+   "steps": [
+    {
+     "say": "← Clairière aux câbles · SENTIER CÔTIER · Hugging Grove ↑ 3 km · Port 8080 ↓ 5 km\n(Les distances sont approximatives : le sentier est hallucinant.)"
+    }
+   ]
+  },
+  {
+   "id": "sign_sentier_cotier_8_21",
+   "steps": [
+    {
+     "say": "ATTENTION : MOUETTES. Elles volent des tokens. Ne laissez aucun contexte sans surveillance."
+    }
+   ]
+  },
+  {
+   "id": "sign_sentier_cotier_14_34",
+   "steps": [
+    {
+     "say": "← PLAGE (baignade interdite : eau salée, pas de licence) · PORT 8080 ↓ 3 km · Hugging Grove ↑ 5 km"
+    }
+   ]
+  },
+  {
+   "id": "sign_sentier_cotier_12_46",
+   "steps": [
+    {
+     "say": "PORT 8080 ↓ 1 km — Contrôle de conformité obligatoire. Apportez : un certificat, un second certificat, et votre bonne humeur."
+    }
+   ]
+  },
+  {
+   "id": "sign_sentier_cotier_6_20",
+   "steps": [
+    {
+     "say": "BANC DE LA JETÉE : un dresseur y a laissé un mug « Café du Lundi ». Il est encore chaud. Mystère."
+    }
+   ]
+  },
+  {
+   "id": "sign_sentier_cotier_19_24",
+   "steps": [
+    {
+     "say": "CHÂTEAU DE SABLE : œuvre d'un enfant et d'un modèle de diffusion. Les tours sont à 7 doigts."
+    }
+   ]
+  },
+  {
+   "id": "sign_sentier_cotier_15_42",
+   "steps": [
+    {
+     "say": "FEU DE PLAGE interdit par l'AIACT. Autorisé par la lune. La lune n'est pas conforme."
+    }
+   ]
+  },
+  {
+   "id": "sign_sentier_cotier_12_31",
+   "steps": [
+    {
+     "say": "ÉPAVE DE BARQUE : « Le Prompt Précis ». Elle a coulé en essayant de trouver la sortie."
+    }
+   ]
+  },
+  {
+   "id": "sign_sentier_cotier_18_31",
+   "steps": [
+    {
+     "say": "POTAGER DU PHARE : on y plante des tokens. Aucun n'a poussé. Les mouettes sont suspectes."
+    }
+   ]
+  },
+  {
+   "id": "sign_sentier_cotier_13_24",
+   "steps": [
+    {
+     "say": "BORNE WI-FI DU SENTIER : « Pour te connecter, résous la devinette. »"
+    },
+    {
+     "say": "« Je parle toutes les langues sans en connaître aucune. Je sais tout, sauf ce que tu veux vraiment. Je jure que je ne mens pas, mais je me trompe. Que suis-je ? »"
+    },
+    {
+     "if": {
+      "flag": "riddle_sentier_done"
+     },
+     "goto": "done"
+    },
+    {
+     "choice": [
+      {
+       "label": "Un grand modèle de langage",
+       "goto": "good"
+      },
+      {
+       "label": "Un perroquet stochastique",
+       "goto": "parrot"
+      },
+      {
+       "label": "Un stagiaire",
+       "goto": "intern"
+      }
+     ]
+    },
+    {
+     "label": "good"
+    },
+    {
+     "say": "« Connexion établie. Bravo ! Voici une Clé API Pro, oubliée par un voyageur qui n'a jamais lu la doc. »"
+    },
+    {
+     "give_item": "api_key_pro"
+    },
+    {
+     "set_flag": "riddle_sentier_done"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "parrot"
+    },
+    {
+     "say": "« Presque. C'est la réponse d'un papier célèbre, mais pas la mienne. Réessaie. La borne te regarde avec pitié. »"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "intern"
+    },
+    {
+     "say": "« Oui, mais un stagiaire a un contrat. Faux. Réessaie. »"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "done"
+    },
+    {
+     "say": "« Tu as déjà résolu cette devinette. Connexion active : 2 bars. Tu n'as pas de réseau, mais tu as de la satisfaction. »"
+    }
+   ]
+  },
+  {
+   "id": "amb_sc_1",
+   "steps": [
+    {
+     "say": "J'ai trouvé un coquillage qui dit « je suis un modèle de langage ». Je l'ai remis à la mer. Il hallucinait.",
+     "speaker": "Touriste"
+    }
+   ]
+  },
+  {
+   "id": "amb_sc_2",
+   "steps": [
+    {
+     "say": "Je marche pour oublier ma facture d'API. Elle me suit. À chaque kilomètre, elle prend un zéro.",
+     "speaker": "Promeneur"
+    }
+   ]
+  },
+  {
+   "id": "sc_sailor_1_intro",
+   "steps": [
+    {
+     "say": "Mille sabords ! Ici, c'est le Sentier Côtier. Le Port est plus loin. Les ennuis, ils sont là.",
+     "speaker": "Marin Gaël",
+     "portrait": "sailor"
+    }
+   ]
+  },
+  {
+   "id": "sc_sailor_1_defeat",
+   "steps": [
+    {
+     "say": "J'ai perdu comme un cargo sans GPU. Vide, mais plein de regrets.",
+     "speaker": "Marin Gaël",
+     "portrait": "sailor"
+    }
+   ]
+  },
+  {
+   "id": "sc_sailor_1_talk",
+   "steps": [
+    {
+     "say": "Les Agents de l'AIACT saisissent les cargos. Ils les remplissent de formulaires. C'est ça, la vraie cargaison.",
+     "speaker": "Marin Gaël",
+     "portrait": "sailor"
+    }
+   ]
+  },
+  {
+   "id": "sc_tourist_1_intro",
+   "steps": [
+    {
+     "say": "Cette plage est magnifique ! Un selfie avec ton PokAI ? Un combat ? Je ne sais plus ce que j'ai demandé.",
+     "speaker": "Touriste Odile",
+     "portrait": "tourist"
+    }
+   ]
+  },
+  {
+   "id": "sc_tourist_1_defeat",
+   "steps": [
+    {
+     "say": "Je poste : « combat sur la plage, 0 étoile, 1 PokAI mouillé ». Tu mérites mieux.",
+     "speaker": "Touriste Odile",
+     "portrait": "tourist"
+    }
+   ]
+  },
+  {
+   "id": "sc_tourist_1_talk",
+   "steps": [
+    {
+     "say": "Mon assistant de voyage m'a promis une plage privée. C'est un parking.",
+     "speaker": "Touriste Odile",
+     "portrait": "tourist"
+    }
+   ]
+  },
+  {
+   "id": "sc_scientist_1_intro",
+   "steps": [
+    {
+     "say": "Je mesure la vitesse de l'inférence en fonction de la marée. Tu es un point de données de plus.",
+     "speaker": "Chercheur Anselme",
+     "portrait": "scientist"
+    }
+   ]
+  },
+  {
+   "id": "sc_scientist_1_defeat",
+   "steps": [
+    {
+     "say": "Intéressant. Résultat : tu es meilleur que mon modèle. Je vais le noter comme « erreur de mesure ».",
+     "speaker": "Chercheur Anselme",
+     "portrait": "scientist"
+    }
+   ]
+  },
+  {
+   "id": "sc_scientist_1_talk",
+   "steps": [
+    {
+     "say": "Mon papier sur les mouettes a été accepté. Les relecteurs sont des mouettes. Elles ont tout validé.",
+     "speaker": "Chercheur Anselme",
+     "portrait": "scientist"
+    }
+   ]
+  },
+  {
+   "id": "sc_resistance_1_intro",
+   "steps": [
+    {
+     "say": "La Résistance contrôle le sentier ! Pas d'AIACT, pas de scellés, pas de marque déposée. Combat !",
+     "speaker": "Maquisarde Inès",
+     "portrait": "resistance_dev"
+    }
+   ]
+  },
+  {
+   "id": "sc_resistance_1_defeat",
+   "steps": [
+    {
+     "say": "Bravo. Va au Port. Si tu vois un cargo qui brille, c'est du GPU. Si tu vois un cargo qui ne brille pas, c'est de la conformité.",
+     "speaker": "Maquisarde Inès",
+     "portrait": "resistance_dev"
+    }
+   ]
+  },
+  {
+   "id": "sc_resistance_1_talk",
+   "steps": [
+    {
+     "say": "Je distribue des poids ouverts aux promeneurs. Ils ne disent pas merci. Ils lisent d'abord la licence.",
+     "speaker": "Maquisarde Inès",
+     "portrait": "resistance_dev"
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_sc_1_intro",
+   "steps": [
+    {
+     "cutscene": "start"
+    },
+    {
+     "emote": "!",
+     "who": "aiact_agent_sc_1"
+    },
+    {
+     "intro_card": {
+      "name": "AGENT DE CONFORMITÉ",
+      "title": "Division Littoral",
+      "portrait": "agent_conformite"
+     }
+    },
+    {
+     "say": "Halte ! Cette plage n'a pas de permis de baignade pour modèles de langage. Vos PokAI seront scellés. Le sable aussi.",
+     "speaker": "Agent de Conformité",
+     "portrait": "agent_conformite"
+    },
+    {
+     "cutscene": "end"
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_sc_1_defeat",
+   "steps": [
+    {
+     "say": "Mon rapport dira « incident : une vague ». Le formulaire a un champ pour ça. Je l'ai ajouté moi-même.",
+     "speaker": "Agent de Conformité",
+     "portrait": "agent_conformite"
+    }
+   ]
+  },
+  {
+   "id": "aiact_agent_sc_1_talk",
+   "steps": [
+    {
+     "say": "Je surveille la plage pour votre sécurité. Si vous voyez un lama, ne le nourrissez pas.",
+     "speaker": "Agent de Conformité",
+     "portrait": "agent_conformite"
+    }
+   ]
+  }
+ ]
+}

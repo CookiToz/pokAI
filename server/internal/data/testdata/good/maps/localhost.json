@@ -1,0 +1,13 @@
+{
+  "id": "localhost", "name": "Localhost", "width": 4, "height": 3,
+  "rows": ["####", "#..#", "#~~#"],
+  "legend": { "#": "wall", ".": "floor", "~": "cable" },
+  "npcs": [ { "id": "prof", "sprite": "prof", "x": 1, "y": 1, "facing": "down", "dialogue": "prof_intro" },
+            { "id": "rival", "sprite": "rival", "x": 2, "y": 1, "facing": "left", "dialogue": "rival_intro", "trainer": "rival_1",
+              "condition": { "all": [ { "flag": "got_starter" }, { "not": { "flag": "beat_rival" } } ] } } ],
+  "warps": [ { "x": 1, "y": 2, "to": "route_1", "toX": 0, "toY": 0 } ],
+  "triggers": [ { "x": 2, "y": 2, "script": "prof_intro", "once": true } ],
+  "encounters": [ { "form": "claude_haiku", "minLevel": 2, "maxLevel": 4, "weight": 1 } ],
+  "encounterRate": 0.1,
+  "hub": { "x": 1, "y": 1 }
+}

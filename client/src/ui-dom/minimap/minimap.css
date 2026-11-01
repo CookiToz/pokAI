@@ -1,0 +1,11 @@
+/* LatentOS minimap: top-right, under the top bar. Same tokens as the shell (paper + ink, hard shadow, 4px radius). */
+.minimap { position: fixed; top: 52px; right: 12px; z-index: 30; background: var(--paper); border: var(--bw) solid var(--ink); border-radius: var(--r); box-shadow: var(--shadow); font-family: var(--font-ui); color: var(--ink); opacity: 0; transform: translateY(-6px); pointer-events: none; transition: opacity var(--dur), transform var(--dur); max-width: calc(100vw - 24px); }
+.minimap.is-on { opacity: 1; transform: none; pointer-events: auto; }
+.minimap-bar { display: flex; align-items: center; gap: 6px; padding: 3px 4px 3px 8px; background: var(--ink); color: var(--paper); font: 600 11px var(--font-mono); text-transform: uppercase; letter-spacing: 0.05em; cursor: pointer; user-select: none; }
+.minimap-title { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.minimap-btn { width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--paper); border-radius: 2px; color: var(--paper); font: 700 12px/1 var(--font-mono); }
+.minimap-btn:hover { background: var(--pink); border-color: var(--pink); color: var(--ink); }
+.minimap-body { padding: 4px; background: var(--paper-2); }
+.minimap-canvas { display: block; }
+.minimap.is-folded .minimap-body { display: none; }
+@media (max-width: 720px) { .minimap { top: 48px; } }

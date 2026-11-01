@@ -1,0 +1,982 @@
+{
+ "scripts": [
+  {
+   "id": "sign_hugging_grove_11_52",
+   "steps": [
+    {
+     "say": "← FORÊT DES POIDS · Latentia City ↓ 7 km\n(La Forêt des Poids est ouverte jour et nuit. Les arbres, eux, sont sous licence MIT.)"
+    }
+   ]
+  },
+  {
+   "id": "sign_hugging_grove_45_52",
+   "steps": [
+    {
+     "say": "SENTIER CÔTIER → Port 8080 · 5 km. Accès : Badge Vent. Les mouettes n'ont pas de badge, elles passent quand même."
+    }
+   ]
+  },
+  {
+   "id": "sign_hugging_grove_27_22",
+   "steps": [
+    {
+     "say": "↑ GRAND ARBRE (Hub 🤗) · → Benchmark Open-Weights · ← Quartier des Branches & Store · ↓ Étang, Ranch des Lamas, Sentier Côtier"
+    }
+   ]
+  },
+  {
+   "id": "sign_hugging_grove_23_25",
+   "steps": [
+    {
+     "say": "← QUARTIER DES BRANCHES : maisons dans les arbres, passerelles en bois, voisins bruyants (ils sont des singes)."
+    }
+   ]
+  },
+  {
+   "id": "sign_hugging_grove_43_23",
+   "steps": [
+    {
+     "say": "↑ BENCHMARK OPEN-WEIGHTS · Règle d'or : seuls les PokAI open-weights ont le droit de combattre. Les autres peuvent regarder."
+    }
+   ]
+  },
+  {
+   "id": "sign_hugging_grove_46_29",
+   "steps": [
+    {
+     "say": "RANCH DES LAMAS → « Ne pas nourrir les lamas avec des tokens payants. Ils exigent des poids ouverts. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_hugging_grove_11_35",
+   "steps": [
+    {
+     "say": "← QG DE LA RÉSISTANCE OPEN SOURCE · « On partage les poids. Pas les mots de passe. » · Café libre-service (libre = gratuit)."
+    }
+   ]
+  },
+  {
+   "id": "sign_hugging_grove_14_33",
+   "steps": [
+    {
+     "say": "STORE → entrée au nord. Pas de promotion « -50 % sur le contexte ». Le contexte, on le garde."
+    }
+   ]
+  },
+  {
+   "id": "sign_hugging_grove_45_51",
+   "steps": [
+    {
+     "say": "POTAGER OPEN SOURCE : tomates, courgettes et un fork de basilic. Récolte libre, sous licence Apache."
+    }
+   ]
+  },
+  {
+   "id": "sign_hugging_grove_5_25",
+   "steps": [
+    {
+     "say": "BANC DU DOCTORANT : « Je termine ma thèse sur la gradient descente. Je descends depuis 2021. »"
+    }
+   ]
+  },
+  {
+   "id": "sign_hugging_grove_26_23",
+   "steps": [
+    {
+     "say": "FEU DE CAMP DU HACKATHON : 48 heures, 3 sandwichs, 1 démo qui fonctionne (en local)."
+    }
+   ]
+  },
+  {
+   "id": "sign_hugging_grove_8_28",
+   "steps": [
+    {
+     "say": "PASSERELLE BONUS : le banc le plus ancien du Grove. Quelqu'un a gravé « git blame » dessus."
+    }
+   ]
+  },
+  {
+   "id": "sign_hugging_grove_11_33",
+   "steps": [
+    {
+     "say": "SCIERIE NUMÉRIQUE : on y découpe les gros fichiers en petits fichiers. Les petits fichiers sont dans l'arbre."
+    }
+   ]
+  },
+  {
+   "id": "sign_hugging_grove_54_20",
+   "steps": [
+    {
+     "say": "ÉCUREUILS EN CONFÉRENCE : thème « Mes noix, mes règles ». Entrée libre. Sortie aussi."
+    }
+   ]
+  },
+  {
+   "id": "sign_hugging_grove_26_30",
+   "steps": [
+    {
+     "say": "CAIRN DES VERSIONS : une pierre par release. Il y en a déjà 4 000. Le cairn a une dépendance cyclique."
+    }
+   ]
+  },
+  {
+   "id": "sign_hugging_grove_16_35",
+   "steps": [
+    {
+     "say": "ALLÉE DES LUCIOLES : elles s'allument quand un build passe. Il y a rarement de la lumière."
+    }
+   ]
+  },
+  {
+   "id": "grove_welcome",
+   "steps": [
+    {
+     "say": "Haut-parleur du Grand Arbre : « Bienvenue à Hugging Grove ! Ici, on sème des modèles et on récolte des câlins. Merci de ne pas tailler les poids. » 🤗"
+    }
+   ]
+  },
+  {
+   "id": "grove_sentier_closed",
+   "steps": [
+    {
+     "say": "Un garde-forestier barre le Sentier Côtier avec une branche. Il lit un très long règlement."
+    },
+    {
+     "say": "« Le Sentier Côtier est réservé aux Vibeurs certifiés open-weights. Va d'abord battre Arthur Menschtral au Benchmark Open-Weights. Son Badge Vent fait office de laissez-passer. »",
+     "speaker": "GARDE-FORESTIER"
+    },
+    {
+     "warp": "hugging_grove",
+     "x": 46,
+     "y": 52
+    }
+   ]
+  },
+  {
+   "id": "clerk_grove",
+   "steps": [
+    {
+     "say": "Bienvenue au Store du Grove ! Tout est en vrac, bio et sous licence permissive.",
+     "speaker": "MARCHAND",
+     "portrait": "clerk"
+    },
+    {
+     "open": "store"
+    },
+    {
+     "say": "Merci ! Votre ticket est imprimé sur du papier recyclé. Le prix, lui, n'est pas recyclé.",
+     "speaker": "MARCHAND",
+     "portrait": "clerk"
+    }
+   ]
+  },
+  {
+   "id": "grove_store_dev",
+   "steps": [
+    {
+     "say": "Je suis venu acheter un café. J'ai ressorti un modèle de 70 milliards de paramètres. C'est le Store du Grove.",
+     "speaker": "Résistant",
+     "portrait": "resistance_dev"
+    }
+   ]
+  },
+  {
+   "id": "clem_grove",
+   "steps": [
+    {
+     "if": {
+      "flag": "clem_grove_met"
+     },
+     "goto": "again"
+    },
+    {
+     "cutscene": "start"
+    },
+    {
+     "camera": {
+      "x": 14,
+      "y": 5
+     },
+     "ms": 800
+    },
+    {
+     "emote": "!",
+     "who": "clem_grove"
+    },
+    {
+     "npc_approach": "clem_grove"
+    },
+    {
+     "camera": "player",
+     "ms": 700
+    },
+    {
+     "intro_card": {
+      "name": "CLEM DELANGOUSTE",
+      "title": "Patron du Hub 🤗",
+      "portrait": "clem_delangouste"
+     }
+    },
+    {
+     "say": "Bienvenue dans le Grand Arbre ! C'est notre QG. Une branche pour les modèles, une branche pour les câlins, une branche pour les serveurs.",
+     "speaker": "CLEM",
+     "portrait": "clem_delangouste"
+    },
+    {
+     "say": "Là-bas, sur le mur, tu vois les PC ? C'est notre Repo. Tous les PokAI que tu attrapes y sont stockés, et tu peux les échanger avec ton équipe. Open source, comme tout ici.",
+     "speaker": "CLEM",
+     "portrait": "clem_delangouste"
+    },
+    {
+     "say": "On m'a demandé si le Grand Arbre était « open source ». Oui. Les racines aussi. Mais ne les arrosez pas, ça fait des bugs.",
+     "speaker": "CLEM",
+     "portrait": "clem_delangouste"
+    },
+    {
+     "say": "Cadeau de bienvenue : un Redémarrage complet. Pour les jours où tout plante. Ça arrive. Surtout le vendredi.",
+     "speaker": "CLEM",
+     "portrait": "clem_delangouste"
+    },
+    {
+     "give_item": "full_restart"
+    },
+    {
+     "set_flag": "clem_grove_met"
+    },
+    {
+     "npc_leave": "clem_grove",
+     "to": {
+      "x": 14,
+      "y": 5
+     }
+    },
+    {
+     "cutscene": "end"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "again"
+    },
+    {
+     "say": "Le Hub est dans l'arbre. Les PC, c'est le Repo : range-y tes PokAI, reprends-les, échange-les. Gratuit. Enfin, facturé en câlins.",
+     "speaker": "CLEM",
+     "portrait": "clem_delangouste"
+    }
+   ]
+  },
+  {
+   "id": "clem_plaza",
+   "steps": [
+    {
+     "say": "Sur la place du Grand Arbre, tout est libre. Les bancs, les modèles, l'ombre. Seule la pizza est sous licence.",
+     "speaker": "CLEM",
+     "portrait": "clem_delangouste"
+    },
+    {
+     "say": "Le Hub est dans l'arbre. Entre par le tronc, c'est la porte. J'ai demandé à un modèle où était la porte. Il m'a répondu : « un tronc ».",
+     "speaker": "CLEM",
+     "portrait": "clem_delangouste"
+    }
+   ]
+  },
+  {
+   "id": "resistance_grove_hub",
+   "steps": [
+    {
+     "say": "Ici, le Repo est une bibliothèque en bois. Tu déposes un PokAI, tu fais un fork, tu repars avec un câlin.",
+     "speaker": "Résistant",
+     "portrait": "resistance_dev"
+    }
+   ]
+  },
+  {
+   "id": "amb_grove_hub_1",
+   "steps": [
+    {
+     "say": "Mon PokAI est au repos dans le Repo. Il y a une étiquette « ne pas déranger ». Il a pris ça très au sérieux.",
+     "speaker": "Citoyen"
+    }
+   ]
+  },
+  {
+   "id": "resistance_camp_a",
+   "steps": [
+    {
+     "say": "Le QG de la Résistance ! On a un feu de camp, une guitare et un wiki. Le wiki est à jour. C'est ça, la vraie révolution.",
+     "speaker": "Résistant",
+     "portrait": "resistance_dev"
+    }
+   ]
+  },
+  {
+   "id": "resistance_camp_b",
+   "steps": [
+    {
+     "say": "L'AIACT a interdit les modèles open source « pour votre sécurité ». Alors on les distribue gratuitement. Dans des sacs à dos.",
+     "speaker": "Résistant",
+     "portrait": "resistance_dev"
+    },
+    {
+     "if": {
+      "flag": "got_grove_gift"
+     },
+     "goto": "z"
+    },
+    {
+     "say": "Tiens, pour la lutte : un Hotfix. Emballé sans licence.",
+     "speaker": "Résistant",
+     "portrait": "resistance_dev"
+    },
+    {
+     "give_item": "hotfix"
+    },
+    {
+     "set_flag": "got_grove_gift"
+    },
+    {
+     "label": "z"
+    }
+   ]
+  },
+  {
+   "id": "resistance_arena_c",
+   "steps": [
+    {
+     "say": "Règle du Benchmark Open-Weights : seuls les PokAI open-weights ont le droit de combattre. Les propriétaires attendent dehors. Ils ont l'habitude des files.",
+     "speaker": "Résistant",
+     "portrait": "resistance_dev"
+    },
+    {
+     "say": "Dans la salle, il faut assembler le modèle en poussant ses poids sur les dalles. Un vrai travail d'équipe. Ou de déménageur.",
+     "speaker": "Résistant",
+     "portrait": "resistance_dev"
+    }
+   ]
+  },
+  {
+   "id": "zuckerbot_ranch",
+   "steps": [
+    {
+     "if": {
+      "flag": "got_llama_ranch"
+     },
+     "goto": "again"
+    },
+    {
+     "say": "Bienvenue au Ranch des Lamas ! Je suis Mark Zuckerbot. Je lance des projets à la vitesse du lama. Les poids sont ouverts. Le reste, c'est compliqué.",
+     "speaker": "ZUCKERBOT",
+     "portrait": "zuckerbot"
+    },
+    {
+     "say": "Tiens : un Llama 2. Il a grandi au ranch. Il aime les chaînes en or et le mot « métavers ». Ne lui parle pas du métavers.",
+     "speaker": "ZUCKERBOT",
+     "portrait": "zuckerbot"
+    },
+    {
+     "give_pokai": "llama_2",
+     "level": 12
+    },
+    {
+     "set_flag": "got_llama_ranch"
+    },
+    {
+     "say": "Un Llama 2 rejoint ton équipe. Il a l'air fier. Et légèrement sponsorisé."
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "again"
+    },
+    {
+     "say": "Les lamas vont bien. Ils broutent des poids ouverts toute la journée. Ils ne sont pas sympathiques avec les modèles propriétaires, remarque.",
+     "speaker": "ZUCKERBOT",
+     "portrait": "zuckerbot"
+    }
+   ]
+  },
+  {
+   "id": "amb_grove_1",
+   "steps": [
+    {
+     "say": "On dit que l'AGI arrive dans 2 ans. Dans le Grove, on a des arbres. Ça prend 30 ans, mais on sait que ça arrive.",
+     "speaker": "Citoyen"
+    }
+   ]
+  },
+  {
+   "id": "amb_grove_2",
+   "steps": [
+    {
+     "say": "Ma maison est dans un arbre. Mon loyer, dans le cloud. Les deux ont des fuites.",
+     "speaker": "Citoyen"
+    }
+   ]
+  },
+  {
+   "id": "amb_grove_3",
+   "steps": [
+    {
+     "say": "J'ai fait un fork de ma voisine. Elle a mal pris. Elle a dit « ce n'est pas le même type de fork ».",
+     "speaker": "Citoyen"
+    }
+   ]
+  },
+  {
+   "id": "amb_grove_4",
+   "steps": [
+    {
+     "say": "Ces passerelles en bois, c'est du « Infrastructure as Code ». Le code est en bois, c'est surtout de l'infrastructure.",
+     "speaker": "Citoyen"
+    }
+   ]
+  },
+  {
+   "id": "amb_grove_5",
+   "steps": [
+    {
+     "say": "Hier, un lama a tenté de se connecter à ma maison. Il a oublié le mot de passe. Il l'a mangé.",
+     "speaker": "Citoyen"
+    }
+   ]
+  },
+  {
+   "id": "amb_grove_6",
+   "steps": [
+    {
+     "say": "Je cultive des tomates open source. Tu peux regarder le code source. Tu peux aussi les manger.",
+     "speaker": "Citoyen"
+    }
+   ]
+  },
+  {
+   "id": "amb_grove_7",
+   "steps": [
+    {
+     "say": "Le Grand Arbre consomme 3 kWh par jour. On a décidé de ne pas faire de benchmark sur ça.",
+     "speaker": "Citoyen"
+    }
+   ]
+  },
+  {
+   "id": "amb_grove_8",
+   "steps": [
+    {
+     "say": "Chez nous, les mises à jour sont des saisons. Le printemps, c'est la v2.",
+     "speaker": "Citoyen"
+    }
+   ]
+  },
+  {
+   "id": "amb_grove_9",
+   "steps": [
+    {
+     "say": "J'ai acheté un casque audio « sans fil ». Il est quand même accroché à un arbre. Je ne sais pas comment.",
+     "speaker": "Citoyen"
+    }
+   ]
+  },
+  {
+   "id": "amb_grove_10",
+   "steps": [
+    {
+     "say": "Mon PokAI a halluciné un bois entier. On l'a gardé, c'est devenu un parc.",
+     "speaker": "Citoyen"
+    }
+   ]
+  },
+  {
+   "id": "amb_grove_11",
+   "steps": [
+    {
+     "say": "L'AIACT a tenté de classer le Grove « zone à risque élevé ». Les fougères ont posé un recours.",
+     "speaker": "Citoyen"
+    }
+   ]
+  },
+  {
+   "id": "amb_grove_12",
+   "steps": [
+    {
+     "say": "On ne dit pas « tu es sur mon réseau ». On dit « tu es sur ma branche ».",
+     "speaker": "Citoyen"
+    }
+   ]
+  },
+  {
+   "id": "amb_grove_13",
+   "steps": [
+    {
+     "say": "Un touriste m'a demandé s'il y avait du wifi. J'ai montré les arbres. Il m'a dit « ça ne capte pas ». J'ai répondu « les racines, si ».",
+     "speaker": "Citoyen"
+    }
+   ]
+  },
+  {
+   "id": "amb_grove_14",
+   "steps": [
+    {
+     "say": "Les écureuils ont lancé un benchmark. Personne ne comprend le score, mais ils ont l'air contents.",
+     "speaker": "Citoyen"
+    }
+   ]
+  },
+  {
+   "id": "grove_scientist_1_intro",
+   "steps": [
+    {
+     "say": "Je fais une étude sur la rencontre entre Vibeurs et PokAI sauvages. Tu es un bon échantillon. Combat !",
+     "speaker": "Chercheuse Mélusine",
+     "portrait": "scientist"
+    }
+   ]
+  },
+  {
+   "id": "grove_scientist_1_defeat",
+   "steps": [
+    {
+     "say": "Résultat : n = 1. Conclusion : « il faudrait refaire l'expérience ». Je vais publier ça tel quel.",
+     "speaker": "Chercheuse Mélusine",
+     "portrait": "scientist"
+    }
+   ]
+  },
+  {
+   "id": "grove_scientist_1_talk",
+   "steps": [
+    {
+     "say": "Mon dernier papier a 42 auteurs et 3 lignes. La troisième est la bibliographie.",
+     "speaker": "Chercheuse Mélusine",
+     "portrait": "scientist"
+    }
+   ]
+  },
+  {
+   "id": "grove_resistance_1_intro",
+   "steps": [
+    {
+     "say": "Halte au camp ! Ici, on n'accepte que les poids ouverts ou les cadeaux. Montre ce que tu vaux !",
+     "speaker": "Maquisard Karim",
+     "portrait": "resistance_dev"
+    }
+   ]
+  },
+  {
+   "id": "grove_resistance_1_defeat",
+   "steps": [
+    {
+     "say": "Bravo. Tu passes. Mais promets-moi une chose : si tu vois un Agent de Conformité, tu lui racontes la licence Apache.",
+     "speaker": "Maquisard Karim",
+     "portrait": "resistance_dev"
+    }
+   ]
+  },
+  {
+   "id": "grove_resistance_1_talk",
+   "steps": [
+    {
+     "say": "Le Port 8080 est tenu par l'AIACT. Ils saisissent des cargos de GPU « pour votre sécurité ». Étrange sécurité.",
+     "speaker": "Maquisard Karim",
+     "portrait": "resistance_dev"
+    }
+   ]
+  },
+  {
+   "id": "grove_dev_1_intro",
+   "steps": [
+    {
+     "say": "Tu cherches le ranch ? Moi je cherche mon bug. Il est dans un des 40 000 fichiers du Grove. On combat ?",
+     "speaker": "Dev Anaïs",
+     "portrait": "dev_phone"
+    }
+   ]
+  },
+  {
+   "id": "grove_dev_1_defeat",
+   "steps": [
+    {
+     "say": "J'ai trouvé mon bug. C'est un point-virgule. En production. Dans un lama.",
+     "speaker": "Dev Anaïs",
+     "portrait": "dev_phone"
+    }
+   ]
+  },
+  {
+   "id": "grove_dev_1_talk",
+   "steps": [
+    {
+     "say": "Le ranch des lamas est derrière moi. Si un lama te regarde, ne détourne pas les yeux. Il te juge.",
+     "speaker": "Dev Anaïs",
+     "portrait": "dev_phone"
+    }
+   ]
+  },
+  {
+   "id": "bench_ow_junior_1_intro",
+   "steps": [
+    {
+     "say": "Je suis l'apprenti du Maître des Poids. Je connais la règle : seuls les modèles open-weights ont le droit de combattre ici.",
+     "speaker": "Apprenti Lucas",
+     "portrait": "resistance_dev"
+    },
+    {
+     "say": "Les propriétaires ? Ils attendent dehors, avec leur NDA.",
+     "speaker": "Apprenti Lucas",
+     "portrait": "resistance_dev"
+    }
+   ]
+  },
+  {
+   "id": "bench_ow_junior_1_defeat",
+   "steps": [
+    {
+     "say": "Mon modèle était trop propriétaire dans l'âme. Je le fork et je reviens.",
+     "speaker": "Apprenti Lucas",
+     "portrait": "resistance_dev"
+    }
+   ]
+  },
+  {
+   "id": "bench_ow_junior_1_talk",
+   "steps": [
+    {
+     "say": "Les poids sont les caisses. Pousse-les sur les dalles. Ou lis le fichier. Les deux marchent.",
+     "speaker": "Apprenti Lucas",
+     "portrait": "resistance_dev"
+    }
+   ]
+  },
+  {
+   "id": "bench_ow_junior_2_intro",
+   "steps": [
+    {
+     "say": "Tu as assemblé le modèle ? Moi non plus. Je prépare mon doctorat en « poussage de caisse ». Combat !",
+     "speaker": "Apprentie Sofia",
+     "portrait": "dev_phone"
+    }
+   ]
+  },
+  {
+   "id": "bench_ow_junior_2_defeat",
+   "steps": [
+    {
+     "say": "Je note : « cas limite : le dresseur est plus fort que prévu ». Je mettrai à jour la doc.",
+     "speaker": "Apprentie Sofia",
+     "portrait": "dev_phone"
+    }
+   ]
+  },
+  {
+   "id": "bench_ow_junior_2_talk",
+   "steps": [
+    {
+     "say": "Menschtral dit toujours « le meilleur modèle est celui que tu peux lire ». Il porte un béret. C'est un clin d'œil. Enfin, je crois.",
+     "speaker": "Apprentie Sofia",
+     "portrait": "dev_phone"
+    }
+   ]
+  },
+  {
+   "id": "leader_menschtral_intro",
+   "steps": [
+    {
+     "say": "Bonjour. Bienvenue au Benchmark Open-Weights. Ici, seuls les modèles ouverts ont le droit de combattre. C'est la règle. Et c'est un peu la France.",
+     "speaker": "MENSCHTRAL",
+     "portrait": "menschtral"
+    },
+    {
+     "say": "Tu as assemblé le modèle. Bravo. Maintenant, voyons s'il tient la route. Nos poids sont ouverts. Notre stratégie, elle, est confidentielle.",
+     "speaker": "MENSCHTRAL",
+     "portrait": "menschtral"
+    }
+   ]
+  },
+  {
+   "id": "leader_menschtral_defeat",
+   "steps": [
+    {
+     "say": "Magnifique. Un modèle, c'est comme un fromage : plus il vieillit, plus il est ouvert.",
+     "speaker": "MENSCHTRAL",
+     "portrait": "menschtral"
+    },
+    {
+     "set_flag": "badge_vent"
+    },
+    {
+     "say": "{player} reçoit le Badge Vent !"
+    },
+    {
+     "say": "Il te laisse passer par le Sentier Côtier. Au bout, le Port 8080 et Demis Hassabyte, un type qui joue aux échecs contre l'univers.",
+     "speaker": "MENSCHTRAL",
+     "portrait": "menschtral"
+    }
+   ]
+  },
+  {
+   "id": "menschtral_talk",
+   "steps": [
+    {
+     "say": "Le Badge Vent te va bien. Souviens-toi : un bon modèle, comme une baguette, se partage.",
+     "speaker": "MENSCHTRAL",
+     "portrait": "menschtral"
+    },
+    {
+     "say": "Au Port 8080, l'AIACT saisit des cargos de GPU. Ils appellent ça « un contrôle préventif ». Moi, j'appelle ça « le déjeuner de quelqu'un d'autre ».",
+     "speaker": "MENSCHTRAL",
+     "portrait": "menschtral"
+    }
+   ]
+  },
+  {
+   "id": "sign_bench_openweights_12_6",
+   "steps": [
+    {
+     "say": "weights.safetensors : « Pousse les poids (les caisses) sur les 3 dalles pour assembler le modèle. Les dalles sont en haut. Les caisses passent par les trous des racks. Un rack est un obstacle, pas une opinion. » Une borne (terminal) à gauche permet de remettre les caisses à leur place."
+    },
+    {
+     "say": "Quand les 3 dalles sont couvertes en même temps, la grille s'ouvre pour de bon."
+    }
+   ]
+  },
+  {
+   "id": "kartpathy_grove",
+   "steps": [
+    {
+     "if": {
+      "flag": "kartpathy_grove_met"
+     },
+     "goto": "again"
+    },
+    {
+     "cutscene": "start"
+    },
+    {
+     "emote": "!",
+     "who": "kartpathy_grove"
+    },
+    {
+     "npc_approach": "kartpathy_grove"
+    },
+    {
+     "intro_card": {
+      "name": "ANDREJ KARTPATHY",
+      "title": "Fondateur des Vibeurs",
+      "portrait": "kartpathy"
+     }
+    },
+    {
+     "say": "Tu as battu Nadelta ! Je l'ai vu en direct sur mon laptop. Cinq cents personnes ont commenté « GG ». Quatre cents quatre-vingt-dix étaient des bots.",
+     "speaker": "KARTPATHY",
+     "portrait": "kartpathy"
+    },
+    {
+     "say": "Un conseil de vieux Vibeur : quand un PokAI hallucine, ne te fâche pas. Dis-lui « tu es sûr ? ». Il change d'avis. Toujours. Même quand il avait raison.",
+     "speaker": "KARTPATHY",
+     "portrait": "kartpathy"
+    },
+    {
+     "say": "Tiens, deux Datasets. Je les ai trouvés dans mes anciens projets. Ils n'ont jamais compilé.",
+     "speaker": "KARTPATHY",
+     "portrait": "kartpathy"
+    },
+    {
+     "give_item": "dataset",
+     "count": 2
+    },
+    {
+     "set_flag": "kartpathy_grove_met"
+    },
+    {
+     "say": "Je repars. Un bug m'attend quelque part. Un bug que j'ai moi-même écrit.",
+     "speaker": "KARTPATHY",
+     "portrait": "kartpathy"
+    },
+    {
+     "set_flag": "kartpathy_grove_gone"
+    },
+    {
+     "npc_leave": "kartpathy_grove",
+     "hide": true
+    },
+    {
+     "cutscene": "end"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "again"
+    },
+    {
+     "say": "Si ça marche, n'y touche plus.",
+     "speaker": "KARTPATHY",
+     "portrait": "kartpathy"
+    }
+   ]
+  },
+  {
+   "id": "lecube_grove",
+   "steps": [
+    {
+     "if": {
+      "flag": "lecube_grove_met"
+     },
+     "goto": "again"
+    },
+    {
+     "cutscene": "start"
+    },
+    {
+     "emote": "?",
+     "who": "lecube_grove"
+    },
+    {
+     "intro_card": {
+      "name": "Pr YANN LECUBE",
+      "title": "Philosophe en sandales",
+      "portrait": "lecube"
+     }
+    },
+    {
+     "say": "Ah, {player}. J'ai réfléchi, sous cet arbre, pendant trois heures. Résultat : l'arbre a une meilleure représentation du monde que ton PokAI.",
+     "speaker": "Pr LECUBE",
+     "portrait": "lecube"
+    },
+    {
+     "say": "Mais il n'a pas de GPU. C'est le problème avec la nature : peu de débit, énormément de contexte.",
+     "speaker": "Pr LECUBE",
+     "portrait": "lecube"
+    },
+    {
+     "choice": [
+      {
+       "label": "Et AGI, alors ?",
+       "goto": "agi"
+      },
+      {
+       "label": "Tu es sûr ?",
+       "goto": "sure"
+      }
+     ]
+    },
+    {
+     "label": "agi"
+    },
+    {
+     "say": "AGI viendra « dans 2 ans ». Je l'ai dit en 2014. Et en 2020. J'aime beaucoup cette date, elle est confortable.",
+     "speaker": "Pr LECUBE",
+     "portrait": "lecube"
+    },
+    {
+     "goto": "end"
+    },
+    {
+     "label": "sure"
+    },
+    {
+     "say": "« Tu es sûr ? » Voilà la question que tout professeur redoute. Merci. Je change d'avis. Encore.",
+     "speaker": "Pr LECUBE",
+     "portrait": "lecube"
+    },
+    {
+     "goto": "end"
+    },
+    {
+     "label": "end"
+    },
+    {
+     "say": "Tiens, un Hotfix. Pour réparer ce qui est cassé. Dans ton code ou dans ton raisonnement.",
+     "speaker": "Pr LECUBE",
+     "portrait": "lecube"
+    },
+    {
+     "give_item": "hotfix"
+    },
+    {
+     "set_flag": "lecube_grove_met"
+    },
+    {
+     "cutscene": "end"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "again"
+    },
+    {
+     "say": "Je pense. Donc je suis. Mais est-ce que mon PokAI pense aussi ? Ne réponds pas.",
+     "speaker": "Pr LECUBE",
+     "portrait": "lecube"
+    }
+   ]
+  },
+  {
+   "id": "llama_nft",
+   "steps": [
+    {
+     "say": "Un type déguisé en lama chuchote : « Psst… un NFT de lama. 0,4 ETH. Rare. Unique. Je l'ai fait avec un prompt. »",
+     "speaker": "LAMA À NFT",
+     "portrait": "tourist"
+    },
+    {
+     "choice": [
+      {
+       "label": "Clic droit, enregistrer sous",
+       "goto": "y"
+      },
+      {
+       "label": "Je passe",
+       "goto": "n"
+      }
+     ]
+    },
+    {
+     "label": "y"
+    },
+    {
+     "say": "« Tu viens d'enregistrer mon NFT. Valeur : zéro. Comme tout. »",
+     "speaker": "LAMA À NFT",
+     "portrait": "tourist"
+    },
+    {
+     "if": {
+      "flag": "llama_nft_got"
+     },
+     "goto": "end"
+    },
+    {
+     "give_item": "certificat_inutile"
+    },
+    {
+     "set_flag": "llama_nft_got"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "n"
+    },
+    {
+     "say": "« Tu rates l'affaire du siècle. Du siècle dernier. »",
+     "speaker": "LAMA À NFT",
+     "portrait": "tourist"
+    },
+    {
+     "end": true
+    },
+    {
+     "label": "end"
+    },
+    {
+     "say": "« Tu l'as déjà. Un seul jpg par client. »",
+     "speaker": "LAMA À NFT",
+     "portrait": "tourist"
+    }
+   ]
+  }
+ ]
+}

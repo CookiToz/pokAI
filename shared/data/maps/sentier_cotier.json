@@ -1,0 +1,350 @@
+{
+ "id": "sentier_cotier",
+ "name": "Sentier Côtier",
+ "width": 28,
+ "height": 56,
+ "rows": [
+  "TTTYYTTTYYTTTppTTTYYss~~~~~~",
+  "YYTT,Y..TTF.,pp,,TT,ss~~~~~~",
+  "TTF,.F.,.FT,.pp..Y,.ss~~~~~~",
+  "YT.cccccc.Ybpppb..,Y,ss~~~~~",
+  "TY.cccccc,TFpppF.,..Fss~~~~~",
+  "TT.cccccc,.Fpppbccc.,ss~~~~~",
+  "YY.cccccc,.LFpppccc,.ss~~~~~",
+  "TT.ccccccFT,,pppccc.Fss~~~~~",
+  "YT,,....b...bpppccc..ss~~~~~",
+  "TYY..b,FFbLUppppFF...ss~~~~~",
+  "TTTYY.bpppppppp..,Yb.ss~~~~~",
+  "YYTTT,Fpppppppp...T,,ss~~~~~",
+  "TT..F.ppp.F..,I.S..T.ss~~~~~",
+  "YTccccppp..,,...,T.,,ss~~~~~",
+  "TYccccppp..Y.TT..Y..ss~~~~~~",
+  "TTccccpppb.F,YY.TTY,ss~~~~~~",
+  "YYccccpppF..TTTYYTT,ss~~~~~~",
+  "TTccccppp..,.,..,Y,Fss~~~~~~",
+  "YT..FUppp.....b,..f,ss~~~~~~",
+  "TY.TT,Fpp.,,..pbU,.ss~~~~~~~",
+  "TT.b.BSpppppppppp.,ss~~~~~~~",
+  "YY,Tff.pIppcccpppb.ss~~~~~~~",
+  "TTYYTFb.L.,ccc,pppbss~~~~~~~",
+  "YT.F..b.,.,cmc,ppprrr~~~~~~~",
+  "TY,,.,,.,.B,JS,ppp.Ss~~~~~~~",
+  "~~~~~~~~~~,,,,b==~~~~~~~~~~~",
+  "~~~~~~~~~~~~~~~==~~~~~~~~~~~",
+  "~~~~~~~~~~~~~~~==~~~~~~~~~~~",
+  "YTTTYYTTT..TLbUppFbss~~~~~~~",
+  "TY....Y.T.TYYbppp..,sL~~~~~~",
+  "TT.....UbI..LLbppbF,,sdddd~~",
+  "YY........FUSfppp,S,ss~~~~~~",
+  "TT,.TT.Fbpppppppp,..ss~~~~~~",
+  "YTT.,.T.Fpppppppp,cccs~~~~~~",
+  "TY,,.T.Fpppb..ILF.cccs~~~~~~",
+  "TT,,.TTLppp.,,....cccss~~~~~",
+  "YY.T..YFppp.,..L.,cccss~~~~~",
+  "TTYY.T.rppp,FY.T,.,.,ss~~~~~",
+  "~~~~~~~~~==~~~~~~~~~~~~~~~~~",
+  "~~~~~~~~~==~~~~~~~~~~~~~~~~~",
+  "~~~~~~~~~==~~~~~~~~~~~~~~~~~",
+  "YYTTT.YFpppF,T,...TT,ss~~~~~",
+  "TT,YTTb.FpppFUmS.YYT,ss~~~~~",
+  "YTT.,.b,.ppppFF.F.TY.ss~~~~~",
+  "TY.TTTYfbppppppFrYTT.ss~~~~~",
+  "TT..,.,,FppppppF..,,ss~~~~~~",
+  "YYFccccc...,IpppFcccss~~~~~~",
+  "TT.ccccc,,.F,pppFcccss~~~~~~",
+  "YT.ccccc,.,,.ppp.cccss~~~~~~",
+  "TY.ccccc..,,,pppFcccss~~~~~~",
+  "TT.cccccFYT.Fppb.cccs~~~~~~~",
+  "YY.,,.,.,..bpppb...ss~~~~~~~",
+  "TT..T.,FY,TFpppF,,.ss~~~~~~~",
+  "YTT,,YFT.Y...pp.FTFss~~~~~~~",
+  "TY.TFTF,,FT,,pp.,,.ss~~~~~~~",
+  "TTTYYTTTYYTTTppTTTYss~~~~~~~"
+ ],
+ "legend": {
+  ",": "grass_alt",
+  ".": "grass",
+  "=": "bridge_wood",
+  "B": "bench_seat",
+  "F": "flower_bed",
+  "I": "signpost",
+  "J": "terminal",
+  "L": "log",
+  "S": "sign",
+  "T": "tree_pine",
+  "U": "stump",
+  "Y": "tree_birch",
+  "b": "bush",
+  "c": "cable",
+  "d": "dock",
+  "f": "flowers",
+  "m": "street_lamp",
+  "p": "path",
+  "r": "rock",
+  "s": "sand",
+  "~": "water"
+ },
+ "kind": "route",
+ "music": "route_b",
+ "npcs": [
+  {
+   "id": "sc_sailor_1",
+   "sprite": "sailor",
+   "x": 11,
+   "y": 13,
+   "facing": "left",
+   "dialogue": "sc_sailor_1_talk",
+   "trainer": "sc_sailor_1",
+   "sightRange": 4
+  },
+  {
+   "id": "sc_tourist_1",
+   "sprite": "tourist",
+   "x": 19,
+   "y": 29,
+   "facing": "left",
+   "dialogue": "sc_tourist_1_talk",
+   "trainer": "sc_tourist_1",
+   "sightRange": 4
+  },
+  {
+   "id": "sc_scientist_1",
+   "sprite": "scientist",
+   "x": 12,
+   "y": 36,
+   "facing": "left",
+   "dialogue": "sc_scientist_1_talk",
+   "trainer": "sc_scientist_1",
+   "sightRange": 3
+  },
+  {
+   "id": "sc_resistance_1",
+   "sprite": "resistance_dev",
+   "x": 11,
+   "y": 48,
+   "facing": "right",
+   "dialogue": "sc_resistance_1_talk",
+   "trainer": "sc_resistance_1",
+   "sightRange": 4
+  },
+  {
+   "id": "aiact_agent_sc_1",
+   "sprite": "agent_conformite",
+   "x": 11,
+   "y": 17,
+   "facing": "left",
+   "dialogue": "aiact_agent_sc_1_talk",
+   "trainer": "aiact_agent_sc_1",
+   "sightRange": 4,
+   "condition": {
+    "not": {
+     "flag": "trainer_aiact_agent_sc_1_defeated"
+    }
+   }
+  },
+  {
+   "id": "amb_1_tourist",
+   "sprite": "tourist",
+   "x": 20,
+   "y": 30,
+   "facing": "down",
+   "dialogue": "amb_sc_1",
+   "wander": 2,
+   "ambient": true
+  },
+  {
+   "id": "amb_2_citizen_d",
+   "sprite": "citizen_d",
+   "x": 11,
+   "y": 24,
+   "facing": "down",
+   "dialogue": "amb_sc_2",
+   "wander": 2,
+   "ambient": true
+  }
+ ],
+ "warps": [
+  {
+   "x": 13,
+   "y": 0,
+   "to": "hugging_grove",
+   "toX": 46,
+   "toY": 54,
+   "facing": "up"
+  },
+  {
+   "x": 13,
+   "y": 55,
+   "to": "port_8080",
+   "toX": 28,
+   "toY": 1,
+   "facing": "down"
+  },
+  {
+   "x": 14,
+   "y": 0,
+   "to": "hugging_grove",
+   "toX": 47,
+   "toY": 54,
+   "facing": "up"
+  },
+  {
+   "x": 14,
+   "y": 55,
+   "to": "port_8080",
+   "toX": 29,
+   "toY": 1,
+   "facing": "down"
+  }
+ ],
+ "triggers": [
+  {
+   "x": 3,
+   "y": 30,
+   "script": "secret_sentier_cotier_3_30",
+   "once": true
+  },
+  {
+   "x": 2,
+   "y": 29,
+   "script": "secret_sentier_cotier_2_29",
+   "once": true
+  },
+  {
+   "x": 2,
+   "y": 21,
+   "script": "secret_sentier_cotier_2_21",
+   "once": true
+  },
+  {
+   "x": 4,
+   "y": 1,
+   "script": "secret_sentier_cotier_4_1",
+   "once": true
+  },
+  {
+   "x": 4,
+   "y": 54,
+   "script": "secret_sentier_cotier_4_54",
+   "once": true
+  }
+ ],
+ "encounters": [
+  {
+   "form": "falcon_40b",
+   "minLevel": 16,
+   "maxLevel": 19,
+   "weight": 16
+  },
+  {
+   "form": "whisper_base",
+   "minLevel": 16,
+   "maxLevel": 19,
+   "weight": 16
+  },
+  {
+   "form": "sdxl",
+   "minLevel": 17,
+   "maxLevel": 20,
+   "weight": 14
+  },
+  {
+   "form": "llama_3",
+   "minLevel": 17,
+   "maxLevel": 20,
+   "weight": 14
+  },
+  {
+   "form": "qwen_2_5",
+   "minLevel": 17,
+   "maxLevel": 20,
+   "weight": 12,
+   "group": 3
+  },
+  {
+   "form": "gpt_3_5",
+   "minLevel": 18,
+   "maxLevel": 21,
+   "weight": 12
+  },
+  {
+   "form": "midjourney_v5",
+   "minLevel": 18,
+   "maxLevel": 21,
+   "weight": 10
+  },
+  {
+   "form": "copilot_chat",
+   "minLevel": 19,
+   "maxLevel": 21,
+   "weight": 8
+  },
+  {
+   "form": "mixtral_8x7b",
+   "minLevel": 19,
+   "maxLevel": 22,
+   "weight": 6
+  },
+  {
+   "form": "smollm_2",
+   "minLevel": 16,
+   "maxLevel": 18,
+   "weight": 10
+  },
+  {
+   "form": "deepseek_v2",
+   "minLevel": 20,
+   "maxLevel": 22,
+   "weight": 4
+  },
+  {
+   "form": "whisper_base",
+   "minLevel": 18,
+   "maxLevel": 20,
+   "weight": 10,
+   "night": true
+  }
+ ],
+ "encounterRate": 0.18,
+ "landmarks": [
+  {
+   "x": 16,
+   "y": 26,
+   "label": "Pont du ruisseau"
+  },
+  {
+   "x": 10,
+   "y": 39,
+   "label": "Pont de la crique"
+  },
+  {
+   "x": 20,
+   "y": 30,
+   "label": "Ponton"
+  },
+  {
+   "x": 12,
+   "y": 24,
+   "label": "Borne devinette"
+  },
+  {
+   "x": 3,
+   "y": 30,
+   "label": "Crique cachée"
+  }
+ ],
+ "exits": [
+  {
+   "x": 13,
+   "y": 0,
+   "to": "hugging_grove",
+   "label": "Hugging Grove"
+  },
+  {
+   "x": 13,
+   "y": 55,
+   "to": "port_8080",
+   "label": "Port 8080"
+  }
+ ]
+}

@@ -1,0 +1,221 @@
+{
+ "id": "bench_swebench",
+ "name": "Benchmark SWE-bench",
+ "width": 19,
+ "height": 23,
+ "rows": [
+  "##V#ZZZZZZZZZZZ#V##",
+  "#KOOOOOOOOOOOOOOOK#",
+  "#OOOOOOOEEEOOOOOOO#",
+  "#OOOOOOOOOOOOOOOOO#",
+  "#OOOlOOOOOOOOOlOOO#",
+  "#OOOOOOOOOOOOOOOOO#",
+  "########HHH########",
+  "#KOOOOOOOOOOOOOOOK#",
+  "#OOOOOOOOOOOOOOOOO#",
+  "#OOOOOOOOOOOOOOOOO#",
+  "#JOOOOOOOOOOOOOhOK#",
+  "########HHH########",
+  "#KOOOOOOOOOOOOOOOK#",
+  "#OOOOOOOOOOOOOOOOO#",
+  "#OOOOOOOOOOOOOOOOO#",
+  "#JOhOOOOOOOOOOOOOl#",
+  "########HHH########",
+  "#KOOOOOOOOOOOOOOOK#",
+  "#OOOOOOOOOOOOOhOOO#",
+  "#OOOOOOOOOOOOOOOOO#",
+  "#lOOOOOOOOOOOOOOOJ#",
+  "#lOOOOOOOOOOOOOOOJ#",
+  "########XXX########"
+ ],
+ "legend": {
+  "#": "wall",
+  "E": "arena_line",
+  "H": "gate",
+  "J": "terminal",
+  "K": "server_rack",
+  "O": "arena_floor",
+  "V": "wall_window",
+  "X": "exit_mat",
+  "Z": "scoreboard",
+  "h": "switch_plate",
+  "l": "plant"
+ },
+ "npcs": [
+  {
+   "id": "patchwell",
+   "sprite": "resistance_dev",
+   "x": 9,
+   "y": 3,
+   "facing": "down",
+   "dialogue": "leader_patchwell_talk",
+   "trainer": "leader_patchwell",
+   "sightRange": 2
+  },
+  {
+   "id": "swe_junior_1",
+   "sprite": "dev_phone",
+   "x": 6,
+   "y": 18,
+   "facing": "right",
+   "dialogue": "swe_junior_1_talk",
+   "trainer": "swe_junior_1",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_swe_junior_1_defeated"
+    }
+   }
+  },
+  {
+   "id": "swe_junior_2",
+   "sprite": "scientist",
+   "x": 9,
+   "y": 14,
+   "facing": "left",
+   "dialogue": "swe_junior_2_talk",
+   "trainer": "swe_junior_2",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_swe_junior_2_defeated"
+    }
+   }
+  },
+  {
+   "id": "swe_junior_3",
+   "sprite": "stagiaire",
+   "x": 4,
+   "y": 8,
+   "facing": "right",
+   "dialogue": "swe_junior_3_talk",
+   "trainer": "swe_junior_3",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_swe_junior_3_defeated"
+    }
+   }
+  }
+ ],
+ "warps": [
+  {
+   "x": 8,
+   "y": 22,
+   "to": "dunes_datacenters",
+   "toX": 49,
+   "toY": 16,
+   "facing": "down"
+  },
+  {
+   "x": 9,
+   "y": 22,
+   "to": "dunes_datacenters",
+   "toX": 49,
+   "toY": 16,
+   "facing": "down"
+  },
+  {
+   "x": 10,
+   "y": 22,
+   "to": "dunes_datacenters",
+   "toX": 49,
+   "toY": 16,
+   "facing": "down"
+  }
+ ],
+ "triggers": [
+  {
+   "x": 8,
+   "y": 21,
+   "script": "swe_intro",
+   "w": 3,
+   "once": true
+  }
+ ],
+ "kind": "interior",
+ "music": "interior",
+ "gates": [
+  {
+   "x": 8,
+   "y": 16,
+   "flag": "swe_g1"
+  },
+  {
+   "x": 9,
+   "y": 16,
+   "flag": "swe_g1"
+  },
+  {
+   "x": 10,
+   "y": 16,
+   "flag": "swe_g1"
+  },
+  {
+   "x": 8,
+   "y": 11,
+   "flag": "swe_g2"
+  },
+  {
+   "x": 9,
+   "y": 11,
+   "flag": "swe_g2"
+  },
+  {
+   "x": 10,
+   "y": 11,
+   "flag": "swe_g2"
+  },
+  {
+   "x": 8,
+   "y": 6,
+   "flag": "swe_g3"
+  },
+  {
+   "x": 9,
+   "y": 6,
+   "flag": "swe_g3"
+  },
+  {
+   "x": 10,
+   "y": 6,
+   "flag": "swe_g3"
+  }
+ ],
+ "switches": [
+  {
+   "x": 14,
+   "y": 18,
+   "flag": "swe_g1"
+  },
+  {
+   "x": 3,
+   "y": 15,
+   "flag": "swe_g2"
+  },
+  {
+   "x": 15,
+   "y": 10,
+   "flag": "swe_g3"
+  }
+ ],
+ "pushables": [
+  {
+   "id": "swe_crate_1",
+   "x": 4,
+   "y": 19
+  },
+  {
+   "id": "swe_crate_2",
+   "x": 14,
+   "y": 13
+  },
+  {
+   "id": "swe_crate_3",
+   "x": 9,
+   "y": 8
+  }
+ ],
+ "landmarks": [],
+ "exits": []
+}

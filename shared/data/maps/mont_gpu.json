@@ -1,0 +1,280 @@
+{
+ "id": "mont_gpu",
+ "name": "Mont GPU",
+ "width": 40,
+ "height": 46,
+ "rows": [
+  "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr",
+  "rrrrrrrrrrrrrrGrrrGrrrGrrrGrrrrrrrrrrrrr",
+  "rrrrrrrrrrrGPPGPSPPPPPPPPPGPPrrrrrrrrrrr",
+  "rrrrrrrrrrrrPvPPPPPPPPPPPPPJPrrrrrrrrrrr",
+  "rrrrrrr.rrrrPPPGPPPPPPPPPGPPPGrrrrrrrrrr",
+  "rrrrrrG.rrrrPPPPPPPPPPPPPPPPPrrrrrrrrrrr",
+  "rrrrrrr.rrrGPPPPmPPPPPPPmPPPPrrrrrrrrrrr",
+  "rrrrrrr.GrrrPPPPPPPPPPPPPPPPPrrrrrrrrrrr",
+  "rrrrrrr.rrrrPBPPPPPPPPPPPPPBPGrrrrrrrrrr",
+  "rrrrrrG.rrrrPPPPPPPPPPPPPPPPPrrrrrrrrrrr",
+  "rrrrrrr.rrrrrrrGrrrGpppGrrrGrrrrrrrrrrrr",
+  "rrrrrrr.GrrrrrrrrrrIppprrrrrrrrrrrrrrrrr",
+  "rrrrrrr.rrrrrrrrrrrrppprrrrrrrrrrrrrrrrr",
+  "rrrrrrG.rrrrrrrrrrrrppprrrrrrrrrrrrrrrrr",
+  "rrrrrrr.rrrGrrrGrrrGpppGrrrrrrrrrrrrrrrr",
+  "rrrrrrppppppppppppppppprrrrrrrrrrrrrrrrr",
+  "rrrrrIppppppppppppppppprrrrrrrrrrrrrrrrr",
+  "rrrrrrppppppppppppppppprrrrrrrrrrrrrrrrr",
+  "rrrrrrppprccccccccccrrrrrrrrrrrrrrrrrrrr",
+  "rrrrrrppprccccccccccGrrrrrrrrrrrrrrrrrrr",
+  "rrrrrGpppGccccccccccrrrrrrrrrrrrrrrrrrrr",
+  "rrrrrrppprGrrrGrrrGrrrGrrrrrrrrrrrrrrrrr",
+  "rrrrrrppprrGccccccccccccccrrrrrrrrrrrrrr",
+  "rrrrrrppprrrccccccccccccccrrrrrrrrrrrrrr",
+  "rrrrrGpppGrrccccccccccccccrrrGrrrGrrrrrr",
+  "rrGrrrppppppppppppppppppppppppppppGrrrrr",
+  "rr....ppppppppppppppppppppppppppppIrrrrr",
+  "rrrrGrpppppppppppppppppppppppppppprrGrrr",
+  "rrrrrrrrrGrrrGrrrGrrrGrrrGrrrGrpppccccrr",
+  "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrGpppccccGr",
+  "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrpppccccrr",
+  "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrpppccccrr",
+  "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrpppccccrr",
+  "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrGpppccccGr",
+  "rrrrrrrrrrrrrrrrrrrGrrrGrrrGrrrppprGrrrr",
+  "rrrrrrrrrrrrrrrrrrpppppppppppppppp.....r",
+  "rrrrrrrrrrrrrrrrrIpppppppppppppppprrrG.r",
+  "rrrrrrrrrrrrrrrrrrppppppppppppppppGrrr.r",
+  "rrrrrrrrrrrrrrrrrrppprrGccccccccrrrrrr.r",
+  "rrrrrrrrrrrrrrrrrrppprrrccccccccGrrrrrrr",
+  "rrrrrrrrrrrrrrrrrGpppGrrccccccccrrrrrrrr",
+  "rrrrrrrrrrrrrrrrrrppprrrrrGrrrGrrrrrrrrr",
+  "rrrrrrrrrrrrrrrrrrppprrrrrrrrrrrrrrrrrrr",
+  "rrrrrrrrrrrrrrrrrrppprrrrrrrrrrrrrrrrrrr",
+  "rrrrrrrrrrrrrrrrrGpppGrrrrrrrrrrrrrrrrrr"
+ ],
+ "legend": {
+  ".": "sand",
+  "B": "bench_seat",
+  "G": "gpu_crate",
+  "I": "signpost",
+  "J": "terminal",
+  "P": "plaza",
+  "S": "sign",
+  "c": "cable",
+  "m": "street_lamp",
+  "p": "path",
+  "r": "rock",
+  "v": "vending"
+ },
+ "npcs": [
+  {
+   "id": "jensen",
+   "sprite": "jensen_cuir",
+   "x": 20,
+   "y": 5,
+   "facing": "down",
+   "dialogue": "jensen_mont_gpu"
+  },
+  {
+   "id": "mg_gamer",
+   "sprite": "vibeur_b",
+   "x": 14,
+   "y": 8,
+   "facing": "right",
+   "dialogue": "mg_gamer"
+  },
+  {
+   "id": "mg_hiker_1",
+   "sprite": "tourist",
+   "x": 25,
+   "y": 37,
+   "facing": "left",
+   "dialogue": "mg_hiker_1_talk",
+   "trainer": "mg_hiker_1",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_mg_hiker_1_defeated"
+    }
+   }
+  },
+  {
+   "id": "mg_dev_1",
+   "sprite": "dev_phone",
+   "x": 19,
+   "y": 27,
+   "facing": "right",
+   "dialogue": "mg_dev_1_talk",
+   "trainer": "mg_dev_1",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_mg_dev_1_defeated"
+    }
+   }
+  },
+  {
+   "id": "mg_scientist_1",
+   "sprite": "scientist",
+   "x": 7,
+   "y": 17,
+   "facing": "right",
+   "dialogue": "mg_scientist_1_talk",
+   "trainer": "mg_scientist_1",
+   "sightRange": 3,
+   "condition": {
+    "not": {
+     "flag": "trainer_mg_scientist_1_defeated"
+    }
+   }
+  }
+ ],
+ "warps": [
+  {
+   "x": 18,
+   "y": 45,
+   "to": "dunes_datacenters",
+   "toX": 30,
+   "toY": 1,
+   "facing": "down"
+  },
+  {
+   "x": 19,
+   "y": 45,
+   "to": "dunes_datacenters",
+   "toX": 31,
+   "toY": 1,
+   "facing": "down"
+  },
+  {
+   "x": 20,
+   "y": 45,
+   "to": "dunes_datacenters",
+   "toX": 32,
+   "toY": 1,
+   "facing": "down"
+  }
+ ],
+ "triggers": [
+  {
+   "x": 19,
+   "y": 10,
+   "script": "jensen_cutscene",
+   "w": 3,
+   "once": true
+  },
+  {
+   "x": 2,
+   "y": 27,
+   "script": "secret_mont_h100",
+   "once": true
+  },
+  {
+   "x": 7,
+   "y": 5,
+   "script": "secret_mont_enterprise",
+   "once": true
+  },
+  {
+   "x": 38,
+   "y": 39,
+   "script": "secret_mont_dataset",
+   "once": true
+  }
+ ],
+ "kind": "route",
+ "music": "route_a",
+ "encounterRate": 0.17,
+ "encounters": [
+  {
+   "form": "o1",
+   "minLevel": 30,
+   "maxLevel": 33,
+   "weight": 14
+  },
+  {
+   "form": "grok_3",
+   "minLevel": 31,
+   "maxLevel": 34,
+   "weight": 10
+  },
+  {
+   "form": "nano_banana_pro",
+   "minLevel": 32,
+   "maxLevel": 34,
+   "weight": 6
+  },
+  {
+   "form": "sd3",
+   "minLevel": 31,
+   "maxLevel": 33,
+   "weight": 10
+  },
+  {
+   "form": "devstral",
+   "minLevel": 31,
+   "maxLevel": 34,
+   "weight": 12
+  },
+  {
+   "form": "midjourney_v6",
+   "minLevel": 30,
+   "maxLevel": 33,
+   "weight": 14
+  },
+  {
+   "form": "whisper_large",
+   "minLevel": 32,
+   "maxLevel": 34,
+   "weight": 8
+  },
+  {
+   "form": "gpt_4o",
+   "minLevel": 32,
+   "maxLevel": 34,
+   "weight": 6
+  },
+  {
+   "form": "qwen_3",
+   "minLevel": 31,
+   "maxLevel": 33,
+   "weight": 12
+  },
+  {
+   "form": "claude_sonnet",
+   "minLevel": 31,
+   "maxLevel": 33,
+   "weight": 12
+  },
+  {
+   "form": "copilot_chat",
+   "minLevel": 30,
+   "maxLevel": 32,
+   "weight": 10
+  }
+ ],
+ "landmarks": [
+  {
+   "x": 20,
+   "y": 6,
+   "label": "Boutique de Jensen"
+  },
+  {
+   "x": 3,
+   "y": 27,
+   "label": "Boyau sans nom"
+  },
+  {
+   "x": 19,
+   "y": 40,
+   "label": "Pied du Mont"
+  }
+ ],
+ "exits": [
+  {
+   "x": 19,
+   "y": 45,
+   "to": "dunes_datacenters",
+   "label": "Dunes des Datacenters"
+  }
+ ]
+}
