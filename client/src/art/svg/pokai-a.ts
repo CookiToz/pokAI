@@ -84,7 +84,7 @@ const MS_R = '#f25022', MS_G = '#7fba00', MS_B = '#00a4ef', MS_Y = '#ffb900'; //
 const GB = '#4285f4', GL = '#8ab4f8', GY = '#fbbc04', GV = '#9b72cb'; // Google / Gemini
 const OAI = '#10a37f'; // OpenAI green
 const META = '#0668e1'; // Meta infinity blue
-const MI = ['#ffd800', '#ffaf00', '#ff8205', '#fa500f', '#e10500']; // Mistral pixel-M bands, top to bottom
+export const MI = ['#ffd800', '#ffaf00', '#ff8205', '#fa500f', '#e10500']; // Mistral pixel-M bands, top to bottom
 
 const f1 = (n: number): string => n.toFixed(1);
 
@@ -508,7 +508,7 @@ const llama = (st: number): string => {
 // ---------- Mistral : pixel cats (official emblem = "abstract pixel cat", Le Chat mascot). Bands yellow -> red ----------
 
 /** Turn a char grid into flat square cells. '#' = body, coloured in 5 horizontal bands (yellow -> red) by row;
- *  '.' = empty; every other char is looked up in `palette`. Cells sit on an ink underlay (the riso outline + visible pixel seams). */
+ *  '.' = empty; every other char is looked up in `palette`. Cells are flush (no seams) on an ink underlay that only shows as the outer riso outline, like every other PokAI. */
 export const pixelCat = (grid: string[], palette: Record<string, string>, cell: number): { under: string; fills: [string, string][]; } => {
   const w = Math.max(...grid.map((r) => r.length));
   const x0 = Math.round((128 - w * cell) / 2), y0 = 118 - grid.length * cell;
@@ -521,8 +521,8 @@ export const pixelCat = (grid: string[], palette: Record<string, string>, cell: 
       if (ch === '.' || ch === ' ') return;
       const x = x0 + c * cell, y = y0 + r * cell;
       const fill = ch === '#' ? (MI[Math.min(4, Math.floor(((r - top) * 5) / span))] as string) : (palette[ch] ?? INK);
-      under += `M${x - 1.5} ${y - 1.5}h${cell + 3}v${cell + 3}h${-(cell + 3)}z`;
-      by.set(fill, (by.get(fill) ?? '') + `M${x + 0.5} ${y + 0.5}h${cell - 1}v${cell - 1}h${-(cell - 1)}z`);
+      under += `M${x - 3} ${y - 3}h${cell + 6}v${cell + 6}h${-(cell + 6)}z`;
+      by.set(fill, (by.get(fill) ?? '') + `M${x - 0.1} ${y - 0.1}h${cell + 0.2}v${cell + 0.2}h${-(cell + 0.2)}z`);
     });
   });
   return { under, fills: [...by.entries()] };
@@ -533,44 +533,36 @@ export const stamp = (w: number, h: number, parts: [string[], number, number][])
   for (const [p, x, y] of parts) p.forEach((row, r) => [...row].forEach((ch, c) => { if (ch !== '.') (g[y + r] as string[])[x + c] = ch; }));
   return g.map((r) => r.join(''));
 };
-export const KIT = [
-  '#..........#', '##........##', '############', '############', '##wk####wk##', '##kk####kk##',
-  '#####pp#####', '.##########.', '..########..', '..########..', '..########..', '..###..###..', '..###..###..',
+// Official Mistral mascot: the small sitting pixel cat (mistral.ai footer), traced cell by cell, coloured with the logo bands.
+/** 13x13 sitting cat. '#' body, 'k' eyes, 'p' nose, 'r' collar, 'y' collar tag. */
+export const MCAT = [
+  '...#...#.....', '...##.##.....', '...#####.....', '...#k#k#.....', '..###p###....', '....rrrr.....', '....#y###....',
+  '....#####...#', '....######..#', '....######..#', '...#######.#.', '...#######.#.', '###########..',
 ];
-const CAT_HEAD = [
-  '##............##', '###..........###', '################', '################', '###wk######wk###', '###kk######kk###',
-  '#######pp#######', '.##############.',
+/** 17x14 plump variant (the "work mode" mascot): shirt collar 'w' + tie 'r'. */
+export const PLUMP = [
+  '...#.......#.....', '...##.....##.....', '...#########.....', '..###k###k###....', '..#####p#####....', '...wwwrrrwww.....',
+  '..#####r#####..#.', '.######r######.#.', '.#####rrr#####.#.', '.#####rrr#####.#.', '.######r######.#.', '.#############.#.',
+  '..#############..', '###############..',
 ];
-const PAL: Record<string, string> = { k: INK, w: PAPER, p: PINK, t: BLUE, y: MI[0] as string, d: '#3a3550' };
+const MINI = ['#...#..', '##.##..', '#k#k#..', '.rrr...', '.####.#', '.#####.', '######.'];
+const PAL: Record<string, string> = { k: INK, w: PAPER, p: PINK, t: BLUE, y: MI[0] as string, o: MI[2] as string, r: MI[4] as string, d: '#3a3550' };
 const catShapes = (grid: string[], cell: number): Shape[] => {
   const { under, fills } = pixelCat(grid, PAL, cell);
   return [{ ...path(under, INK), k: false }, ...fills.map(([f, d]) => ({ ...path(d, f), k: false, n: true }))];
 };
 const mistral = (kind: 'base' | 'mix' | 'large' | 'magi'): string => {
-  if (kind === 'base') {
-    return render(BLUE, catShapes(stamp(13, 13, [[KIT, 0, 0], [['.#', '.#', '##'], 11, 8], [['.#', '.#', '.#'], 11, 10]]).map((r) => r), 8));
-  }
+  if (kind === 'base') return render(BLUE, catShapes(MCAT, 7));
   if (kind === 'mix') {
-    const tiny = ['#...#', '#####', '#k#k#', '.###.'];
-    const spots: [number, number][] = [[0, 0], [12, 0], [0, 5], [6, 5], [12, 5], [0, 10], [6, 10], [12, 10]];
-    return render(BLUE, catShapes(stamp(17, 14, spots.map(([x, y]) => [tiny, x, y] as [string[], number, number])), 6));
+    // mixture of experts: eight small cats, two rows of four
+    const spots: [number, number][] = [0, 8, 16, 24].flatMap((x) => [[x, 0], [x, 8]] as [number, number][]);
+    return render(BLUE, catShapes(stamp(31, 15, spots.map(([x, y]) => [MINI, x, y] as [string[], number, number])), 3.8));
   }
-  if (kind === 'large') {
-    const body = [
-      '######wttw######', '#######tt#######', '######tttt######', '######tttt######', '#######tt#######', '.######tt######.', '..####....####..',
-    ];
-    return render(BLUE, catShapes([...CAT_HEAD, ...body], 7));
-  }
+  if (kind === 'large') return render(BLUE, catShapes(PLUMP, 7));
+  const hat = ['.....d.....', '....dd.....', '....ddd....', '...ddydd...', '...yyyyy...', 'ddddddddddd'];
   const spark = ['.y.', 'yyy', '.y.'];
-  const board = stamp(18, 17, [
-    [KIT, 3, 4],
-    [['..kkkkkkkkkk..'], 2, 2], [['kkkkkkkkkkkkkkkk'], 1, 3], [['kkkkkkkk', 'kkkkkkkk'], 5, 4],
-    [['y', 'y', 'y', 'yy'], 16, 4],
-    [spark, 0, 6], [spark, 15, 9], [['y'], 1, 11], [['y'], 16, 13],
-  ]);
-  return render(BLUE, catShapes(board, 6));
+  return render(BLUE, catShapes(stamp(17, 19, [[MCAT, 2, 6], [hat, 2, 1], [spark, 14, 3], [spark, 0, 11], [['y'], 16, 9]]), 6));
 };
-
 
 // ---------- Transformer : multi-headed attention hydra (legendary) ----------
 const transformer = (): string => {

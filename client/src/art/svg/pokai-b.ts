@@ -1,7 +1,7 @@
 // Art-B: Codestral, DeepSeek, Qwen, Grok, Stable Diffusion, Midjourney, Whisper, Falcon, SmolLM, BERT.
 // Flat riso vector style (see ./types.ts). Stages share part helpers so silhouettes stay consistent.
 import type { PokaiSvg } from './types';
-import { pixelCat, stamp, KIT } from './pokai-a';
+import { pixelCat, stamp, MCAT, PLUMP, MI } from './pokai-a';
 
 export const INK = '#1d1a2b';
 export const INK2 = '#3a3550';
@@ -100,7 +100,7 @@ const blush = (x: number, y: number, r = 3.6): string => NS(ell(x, y, r * 1.35, 
 
 /* ------------------------------------------------------------------ Mistral: pixel cats (Codestral, Devstral) */
 
-const PALB: Record<string, string> = { k: INK, w: PAPER, p: PINK, y: YEL, d: INK2 };
+const PALB: Record<string, string> = { k: INK, w: PAPER, p: PINK, y: MI[0] as string, r: MI[4] as string, d: INK2 };
 function pixelSprite(grid: string[], cell: number, shadow: string): string {
   const { under, fills } = pixelCat(grid, PALB, cell);
   return sprite([under], NS(under, INK) + fills.map(([f, d]) => NS(d, f)).join(''), { shadow });
@@ -108,21 +108,20 @@ function pixelSprite(grid: string[], cell: number, shadow: string): string {
 
 function mistral(dev: boolean): string {
   if (!dev) {
-    // kitten between `< >` with a blinking cursor block
-    const g = stamp(19, 13, [
-      [KIT, 3, 0],
-      [['..k', '.k.', 'k..', '.k.', '..k'], 0, 3], [['k..', '.k.', '..k', '.k.', 'k..'], 16, 3],
-      [['ww', 'ww', 'ww', 'ww'], 16, 9],
+    // the sitting cat between `< >` with a blinking cursor block
+    const g = stamp(20, 13, [
+      [MCAT, 3, 0],
+      [['..k', '.k.', 'k..', '.k.', '..k'], 0, 3], [['k..', '.k.', '..k', '.k.', 'k..'], 17, 3],
+      [['ww', 'ww'], 17, 10],
     ]);
     return pixelSprite(g, 6, PINK);
   }
-  // bigger kitten, pixel hard hat, little terminal on its belly
-  const head = ['##............##', '###..........###', '################', '################', '###wk######wk###', '###kk######kk###', '#######pp#######', '.##############.'];
-  const body = ['.##############.', '.##############.', '.##############.', '.##############.', '.##############.', '..####....####..', '..####....####..'];
-  const g = stamp(16, 15, [
-    [[...head, ...body], 0, 0],
-    [['..wwww..', 'wwwyywww'], 4 + 0, 0], [['wwwwwwwwwwww'], 2, 2],
-    [['kkkkkkkk', 'kdyddddk', 'kddyddwk', 'kdyddddk', 'kkkkkkkk'], 7, 9],
+  // the plump cat with a pixel hard hat and a little terminal on its belly (no tie: it ships on Fridays)
+  const body = PLUMP.map((r) => r.replace(/[wr]/g, '#'));
+  const g = stamp(17, 16, [
+    [body, 0, 2],
+    [['..wwwww..', '.wwwywww.', 'kkkkkkkkkkk'], 2, 0],
+    [['kkkkkkk', 'kdyddwk', 'kddyddk', 'kkkkkkk'], 4, 10],
   ]);
   return pixelSprite(g, 7, BLUE);
 }
