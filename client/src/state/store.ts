@@ -5,6 +5,7 @@ import { emitGameEvent } from '../systems/progression';
 import { randomSeed } from '../systems/rng';
 
 export const SAVE_KEY = 'pokai.save.v1';
+export const SAVE_BACKUP_KEY = 'pokai.save.v1.bak';
 export const PLAYER_ID_KEY = 'pokai.playerId';
 export const MAX_PARTY = 6;
 export const START_MAP = 'aiact_center';
@@ -48,6 +49,16 @@ function isSave(x: unknown): x is SaveData {
   return o.version === 1 && typeof o.playerName === 'string' && Array.isArray(o.party);
 }
 
+function parseSave(raw: string | null): SaveData | null {
+  if (!raw) return null;
+  try {
+    const parsed: unknown = JSON.parse(raw);
+    return isSave(parsed) ? parsed : null;
+  } catch {
+    return null;
+  }
+}
+
 function generateId(): string {
   try {
     if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') return crypto.randomUUID();
@@ -87,10 +98,13 @@ class GameStore {
     this.state = blankSave(name.trim() || 'Vibeur', vibeurClass);
   }
 
+  /** Writes the save; the previous valid save is kept as a backup in case the new one ever gets corrupted. */
   save(): boolean {
     try {
       const s = storage();
       if (!s) return false;
+      const prev = s.getItem(SAVE_KEY);
+      if (prev && parseSave(prev)) s.setItem(SAVE_BACKUP_KEY, prev);
       s.setItem(SAVE_KEY, JSON.stringify(this.state));
       return true;
     } catch {
@@ -98,12 +112,12 @@ class GameStore {
     }
   }
 
+  /** Loads the save, falling back to the backup. Missing fields (older versions) take their default values. */
   load(): boolean {
     try {
-      const raw = storage()?.getItem(SAVE_KEY);
-      if (!raw) return false;
-      const parsed: unknown = JSON.parse(raw);
-      if (!isSave(parsed)) return false;
+      const s = storage();
+      const parsed = parseSave(s?.getItem(SAVE_KEY) ?? null) ?? parseSave(s?.getItem(SAVE_BACKUP_KEY) ?? null);
+      if (!parsed) return false;
       this.state = { ...blankSave(), ...parsed };
       return true;
     } catch {
@@ -120,7 +134,8 @@ class GameStore {
 
   hasSave(): boolean {
     try {
-      return !!storage()?.getItem(SAVE_KEY);
+      const s = storage();
+      return !!(s?.getItem(SAVE_KEY) || s?.getItem(SAVE_BACKUP_KEY));
     } catch {
       return false;
     }
@@ -129,6 +144,7 @@ class GameStore {
   deleteSave(): void {
     try {
       storage()?.removeItem(SAVE_KEY);
+      storage()?.removeItem(SAVE_BACKUP_KEY);
     } catch {
       /* ignore */
     }

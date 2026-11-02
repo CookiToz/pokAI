@@ -2,6 +2,7 @@
 import { audio } from '../../audio/audio';
 import { h, uiRoot } from '../dom';
 import { game } from '../../state/store';
+import { installAutosave } from '../../state/autosave';
 import { input } from '../../input/input';
 import { maxContext } from '../../systems/pokai';
 import { icon, type IconName } from './icons';
@@ -49,6 +50,7 @@ export function setDockActive(tab: MenuTab | null): void {
 export function startSession(): void {
   baseSec = game.state.playTimeSec;
   sessionSec = 0;
+  if (!started) installAutosave(() => started && (input.topLayer() === 'world' || input.topLayer() === undefined));
   started = true;
   topbar.classList.add('is-on');
   refreshChrome();

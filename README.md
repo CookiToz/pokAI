@@ -17,6 +17,8 @@ Un jeu de collection de créatures où les créatures sont **des IA**.<br>
 ![Tests](https://img.shields.io/badge/tests-235%20%E2%9C%93-ff48b0?style=flat-square)
 ![Licence](https://img.shields.io/badge/licence-MIT-0078bf?style=flat-square)
 
+### [▶ Jouer en ligne : pokai-bice.vercel.app](https://pokai-bice.vercel.app)
+
 **[Le pitch](#le-pitch) · [Captures](#captures) · [Gameplay](#ce-qui-change-du-genre) · [Lancer le jeu](#lancer-le-jeu) · [Architecture](#architecture) · [Vision](#vision-long-terme)**
 
 </div>
@@ -56,6 +58,10 @@ Satirique, affectueux, jamais méchant : on se moque des **tics de l'industrie**
   <tr>
     <td><img src="docs/screenshots/port-8080.png" alt="Port 8080"><br><sub><b>Port 8080</b> : conteneurs, grues, cargos de GPU saisis par l'AIACT.</sub></td>
     <td><img src="docs/screenshots/evolution-branche.png" alt="Évolution à embranchement"><br><sub><b>Montée de version</b> : DeepSeek V3 évolue en R1 <i>ou</i> en V4, et c'est toi qui choisis.</sub></td>
+  </tr>
+  <tr>
+    <td><img src="docs/screenshots/dunes.png" alt="Dunes des Datacenters"><br><sub><b>Dunes des Datacenters</b> : pisé, dômes et baies de serveurs au milieu du sable.</sub></td>
+    <td><img src="docs/screenshots/capitale.png" alt="Conformité-Capitale"><br><sub><b>Conformité-Capitale</b> : le QG de l'AIACT, en béton brutaliste avec ses bannières rouges.</sub></td>
   </tr>
   <tr>
     <td><img src="docs/screenshots/centre-conformite.png" alt="Centre de Conformité n°7"><br><sub><b>Centre de Conformité n°7</b> : le prologue en infiltration.</sub></td>
@@ -139,6 +145,8 @@ On croise des personnalités de la tech **aux noms modifiés**, comme Jensen Cui
 - **Des distributeurs** qui fonctionnent, et un PC au Hub pour retrouver tous les PokAI capturés.
 
 ## Lancer le jeu
+
+**En ligne :** [pokai-bice.vercel.app](https://pokai-bice.vercel.app). La progression est sauvegardée dans **ton navigateur** (localStorage, avec une copie de secours et une sauvegarde automatique) : elle survit aux mises à jour du site, mais reste liée à ce navigateur et à cet appareil.
 
 **Prérequis :** Node 20 ou plus. Go 1.27 ou plus est optionnel : il ne sert qu'au serveur (sauvegardes en ligne, Neurodex mondial).
 

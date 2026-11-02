@@ -3,3 +3,5 @@ dist/
 *.db
 server/pokai
 server/data/
+.vercel
+.env*
