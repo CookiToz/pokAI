@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { barLength, chordToMidi, compileLayer, maskBar, midiToFreq, noteToMidi, parseBar, stepAtOrAfter, stepDuration, stepTime, sustain } from './sequencer';
-import { isInterrupt, isJingle, nextIndex, playlistFor, rotationSeconds } from './playlist';
+import { isInterrupt, isJingle, nextIndex, playlistFor, rotationSeconds, MAP_THEMES } from './playlist';
 import { TRACKS } from './tracks';
 import { DRUM_INSTS } from './synth';
 import { RECIPES } from './sfx';
@@ -56,6 +56,12 @@ describe('playlists', () => {
     expect(playlistFor('city', 23)[0]).toBe('city_night');
     expect(playlistFor('route', 10)).toContain('route_b');
     expect(playlistFor('dungeon', 1)).toEqual(['prison']);
+    expect(playlistFor('city', 12, 'port_8080')).toEqual(['port_8080_day', 'port_8080_night']);
+    expect(playlistFor('city', 23, 'latentia_city')[0]).toBe('latentia_city_night');
+    expect(playlistFor('city', 12, 'unknown_map')[0]).toBe('city_day');
+    expect(playlistFor('interior', 12, 'hub_city')[0]).toBe('interior');
+    expect(playlistFor('route', 12, 'temple_attention')).toEqual(['temple_attention']);
+    for (const [id, pair] of Object.entries(MAP_THEMES)) for (const t of pair) expect(TRACKS[t], `${id}/${t}`).toBeDefined();
     expect(nextIndex(1, 2)).toBe(0);
     expect(rotationSeconds(0)).toBe(120);
     expect(rotationSeconds(1)).toBe(180);

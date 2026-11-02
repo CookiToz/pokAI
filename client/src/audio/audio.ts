@@ -13,7 +13,10 @@ export type SfxName =
   | 'xp' | 'level_up' | 'evolve' | 'onboard_card' | 'onboard_success' | 'onboard_fail' | 'cookie' | 'coin' | 'badge';
 
 export type TrackName =
-  | 'city_day' | 'city_night' | 'route_a' | 'route_b' | 'interior' | 'prison' | 'hub'
+  | 'city_day' | 'city_night'
+  | 'latentia_city_day' | 'latentia_city_night' | 'hugging_grove_day' | 'hugging_grove_night' | 'port_8080_day' | 'port_8080_night'
+  | 'dunes_datacenters_day' | 'dunes_datacenters_night' | 'conformite_capitale_day' | 'conformite_capitale_night' | 'temple_attention'
+  | 'route_a' | 'route_b' | 'interior' | 'prison' | 'hub'
   | 'battle_wild' | 'battle_trainer' | 'battle_aiact' | 'battle_leader'
   | 'victory' | 'evolution' | 'title' | 'trailer';
 
@@ -21,8 +24,8 @@ export interface AudioApi {
   sfx(name: SfxName): void;
   /** Crossfades to a track (null = silence). Ambient tracks for a map kind may rotate automatically. */
   music(track: TrackName | null): void;
-  /** Ambient playlist for a map kind: rotates between suitable tracks. */
-  ambient(kind: 'city' | 'route' | 'interior' | 'dungeon'): void;
+  /** Ambient playlist for a map kind (and optionally its map id for a dedicated theme): rotates between suitable tracks. */
+  ambient(kind: AmbientKind, mapId?: string): void;
   setVolume(channel: 'master' | 'music' | 'sfx', v: number): void; // 0..1, persisted
   getVolume(channel: 'master' | 'music' | 'sfx'): number;
   /** After a battle / jingle: returns to the ambient music that was playing before (no-op if a jingle is still running). */
@@ -67,7 +70,7 @@ export const audio: AudioApi = {
     }
   },
   music: (track) => director.music(track),
-  ambient: (kind: AmbientKind) => director.ambient(kind),
+  ambient: (kind: AmbientKind, mapId?: string) => director.ambient(kind, mapId),
   setVolume: (ch: Channel, v) => engine.setVolume(ch, v),
   getVolume: (ch: Channel) => engine.getVolume(ch),
   resume: () => director.resumeWorld(),

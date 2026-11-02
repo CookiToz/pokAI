@@ -6,7 +6,7 @@ import { isInterrupt, isJingle, nextIndex, playlistFor, rotationSeconds, type Am
 import { TrackRig } from './rig';
 import { TRACKS } from './tracks';
 
-type Request = { type: 'track'; track: TrackName } | { type: 'ambient'; kind: AmbientKind } | null;
+type Request = { type: 'track'; track: TrackName } | { type: 'ambient'; kind: AmbientKind; mapId?: string } | null;
 
 interface Playing {
   rig: TrackRig;
@@ -54,10 +54,10 @@ export class MusicDirector {
     this.apply(track === 'trailer' ? 0.3 : isInterrupt(track) ? 0.45 : 0.8);
   }
 
-  ambient(kind: AmbientKind): void {
+  ambient(kind: AmbientKind, mapId?: string): void {
     this.resume = null;
-    if (this.request?.type === 'ambient' && this.request.kind === kind && this.cur) return;
-    this.request = { type: 'ambient', kind };
+    if (this.request?.type === 'ambient' && this.request.kind === kind && this.request.mapId === mapId && this.cur) return;
+    this.request = { type: 'ambient', kind, mapId };
     this.apply(0.8);
   }
 
@@ -82,7 +82,7 @@ export class MusicDirector {
     let index = 0;
     if (r.type === 'track') list = [r.track];
     else {
-      list = playlistFor(r.kind, this.hour());
+      list = playlistFor(r.kind, this.hour(), r.mapId);
       index = 0;
     }
     this.start(list, index, fade, r.type === 'ambient');

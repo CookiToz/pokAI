@@ -4,6 +4,7 @@ import { audio, audioInternals, type SfxName, type TrackName } from './audio';
 import { TrackRig } from './rig';
 import { RECIPES } from './sfx';
 import { TRACKS } from './tracks';
+import { MAP_THEMES } from './playlist';
 
 export interface Stats {
   name: string;
@@ -104,6 +105,7 @@ function panel(): void {
   (['master', 'music', 'sfx'] as const).forEach(slider);
   mk('Pistes', Object.keys(TRACKS), (s) => audio.music(s as TrackName));
   mk('Ambiances (playlists)', ['city', 'route', 'interior', 'dungeon'], (s) => audio.ambient(s as 'city'));
+  mk('Ambiances par carte', Object.keys(MAP_THEMES).concat('temple_attention'), (s) => audio.ambient('city', s));
   mk('Silence / reprise', ['stop', 'resume'], (s) => (s === 'stop' ? audio.music(null) : audio.resume()));
   mk('Effets', Object.keys(RECIPES), (s) => audio.sfx(s as SfxName));
   const close = document.createElement('button');

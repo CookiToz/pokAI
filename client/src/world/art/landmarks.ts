@@ -4,7 +4,7 @@
 import { LANDMARK_FOOTPRINT, type TileName } from '../../data/tiles';
 import { ENTRANCE_OFFSET } from './entrances';
 import {
-  ACCENTS, DOOR_H, MATERIALS, STOREY_PX, boxDress, doorUnit, parapetRing, windowModule,
+  ACCENTS, DOOR_H, DOOR_U0, DOOR_U1, MATERIALS, SILL_PX, STOREY_PX, WINDOW_H, boxDress, doorLeft, doorUnit, parapetRing, windowModule,
   P, circle, cuboid, cuboidShadow, ellipse, hash01, lcell, landmarkCanvas, leftPlaneG, line3, path, poly, poly3, pt, rcell, rect, rightPlaneG,
   stroke, svgDoc, text, topPlaneG, type ArtEntry,
 } from './kit';
@@ -73,17 +73,40 @@ function hfHub(cx: number, cy: number): string {
   const EN = ENTRANCE_OFFSET.lm_hf_hub!;
   let s = '';
 
+  // ground shadow: hard pink + blue offset footprints
+  const fpr = (dx: number, dy: number, col: string): string =>
+    `<polygon points="${[pt(cx, cy, -4.05, -4.05), pt(cx, cy, 1.05, -4.05), pt(cx, cy, 1.05, 1.05), pt(cx, cy, -4.05, 1.05)].map(([x, y]) => `${x + dx},${y + dy}`).join(' ')}" fill="${col}"/>`;
+  s += fpr(10, 8, P.blue) + fpr(5, 4, P.pink);
+
   // plaza apron
   s += poly3(cx, cy, [[-4.05, -4.05, 0], [1.05, -4.05, 0], [1.05, 1.05, 0], [-4.05, 1.05, 0]], P.paper2, false);
 
   // base block
   s += cuboidShadow(cx, cy, A0, A1, A0, A1, BH, P.pink, 7, 5);
-  const M = MATERIALS.paper;
-  s += cuboid(cx, cy, A0, A1, A0, A1, 0, BH, { top: M.top, left: M.left, right: M.right });
-  s += boxDress(cx, cy, A0, A1, A0, A1, BH, ACCENTS.yellow);
-  // the window module on the storey grid; the entrance column stays free
-  s += facadeWindows(cx, cy, A1, [-4, -3, -1, 0], [-4, -3, -2, -1, 0]);
-  s += parapetRing(cx, cy, A0, A1, A0, A1, BH);
+  s += cuboid(cx, cy, A0, A1, A0, A1, 0, BH, { top: '#ffe9a8', left: P.paper, right: P.paper3 });
+  s += lcell(cx, cy, A1, A0, A1, 0, 5, P.pink, false) + rcell(cx, cy, A1, A1, A0, 0, 5, '#c2257f', false);
+  s += lcell(cx, cy, A1, A0, A1, BH - 5, BH, P.yellow, false) + rcell(cx, cy, A1, A1, A0, BH - 5, BH, P.yellowD, false);
+  // windows on the front face leave the entrance column free
+  for (const col of [-4, -3, -1, 0]) {
+    const a = col + 0.2;
+    const i = col + 4;
+    s += lcell(cx, cy, A1, a, a + 0.6, SILL_PX, SILL_PX + WINDOW_H, P.yellowD);
+    s += lcell(cx, cy, A1, a + 0.06, a + 0.54, SILL_PX + 3, SILL_PX + WINDOW_H - 3, i % 2 ? P.glassL : '#fff1c9', false);
+    s += lcell(cx, cy, A1, a + 0.28, a + 0.32, SILL_PX + 3, SILL_PX + WINDOW_H - 3, P.yellowD, false);
+  }
+  for (let i = 0; i < 4; i++) {
+    const b = 0.3 - i * 1.05;
+    s += rcell(cx, cy, A1, b + 0.6, b, SILL_PX, SILL_PX + WINDOW_H, P.yellowD);
+    s += rcell(cx, cy, A1, b + 0.54, b + 0.06, SILL_PX + 3, SILL_PX + WINDOW_H - 3, i % 2 ? '#fff1c9' : P.glassL, false);
+  }
+
+  // bunting along the two front roof edges
+  const [lx0, ly0] = pt(cx, cy, A0, A1, BH);
+  const [fx0, fy0] = pt(cx, cy, A1, A1, BH);
+  const [rx0, ry0] = pt(cx, cy, A1, A0, BH);
+  const flags = [P.pink, P.blue, P.teal, P.orange, P.purple] as const;
+  s += bunting(lx0, ly0, fx0, fy0 - 2, 12, 9, flags);
+  s += bunting(fx0, fy0 - 2, rx0, ry0, 12, 9, flags);
 
   // ---- the face (screen-space, frontal) ----
   const fx = cx;
@@ -122,7 +145,10 @@ function hfHub(cx: number, cy: number): string {
   s += hearts(fx, fy, R);
 
   // ---- entrance: a real door on the front face, exactly on the entrance column ----
-  s += doorUnit(cx, cy, EN.dx, A1, ACCENTS.yellow, { leaf: P.glass, glass: P.glassL, split: true });
+  const door0 = EN.dx + DOOR_U0;
+  const door1 = EN.dx + DOOR_U1;
+  s += doorLeft(cx, cy, { frame: P.yellowD, leaf: P.tealL, glass: P.paper, split: true, mat: P.paper3 }, door0, door1, DOOR_H, A1);
+  s += lcell(cx, cy, A1, door0 - 0.05, door1 + 0.05, DOOR_H + 5, DOOR_H + 9, P.pink, false);
   const [ex, ey] = pt(cx, cy, EN.dx + 0.5, A1, 0);
 
   // ---- two big hugging hands around the entrance ----

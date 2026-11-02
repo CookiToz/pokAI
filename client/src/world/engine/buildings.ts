@@ -13,7 +13,7 @@ import { isThickWall, type NameAt } from './walls';
 
 export type Theme = 'city' | 'grove' | 'port' | 'dunes' | 'capitale';
 export type Accent = 'pink' | 'blue' | 'yellow' | 'teal' | 'leaf' | 'orange' | 'red';
-export type Style = 'house' | 'cabin' | 'shop' | 'tower' | 'hub' | 'store' | 'bench' | 'block' | 'wall' | 'container';
+export type Style = 'house' | 'cabin' | 'shop' | 'tower' | 'hub' | 'store' | 'bench' | 'block' | 'monument' | 'wall' | 'container';
 export type RoofShape = 'single' | 'back' | 'front' | 'flat';
 
 export const THEMES: readonly Theme[] = ['city', 'grove', 'port', 'dunes', 'capitale'];
@@ -86,6 +86,11 @@ export interface Building {
   id: number;
   style: Style;
   accent: Accent;
+  /** Bounding box (inclusive), used for symmetric decoration (Capitale banners, flag mast). */
+  x0: number;
+  y0: number;
+  x1: number;
+  y1: number;
 }
 
 interface Analysis {
@@ -113,7 +118,7 @@ export function hashXY(x: number, y: number, salt = 0): number {
 
 function accentFor(style: Style, theme: Theme, names: ReadonlySet<TileName>, seedX: number, seedY: number): Accent {
   if (style === 'hub') return 'yellow'; // the Hub is always the yellow 🤗 house, in every city
-  if (style === 'block' && (names.has('aiact_wall') || names.has('aiact_door'))) return 'red';
+  if ((style === 'block' || style === 'monument') && (names.has('aiact_wall') || names.has('aiact_door'))) return 'red';
   const pal = THEME_ACCENTS[theme];
   return pal[Math.floor(hashXY(seedX, seedY, 11) * pal.length)] ?? pal[0]!;
 }
@@ -134,9 +139,14 @@ export function analyse(map: MapLike, at: NameAt): Analysis {
       const names = new Set<TileName>();
       const stack: [number, number][] = [[x0, y0]];
       comp[y0 * W + x0] = id;
+      let bx0 = x0, by0 = y0, bx1 = x0, by1 = y0;
       while (stack.length) {
         const [x, y] = stack.pop()!;
         names.add(at(x, y)!);
+        bx0 = Math.min(bx0, x);
+        by0 = Math.min(by0, y);
+        bx1 = Math.max(bx1, x);
+        by1 = Math.max(by1, y);
         for (const [dx, dy] of [[1, 0], [-1, 0], [0, 1], [0, -1]] as const) {
           const nx = x + dx;
           const ny = y + dy;
@@ -146,8 +156,12 @@ export function analyse(map: MapLike, at: NameAt): Analysis {
           stack.push([nx, ny]);
         }
       }
-      const style = styleOf(names);
-      list.push({ id, style, accent: accentFor(style, theme, names, x0, y0) });
+      let style = styleOf(names);
+      const bw = bx1 - bx0 + 1;
+      const bh = by1 - by0 + 1;
+      // Conformité-Capitale: the big AIACT / ministry blocks are monumental (two storeys)
+      if (style === 'block' && theme === 'capitale' && bw * bh >= 40 && Math.min(bw, bh) >= 4) style = 'monument';
+      list.push({ id, style, accent: accentFor(style, theme, names, x0, y0), x0: bx0, y0: by0, x1: bx1, y1: by1 });
     }
   const out = { theme, comp, list };
   cache.set(map, out);
@@ -163,7 +177,7 @@ export const MS = 4;
 export const MW = 8;
 
 /** Volume of a tile: decides its height in the art and which neighbours it merges with. */
-export type Geom = 'st' | 'stp' | 'tw' | 'wl' | 'b2' | 'b3' | `rf-${RoofShape}`;
+export type Geom = 'st' | 'stp' | 'tw' | 'wl' | 'b2' | 'b3' | 'lg' | 'sd' | 'sdt' | 'mo' | `rf-${RoofShape}`;
 
 export interface BuildingSprite {
   /** Shadow image (only on the right / front silhouette), drawn on the ground band. */
@@ -172,15 +186,32 @@ export interface BuildingSprite {
   edge: string;
 }
 
-function partOf(name: TileName, style: Style, pitched: boolean, x: number, y: number): string {
+/** Roof equipment odds per city: [top1, top2] (top1 / top2 meaning depends on the city, see the art). */
+const TOP_ODDS: Readonly<Record<Theme, readonly [number, number]>> = {
+  city: [0.12, 0.2], grove: [0.12, 0.08], port: [0.14, 0.1], dunes: [0.16, 0.08], capitale: [0.12, 0],
+};
+
+function partOf(name: TileName, b: Building, theme: Theme, pitched: boolean, x: number, y: number): string {
+  const style = b.style;
   if (style === 'container') return name === 'container_roof' ? 'c3' : 'c2';
   if (DOORS.has(name)) return 'door';
   if (name === 'poster_aiact') return 'poster';
   if (name === 'shop_window') return 'front';
   if (ROOFS.has(name)) {
     if (pitched && name !== 'tower_roof') return 'roof';
+    // Capitale: one flag mast, on the axis of symmetry of the building
+    if (theme === 'capitale') return x === Math.floor((b.x0 + b.x1) / 2) && y === b.y0 ? 'top2' : hashXY(x, y, 3) < TOP_ODDS.capitale[0] ? 'top1' : 'top0';
     const r = hashXY(x, y, 3);
-    return r < 0.16 ? 'top1' : r < 0.26 ? 'top2' : 'top0';
+    const [o1, o2] = TOP_ODDS[theme];
+    return r < o1 ? 'top1' : r < o1 + o2 ? 'top2' : 'top0';
+  }
+  if (style === 'monument' || (style === 'block' && theme === 'capitale')) {
+    // red AIACT banners, symmetric about the building's axes, every third column
+    const cxm = (b.x0 + b.x1) / 2;
+    const cym = (b.y0 + b.y1) / 2;
+    const L = Math.abs(x - cxm) % 3 < 0.6 ? 'L' : '';
+    const R = Math.abs(y - cym) % 3 < 0.6 ? 'R' : '';
+    return `wall${L}${R}`;
   }
   return 'wall';
 }
@@ -191,12 +222,17 @@ function classOf(part: string): string {
   return 'body';
 }
 
-function geomOf(style: Style, theme: Theme, part: string): Geom {
+/** Volume of a tile in a building of this style / city (shared with the art, which turns it into px). */
+export function geomOf(style: Style, theme: Theme, part: string): Geom {
+  if (part.startsWith('roof-')) return `rf-${part.slice(5) as RoofShape}`;
   if (part === 'c2') return 'b2';
   if (part === 'c3') return 'b3';
-  if (style === 'tower') return 'tw';
+  if (style === 'tower') return theme === 'dunes' ? 'sdt' : 'tw';
   if (style === 'wall') return 'wl';
-  return isPitched(style, theme) ? 'st' : 'stp';
+  if (style === 'monument') return 'mo';
+  if (style === 'cabin') return 'lg';
+  if (isPitched(style, theme)) return 'st';
+  return theme === 'dunes' ? 'sd' : 'stp';
 }
 
 /** The three images of a building tile, or null when (x, y) is not part of a building. */
@@ -208,11 +244,11 @@ export function buildingSprite(map: MapLike, at: NameAt, x: number, y: number): 
   const b = a.list[id]!;
   const name = at(x, y)!;
   const pitched = isPitched(b.style, a.theme);
-  const part = partOf(name, b.style, pitched, x, y);
+  const part = partOf(name, b, a.theme, pitched, x, y);
   const cls = classOf(part);
   const same = (nx: number, ny: number): boolean => {
     if (nx < 0 || ny < 0 || nx >= W || ny >= map.height || a.comp[ny * W + nx] !== id) return false;
-    return classOf(partOf(at(nx, ny)!, b.style, pitched, nx, ny)) === cls;
+    return classOf(partOf(at(nx, ny)!, b, a.theme, pitched, nx, ny)) === cls;
   };
   const mask = (same(x, y - 1) ? MN : 0) | (same(x + 1, y) ? ME : 0) | (same(x, y + 1) ? MS : 0) | (same(x - 1, y) ? MW : 0);
   let geom: Geom = geomOf(b.style, a.theme, part);

@@ -302,7 +302,210 @@ const title: TrackDef = {
   ],
 };
 
+
+// ===================================================================== CITY TRACKS (one theme per town)
+
+// ---- latentia_city_day: neon city-pop, 112 bpm, bouncy (starting town)
+const LAT_A = ['Abmaj7', 'Gm7', 'Fm9', 'Bb7', 'Ebmaj7', 'Dm7', 'Gm7', 'C7'];
+const latentia_city_day: TrackDef = {
+  bpm: 112, swing: 0.1, bars: 8, loop: true, gain: 1.3,
+  layers: [
+    L('pad', pads(LAT_A, 3), { gain: 0.7, rev: 0.45, pan: -0.2, p: { cut: 1300 } }),
+    L('stab', comp(LAT_A, 3, ['x..x..x...x..x..', '..x...x..x..x...']), { gain: 0.7, rev: 0.25, dly: 0.2, pan: 0.2, p: { cut: 2000 } }),
+    L('bass', bassBars(LAT_A, 2, ['x.xxo.x.x.xxo.xf', 'x.x.o.xxx.x.o.x.']), { gain: 0.95, p: { cut: 650 } }),
+    L('kick', ['x...x...x...x...', 'x...x...x..xx...'], { gain: 0.8 }),
+    L('clap', ['....x.......x...'], { gain: 0.6, rev: 0.3 }),
+    L('hat', ['x.g.x.g.x.g.x.gg'], { gain: 0.7, pan: 0.2 }),
+    L('shaker', ['xxxxxxxxxxxxxxxx'], { gain: 0.3, pan: -0.3, on: '..xxxxxx' }),
+    L('glass', [
+      'C6 . . Eb6 . G6 . . F6 . Eb6 . C6 . . .', 'D6 . . F6 . Bb5 . . . . D6 . C6 . . .', 'C6 . Ab5 . . . F5 . G5 . Ab5 . C6 . . .', 'Bb5 . . D6 . F6 . . Eb6 . D6 . . . . .',
+      'G6 . . Eb6 . Bb5 . . . . G5 . Bb5 . . .', 'A5 . . D6 . F6 . . A6 . G6 . F6 . . .', 'D6 . . Bb5 . G5 . . Bb5 . D6 . . . . .', 'E6 . G6 . . . C6 . Bb5 . G5 . . . . .',
+    ], { gain: 0.85, rev: 0.4, dly: 0.35, on: '.xxxxxxx' }),
+  ],
+};
+
+// ---- latentia_city_night: synthwave neon, 100 bpm, arpeggiated
+const LAT_N = ['Am9', 'Fmaj7', 'Cmaj7', 'G6', 'Am9', 'Fmaj7', 'Dm7', 'E7sus4'];
+const latentia_city_night: TrackDef = {
+  bpm: 100, swing: 0, bars: 8, loop: true, gain: 1.45, reverb: { seconds: 2.6, mix: 0.45 }, echo: 3, echoFeedback: 0.35,
+  layers: [
+    L('pad', pads(LAT_N, 3), { gain: 0.85, rev: 0.55, p: { cut: 1000, a: 0.6 } }),
+    L('pluck', arp(LAT_N, 4, 'xxxxxxxxxxxxxxxx', [0, 2, 1, 3, 2, 4, 3, 1]), { gain: 0.6, rev: 0.25, dly: 0.3, pan: 0.25, p: { wave: 1, cut: 1900, decay: 0.22 } }),
+    L('bass', bassBars(LAT_N, 2, ['xxxxxxxxxxxxxxxx', 'x.xxx.xxx.xxx.xx']), { gain: 0.8, p: { cut: 520 } }),
+    L('kick', ['x...x...x...x...'], { gain: 0.7, on: '.xxxxxxx' }),
+    L('snare', ['....x.......x...'], { gain: 0.55, rev: 0.45, p: { tone: 1900 } }),
+    L('hat', ['..x...x...x...x.'], { gain: 0.55, pan: -0.2 }),
+    L('bell', [
+      'E6 . . . A6 . . . G6 . . . E6 . . .', 'C6 . . . A5 . . . F6 . . . E6 . . .', 'G6 . . . E6 . . . C6 . . . D6 . . .', 'B5 . . . D6 . . . G6 - - - - - - -',
+      'E6 . . . A6 . . . C7 . . . B6 . . .', 'A6 . . . F6 . . . C6 . . . A5 . . .', 'F6 . . . D6 . . . A5 . . . C6 . . .', 'B5 . . . E6 . . . G#6 - - - - - - -',
+    ], { gain: 0.7, rev: 0.6, dly: 0.5, on: '..xxxxxx' }),
+  ],
+};
+
+// ---- hugging_grove_day: soft forest, 72 bpm, kalimba and warm pads
+const GRV_A = ['Dmaj7', 'Bm7', 'Gmaj7', 'A6', 'Dmaj9', 'F#m7', 'Gmaj7', 'Asus4'];
+const hugging_grove_day: TrackDef = {
+  bpm: 72, swing: 0.12, bars: 8, loop: true, gain: 1.9, reverb: { seconds: 2.8, mix: 0.5 },
+  layers: [
+    L('pad', pads(GRV_A, 3), { gain: 0.85, rev: 0.55, p: { cut: 700, a: 1, r: 1.8 } }),
+    L('pluck', arp(GRV_A, 4, 'x.x.x.x.x.x.x.x.', [0, 2, 4, 2, 1, 3, 2, 1]), { gain: 0.8, rev: 0.4, dly: 0.3, pan: -0.15, p: { cut: 2600, decay: 0.7 } }),
+    L('bass', bassBars(GRV_A, 2, ['x.......--------', 'x.......x..f....']), { gain: 0.7, p: { cut: 380 } }),
+    L('shaker', ['x.x.x.x.x.x.x.x.'], { gain: 0.25, pan: 0.3, on: '..xxxxxx' }),
+    L('rim', ['........x.......'], { gain: 0.35, rev: 0.5 }),
+    L('bell', [
+      'F#6 . . . . . A6 . . . . . D6 . . .', 'D6 . . . . . F#6 . . . . . E6 . . .', 'B5 . . . D6 . . . . . G6 . . . . .', 'A6 . . . . . E6 . . . C#6 . . . . .',
+      'A6 . . . F#6 . . . . . D6 . . . . .', 'C#6 . . . . . F#6 . A6 . . . . . . .', 'D6 . . . B5 . . . G6 . . . . . . .', 'E6 . . . . . . . C#6 . . . . . . .',
+    ], { gain: 0.65, rev: 0.7, dly: 0.45, on: 'x.xxxxxx' }),
+  ],
+};
+
+// ---- hugging_grove_night: fireflies, 60 bpm, almost beatless
+const GRV_N = ['Gmaj9', 'Em9', 'Cmaj9', 'D6', 'Gmaj9', 'Bm7', 'Am9', 'D7sus4'];
+const hugging_grove_night: TrackDef = {
+  bpm: 60, swing: 0.1, bars: 8, loop: true, gain: 2.0, reverb: { seconds: 3.6, mix: 0.6 }, echo: 3, echoFeedback: 0.4,
+  layers: [
+    L('pad', pads(GRV_N, 3), { gain: 1, rev: 0.65, p: { cut: 600, a: 1.2, r: 2.2 } }),
+    L('pluck', arp(GRV_N, 4, 'x...x...x...x...', [0, 2, 4, 3, 1, 3]), { gain: 0.75, rev: 0.5, dly: 0.45, pan: 0.2, p: { cut: 2200, decay: 0.9 } }),
+    L('bass', bassBars(GRV_N, 2, ['x...............']), { gain: 0.6, p: { cut: 320 } }),
+    L('drip', ['. . . . . . . . . . B5 . . . . .', R, '. . . . . . G6 . . . . . . . . .', R], { gain: 0.45, rev: 0.8, dly: 0.5 }),
+    L('bell', [
+      'B6 . . . . . . . . . D7 . . . . .', R, 'G6 . . . . . . . . . . . E6 . . .', R,
+      'D7 . . . . . . . . . B6 . . . . .', R, 'A6 . . . . . . . E6 . . . . . . .', R,
+    ], { gain: 0.5, rev: 0.85, dly: 0.5, p: { decay: 2.6 } }),
+  ],
+};
+
+// ---- port_8080_day: harbour dub groove, 86 bpm
+const PRT_A = ['Gm7', 'Gm7', 'Cm7', 'Cm7', 'Gm7', 'Eb7', 'Dm7b5', 'D7'];
+const port_8080_day: TrackDef = {
+  bpm: 86, swing: 0.18, bars: 8, loop: true, gain: 1.35, reverb: { seconds: 1.8, mix: 0.35 }, echo: 3, echoFeedback: 0.5,
+  layers: [
+    L('pad', pads(PRT_A, 3), { gain: 0.55, rev: 0.4, p: { cut: 650 } }),
+    L('bass', bassBars(PRT_A, 1, ['x..x..x..x..x.o.', 'x..x..x...x.x...']), { gain: 1.1, p: { cut: 330, max: 2 } }),
+    L('stab', comp(PRT_A, 3, ['....x.......x...', '....x.......x..x']), { gain: 0.65, rev: 0.3, dly: 0.55, pan: 0.25, p: { cut: 1500 } }),
+    L('kick', ['x.......x.x.....', 'x.......x.......'], { gain: 0.85 }),
+    L('rim', ['....x.......x...'], { gain: 0.8, rev: 0.4 }),
+    L('hat', ['x.xgx.xgx.xgx.xg'], { gain: 0.55, pan: -0.2 }),
+    L('tick', ['..x...x.x...x...', '..x...x...x.x..x'], { gain: 0.5, pan: 0.3, rev: 0.2 }),
+    L('bell', [
+      'D6 . . . . . . . . . . . . . . .', '. . . . . . . . Bb5 . . . . . . .', 'G6 . . . . . . . . . Eb6 . . . . .', '. . . . . . . . . . . . D6 . . .',
+      'Bb5 . . . . . D6 . . . . . . . . .', 'G5 . . . . . . . Bb5 . . . . . . .', 'A5 . . . C6 . . . . . F6 . . . . .', 'F#6 . . . . . . . D6 . . . . . . .',
+    ], { gain: 0.6, rev: 0.55, dly: 0.6, p: { decay: 1.4 } }),
+  ],
+};
+
+// ---- port_8080_night: slower, foggy swell, 74 bpm
+const PRT_N = ['Cm9', 'Cm9', 'Fm7', 'Fm7', 'Ab6', 'G7', 'Cm9', 'G7sus4'];
+const port_8080_night: TrackDef = {
+  bpm: 74, swing: 0.14, bars: 8, loop: true, gain: 1.6, reverb: { seconds: 3.4, mix: 0.55 }, echo: 3, echoFeedback: 0.5,
+  layers: [
+    L('pad', pads(PRT_N, 3), { gain: 0.9, rev: 0.6, p: { cut: 520, a: 1.6, r: 2.4 } }),
+    L('drone', [sustain('C1'), sustain('C1'), sustain('F1'), sustain('F1')], { gain: 0.6, rev: 0.3, p: { cut: 200 } }),
+    L('bass', bassBars(PRT_N, 1, ['x.....x...x.....', 'x.......x.f.....']), { gain: 1, p: { cut: 300, max: 2 } }),
+    L('kick', ['x.......x.......'], { gain: 0.65, on: '.xxxxxxx' }),
+    L('rim', ['................', '............x...'], { gain: 0.6, rev: 0.6 }),
+    L('hat', ['..g...g...g...g.'], { gain: 0.35, pan: 0.25, rev: 0.3 }),
+    L('epiano', comp(PRT_N, 3, ['....x.......x...', '....x...........']), { gain: 0.7, rev: 0.5, dly: 0.6, pan: -0.2, p: { cut: 1800 } }),
+    L('bell', [
+      'G6 . . . . . . . . . . . Eb6 . . .', R, 'C7 . . . . . . . . . Ab6 . . . . .', R,
+      'Eb6 . . . . . . . G6 . . . . . . .', R, 'C6 . . . . . . . . . . . . . . .', R,
+    ], { gain: 0.5, rev: 0.8, dly: 0.55, p: { decay: 2.4 } }),
+  ],
+};
+
+// ---- dunes_datacenters_day: phrygian desert, 92 bpm, drone + dry percussion
+const DUN_A = ['Em', 'F', 'Em', 'Dm', 'Em', 'F', 'Gm', 'Em'];
+const dunes_datacenters_day: TrackDef = {
+  bpm: 92, swing: 0.04, bars: 8, loop: true, gain: 1.45, reverb: { seconds: 2.2, mix: 0.4 }, echo: 3, echoFeedback: 0.35,
+  layers: [
+    L('drone', [sustain('E1'), sustain('E1'), sustain('E1'), sustain('E1')], { gain: 0.9, rev: 0.25, p: { cut: 260 } }),
+    L('pad', pads(DUN_A, 3), { gain: 0.45, rev: 0.5, p: { cut: 780, a: 0.8 } }),
+    L('bass', bassBars(DUN_A, 2, ['x..x..x.x..x....', 'x..x..x.x.x.o...']), { gain: 0.85, p: { cut: 450 } }),
+    L('kick', ['x.....x.x.......', 'x.......x..x....'], { gain: 0.7 }),
+    L('rim', ['....x.....x.x...', '....x.......x.x.'], { gain: 0.7, rev: 0.3 }),
+    L('shaker', ['x.xxx.xxx.xxx.xx'], { gain: 0.35, pan: -0.3 }),
+    L('tick', ['..x...x...x...x.'], { gain: 0.4, pan: 0.3, on: '..xxxxxx' }),
+    L('pluck', [
+      'E5 . F5 E5 . . B4 . C5 . B4 . . . . .', 'F5 . G#5 F5 . . C5 . E5 . . . . . . .', 'E5 . F5 E5 . . G5 . F5 . E5 . . . . .', 'D5 . E5 D5 . . A4 . . . . . . . . .',
+      'E5 . F5 G#5 . . B5 . A5 . G#5 . F5 . E5 .', 'C6 . B5 . G#5 . F5 . . . E5 . . . . .', 'G5 . A#5 . D6 . C6 . A#5 . G5 . . . . .', 'F5 . E5 . . . B4 . E5 - - - . . . .',
+    ], { gain: 0.8, rev: 0.4, dly: 0.4, p: { wave: 1, cut: 1900, decay: 0.3 }, on: '.xxxxxxx' }),
+  ],
+};
+
+// ---- dunes_datacenters_night: server hum, 80 bpm, cold
+const DUN_N = ['Em', 'Em', 'Fmaj7', 'Em', 'Am', 'Fmaj7', 'Dm', 'Em'];
+const dunes_datacenters_night: TrackDef = {
+  bpm: 80, swing: 0, bars: 8, loop: true, gain: 1.7, reverb: { seconds: 3.4, mix: 0.5 }, echo: 6, echoFeedback: 0.42,
+  layers: [
+    L('drone', [sustain('E1'), sustain('E1'), sustain('F1'), sustain('E1')], { gain: 1, rev: 0.3, p: { cut: 240 } }),
+    L('drone', [sustain('B2'), sustain('B2'), sustain('C3'), sustain('B2')], { gain: 0.3, rev: 0.4, p: { cut: 600 } }),
+    L('pad', pads(DUN_N, 3), { gain: 0.5, rev: 0.7, p: { cut: 600, a: 1.4, r: 2 } }),
+    L('tick', ['x.x.x.x.x.x.x.x.'], { gain: 0.3, pan: 0.3, rev: 0.2 }),
+    L('rim', ['........x.......', '..............x.'], { gain: 0.5, rev: 0.5 }),
+    L('kick', ['x...............', 'x.......x.......'], { gain: 0.6, rev: 0.4, p: { low: 42 } }),
+    L('glass', [
+      'E5 . . . . . F5 . . . . . B4 . . .', R, 'G#5 . . . . . F5 . . . . . E5 . . .', R,
+      'A5 . . . . . G#5 . . . . . E5 . . .', 'F5 . . . . . . . E5 . . . . . . .', 'D5 . . . . . F5 . . . . . A4 . . .', 'E5 - - - - - - - . . . . . . . .',
+    ], { gain: 0.55, rev: 0.8, dly: 0.55, p: { decay: 2 } }),
+  ],
+};
+
+// ---- conformite_capitale_day: bureaucratic march, 104 bpm, minimal, stamps
+const CON_A = ['Am', 'Am', 'Dm', 'Am', 'Fmaj7', 'E', 'Am', 'E'];
+const conformite_capitale_day: TrackDef = {
+  bpm: 104, swing: 0, bars: 8, loop: true, gain: 1.4, reverb: { seconds: 1.4, mix: 0.25 },
+  layers: [
+    L('pad', pads(CON_A, 3), { gain: 0.5, rev: 0.3, p: { cut: 650 } }),
+    L('bass', bassBars(CON_A, 2, ['x.x.x.x.x.x.x.x.', 'x.x.x.x.x.x.xxo.']), { gain: 0.85, p: { cut: 420 } }),
+    L('kick', ['x...x...x...x...'], { gain: 0.7 }),
+    L('snare', ['....x.......x...', '....x.......xxxx'], { gain: 0.5, rev: 0.15, p: { tone: 2300 } }),
+    L('typewriter', ['..x..x..x..x..x.', '..x..x..x..x....'], { gain: 0.5, pan: -0.3 }),
+    L('stamp', ['........x.......', '........x.......', '........x.......', '........x...x...'], { gain: 0.8, rev: 0.2 }),
+    L('tick', ['x.x.x.x.x.x.x.x.'], { gain: 0.4, pan: 0.3 }),
+    L('stab', comp(CON_A, 3, ['x...............', 'x.......x.......']), { gain: 0.55, rev: 0.2, pan: 0.2, p: { cut: 1300 } }),
+    L('glass', [
+      'A5 . . . C6 . . . E6 . . . C6 . . .', 'A5 . . . C6 . . . B5 . . . . . . .', 'D6 . . . F6 . . . A5 . . . . . . .', 'E6 . . . C6 . . . A5 . . . . . . .',
+      'C6 . . . A5 . . . F5 . . . . . . .', 'G#5 . . . B5 . . . D6 . . . E6 . . .', 'A5 . . . C6 . . . E6 . . . A6 . . .', 'G#6 . . . B5 . . . . . . . . . . .',
+    ], { gain: 0.5, rev: 0.25, on: '..xxxxxx' }),
+  ],
+};
+
+// ---- conformite_capitale_night: oppressive, 88 bpm, ticking clock
+const CON_N = ['Am', 'Am', 'Bdim', 'Am', 'Fmaj7', 'E', 'Dm', 'E'];
+const conformite_capitale_night: TrackDef = {
+  bpm: 88, swing: 0, bars: 8, loop: true, gain: 1.6, reverb: { seconds: 2.8, mix: 0.45 }, echo: 6, echoFeedback: 0.3,
+  layers: [
+    L('drone', [sustain('A1'), sustain('A1'), sustain('A1'), sustain('E1')], { gain: 0.9, rev: 0.3, p: { cut: 240 } }),
+    L('pad', pads(CON_N, 3), { gain: 0.5, rev: 0.6, p: { cut: 480, a: 1.2, r: 1.8 } }),
+    L('tick', ['x...x...x...x...', 'x...x...x...x.x.'], { gain: 0.55, pan: 0.3, rev: 0.15 }),
+    L('typewriter', ['................', '..x.x...........'], { gain: 0.4, pan: -0.3, on: '.xxxxxxx' }),
+    L('stamp', ['x...............', '................', '................', '........x.......'], { gain: 0.8, rev: 0.4 }),
+    L('kick', ['x.......x.......'], { gain: 0.55, rev: 0.3, p: { low: 44 } }),
+    L('drip', ['. . . . . . . . . . . . A5 . . .', R, '. . . . E6 . . . . . . . . . . .', R], { gain: 0.5, rev: 0.7, dly: 0.5 }),
+    L('bell', [
+      'A5 . . . . . . . C6 . . . . . . .', R, 'B5 . . . . . . . D6 . . . . . . .', R,
+      'A5 . . . . . . . F5 . . . . . . .', 'G#5 . . . B5 . . . E6 . . . . . . .', 'F5 . . . D6 . . . . . . . . . . .', 'E6 - - - - - - - . . . . . . . .',
+    ], { gain: 0.5, rev: 0.7, dly: 0.35, p: { decay: 2.2 } }),
+  ],
+};
+
+// ---- temple_attention: mystical, 66 bpm, bells and open fifths
+const TMP = ['Dm9', 'Dm9', 'Bbmaj7', 'Csus4', 'Dm9', 'Gm7', 'Bbmaj7', 'A7sus4'];
+const temple_attention: TrackDef = {
+  bpm: 66, swing: 0, bars: 8, loop: true, gain: 1.8, reverb: { seconds: 4, mix: 0.6 }, echo: 3, echoFeedback: 0.45,
+  layers: [
+    L('drone', [sustain('D1'), sustain('D1'), sustain('Bb0'), sustain('C1')], { gain: 0.8, rev: 0.3, p: { cut: 230 } }),
+    L('pad', pads(TMP, 3), { gain: 0.85, rev: 0.7, p: { cut: 640, a: 1.4, r: 2.4 } }),
+    L('bell', arp(TMP, 5, 'x.....x.....x...', [0, 2, 4, 1, 3, 2]), { gain: 0.6, rev: 0.8, dly: 0.5 }),
+    L('kick', ['x...............', 'x.......x.......'], { gain: 0.45, rev: 0.5, p: { low: 40 }, on: '..xxxxxx' }),
+    L('shaker', ['..x...x...x...x.'], { gain: 0.2, pan: 0.3, on: '....xxxx' }),
+  ],
+};
+
 export const TRACKS: Readonly<Record<TrackName, TrackDef>> = {
-  city_day, city_night, route_a, route_b, interior, prison, hub,
+  city_day, city_night,
+  latentia_city_day, latentia_city_night, hugging_grove_day, hugging_grove_night, port_8080_day, port_8080_night,
+  dunes_datacenters_day, dunes_datacenters_night, conformite_capitale_day, conformite_capitale_night, temple_attention,
+  route_a, route_b, interior, prison, hub,
   battle_wild, battle_trainer, battle_aiact, battle_leader, victory, evolution, title, trailer,
 };

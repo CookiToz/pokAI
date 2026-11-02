@@ -930,7 +930,7 @@ export class OverworldScene extends Phaser.Scene implements WorldPort {
     this.snapCamera();
     ui.mapBanner(interpolate(this.map.name, { player: s.playerName }));
     if (this.map.music) audio.music(this.map.music as TrackName);
-    else audio.ambient(this.map.kind ?? 'route');
+    else audio.ambient(this.map.kind ?? 'route', mapId);
     this.minimap?.setMap(this.map);
     this.hideSignLabel();
     this.hintKey = '';
